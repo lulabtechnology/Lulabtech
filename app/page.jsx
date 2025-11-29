@@ -20,7 +20,7 @@ const navItems = [
   { href: "#contacto", label: "Contacto" }
 ];
 
-// 👇 WhatsApp oficial
+// WhatsApp + contacto oficial
 const whatsappLink =
   "https://wa.me/50767069044?text=Hola%20Lulabtech,%20quiero%20cotizar%20una%20web.";
 const contactPhone = "+507 67069044";
@@ -201,9 +201,10 @@ export default function Home() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-slate-300 transition hover:text-white"
+                className="relative text-slate-300 transition hover:text-white"
               >
-                {item.label}
+                <span>{item.label}</span>
+                <span className="absolute left-0 top-full mt-1 h-[2px] w-0 bg-sky-400 transition-all group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -226,8 +227,19 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="relative overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#020617] via-[#020617] to-[#081021] pb-16 pt-10 sm:pb-24 sm:pt-14"
       >
-        <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center opacity-70">
-          <div className="h-72 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.35),_transparent_70%)]" />
+        {/* blobs animados */}
+        <motion.div
+          className="pointer-events-none absolute -top-24 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.45),_transparent)] blur-3xl"
+          animate={{ x: [0, 10, 0], y: [0, 20, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="pointer-events-none absolute -top-10 -right-32 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,184,128,0.4),_transparent)] blur-3xl"
+          animate={{ x: [0, -14, 0], y: [0, 16, 0] }}
+          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center opacity-40">
+          <div className="h-72 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.4),_transparent_70%)]" />
         </div>
 
         <div className="section-wrapper grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
@@ -238,7 +250,9 @@ export default function Home() {
             </span>
             <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Webs y automatizaciones que convierten{" "}
-              <span className="text-sky-300">seguidores en clientes.</span>
+              <span className="bg-gradient-to-r from-sky-300 via-white to-emerald-300 bg-clip-text text-transparent">
+                seguidores en clientes.
+              </span>
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
               Creamos landing pages, webs corporativas, tiendas online y
@@ -277,6 +291,15 @@ export default function Home() {
               </span>
               <span className="badge-soft bg-white/5 text-[11px]">
                 Tiendas online desde $500
+              </span>
+            </div>
+
+            {/* indicador de scroll */}
+            <div className="mt-10 hidden items-center gap-3 text-[11px] text-slate-400 md:flex">
+              <span className="h-px w-10 bg-slate-600" />
+              <span>Desplaza para ver cómo trabajamos</span>
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-600">
+                <span className="animate-bounce text-xs">↓</span>
               </span>
             </div>
           </div>
@@ -829,6 +852,18 @@ export default function Home() {
           </footer>
         </div>
       </motion.section>
+
+      {/* BOTÓN FLOTANTE WHATSAPP */}
+      <a
+        href={whatsappLink}
+        className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold text-slate-950 shadow-[0_18px_40px_rgba(16,185,129,0.6)] transition hover:-translate-y-1 hover:bg-emerald-300"
+      >
+        <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/90">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-70" />
+          <span className="relative text-[13px]">WA</span>
+        </span>
+        <span className="hidden sm:inline">Escríbenos por WhatsApp</span>
+      </a>
     </main>
   );
 }
