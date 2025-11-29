@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta Lulabtech basada en tu logo */
+:root {
+  --brand-primary: #1078ff; /* azul del logo */
+  --brand-accent: #10b880;  /* verde del punto */
+  --brand-dark: #020617;
+  --brand-soft: #0b1220;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+}
+
+/* Helpers para secciones */
+@layer components {
+  .section-wrapper {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold tracking-[0.28em] uppercase text-sky-300;
+  }
+
+  .section-heading {
+    @apply mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-white;
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-sm sm:text-base text-slate-300 max-w-2xl;
+  }
+
+  .badge-soft {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-100;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand-accent)] px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-300;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/10;
+  }
+
+  .glass-card {
+    @apply rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-6 shadow-[0_18px_45px_rgba(15,23,42,0.75)];
+  }
+}
