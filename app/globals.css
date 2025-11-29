@@ -4,10 +4,10 @@
 
 /* Paleta Lulabtech basada en tu logo */
 :root {
-  --brand-primary: #1078ff; /* azul del logo */
-  --brand-accent: #10b880;  /* verde del punto */
-  --brand-dark: #020617;
-  --brand-soft: #0b1220;
+  --brand-primary: #1078ff;  /* azul logo */
+  --brand-accent: #10b880;   /* verde punto logo */
+  --brand-dark: #0f172a;
+  --brand-soft: #e5f1ff;
   --font-sans: system-ui;
 }
 
@@ -15,7 +15,8 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Inter", sans-serif;
   background:
-    radial-gradient(circle at top, #0b1f3a 0, #020617 55%, #020617 100%);
+    radial-gradient(circle at top, #e0f1ff 0, #f5f7ff 40%, #f9fafb 100%);
+  color: var(--brand-dark);
   min-height: 100vh;
 }
 
@@ -26,31 +27,30 @@ body {
   }
 
   .section-title {
-    @apply text-xs font-semibold tracking-[0.28em] uppercase text-sky-300;
+    @apply text-xs font-semibold tracking-[0.28em] uppercase text-sky-600;
   }
 
   .section-heading {
-    @apply mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-white;
+    @apply mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-950;
   }
 
   .section-subtitle {
-    @apply mt-4 text-sm sm:text-base text-slate-300 max-w-2xl;
+    @apply mt-4 text-sm sm:text-base text-slate-600 max-w-2xl;
   }
 
   .badge-soft {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-slate-100;
+    @apply inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-[11px] font-medium text-sky-800;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand-accent)] px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-300;
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-400/40 transition hover:shadow-sky-500/60;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/10;
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50;
   }
 
-  /* Cartas con glassmorphism más marcado */
   .glass-card {
-    @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.8)] backdrop-blur-xl;
+    @apply rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.12)] backdrop-blur-sm;
   }
 }
