@@ -15,13 +15,16 @@ const navItems = [
   { href: "#servicios", label: "Servicios" },
   { href: "#planes", label: "Planes" },
   { href: "#proceso", label: "Proceso" },
+  { href: "#equipo", label: "El calvo" },
   { href: "#portafolio", label: "Portafolio" },
   { href: "#contacto", label: "Contacto" }
 ];
 
-// 👇 Cambia este link por tu número de WhatsApp real
+// 👇 WhatsApp oficial
 const whatsappLink =
-  "https://wa.me/50760000000?text=Hola%20Lulabtech,%20quiero%20cotizar%20una%20web.";
+  "https://wa.me/50767069044?text=Hola%20Lulabtech,%20quiero%20cotizar%20una%20web.";
+const contactPhone = "+507 67069044";
+const contactEmail = "ventas@lulabtech.com";
 
 const services = [
   {
@@ -43,7 +46,7 @@ const services = [
       "Sitios pensados para mostrar quién eres, qué haces y por qué confiar en tu marca.",
     items: [
       "Estructura pensada para empresas y profesionales",
-      "Hasta 5 secciones principales (Inicio, Servicios, Nosotros, etc.)",
+      "Hasta 5 secciones principales",
       "Integración con redes sociales y formularios",
       "SEO básico on-page"
     ]
@@ -170,7 +173,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617]">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-30 border-b border-white/5 bg-[#020617]/80 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-white/5 bg-[#020617]/85 backdrop-blur">
         <div className="section-wrapper flex items-center justify-between py-3">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--brand-primary)] shadow-lg shadow-sky-500/40">
@@ -207,7 +210,7 @@ export default function Home() {
 
           <a
             href={whatsappLink}
-            className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:-translate-y-[1px] hover:bg-emerald-300 sm:inline-flex"
           >
             Hablemos por WhatsApp
             <ArrowRight className="h-3 w-3" />
@@ -223,8 +226,8 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="relative overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#020617] via-[#020617] to-[#081021] pb-16 pt-10 sm:pb-24 sm:pt-14"
       >
-        <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 flex justify-center opacity-60">
-          <div className="h-64 w-[32rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.3),_transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center opacity-70">
+          <div className="h-72 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.35),_transparent_70%)]" />
         </div>
 
         <div className="section-wrapper grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
@@ -247,13 +250,22 @@ export default function Home() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a href={whatsappLink} className="btn-primary">
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href={whatsappLink}
+                className="btn-primary"
+              >
                 Quiero cotizar ahora
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
-              <a href="#planes" className="btn-ghost">
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                href="#planes"
+                className="btn-ghost"
+              >
                 Ver planes y precios
-              </a>
+              </motion.a>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-300">
@@ -270,7 +282,12 @@ export default function Home() {
           </div>
 
           {/* Tarjeta logo + stats */}
-          <div className="glass-card relative overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            className="glass-card relative overflow-hidden border border-sky-500/30 bg-gradient-to-b from-white/10 to-white/[0.03]"
+          >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.18),_transparent_60%)]" />
             <div className="relative flex flex-col gap-6">
               <div className="flex items-center justify-between gap-4">
@@ -331,8 +348,28 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+
+              <div className="mt-1 text-[11px] text-slate-300">
+                <p>
+                  Contáctanos al{" "}
+                  <a
+                    href={whatsappLink}
+                    className="font-semibold text-sky-200 underline underline-offset-2"
+                  >
+                    {contactPhone}
+                  </a>{" "}
+                  o al correo{" "}
+                  <a
+                    href={`mailto:${contactEmail}`}
+                    className="font-semibold text-sky-200 underline underline-offset-2"
+                  >
+                    {contactEmail}
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -358,9 +395,14 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {services.map((service) => (
-              <div
+            {services.map((service, index) => (
+              <motion.div
                 key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05, duration: 0.6 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="glass-card flex h-full flex-col gap-4 bg-white/[0.03]"
               >
                 <div className="flex items-center gap-3">
@@ -385,7 +427,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -413,9 +455,20 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {plans.map((plan) => (
-              <div
+            {plans.map((plan, index) => (
+              <motion.div
                 key={plan.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.07, duration: 0.6 }}
+                whileHover={{
+                  y: -6,
+                  scale: 1.02,
+                  boxShadow: plan.highlight
+                    ? "0 22px 60px rgba(56,189,248,0.55)"
+                    : "0 18px 40px rgba(15,23,42,0.9)"
+                }}
                 className={`relative flex h-full flex-col rounded-3xl border bg-white/[0.02] p-6 text-sm ${
                   plan.highlight
                     ? "border-sky-400/70 shadow-[0_20px_60px_rgba(56,189,248,0.4)]"
@@ -463,7 +516,7 @@ export default function Home() {
                   Cotizar este tipo de proyecto
                   <ArrowRight className="ml-1 h-3 w-3" />
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -502,8 +555,12 @@ export default function Home() {
 
           <div className="space-y-5 text-[11px] sm:text-xs">
             {steps.map((stepItem, index) => (
-              <div
+              <motion.div
                 key={stepItem.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.06, duration: 0.6 }}
                 className="relative rounded-2xl border border-white/10 bg-white/5 p-4"
               >
                 <div className="mb-1 flex items-center justify-between gap-2">
@@ -521,8 +578,91 @@ export default function Home() {
                 <p className="mt-1 text-[11px] text-slate-400">
                   {stepItem.extra}
                 </p>
-              </div>
+              </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* SECCIÓN DEL CALVO / EQUIPO */}
+      <motion.section
+        id="equipo"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
+        className="border-b border-white/5 bg-gradient-to-r from-[#020617] via-[#020617] to-[#07152a] py-16 sm:py-20"
+      >
+        <div className="section-wrapper grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+          <div>
+            <p className="section-title">Quién está detrás</p>
+            <h2 className="section-heading">
+              El calvo detrás de Lulabtech (que realmente hace el trabajo).
+            </h2>
+            <p className="section-subtitle">
+              Lulabtech no es una agencia enorme. Es un estudio pequeño donde
+              tú hablas directamente con la persona que piensa la estrategia,
+              diseña la experiencia y arma el sitio.
+            </p>
+
+            <ul className="mt-6 space-y-2 text-[11px] text-slate-300 sm:text-xs">
+              <li className="flex gap-2">
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <span>
+                  Te hablo en lenguaje normal, no en código: números, ventas y
+                  objetivos.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <span>
+                  Webs pensadas para que funcionen bien en Meta Ads y campañas
+                  reales, no solo para verse bonitas.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <span>
+                  Si algo no te gusta, se ajusta. El objetivo es que te sientas
+                  orgulloso/a de compartir tu web.
+                </span>
+              </li>
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3 text-[11px] text-slate-300">
+              <a href={whatsappLink} className="btn-primary">
+                Hablar directo con el calvo
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </a>
+              <a
+                href={`mailto:${contactEmail}`}
+                className="btn-ghost text-[11px]"
+              >
+                O escribir a {contactEmail}
+              </a>
+            </div>
+          </div>
+
+          <div className="glass-card relative overflow-hidden bg-white/[0.03]">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[var(--brand-primary)]/30 blur-3xl" />
+            <div className="relative">
+              <p className="text-xs font-semibold text-sky-200">
+                Mini manifiesto
+              </p>
+              <p className="mt-3 text-sm font-semibold text-white">
+                “La web no es un lujo: es la versión más seria de tu Instagram.”
+              </p>
+              <p className="mt-3 text-[11px] text-slate-200">
+                Por eso cada proyecto se diseña como si fuera para nosotros:
+                limpio, directo, sin cosas innecesarias, pero con los detalles
+                justos para que la gente diga “wow” cuando entra.
+              </p>
+              <p className="mt-4 text-[11px] text-slate-400">
+                Y sí, si me escribes por WhatsApp probablemente esté calvo,
+                tomando café y moviendo bloques de código para que tu marca se
+                vea brutal.
+              </p>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -550,9 +690,14 @@ export default function Home() {
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {projects.map((project) => (
-              <div
+            {projects.map((project, index) => (
+              <motion.div
                 key={project.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05, duration: 0.6 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
@@ -566,7 +711,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
                   <span className="mb-1 inline-flex w-fit rounded-full bg-white/5 px-2 py-1 text-[10px] font-medium text-sky-300">
-                    {projects.tag}
+                    {project.tag}
                   </span>
                   <p className="text-[13px] font-semibold text-white">
                     {project.name}
@@ -575,7 +720,7 @@ export default function Home() {
                     Reemplaza esta imagen por una captura real de tu proyecto.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -612,14 +757,37 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <a href={whatsappLink} className="btn-primary">
+                  <motion.a
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={whatsappLink}
+                    className="btn-primary"
+                  >
                     Empezar por WhatsApp
                     <ArrowRight className="ml-1 h-4 w-4" />
-                  </a>
+                  </motion.a>
                   <span className="text-[11px] text-slate-300">
                     Tiempo de respuesta habitual: menos de 24 horas.
                   </span>
                 </div>
+
+                <p className="mt-4 text-[11px] text-slate-300">
+                  También puedes escribir a{" "}
+                  <a
+                    href={`mailto:${contactEmail}`}
+                    className="font-semibold text-sky-200 underline underline-offset-2"
+                  >
+                    {contactEmail}
+                  </a>{" "}
+                  o llamar / escribir al{" "}
+                  <a
+                    href={whatsappLink}
+                    className="font-semibold text-sky-200 underline underline-offset-2"
+                  >
+                    {contactPhone}
+                  </a>
+                  .
+                </p>
               </div>
 
               <div className="space-y-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-[11px] text-slate-200">
@@ -651,9 +819,12 @@ export default function Home() {
           </div>
 
           <footer className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[11px] text-slate-500 sm:flex-row">
-            <p>© {new Date().getFullYear()} Lulabtech Studio. Todos los derechos reservados.</p>
+            <p>
+              © {new Date().getFullYear()} Lulabtech Studio. Todos los derechos
+              reservados.
+            </p>
             <p className="text-[11px]">
-              Hecho con Next.js, Tailwind y mucho cariño panameño.
+              Contacto: {contactPhone} · {contactEmail}
             </p>
           </footer>
         </div>
