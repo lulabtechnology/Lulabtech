@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Monitor,
   Globe2,
   ShoppingBag,
   Bot,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react";
 
 const navItems = [
@@ -17,10 +17,9 @@ const navItems = [
   { href: "#proceso", label: "Proceso" },
   { href: "#equipo", label: "El calvo" },
   { href: "#portafolio", label: "Portafolio" },
-  { href: "#contacto", label: "Contacto" }
+  { href: "#contacto", label: "Contacto" },
 ];
 
-// WhatsApp + contacto oficial
 const whatsappLink =
   "https://wa.me/50767069044?text=Hola%20Lulabtech,%20quiero%20cotizar%20una%20web.";
 const contactPhone = "+507 67069044";
@@ -36,8 +35,8 @@ const services = [
       "Una sola página enfocada 100% a la conversión",
       "Sección hero con propuesta de valor clara",
       "Bloques de beneficios + prueba social",
-      "Botón directo a WhatsApp o formulario"
-    ]
+      "Botón directo a WhatsApp o formulario",
+    ],
   },
   {
     icon: Globe2,
@@ -48,8 +47,8 @@ const services = [
       "Estructura pensada para empresas y profesionales",
       "Hasta 5 secciones principales",
       "Integración con redes sociales y formularios",
-      "SEO básico on-page"
-    ]
+      "SEO básico on-page",
+    ],
   },
   {
     icon: ShoppingBag,
@@ -60,8 +59,8 @@ const services = [
       "Catálogo administrable por categorías",
       "Carrito que envía el pedido a WhatsApp o correo",
       "Soporte para pasarela de pago (según país/proveedor)",
-      "Panel sencillo para actualizar productos"
-    ]
+      "Panel sencillo para actualizar productos",
+    ],
   },
   {
     icon: Bot,
@@ -72,9 +71,9 @@ const services = [
       "Bots para WhatsApp, web o redes sociales",
       "Flujos guiados para calificar leads",
       "Entrega de información clave 24/7",
-      "Soporte en español adaptado a tu marca"
-    ]
-  }
+      "Soporte en español adaptado a tu marca",
+    ],
+  },
 ];
 
 const plans = [
@@ -88,8 +87,8 @@ const plans = [
       "One-page responsive (móvil primero)",
       "Sección hero, servicios, prueba social y CTA",
       "Integración con WhatsApp o formulario",
-      "Entrega estimada: 5–7 días hábiles"
-    ]
+      "Entrega estimada: 5–7 días hábiles",
+    ],
   },
   {
     name: "Web corporativa",
@@ -101,9 +100,9 @@ const plans = [
       "Hasta 5 secciones (Inicio, Servicios, Nosotros, Contacto, etc.)",
       "Blog o sección de novedades básica",
       "Optimización básica de velocidad y SEO on-page",
-      "Configuración de dominio y hosting incluido"
+      "Configuración de dominio y hosting incluido",
     ],
-    highlight: true
+    highlight: true,
   },
   {
     name: "Tienda online",
@@ -115,9 +114,9 @@ const plans = [
       "Catálogo de productos con categorías",
       "Carrito que envía el pedido a WhatsApp o correo",
       "Integración con pasarela de pago (según proveedor)",
-      "Entrenamiento corto para que la puedas manejar"
-    ]
-  }
+      "Entrenamiento corto para que la puedas manejar",
+    ],
+  },
 ];
 
 const steps = [
@@ -126,57 +125,61 @@ const steps = [
     title: "Llamada rápida y definición de objetivo",
     description:
       "Hablamos 20–30 minutos para entender tu negocio, objetivo principal (reservas, leads, ventas, etc.) y escogemos el tipo de web ideal.",
-    extra: "Aquí te enviamos la propuesta formal y el monto a invertir."
+    extra: "Aquí te enviamos la propuesta formal y el monto a invertir.",
   },
   {
     step: "Paso 2",
     title: "Reserva del proyecto (50% inicial)",
     description:
       "Con el 50% adelantado bloqueamos agenda, organizamos el contenido (textos, fotos, logotipos) y te presentamos el wireframe y paleta de colores.",
-    extra: "Nada se programa hasta que estés cómodo con el diseño."
+    extra: "Nada se programa hasta que estés cómodo con el diseño.",
   },
   {
     step: "Paso 3",
     title: "Diseño, desarrollo y pruebas",
     description:
       "Maquetamos la web con animaciones suaves, preparamos la versión móvil y conectamos lo necesario (WhatsApp, formularios, analítica).",
-    extra: "Te mostramos avances navegables para que los revises antes del lanzamiento."
+    extra: "Te mostramos avances navegables para que los revises antes del lanzamiento.",
   },
   {
     step: "Paso 4",
     title: "Lanzamiento + 50% final",
     description:
       "Publicamos en tu dominio, hacemos pruebas finales y cerramos con una mini-guía de uso para que no dependas de nadie para cambios simples.",
-    extra: "El 50% restante se paga contra entrega aprobada."
-  }
+    extra: "El 50% restante se paga contra entrega aprobada.",
+  },
 ];
 
 const projects = [
   {
     tag: "Landing page",
     name: "Landing para lanzamiento de servicio",
-    image: "/portafolio/landing-servicio.jpg"
+    image: "/portafolio/landing-servicio.jpg",
   },
   {
     tag: "Web corporativa",
     name: "Sitio para estudio profesional",
-    image: "/portafolio/web-estudio.jpg"
+    image: "/portafolio/web-estudio.jpg",
   },
   {
     tag: "Tienda online",
     name: "Catálogo para tienda de productos",
-    image: "/portafolio/tienda-productos.jpg"
-  }
+    image: "/portafolio/tienda-productos.jpg",
+  },
 ];
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const blobY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617]">
+    <main className="min-h-screen">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-30 border-b border-white/5 bg-[#020617]/85 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
         <div className="section-wrapper flex items-center justify-between py-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--brand-primary)] shadow-lg shadow-sky-500/40">
+            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--brand-primary)] shadow-lg shadow-sky-300/60">
               <Image
                 src="/logo-lulab.png"
                 alt="Lulabtech logo"
@@ -187,31 +190,31 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight">
+              <span className="text-sm font-semibold tracking-tight text-slate-900">
                 Lulabtech Studio
               </span>
-              <span className="text-[11px] text-slate-400">
+              <span className="text-[11px] text-slate-500">
                 Landing pages · Webs · Tiendas · Bots
               </span>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-6 text-xs sm:flex">
+          <nav className="hidden items-center gap-6 sm:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="relative text-slate-300 transition hover:text-white"
+                className="group relative text-xs font-medium text-slate-600 transition hover:text-slate-950"
               >
                 <span>{item.label}</span>
-                <span className="absolute left-0 top-full mt-1 h-[2px] w-0 bg-sky-400 transition-all group-hover:w-full" />
+                <span className="pointer-events-none absolute left-0 top-full mt-1 h-[2px] w-0 bg-sky-500 transition-all group-hover:w-full" />
               </a>
             ))}
           </nav>
 
           <a
             href={whatsappLink}
-            className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:-translate-y-[1px] hover:bg-emerald-300 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-white shadow-lg shadow-emerald-300/80 transition hover:-translate-y-[1px] hover:bg-emerald-400 sm:inline-flex"
           >
             Hablemos por WhatsApp
             <ArrowRight className="h-3 w-3" />
@@ -224,40 +227,38 @@ export default function Home() {
         id="inicio"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#020617] via-[#020617] to-[#081021] pb-16 pt-10 sm:pb-24 sm:pt-14"
+        transition={{ duration: 0.7 }}
+        className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-sky-50 via-white to-emerald-50 pb-16 pt-10 sm:pb-24 sm:pt-14"
       >
-        {/* blobs animados */}
+        {/* blobs parallax */}
         <motion.div
-          className="pointer-events-none absolute -top-24 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.45),_transparent)] blur-3xl"
-          animate={{ x: [0, 10, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          style={{ y: blobY }}
+          className="pointer-events-none absolute -top-24 -left-20 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)] blur-3xl"
         />
         <motion.div
-          className="pointer-events-none absolute -top-10 -right-32 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,184,128,0.4),_transparent)] blur-3xl"
-          animate={{ x: [0, -14, 0], y: [0, 16, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          style={{ y: blobY2 }}
+          className="pointer-events-none absolute -top-10 -right-32 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,184,128,0.35),_transparent)] blur-3xl"
         />
-        <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center opacity-40">
-          <div className="h-72 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.4),_transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-24 -z-10 flex justify-center opacity-40">
+          <div className="h-64 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.25),_transparent_70%)]" />
         </div>
 
-        <div className="section-wrapper grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
+        <div className="section-wrapper grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.1fr)] lg:items-center">
           {/* Texto hero */}
           <div>
             <span className="badge-soft mb-4">
               Estudio digital con base en Panamá · proyectos online
             </span>
-            <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
               Webs y automatizaciones que convierten{" "}
-              <span className="bg-gradient-to-r from-sky-300 via-white to-emerald-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-500 bg-clip-text text-transparent">
                 seguidores en clientes.
               </span>
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
               Creamos landing pages, webs corporativas, tiendas online y
               chatbots pensados para personas que venden{" "}
-              <span className="font-medium text-sky-200">
+              <span className="font-medium text-sky-700">
                 todos los días en Instagram y WhatsApp
               </span>
               , pero necesitan una presencia web seria que se vea “wow”.
@@ -282,115 +283,141 @@ export default function Home() {
               </motion.a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-300">
-              <span className="badge-soft bg-white/5 text-[11px]">
+            <div className="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-600">
+              <span className="badge-soft bg-sky-50 text-sky-800">
                 Landing pages desde $150
               </span>
-              <span className="badge-soft bg-white/5 text-[11px]">
+              <span className="badge-soft bg-sky-50 text-sky-800">
                 Webs corporativas desde $300
               </span>
-              <span className="badge-soft bg-white/5 text-[11px]">
+              <span className="badge-soft bg-sky-50 text-sky-800">
                 Tiendas online desde $500
               </span>
             </div>
 
-            {/* indicador de scroll */}
-            <div className="mt-10 hidden items-center gap-3 text-[11px] text-slate-400 md:flex">
-              <span className="h-px w-10 bg-slate-600" />
+            <div className="mt-10 hidden items-center gap-3 text-[11px] text-slate-500 md:flex">
+              <span className="h-px w-10 bg-slate-300" />
               <span>Desplaza para ver cómo trabajamos</span>
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-600">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-300">
                 <span className="animate-bounce text-xs">↓</span>
               </span>
             </div>
           </div>
 
-          {/* Tarjeta logo + stats */}
+          {/* Mockup hero */}
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.15, duration: 0.7 }}
-            className="glass-card relative overflow-hidden border border-sky-500/30 bg-gradient-to-b from-white/10 to-white/[0.03]"
+            transition={{ delay: 0.1, duration: 0.7 }}
+            className="glass-card relative overflow-hidden"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.18),_transparent_60%)]" />
-            <div className="relative flex flex-col gap-6">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.28),_transparent)]" />
+            <div className="relative space-y-5">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-[var(--brand-primary)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-primary)]">
                     <Image
                       src="/logo-lulab.png"
                       alt="Lulabtech logo"
-                      width={40}
-                      height={40}
-                      className="rounded-2xl"
+                      width={34}
+                      height={34}
+                      className="rounded-xl"
                     />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-200">
+                    <p className="text-xs font-semibold text-slate-900">
                       Lulabtech Studio
                     </p>
-                    <p className="text-[11px] text-slate-400">
+                    <p className="text-[11px] text-slate-500">
                       Diseño · Desarrollo · Automatización
                     </p>
                   </div>
                 </div>
-                <div className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+                <div className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700">
                   Hecho a medida
                 </div>
               </div>
 
-              <div className="grid gap-4 text-xs text-slate-200 sm:grid-cols-3">
-                <div className="rounded-2xl bg-white/5 p-3">
-                  <p className="text-[11px] text-slate-400">
+              {/* mockup tipo navegador */}
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
+                <div className="flex items-center gap-2 pb-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                  <span className="ml-3 h-5 flex-1 rounded-full bg-white/80 px-3 text-[10px] text-slate-400 flex items-center">
+                    lulabtech.com/tu-proyecto
+                  </span>
+                </div>
+
+                <div className="grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
+                  <div className="space-y-2">
+                    <div className="h-7 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600" />
+                    <div className="h-3 rounded-full bg-slate-200" />
+                    <div className="h-3 rounded-full bg-slate-200/80" />
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                      <div className="h-12 rounded-2xl bg-white shadow-sm" />
+                      <div className="h-12 rounded-2xl bg-white shadow-sm" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="h-20 rounded-2xl bg-slate-200" />
+                    <div className="h-3 rounded-full bg-slate-200/80" />
+                    <div className="h-3 rounded-full bg-slate-200/70 w-4/5" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-4 text-[11px] text-slate-600 sm:grid-cols-3">
+                <div className="rounded-2xl border border-slate-100 bg-sky-50/60 p-3">
+                  <p className="text-[11px] text-slate-500">
                     Pensado para redes
                   </p>
-                  <p className="mt-1 text-lg font-semibold text-white">
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
                     +Ventas
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400">
+                  <p className="mt-1 text-[11px]">
                     Webs diseñadas para campañas de Meta Ads.
                   </p>
                 </div>
-                <div className="rounded-2xl bg-white/5 p-3">
-                  <p className="text-[11px] text-slate-400">
+                <div className="rounded-2xl border border-slate-100 bg-emerald-50/70 p-3">
+                  <p className="text-[11px] text-slate-500">
                     Pago por fases
                   </p>
-                  <p className="mt-1 text-lg font-semibold text-white">
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
                     50% / 50%
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400">
+                  <p className="mt-1 text-[11px]">
                     Mitad al iniciar · mitad al lanzar.
                   </p>
                 </div>
-                <div className="rounded-2xl bg-white/5 p-3">
-                  <p className="text-[11px] text-slate-400">Acompañamiento</p>
-                  <p className="mt-1 text-lg font-semibold text-white">
-                    Soporte
+                <div className="rounded-2xl border border-slate-100 bg-white p-3">
+                  <p className="text-[11px] text-slate-500">Soporte</p>
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
+                    Acompañamiento
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400">
+                  <p className="mt-1 text-[11px]">
                     Guía básica para que puedas autogestionar.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-1 text-[11px] text-slate-300">
-                <p>
-                  Contáctanos al{" "}
-                  <a
-                    href={whatsappLink}
-                    className="font-semibold text-sky-200 underline underline-offset-2"
-                  >
-                    {contactPhone}
-                  </a>{" "}
-                  o al correo{" "}
-                  <a
-                    href={`mailto:${contactEmail}`}
-                    className="font-semibold text-sky-200 underline underline-offset-2"
-                  >
-                    {contactEmail}
-                  </a>
-                  .
-                </p>
-              </div>
+              <p className="mt-1 text-[11px] text-slate-500">
+                Contáctanos al{" "}
+                <a
+                  href={whatsappLink}
+                  className="font-semibold text-sky-700 underline underline-offset-2"
+                >
+                  {contactPhone}
+                </a>{" "}
+                o al correo{" "}
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="font-semibold text-sky-700 underline underline-offset-2"
+                >
+                  {contactEmail}
+                </a>
+                .
+              </p>
             </div>
           </motion.div>
         </div>
@@ -402,8 +429,8 @@ export default function Home() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="border-b border-white/5 bg-[var(--brand-soft)]/40 py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="border-b border-slate-200 bg-sky-50/70 py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="max-w-2xl">
@@ -426,23 +453,23 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.05, duration: 0.6 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className="glass-card flex h-full flex-col gap-4 bg-white/[0.03]"
+                className="glass-card flex h-full flex-col gap-4"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--brand-primary)]/15 text-[var(--brand-accent)]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 text-sky-600">
                     <service.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-white sm:text-base">
+                    <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-xs text-slate-300 sm:text-[13px]">
+                    <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
                       {service.description}
                     </p>
                   </div>
                 </div>
 
-                <ul className="mt-2 space-y-1.5 text-[11px] text-slate-300 sm:text-xs">
+                <ul className="mt-2 space-y-1.5 text-[11px] text-slate-600 sm:text-xs">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
@@ -456,14 +483,14 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PLANES Y PRECIOS */}
+      {/* PLANES */}
       <motion.section
         id="planes"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="border-b border-white/5 bg-[#020617] py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="border-b border-slate-200 bg-white py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="max-w-2xl">
@@ -489,35 +516,35 @@ export default function Home() {
                   y: -6,
                   scale: 1.02,
                   boxShadow: plan.highlight
-                    ? "0 22px 60px rgba(56,189,248,0.55)"
-                    : "0 18px 40px rgba(15,23,42,0.9)"
+                    ? "0 22px 60px rgba(56,189,248,0.45)"
+                    : "0 18px 40px rgba(15,23,42,0.12)",
                 }}
-                className={`relative flex h-full flex-col rounded-3xl border bg-white/[0.02] p-6 text-sm ${
+                className={`relative flex h-full flex-col rounded-3xl border bg-white p-6 text-sm ${
                   plan.highlight
-                    ? "border-sky-400/70 shadow-[0_20px_60px_rgba(56,189,248,0.4)]"
-                    : "border-white/10"
+                    ? "border-sky-300 shadow-[0_20px_60px_rgba(56,189,248,0.35)]"
+                    : "border-slate-200"
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute right-4 top-4 rounded-full bg-sky-400/10 px-3 py-1 text-[11px] font-semibold text-sky-300 ring-1 ring-sky-400/40">
+                  <div className="absolute right-4 top-4 rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-sky-700 ring-1 ring-sky-300">
                     Más elegido
                   </div>
                 )}
 
-                <p className="text-xs font-semibold text-slate-300">
+                <p className="text-xs font-semibold text-slate-700">
                   {plan.name}
                 </p>
-                <p className="mt-2 text-xl font-semibold text-white">
+                <p className="mt-2 text-xl font-semibold text-slate-950">
                   {plan.price}
                 </p>
-                <p className="mt-1 text-[11px] text-slate-400">
+                <p className="mt-1 text-[11px] text-slate-500">
                   {plan.badge}
                 </p>
-                <p className="mt-3 text-[11px] text-slate-300">
+                <p className="mt-3 text-[11px] text-slate-600">
                   {plan.description}
                 </p>
 
-                <ul className="mt-4 space-y-1.5 text-[11px] text-slate-300">
+                <ul className="mt-4 space-y-1.5 text-[11px] text-slate-600">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2">
                       <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
@@ -532,8 +559,8 @@ export default function Home() {
                   href={whatsappLink}
                   className={`mt-4 inline-flex items-center justify-center rounded-full px-4 py-2 text-[11px] font-semibold transition ${
                     plan.highlight
-                      ? "bg-[var(--brand-primary)] text-white shadow-lg shadow-sky-500/40 hover:bg-sky-400"
-                      : "border border-white/15 bg-white/5 text-slate-100 hover:bg-white/10"
+                      ? "bg-[var(--brand-primary)] text-white shadow-lg shadow-sky-400/60 hover:bg-sky-600"
+                      : "border border-slate-200 bg-slate-50 text-slate-800 hover:bg-white"
                   }`}
                 >
                   Cotizar este tipo de proyecto
@@ -551,8 +578,8 @@ export default function Home() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="border-b border-white/5 bg-[var(--brand-soft)]/60 py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20"
       >
         <div className="section-wrapper grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
@@ -565,8 +592,8 @@ export default function Home() {
               qué etapa vamos y qué viene después. Sin tecnicismos raros.
             </p>
 
-            <div className="mt-6 rounded-2xl border border-emerald-400/40 bg-emerald-400/5 p-4 text-[11px] text-emerald-100">
-              <p className="font-semibold text-emerald-200">
+            <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-[11px] text-emerald-800">
+              <p className="font-semibold text-emerald-900">
                 Esquema de pago 50% / 50%
               </p>
               <p className="mt-1">
@@ -584,21 +611,21 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: index * 0.06, duration: 0.6 }}
-                className="relative rounded-2xl border border-white/10 bg-white/5 p-4"
+                className="relative rounded-2xl border border-slate-200 bg-white p-4"
               >
                 <div className="mb-1 flex items-center justify-between gap-2">
-                  <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-300">
+                  <span className="rounded-full bg-sky-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-700">
                     {stepItem.step}
                   </span>
                   <span className="text-[10px] text-slate-400">
                     Etapa {index + 1} de 4
                   </span>
                 </div>
-                <p className="text-xs font-semibold text-white">
+                <p className="text-xs font-semibold text-slate-900">
                   {stepItem.title}
                 </p>
-                <p className="mt-1 text-slate-300">{stepItem.description}</p>
-                <p className="mt-1 text-[11px] text-slate-400">
+                <p className="mt-1 text-slate-600">{stepItem.description}</p>
+                <p className="mt-1 text-[11px] text-slate-500">
                   {stepItem.extra}
                 </p>
               </motion.div>
@@ -607,14 +634,14 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* SECCIÓN DEL CALVO / EQUIPO */}
+      {/* EQUIPO / EL CALVO */}
       <motion.section
         id="equipo"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="border-b border-white/5 bg-gradient-to-r from-[#020617] via-[#020617] to-[#07152a] py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="border-b border-slate-200 bg-gradient-to-r from-sky-50 via-white to-emerald-50 py-16 sm:py-20"
       >
         <div className="section-wrapper grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
           <div>
@@ -628,7 +655,7 @@ export default function Home() {
               diseña la experiencia y arma el sitio.
             </p>
 
-            <ul className="mt-6 space-y-2 text-[11px] text-slate-300 sm:text-xs">
+            <ul className="mt-6 space-y-2 text-[11px] text-slate-600 sm:text-xs">
               <li className="flex gap-2">
                 <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
                 <span>
@@ -652,7 +679,7 @@ export default function Home() {
               </li>
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-3 text-[11px] text-slate-300">
+            <div className="mt-6 flex flex-wrap gap-3 text-[11px] text-slate-700">
               <a href={whatsappLink} className="btn-primary">
                 Hablar directo con el calvo
                 <ArrowRight className="ml-1 h-3 w-3" />
@@ -666,21 +693,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="glass-card relative overflow-hidden bg-white/[0.03]">
-            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[var(--brand-primary)]/30 blur-3xl" />
+          <div className="glass-card relative overflow-hidden">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)]" />
             <div className="relative">
-              <p className="text-xs font-semibold text-sky-200">
+              <p className="text-xs font-semibold text-sky-700">
                 Mini manifiesto
               </p>
-              <p className="mt-3 text-sm font-semibold text-white">
+              <p className="mt-3 text-sm font-semibold text-slate-950">
                 “La web no es un lujo: es la versión más seria de tu Instagram.”
               </p>
-              <p className="mt-3 text-[11px] text-slate-200">
+              <p className="mt-3 text-[11px] text-slate-600">
                 Por eso cada proyecto se diseña como si fuera para nosotros:
                 limpio, directo, sin cosas innecesarias, pero con los detalles
                 justos para que la gente diga “wow” cuando entra.
               </p>
-              <p className="mt-4 text-[11px] text-slate-400">
+              <p className="mt-4 text-[11px] text-slate-500">
                 Y sí, si me escribes por WhatsApp probablemente esté calvo,
                 tomando café y moviendo bloques de código para que tu marca se
                 vea brutal.
@@ -690,14 +717,14 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PORTAFOLIO / PLACEHOLDERS */}
+      {/* PORTAFOLIO */}
       <motion.section
         id="portafolio"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="border-b border-white/5 bg-[#020617] py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="border-b border-slate-200 bg-white py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="max-w-2xl">
@@ -721,25 +748,26 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.05, duration: 0.6 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-slate-50"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-80" />
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
+                  <div className="absolute inset-3 rounded-2xl border border-slate-300 bg-slate-900/80">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="rounded-2xl object-cover opacity-85 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
-                  <span className="mb-1 inline-flex w-fit rounded-full bg-white/5 px-2 py-1 text-[10px] font-medium text-sky-300">
+                  <span className="mb-1 inline-flex w-fit rounded-full bg-sky-50 px-2 py-1 text-[10px] font-medium text-sky-700">
                     {project.tag}
                   </span>
-                  <p className="text-[13px] font-semibold text-white">
+                  <p className="text-[13px] font-semibold text-slate-900">
                     {project.name}
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400">
+                  <p className="mt-1 text-[11px] text-slate-500">
                     Reemplaza esta imagen por una captura real de tu proyecto.
                   </p>
                 </div>
@@ -754,26 +782,26 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* CTA FINAL / CONTACTO */}
+      {/* CONTACTO */}
       <motion.section
         id="contacto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7 }}
-        className="bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.35),_#020617)] py-16 sm:py-20"
+        transition={{ duration: 0.6 }}
+        className="bg-slate-50 py-16 sm:py-20"
       >
         <div className="section-wrapper">
-          <div className="glass-card relative overflow-hidden bg-gradient-to-r from-[var(--brand-primary)]/15 via-[#020617] to-[#020617]">
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[var(--brand-primary)]/25 blur-3xl" />
+          <div className="glass-card relative overflow-hidden border-slate-200 bg-gradient-to-r from-sky-50 via-white to-emerald-50">
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)]" />
             <div className="relative grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
               <div>
                 <p className="section-title">Es tu turno</p>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-white">
+                <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-950">
                   ¿Lista/o para que tu marca tenga una web que se vea tan bien
                   como lo que ya haces en Instagram?
                 </h2>
-                <p className="mt-4 text-sm text-slate-200">
+                <p className="mt-4 text-sm text-slate-600">
                   Escríbenos por WhatsApp, cuéntanos qué vendes y qué idea
                   tienes en mente. Te respondemos con una propuesta clara, sin
                   tecnicismos, en un lenguaje de negocios.
@@ -789,23 +817,23 @@ export default function Home() {
                     Empezar por WhatsApp
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </motion.a>
-                  <span className="text-[11px] text-slate-300">
+                  <span className="text-[11px] text-slate-500">
                     Tiempo de respuesta habitual: menos de 24 horas.
                   </span>
                 </div>
 
-                <p className="mt-4 text-[11px] text-slate-300">
+                <p className="mt-4 text-[11px] text-slate-600">
                   También puedes escribir a{" "}
                   <a
                     href={`mailto:${contactEmail}`}
-                    className="font-semibold text-sky-200 underline underline-offset-2"
+                    className="font-semibold text-sky-700 underline underline-offset-2"
                   >
                     {contactEmail}
                   </a>{" "}
                   o llamar / escribir al{" "}
                   <a
                     href={whatsappLink}
-                    className="font-semibold text-sky-200 underline underline-offset-2"
+                    className="font-semibold text-sky-700 underline underline-offset-2"
                   >
                     {contactPhone}
                   </a>
@@ -813,8 +841,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="space-y-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-[11px] text-slate-200">
-                <p className="font-semibold text-slate-100">
+              <div className="space-y-3 rounded-2xl border border-slate-200 bg-white/80 p-4 text-[11px] text-slate-600">
+                <p className="font-semibold text-slate-900">
                   ¿Qué enviaremos en la cotización?
                 </p>
                 <ul className="space-y-1.5">
@@ -841,7 +869,7 @@ export default function Home() {
             </div>
           </div>
 
-          <footer className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[11px] text-slate-500 sm:flex-row">
+          <footer className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-6 text-[11px] text-slate-500 sm:flex-row">
             <p>
               © {new Date().getFullYear()} Lulabtech Studio. Todos los derechos
               reservados.
@@ -856,9 +884,9 @@ export default function Home() {
       {/* BOTÓN FLOTANTE WHATSAPP */}
       <a
         href={whatsappLink}
-        className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold text-slate-950 shadow-[0_18px_40px_rgba(16,185,129,0.6)] transition hover:-translate-y-1 hover:bg-emerald-300"
+        className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(16,185,129,0.7)] transition hover:-translate-y-1 hover:bg-emerald-400"
       >
-        <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/90">
+        <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-70" />
           <span className="relative text-[13px]">WA</span>
         </span>
