@@ -8,16 +8,18 @@
   --brand-accent: #10b880;  /* verde del punto */
   --brand-dark: #020617;
   --brand-soft: #0b1220;
+  --font-sans: system-ui;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Inter", sans-serif;
-  background: radial-gradient(circle at top, #0b1f3a 0, #020617 55%, #020617);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top, #0b1f3a 0, #020617 55%, #020617 100%);
+  min-height: 100vh;
 }
 
-
-/* Helpers para secciones */
+/* Contenedor estándar */
 @layer components {
   .section-wrapper {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -47,7 +49,8 @@ body {
     @apply inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/10;
   }
 
+  /* Cartas con glassmorphism más marcado */
   .glass-card {
-    @apply rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-6 shadow-[0_18px_45px_rgba(15,23,42,0.75)];
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.8)] backdrop-blur-xl;
   }
 }
