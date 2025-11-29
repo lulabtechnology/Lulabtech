@@ -11,6 +11,10 @@
   --font-sans: system-ui;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Inter", sans-serif;
