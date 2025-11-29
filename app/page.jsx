@@ -50,7 +50,7 @@ const services = [
       "Estructura pensada para empresas y profesionales",
       "Hasta 5 secciones principales",
       "Integración con redes sociales y formularios",
-      "SEO básico on-page",
+      "Textos y estructura pensados para explicar rápido qué haces.",
     ],
   },
   {
@@ -102,7 +102,7 @@ const plans = [
     features: [
       "Hasta 5 secciones (Inicio, Servicios, Nosotros, Contacto, etc.)",
       "Blog o sección de novedades básica",
-      "Optimización básica de velocidad y SEO on-page",
+      "Optimización básica de velocidad y rendimiento",
       "Configuración de dominio y hosting incluido",
     ],
     highlight: true,
@@ -125,9 +125,9 @@ const plans = [
 const steps = [
   {
     step: "Paso 1",
-    title: "Llamada rápida y definición de objetivo",
+    title: "Definimos lo que quieres lograr",
     description:
-      "Hablamos 20–30 minutos para entender tu negocio, objetivo principal (reservas, leads, ventas, etc.) y escogemos el tipo de web ideal.",
+      "Conversamos para entender tu negocio, objetivo principal (reservas, leads, ventas, etc.) y escogemos el tipo de web ideal.",
     extra: "Aquí te enviamos la propuesta formal y el monto a invertir.",
   },
   {
@@ -147,10 +147,11 @@ const steps = [
   },
   {
     step: "Paso 4",
-    title: "Lanzamiento + 50% final",
+    title: "Pago final y lanzamiento en tu dominio",
     description:
-      "Publicamos en tu dominio, hacemos pruebas finales y cerramos con una mini-guía de uso para que no dependas de nadie para cambios simples.",
-    extra: "El 50% restante se paga contra entrega aprobada.",
+      "Se realiza el 50% restante y configuramos tu dominio (DNS, hosting y SSL) para que tu web quede online con tu nombre.",
+    extra:
+      "Hacemos pruebas finales y te dejamos una mini-guía para que no dependas de nadie para cambios simples.",
   },
 ];
 
@@ -438,12 +439,13 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-slate-100 bg-white p-3">
-                  <p className="text-[11px] text-slate-500">Soporte</p>
+                  <p className="text-[11px] text-slate-500">Soporte humano</p>
                   <p className="mt-1 text-lg font-semibold text-slate-900">
-                    Acompañamiento
+                    Equipo real
                   </p>
                   <p className="mt-1 text-[11px]">
-                    Guía básica para que puedas autogestionar.
+                    Te acompaña un equipo de personas reales que entiende tu
+                    negocio y tu contexto, no un bot.
                   </p>
                 </div>
               </div>
@@ -510,7 +512,7 @@ export default function Home() {
                     <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
+                    <p className="mt-1 text-xs text-slate-600 sm:text[13px]">
                       {service.description}
                     </p>
                   </div>
@@ -660,7 +662,7 @@ export default function Home() {
                 transition={{ delay: index * 0.06, duration: 0.6 }}
                 className="relative rounded-2xl border border-slate-200 bg-white p-4"
               >
-                <div className="mb-1 flex items-center justify-between gap-2">
+                <div className="mb-1 flex items-center justify_between gap-2">
                   <span className="rounded-full bg-sky-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-700">
                     {stepItem.step}
                   </span>
@@ -697,31 +699,31 @@ export default function Home() {
               El calvo detrás de Lulabtech (que realmente hace el trabajo).
             </h2>
             <p className="section-subtitle">
-              Lulabtech no es una agencia enorme. Es un estudio pequeño donde
-              tú hablas directamente con la persona que piensa la estrategia,
-              diseña la experiencia y arma el sitio.
+              Detrás de Lulabtech hay un equipo que mezcla estrategia, diseño y
+              desarrollo. Hablas con personas reales que piensan la experiencia
+              completa de tu cliente y arman el sitio contigo, no con un bot.
             </p>
 
             <ul className="mt-6 space-y-2 text-[11px] text-slate-600 sm:text-xs">
               <li className="flex gap-2">
                 <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
                 <span>
-                  Te hablo en lenguaje normal, no en código: números, ventas y
-                  objetivos.
+                  Te hablamos en lenguaje normal, no en código: números, ventas
+                  y objetivos.
                 </span>
               </li>
               <li className="flex gap-2">
                 <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
                 <span>
-                  Webs pensadas para que funcionen bien en Meta Ads y campañas
-                  reales, no solo para verse bonitas.
+                  Diseñamos webs pensadas para rendir bien en campañas reales,
+                  no solo para verse bonitas.
                 </span>
               </li>
               <li className="flex gap-2">
                 <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
                 <span>
-                  Si algo no te gusta, se ajusta. El objetivo es que te sientas
-                  orgulloso/a de compartir tu web.
+                  Si algo no te gusta, lo ajustamos: el objetivo es que te
+                  sientas orgulloso/a de compartir tu web.
                 </span>
               </li>
             </ul>
@@ -755,9 +757,9 @@ export default function Home() {
                 justos para que la gente diga “wow” cuando entra.
               </p>
               <p className="mt-4 text-[11px] text-slate-500">
-                Y sí, si me escribes por WhatsApp probablemente esté calvo,
-                tomando café y moviendo bloques de código para que tu marca se
-                vea brutal.
+                Y sí, si nos escribes por WhatsApp, te responden humanos de
+                verdad: café en mano, revisando tu caso y moviendo bloques de
+                código para que tu marca se vea brutal.
               </p>
             </div>
           </div>
