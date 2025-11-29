@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -9,6 +10,8 @@ import {
   Bot,
   ArrowRight,
   CheckCircle2,
+  Menu,
+  X,
 } from "lucide-react";
 
 const navItems = [
@@ -139,7 +142,8 @@ const steps = [
     title: "Diseño, desarrollo y pruebas",
     description:
       "Maquetamos la web con animaciones suaves, preparamos la versión móvil y conectamos lo necesario (WhatsApp, formularios, analítica).",
-    extra: "Te mostramos avances navegables para que los revises antes del lanzamiento.",
+    extra:
+      "Te mostramos avances navegables para que los revises antes del lanzamiento.",
   },
   {
     step: "Paso 4",
@@ -173,11 +177,14 @@ export default function Home() {
   const blobY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen">
       {/* NAVBAR */}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
         <div className="section-wrapper flex items-center justify-between py-3">
+          {/* Logo + nombre */}
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--brand-primary)] shadow-lg shadow-sky-300/60">
               <Image
@@ -199,6 +206,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Menú desktop */}
           <nav className="hidden items-center gap-6 sm:flex">
             {navItems.map((item) => (
               <a
@@ -212,14 +220,53 @@ export default function Home() {
             ))}
           </nav>
 
-          <a
-            href={whatsappLink}
-            className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-white shadow-lg shadow-emerald-300/80 transition hover:-translate-y-[1px] hover:bg-emerald-400 sm:inline-flex"
-          >
-            Hablemos por WhatsApp
-            <ArrowRight className="h-3 w-3" />
-          </a>
+          {/* CTA + menú móvil */}
+          <div className="flex items-center gap-2">
+            <a
+              href={whatsappLink}
+              className="hidden items-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-white shadow-lg shadow-emerald-300/80 transition hover:-translate-y-[1px] hover:bg-emerald-400 sm:inline-flex"
+            >
+              Hablemos por WhatsApp
+              <ArrowRight className="h-3 w-3" />
+            </a>
+
+            {/* Botón hamburguesa solo en móvil */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 sm:hidden"
+              aria-label="Abrir menú"
+            >
+              {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
+
+        {/* Panel del menú móvil */}
+        {menuOpen && (
+          <div className="border-t border-slate-200 bg-white/95 sm:hidden">
+            <div className="section-wrapper flex flex-col gap-2 py-3">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-full px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-100"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href={whatsappLink}
+                onClick={() => setMenuOpen(false)}
+                className="mt-1 inline-flex items-center justify-center rounded-full bg-[var(--brand-accent)] px-4 py-2 text-[11px] font-semibold text-white shadow-md shadow-emerald-300/70"
+              >
+                Hablemos por WhatsApp
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
