@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Paleta Lulabtech basada en tu logo */
+/* Paleta Lulabtech refinada (manteniendo esencia) */
 :root {
-  --brand-primary: #1078ff;  /* azul logo */
-  --brand-accent: #10b880;   /* verde punto logo */
+  --brand-primary: #1078ff;
+  --brand-accent: #10b880;
   --brand-dark: #0f172a;
   --brand-soft: #e5f1ff;
   --font-sans: system-ui;
@@ -19,27 +19,50 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Inter", sans-serif;
   background:
-    radial-gradient(circle at top, #e0f1ff 0, #f5f7ff 40%, #f9fafb 100%);
+    radial-gradient(circle at top, rgba(224, 241, 255, 0.9) 0, rgba(245, 247, 255, 0.9) 38%, #f8fafc 100%);
   color: var(--brand-dark);
   min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Contenedor estándar */
+::selection {
+  background: rgba(16, 120, 255, 0.16);
+  color: #0f172a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Contenedor + sistema visual */
 @layer components {
   .section-wrapper {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-title {
-    @apply text-xs font-semibold tracking-[0.28em] uppercase text-sky-600;
+    @apply text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-600;
   }
 
   .section-heading {
-    @apply mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-950;
+    @apply mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl lg:text-4xl lg:leading-tight;
   }
 
   .section-subtitle {
-    @apply mt-4 text-sm sm:text-base text-slate-600 max-w-2xl;
+    @apply mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base;
   }
 
   .badge-soft {
@@ -47,14 +70,14 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-400/40 transition hover:shadow-sky-500/60;
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(59,130,246,0.28)] transition duration-200 hover:shadow-[0_18px_40px_rgba(37,99,235,0.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50;
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition duration-200 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 focus-visible:ring-offset-2;
   }
 
   .glass-card {
-    @apply rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.12)] backdrop-blur-sm;
+    @apply rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_16px_42px_rgba(15,23,42,0.10)] backdrop-blur-sm;
   }
 }
