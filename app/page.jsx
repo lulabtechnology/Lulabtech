@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Monitor,
   Globe2,
@@ -16,9 +16,9 @@ import {
 
 const navItems = [
   { href: "#servicios", label: "Servicios" },
-  { href: "#planes", label: "Planes" },
+  { href: "#cotizacion", label: "Cotización" },
   { href: "#proceso", label: "Proceso" },
-  { href: "#equipo", label: "El calvo" },
+  { href: "#equipo", label: "Equipo" },
   { href: "#portafolio", label: "Portafolio" },
   { href: "#contacto", label: "Contacto" },
 ];
@@ -31,127 +31,134 @@ const contactEmail = "ventas@lulabtech.com";
 const services = [
   {
     icon: Monitor,
-    title: "Landing pages que convierten",
+    title: "Landing pages para campañas",
     description:
-      "Perfectas para campañas de Instagram, lanzamientos puntuales o capturar leads de un solo producto/servicio.",
+      "Páginas enfocadas en una sola oferta para captar leads, cotizaciones o ventas desde tráfico frío.",
     items: [
-      "Una sola página enfocada 100% a la conversión",
-      "Sección hero con propuesta de valor clara",
-      "Bloques de beneficios + prueba social",
-      "Botón directo a WhatsApp o formulario",
+      "Propuesta de valor clara desde el primer scroll",
+      "Bloques orientados a conversión y CTA directo",
+      "Integración con WhatsApp o formulario",
+      "Diseño premium, rápido y mobile-first",
     ],
   },
   {
     icon: Globe2,
-    title: "Webs corporativas",
+    title: "Webs corporativas que generan confianza",
     description:
-      "Sitios pensados para mostrar quién eres, qué haces y por qué confiar en tu marca.",
+      "Sitios para empresas y profesionales que necesitan verse serios, explicar bien sus servicios y convertir mejor.",
     items: [
-      "Estructura pensada para empresas y profesionales",
-      "Hasta 5 secciones principales",
-      "Integración con redes sociales y formularios",
-      "Textos y estructura pensados para explicar rápido qué haces.",
+      "Arquitectura de contenido clara y profesional",
+      "Secciones para autoridad, servicios y contacto",
+      "Experiencia móvil cuidada para tráfico real",
+      "Textos orientados a claridad comercial",
     ],
   },
   {
     icon: ShoppingBag,
-    title: "Tiendas online",
+    title: "Tiendas online listas para vender",
     description:
-      "Tu catálogo disponible 24/7 para vender por WhatsApp, email o pasarelas de pago.",
+      "Catálogos y e-commerce pensados para vender por WhatsApp, correo o checkout según el flujo que use tu negocio.",
     items: [
       "Catálogo administrable por categorías",
-      "Carrito que envía el pedido a WhatsApp o correo",
-      "Soporte para pasarela de pago (según país/proveedor)",
-      "Panel sencillo para actualizar productos",
+      "Carrito y flujo de compra claros",
+      "Integración con medios de pago según proveedor",
+      "Panel simple para actualizar productos",
     ],
   },
   {
     icon: Bot,
-    title: "Business bots & chatbots",
+    title: "Automatizaciones para ventas y soporte",
     description:
-      "Automatizamos respuestas frecuentes y flujos simples para que tu equipo se enfoque en cerrar ventas.",
+      "Automatizamos tareas repetitivas y respuestas frecuentes para que tu equipo responda mejor y venda con más orden.",
     items: [
-      "Bots para WhatsApp, web o redes sociales",
-      "Flujos guiados para calificar leads",
-      "Entrega de información clave 24/7",
-      "Soporte en español adaptado a tu marca",
+      "Flujos de atención y seguimiento",
+      "Automatización de respuestas frecuentes",
+      "Calificación inicial de leads (si aplica)",
+      "Integración como complemento de tu web, no como centro del mensaje",
     ],
   },
 ];
 
-const plans = [
+const solutionTypes = [
   {
     name: "Landing page",
-    price: "desde $150",
-    badge: "Ideal para campañas y lanzamientos",
+    badge: "Para campañas, lanzamientos y captación",
     description:
-      "Para probar una idea, lanzar un servicio o centralizar el tráfico de anuncios.",
+      "Ideal cuando necesitas una página enfocada en una sola oferta, con mensaje directo y CTA claro para anuncios o tráfico desde redes.",
     features: [
-      "One-page responsive (móvil primero)",
-      "Sección hero, servicios, prueba social y CTA",
-      "Integración con WhatsApp o formulario",
-      "Entrega estimada: 5–7 días hábiles",
+      "Enfoque 100% en conversión",
+      "Estructura corta y estratégica",
+      "CTA a WhatsApp o formulario",
+      "Pensada para tráfico frío de Meta/Google",
     ],
   },
   {
     name: "Web corporativa",
-    price: "desde $300",
-    badge: "Para empresas y marcas en crecimiento",
+    badge: "Para marcas y negocios que necesitan confianza",
     description:
-      "Presencia sólida en internet para mostrar tu negocio y generar confianza.",
+      "Recomendada para empresas que necesitan una presencia profesional, explicar sus servicios y elevar percepción de marca.",
     features: [
-      "Hasta 5 secciones (Inicio, Servicios, Nosotros, Contacto, etc.)",
-      "Blog o sección de novedades básica",
-      "Optimización básica de velocidad y rendimiento",
-      "Configuración de dominio y hosting incluido",
+      "Contenido organizado por secciones",
+      "Mensaje claro para generar confianza",
+      "Diseño premium adaptable a crecimiento",
+      "Ideal para pauta, referencias y ventas consultivas",
     ],
     highlight: true,
   },
   {
     name: "Tienda online",
-    price: "desde $500",
-    badge: "Pensada para vender todos los días",
+    badge: "Para vender productos con mejor experiencia",
     description:
-      "Catálogo ordenado, fácil de navegar, listo para vender por WhatsApp o checkout.",
+      "Pensada para negocios que necesitan catálogo, carrito y una experiencia más ordenada para vender todos los días.",
     features: [
-      "Catálogo de productos con categorías",
-      "Carrito que envía el pedido a WhatsApp o correo",
-      "Integración con pasarela de pago (según proveedor)",
-      "Entrenamiento corto para que la puedas manejar",
+      "Catálogo de productos y categorías",
+      "Flujo de pedido claro",
+      "Opciones de pago según tu operación",
+      "Preparada para escalar con campañas",
     ],
   },
+];
+
+const quoteFactors = [
+  "Tipo de proyecto (landing, corporativa, tienda o combinación)",
+  "Cantidad de secciones y complejidad de diseño",
+  "Integraciones necesarias (WhatsApp, formularios, analítica, pagos)",
+  "Cantidad de productos/categorías (si es tienda)",
+  "Tiempo de entrega y prioridad del proyecto",
+  "Si partimos desde cero o mejoramos una web existente",
 ];
 
 const steps = [
   {
     step: "Paso 1",
-    title: "Definimos lo que quieres lograr",
+    title: "Definimos objetivo, alcance y prioridad",
     description:
-      "Conversamos para entender tu negocio, objetivo principal (reservas, leads, ventas, etc.) y escogemos el tipo de web ideal.",
-    extra: "Aquí te enviamos la propuesta formal y el monto a invertir.",
+      "Conversamos para entender qué vendes, qué quieres lograr (leads, reservas, ventas, imagen de marca) y qué tipo de web te conviene más.",
+    extra:
+      "Te enviamos una propuesta clara con alcance, tiempos y forma de trabajo.",
   },
   {
     step: "Paso 2",
     title: "Reserva del proyecto (50% inicial)",
     description:
-      "Con el 50% adelantado bloqueamos agenda, organizamos el contenido (textos, fotos, logotipos) y te presentamos el wireframe y paleta de colores.",
-    extra: "Nada se programa hasta que estés cómodo con el diseño.",
+      "Con el 50% adelantado bloqueamos agenda, organizamos contenido (textos, fotos, logos) y definimos dirección visual para arrancar con orden.",
+    extra: "Nada se desarrolla a ciegas: primero alineamos diseño y estructura.",
   },
   {
     step: "Paso 3",
-    title: "Diseño, desarrollo y pruebas",
+    title: "Diseño, desarrollo y revisión",
     description:
-      "Maquetamos la web con animaciones suaves, preparamos la versión móvil y conectamos lo necesario (WhatsApp, formularios, analítica).",
+      "Maquetamos la web, optimizamos versión móvil y conectamos lo necesario (WhatsApp, formularios y herramientas clave según el proyecto).",
     extra:
-      "Te mostramos avances navegables para que los revises antes del lanzamiento.",
+      "Te mostramos avances navegables para revisión antes de lanzar.",
   },
   {
     step: "Paso 4",
-    title: "Pago final y lanzamiento en tu dominio",
+    title: "Pago final y publicación",
     description:
-      "Se realiza el 50% restante y configuramos tu dominio (DNS, hosting y SSL) para que tu web quede online con tu nombre.",
+      "Con el 50% restante realizamos configuración final y publicamos tu sitio en dominio con SSL y pruebas básicas de funcionamiento.",
     extra:
-      "Hacemos pruebas finales y te dejamos una mini-guía para que no dependas de nadie para cambios simples.",
+      "Te dejamos guía breve para cambios simples y uso básico del sitio.",
   },
 ];
 
@@ -160,33 +167,42 @@ const projects = [
     tag: "Landing page",
     name: "Landing para lanzamiento de servicio",
     image: "/portafolio/landing-servicio.jpg",
+    summary:
+      "Estructura enfocada en propuesta de valor, beneficios y CTA para captación rápida desde campañas.",
   },
   {
     tag: "Web corporativa",
     name: "Sitio para estudio profesional",
     image: "/portafolio/web-estudio.jpg",
+    summary:
+      "Presentación más seria de marca y servicios, con narrativa pensada para confianza y decisión.",
   },
   {
     tag: "Tienda online",
     name: "Catálogo para tienda de productos",
     image: "/portafolio/tienda-productos.jpg",
+    summary:
+      "Experiencia de catálogo y compra orientada a claridad, navegación y ventas por canales digitales.",
   },
 ];
 
-export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const blobY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.55 },
+};
 
+export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   return (
     <main className="min-h-screen">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/85 backdrop-blur">
         <div className="section-wrapper flex items-center justify-between py-3">
-          {/* Logo + nombre */}
-          <div className="flex items-center gap-3">
+          <a href="#inicio" className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--brand-primary)] shadow-lg shadow-sky-300/60">
               <Image
                 src="/logo-lulab.png"
@@ -202,12 +218,11 @@ export default function Home() {
                 Lulabtech Studio
               </span>
               <span className="text-[11px] text-slate-500">
-                Landing pages · Webs · Tiendas · Bots
+                Landing pages · Webs · Tiendas · Automatizaciones
               </span>
             </div>
-          </div>
+          </a>
 
-          {/* Menú desktop */}
           <nav className="hidden items-center gap-6 sm:flex">
             {navItems.map((item) => (
               <a
@@ -221,7 +236,6 @@ export default function Home() {
             ))}
           </nav>
 
-          {/* CTA + menú móvil */}
           <div className="flex items-center gap-2">
             <a
               href={whatsappLink}
@@ -231,19 +245,18 @@ export default function Home() {
               <ArrowRight className="h-3 w-3" />
             </a>
 
-            {/* Botón hamburguesa solo en móvil */}
             <button
               type="button"
               onClick={() => setMenuOpen((prev) => !prev)}
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 sm:hidden"
-              aria-label="Abrir menú"
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={menuOpen}
             >
               {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
           </div>
         </div>
 
-        {/* Panel del menú móvil */}
         {menuOpen && (
           <div className="border-t border-slate-200 bg-white/95 sm:hidden">
             <div className="section-wrapper flex flex-col gap-2 py-3">
@@ -271,95 +284,78 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <motion.section
+      <section
         id="inicio"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
         className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-sky-50 via-white to-emerald-50 pb-16 pt-10 sm:pb-24 sm:pt-14"
       >
-        {/* blobs parallax */}
-        <motion.div
-          style={{ y: blobY }}
-          className="pointer-events-none absolute -top-24 -left-20 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)] blur-3xl"
-        />
-        <motion.div
-          style={{ y: blobY2 }}
-          className="pointer-events-none absolute -top-10 -right-32 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,184,128,0.35),_transparent)] blur-3xl"
-        />
-        <div className="pointer-events-none absolute inset-x-0 top-24 -z-10 flex justify-center opacity-40">
-          <div className="h-64 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.25),_transparent_70%)]" />
+        <div className="pointer-events-none absolute -top-20 -left-20 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.18),_transparent)] blur-3xl" />
+        <div className="pointer-events-none absolute -top-8 -right-24 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,184,128,0.18),_transparent)] blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 top-24 -z-10 flex justify-center opacity-50">
+          <div className="h-64 w-[34rem] rounded-full bg-[radial-gradient(circle_at_top,_rgba(16,120,255,0.15),_transparent_70%)]" />
         </div>
 
         <div className="section-wrapper grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.1fr)] lg:items-center">
-          {/* Texto hero */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+          >
             <span className="badge-soft mb-4">
-              Estudio digital con base en Panamá · proyectos online
+              Estudio digital con base en Panamá · atención a clientes locales e
+              internacionales
             </span>
             <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-              Webs y automatizaciones que convierten{" "}
+              Webs y automatizaciones con enfoque en
               <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-emerald-500 bg-clip-text text-transparent">
-                seguidores en clientes.
+                {" "}ventas, confianza y presencia premium.
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-              Creamos landing pages, webs corporativas, tiendas online y
-              chatbots pensados para personas que venden{" "}
-              <span className="font-medium text-sky-700">
-                todos los días en Instagram y WhatsApp
-              </span>
-              , pero necesitan una presencia web seria que se vea “wow”.
+              Diseñamos landing pages, webs corporativas y tiendas online para
+              marcas que ya se mueven en redes, pero necesitan una presencia web
+              seria, clara y lista para convertir mejor.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <motion.a
-                whileHover={{ y: -2, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -2, scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 href={whatsappLink}
                 className="btn-primary"
               >
-                Quiero cotizar ahora
+                Quiero cotizar mi proyecto
                 <ArrowRight className="ml-1 h-4 w-4" />
               </motion.a>
-              <motion.a
-                whileHover={{ y: -2 }}
-                href="#planes"
-                className="btn-ghost"
-              >
-                Ver planes y precios
+              <motion.a whileHover={{ y: -1 }} href="#cotizacion" className="btn-ghost">
+                Ver cómo cotizamos
               </motion.a>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2 text-[11px] text-slate-600">
               <span className="badge-soft bg-sky-50 text-sky-800">
-                Landing pages desde $150
+                Diseño premium
               </span>
               <span className="badge-soft bg-sky-50 text-sky-800">
-                Webs corporativas desde $300
+                Mobile-first real
               </span>
               <span className="badge-soft bg-sky-50 text-sky-800">
-                Tiendas online desde $500
+                Cotización personalizada
               </span>
             </div>
 
             <div className="mt-10 hidden items-center gap-3 text-[11px] text-slate-500 md:flex">
               <span className="h-px w-10 bg-slate-300" />
-              <span>Desplaza para ver cómo trabajamos</span>
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-300">
-                <span className="animate-bounce text-xs">↓</span>
-              </span>
+              <span>Desplaza para ver servicios, proceso y forma de trabajo</span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Mockup hero */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            initial={{ opacity: 0, y: 16, scale: 0.99 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.7 }}
+            transition={{ delay: 0.05, duration: 0.45 }}
             className="glass-card relative overflow-hidden"
           >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.28),_transparent)]" />
+            <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.22),_transparent)]" />
             <div className="relative space-y-5">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
@@ -386,13 +382,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* mockup tipo navegador */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
                 <div className="flex items-center gap-2 pb-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-                  <span className="ml-3 h-5 flex-1 rounded-full bg-white/80 px-3 text-[10px] text-slate-400 flex items-center">
+                  <span className="ml-3 flex h-5 flex-1 items-center rounded-full bg-white/80 px-3 text-[10px] text-slate-400">
                     lulabtech.com/tu-proyecto
                   </span>
                 </div>
@@ -410,33 +405,27 @@ export default function Home() {
                   <div className="flex flex-col gap-2">
                     <div className="h-20 rounded-2xl bg-slate-200" />
                     <div className="h-3 rounded-full bg-slate-200/80" />
-                    <div className="h-3 rounded-full bg-slate-200/70 w-4/5" />
+                    <div className="h-3 w-4/5 rounded-full bg-slate-200/70" />
                   </div>
                 </div>
               </div>
 
               <div className="grid gap-4 text-[11px] text-slate-600 sm:grid-cols-3">
                 <div className="rounded-2xl border border-slate-100 bg-sky-50/60 p-3">
-                  <p className="text-[11px] text-slate-500">
-                    Pensado para redes
-                  </p>
+                  <p className="text-[11px] text-slate-500">Pensado para campañas</p>
                   <p className="mt-1 text-lg font-semibold text-slate-900">
-                    +Ventas
+                    +Conversión
                   </p>
                   <p className="mt-1 text-[11px]">
-                    Webs diseñadas para campañas de Meta Ads.
+                    Estructuras claras para tráfico desde Meta Ads y Google.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-slate-100 bg-emerald-50/70 p-3">
-                  <p className="text-[11px] text-slate-500">
-                    Pago por fases
-                  </p>
+                  <p className="text-[11px] text-slate-500">Pago por fases</p>
                   <p className="mt-1 text-lg font-semibold text-slate-900">
                     50% / 50%
                   </p>
-                  <p className="mt-1 text-[11px]">
-                    Mitad al iniciar · mitad al lanzar.
-                  </p>
+                  <p className="mt-1 text-[11px]">Mitad al iniciar · mitad al publicar.</p>
                 </div>
                 <div className="rounded-2xl border border-slate-100 bg-white p-3">
                   <p className="text-[11px] text-slate-500">Soporte humano</p>
@@ -444,8 +433,7 @@ export default function Home() {
                     Equipo real
                   </p>
                   <p className="mt-1 text-[11px]">
-                    Te acompaña un equipo de personas reales que entiende tu
-                    negocio y tu contexto, no un bot.
+                    Acompañamiento claro en diseño, contenido y lanzamiento.
                   </p>
                 </div>
               </div>
@@ -470,26 +458,23 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* SERVICIOS */}
       <motion.section
+        {...reveal}
         id="servicios"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
         className="border-b border-slate-200 bg-sky-50/70 py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="max-w-2xl">
-            <p className="section-title">Qué hacemos</p>
+            <p className="section-title">Servicios principales</p>
             <h2 className="section-heading">
-              Una sola casa para tu landing, web, tienda y bots.
+              Diseño, web y automatización para vender con mejor presencia.
             </h2>
             <p className="section-subtitle">
-              No hacemos webs genéricas. Cada proyecto parte de tu realidad:
-              qué vendes, cómo cobras y por dónde llega tu cliente ideal.
+              Priorizamos claridad comercial, estética premium y ejecución técnica
+              para que tu marca se vea seria y convierta mejor.
             </p>
           </div>
 
@@ -497,31 +482,31 @@ export default function Home() {
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.05, duration: 0.6 }}
-                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ delay: index * 0.04, duration: 0.45 }}
+                whileHover={{ y: -4, scale: 1.005 }}
                 className="glass-card flex h-full flex-col gap-4"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 text-sky-600">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600">
                     <service.icon className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-xs text-slate-600 sm:text[13px]">
+                    <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
                       {service.description}
                     </p>
                   </div>
                 </div>
 
-                <ul className="mt-2 space-y-1.5 text-[11px] text-slate-600 sm:text-xs">
+                <ul className="mt-1 space-y-1.5 text-[11px] text-slate-600 sm:text-xs">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                      <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -532,71 +517,56 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PLANES */}
+      {/* COTIZACIÓN / TIPOS DE PROYECTO */}
       <motion.section
-        id="planes"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
+        {...reveal}
+        id="cotizacion"
         className="border-b border-slate-200 bg-white py-16 sm:py-20"
       >
         <div className="section-wrapper">
-          <div className="max-w-2xl">
-            <p className="section-title">Planes y precios</p>
+          <div className="max-w-3xl">
+            <p className="section-title">Tipos de proyecto y cotización</p>
             <h2 className="section-heading">
-              Elige el tipo de proyecto que mejor encaja contigo.
+              Cotizamos según alcance real, no con precios públicos rígidos.
             </h2>
             <p className="section-subtitle">
-              Todos los proyectos se trabajan con 50% al iniciar y 50% al
-              entregar, con contrato simple y fechas claras.
+              Cada negocio tiene objetivos y necesidades distintas. Por eso
+              trabajamos con cotización personalizada y una propuesta clara antes
+              de iniciar.
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {plans.map((plan, index) => (
+            {solutionTypes.map((type, index) => (
               <motion.div
-                key={plan.name}
+                key={type.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.07, duration: 0.6 }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                  boxShadow: plan.highlight
-                    ? "0 22px 60px rgba(56,189,248,0.45)"
-                    : "0 18px 40px rgba(15,23,42,0.12)",
-                }}
+                transition={{ delay: index * 0.06, duration: 0.45 }}
+                whileHover={{ y: -4, scale: 1.008 }}
                 className={`relative flex h-full flex-col rounded-3xl border bg-white p-6 text-sm ${
-                  plan.highlight
-                    ? "border-sky-300 shadow-[0_20px_60px_rgba(56,189,248,0.35)]"
+                  type.highlight
+                    ? "border-sky-300 shadow-[0_20px_60px_rgba(56,189,248,0.22)]"
                     : "border-slate-200"
                 }`}
               >
-                {plan.highlight && (
+                {type.highlight && (
                   <div className="absolute right-4 top-4 rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-sky-700 ring-1 ring-sky-300">
-                    Más elegido
+                    Más solicitado
                   </div>
                 )}
 
-                <p className="text-xs font-semibold text-slate-700">
-                  {plan.name}
-                </p>
-                <p className="mt-2 text-xl font-semibold text-slate-950">
-                  {plan.price}
-                </p>
-                <p className="mt-1 text-[11px] text-slate-500">
-                  {plan.badge}
-                </p>
-                <p className="mt-3 text-[11px] text-slate-600">
-                  {plan.description}
+                <p className="text-xs font-semibold text-slate-700">{type.name}</p>
+                <p className="mt-2 text-[11px] text-slate-500">{type.badge}</p>
+                <p className="mt-3 text-[11px] leading-relaxed text-slate-600">
+                  {type.description}
                 </p>
 
                 <ul className="mt-4 space-y-1.5 text-[11px] text-slate-600">
-                  {plan.features.map((feature) => (
+                  {type.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                      <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -607,8 +577,8 @@ export default function Home() {
                 <a
                   href={whatsappLink}
                   className={`mt-4 inline-flex items-center justify-center rounded-full px-4 py-2 text-[11px] font-semibold transition ${
-                    plan.highlight
-                      ? "bg-[var(--brand-primary)] text-white shadow-lg shadow-sky-400/60 hover:bg-sky-600"
+                    type.highlight
+                      ? "bg-[var(--brand-primary)] text-white shadow-lg shadow-sky-400/50 hover:bg-sky-600"
                       : "border border-slate-200 bg-slate-50 text-slate-800 hover:bg-white"
                   }`}
                 >
@@ -618,27 +588,66 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-8 grid gap-5 rounded-3xl border border-slate-200 bg-slate-50 p-5 lg:grid-cols-[1.2fr_1fr]">
+            <div>
+              <p className="text-xs font-semibold text-slate-900">
+                ¿Qué define la cotización?
+              </p>
+              <p className="mt-2 text-[12px] text-slate-600">
+                Te enviamos una propuesta con alcance, tiempos y forma de trabajo.
+                Estos son los factores principales que evaluamos:
+              </p>
+              <ul className="mt-4 grid gap-2 text-[11px] text-slate-600 sm:grid-cols-2">
+                {quoteFactors.map((factor) => (
+                  <li
+                    key={factor}
+                    className="flex items-start gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2"
+                  >
+                    <CheckCircle2 className="mt-[1px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
+                    <span>{factor}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-[11px] text-emerald-900">
+              <p className="font-semibold">Forma de trabajo y pago</p>
+              <p className="mt-2 text-emerald-800">
+                Mantenemos un esquema simple y claro: <strong>50% para reservar e iniciar</strong> y{" "}
+                <strong>50% al aprobar y publicar</strong>.
+              </p>
+              <p className="mt-3 text-emerald-800">
+                Esto nos permite trabajar con agenda organizada, entregables claros
+                y sin improvisación.
+              </p>
+              <a
+                href={whatsappLink}
+                className="mt-4 inline-flex items-center rounded-full border border-emerald-300 bg-white px-4 py-2 font-semibold text-emerald-700 transition hover:bg-emerald-100"
+              >
+                Solicitar cotización personalizada
+                <ArrowRight className="ml-1 h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
         </div>
       </motion.section>
 
       {/* PROCESO */}
       <motion.section
+        {...reveal}
         id="proceso"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
         className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20"
       >
         <div className="section-wrapper grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
             <p className="section-title">Proceso Lulabtech</p>
             <h2 className="section-heading">
-              Simple, transparente y sin sorpresas en el camino.
+              Simple, transparente y pensado para avanzar sin fricción.
             </h2>
             <p className="section-subtitle">
-              Nos gusta trabajar con claridad: sabes qué se está haciendo, en
-              qué etapa vamos y qué viene después. Sin tecnicismos raros.
+              Trabajamos por etapas. Sabes qué se está haciendo, qué necesitas
+              enviar y qué sigue después. Sin tecnicismos innecesarios.
             </p>
 
             <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-[11px] text-emerald-800">
@@ -646,8 +655,8 @@ export default function Home() {
                 Esquema de pago 50% / 50%
               </p>
               <p className="mt-1">
-                50% para reservar tu cupo y arrancar el proyecto · 50% al
-                aprobar el sitio y publicarlo en tu dominio.
+                50% para reservar tu cupo y arrancar el proyecto · 50% al aprobar
+                el sitio y publicarlo en tu dominio.
               </p>
             </div>
           </div>
@@ -656,13 +665,13 @@ export default function Home() {
             {steps.map((stepItem, index) => (
               <motion.div
                 key={stepItem.title}
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 18 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.06, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.45 }}
                 className="relative rounded-2xl border border-slate-200 bg-white p-4"
               >
-                <div className="mb-1 flex items-center justify_between gap-2">
+                <div className="mb-1 flex items-center justify-between gap-2">
                   <span className="rounded-full bg-sky-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-700">
                     {stepItem.step}
                   </span>
@@ -683,83 +692,72 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* EQUIPO / EL CALVO */}
+      {/* EQUIPO / DIRECCIÓN */}
       <motion.section
+        {...reveal}
         id="equipo"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
         className="border-b border-slate-200 bg-gradient-to-r from-sky-50 via-white to-emerald-50 py-16 sm:py-20"
       >
         <div className="section-wrapper grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
           <div>
-            <p className="section-title">Quién está detrás</p>
+            <p className="section-title">Equipo y dirección</p>
             <h2 className="section-heading">
-              El calvo detrás de Lulabtech (que realmente hace el trabajo).
+              Dirección creativa y ejecución técnica en el mismo equipo.
             </h2>
             <p className="section-subtitle">
-              Detrás de Lulabtech hay un equipo que mezcla estrategia, diseño y
-              desarrollo. Hablas con personas reales que piensan la experiencia
-              completa de tu cliente y arman el sitio contigo, no con un bot.
+              En Lulabtech trabajas con personas reales que entienden negocio,
+              diseño y desarrollo. Nuestro enfoque es ayudarte a vender mejor con
+              una web clara, rápida y bien presentada.
             </p>
 
             <ul className="mt-6 space-y-2 text-[11px] text-slate-600 sm:text-xs">
               <li className="flex gap-2">
-                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                 <span>
-                  Te hablamos en lenguaje normal, no en código: números, ventas
-                  y objetivos.
+                  Te hablamos en lenguaje de negocio: objetivos, prioridades,
+                  tiempos y resultados esperados.
                 </span>
               </li>
               <li className="flex gap-2">
-                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                 <span>
-                  Diseñamos webs pensadas para rendir bien en campañas reales,
-                  no solo para verse bonitas.
+                  Diseñamos pensando en campañas, experiencia móvil y percepción de marca.
                 </span>
               </li>
               <li className="flex gap-2">
-                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                 <span>
-                  Si algo no te gusta, lo ajustamos: el objetivo es que te
-                  sientas orgulloso/a de compartir tu web.
+                  Revisamos contigo el proyecto antes de publicar para que salgas con confianza.
                 </span>
               </li>
             </ul>
 
             <div className="mt-6 flex flex-wrap gap-3 text-[11px] text-slate-700">
               <a href={whatsappLink} className="btn-primary">
-                Hablar directo con el calvo
+                Hablar con dirección por WhatsApp
                 <ArrowRight className="ml-1 h-3 w-3" />
               </a>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="btn-ghost text-[11px]"
-              >
-                O escribir a {contactEmail}
+              <a href={`mailto:${contactEmail}`} className="btn-ghost text-[11px]">
+                Escribir a {contactEmail}
               </a>
             </div>
           </div>
 
           <div className="glass-card relative overflow-hidden">
-            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)]" />
+            <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.28),_transparent)]" />
             <div className="relative">
-              <p className="text-xs font-semibold text-sky-700">
-                Mini manifiesto
-              </p>
+              <p className="text-xs font-semibold text-sky-700">Enfoque de trabajo</p>
               <p className="mt-3 text-sm font-semibold text-slate-950">
-                “La web no es un lujo: es la versión más seria de tu Instagram.”
+                “Tu web debe verse tan seria como el servicio que ya vendes.”
               </p>
               <p className="mt-3 text-[11px] text-slate-600">
-                Por eso cada proyecto se diseña como si fuera para nosotros:
-                limpio, directo, sin cosas innecesarias, pero con los detalles
-                justos para que la gente diga “wow” cuando entra.
+                Diseñamos con criterio comercial: estructura clara, mensajes
+                entendibles, llamadas a la acción visibles y una experiencia que se
+                sienta premium desde móvil.
               </p>
               <p className="mt-4 text-[11px] text-slate-500">
-                Y sí, si nos escribes por WhatsApp, te responden humanos de
-                verdad: café en mano, revisando tu caso y moviendo bloques de
-                código para que tu marca se vea brutal.
+                El objetivo no es llenar de efectos. El objetivo es que tu marca se
+                vea mejor, comunique mejor y convierta mejor.
               </p>
             </div>
           </div>
@@ -768,35 +766,32 @@ export default function Home() {
 
       {/* PORTAFOLIO */}
       <motion.section
+        {...reveal}
         id="portafolio"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
         className="border-b border-slate-200 bg-white py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="max-w-2xl">
-            <p className="section-title">Trabajos</p>
+            <p className="section-title">Portafolio</p>
             <h2 className="section-heading">
-              Una vitrina para mostrar resultados reales.
+              Tipos de proyectos que trabajamos con enfoque visual y comercial.
             </h2>
             <p className="section-subtitle">
-              Aquí irán los proyectos que ya creaste. Por ahora dejamos
-              espacios listos para que solo reemplaces las imágenes en la
-              carpeta <code>/public/portafolio</code>.
+              Esta sección presenta ejemplos visuales por tipo de proyecto para
+              ayudarte a entender el estilo y la dirección que podemos desarrollar
+              para tu marca.
             </p>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.article
                 key={project.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.05, duration: 0.6 }}
-                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ delay: index * 0.05, duration: 0.45 }}
+                whileHover={{ y: -4, scale: 1.005 }}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-slate-50"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
@@ -805,7 +800,8 @@ export default function Home() {
                       src={project.image}
                       alt={project.name}
                       fill
-                      className="rounded-2xl object-cover opacity-85 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                      sizes="(max-width: 767px) 100vw, 33vw"
+                      className="rounded-2xl object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
                     />
                   </div>
                 </div>
@@ -816,50 +812,49 @@ export default function Home() {
                   <p className="text-[13px] font-semibold text-slate-900">
                     {project.name}
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-500">
-                    Reemplaza esta imagen por una captura real de tu proyecto.
+                  <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
+                    {project.summary}
                   </p>
+                  <a
+                    href={whatsappLink}
+                    className="mt-3 inline-flex items-center text-[11px] font-semibold text-sky-700 transition hover:text-sky-800"
+                  >
+                    Quiero algo similar
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </a>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
-
-          <p className="mt-6 text-[11px] text-slate-500">
-            ✱ Tip: usa mockups limpios (laptops, móviles) para presentar tus
-            trabajos de forma más aspiracional.
-          </p>
         </div>
       </motion.section>
 
       {/* CONTACTO */}
       <motion.section
+        {...reveal}
         id="contacto"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
         className="bg-slate-50 py-16 sm:py-20"
       >
         <div className="section-wrapper">
           <div className="glass-card relative overflow-hidden border-slate-200 bg-gradient-to-r from-sky-50 via-white to-emerald-50">
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.35),_transparent)]" />
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,120,255,0.28),_transparent)]" />
             <div className="relative grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
               <div>
-                <p className="section-title">Es tu turno</p>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-950">
-                  ¿Lista/o para que tu marca tenga una web que se vea tan bien
-                  como lo que ya haces en Instagram?
+                <p className="section-title">Cotización</p>
+                <h2 className="mt-2 text-2xl font-semibold text-slate-950 sm:text-3xl">
+                  ¿Listo/a para llevar tu marca a una web más seria, clara y lista
+                  para convertir?
                 </h2>
                 <p className="mt-4 text-sm text-slate-600">
-                  Escríbenos por WhatsApp, cuéntanos qué vendes y qué idea
-                  tienes en mente. Te respondemos con una propuesta clara, sin
-                  tecnicismos, en un lenguaje de negocios.
+                  Escríbenos por WhatsApp y cuéntanos qué vendes, qué objetivo
+                  tienes y qué tipo de proyecto te interesa. Te respondemos con
+                  orientación clara y propuesta personalizada.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <motion.a
-                    whileHover={{ y: -2, scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ y: -2, scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                     href={whatsappLink}
                     className="btn-primary"
                   >
@@ -879,7 +874,7 @@ export default function Home() {
                   >
                     {contactEmail}
                   </a>{" "}
-                  o llamar / escribir al{" "}
+                  o al{" "}
                   <a
                     href={whatsappLink}
                     className="font-semibold text-sky-700 underline underline-offset-2"
@@ -892,26 +887,27 @@ export default function Home() {
 
               <div className="space-y-3 rounded-2xl border border-slate-200 bg-white/80 p-4 text-[11px] text-slate-600">
                 <p className="font-semibold text-slate-900">
-                  ¿Qué enviaremos en la cotización?
+                  ¿Qué incluimos en una cotización?
                 </p>
                 <ul className="space-y-1.5">
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                     <span>Resumen del proyecto y objetivo principal.</span>
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
+                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
                     <span>
-                      Tipo de web recomendada (landing, corporativa, tienda).
+                      Tipo de solución recomendada (landing, corporativa, tienda,
+                      automatización).
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
-                    <span>Precio detallado y forma de pago 50% / 50%.</span>
+                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
+                    <span>Alcance, entregables y forma de trabajo 50% / 50%.</span>
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 text-[var(--brand-accent)]" />
-                    <span>Fechas tentativas de inicio y entrega.</span>
+                    <CheckCircle2 className="mt-[2px] h-3.5 w-3.5 shrink-0 text-[var(--brand-accent)]" />
+                    <span>Tiempos tentativos de inicio y entrega.</span>
                   </li>
                 </ul>
               </div>
@@ -919,10 +915,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-6 text-[11px] text-slate-500 sm:flex-row">
-            <p>
-              © {new Date().getFullYear()} Lulabtech Studio. Todos los derechos
-              reservados.
-            </p>
+            <p>© {currentYear} Lulabtech Studio. Todos los derechos reservados.</p>
             <p className="text-[11px]">
               Contacto: {contactPhone} · {contactEmail}
             </p>
@@ -933,11 +926,11 @@ export default function Home() {
       {/* BOTÓN FLOTANTE WHATSAPP */}
       <a
         href={whatsappLink}
-        className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(16,185,129,0.7)] transition hover:-translate-y-1 hover:bg-emerald-400"
+        className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(16,185,129,0.55)] transition hover:-translate-y-0.5 hover:bg-emerald-400"
+        aria-label="Escríbenos por WhatsApp"
       >
-        <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-70" />
-          <span className="relative text-[13px]">WA</span>
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400 text-[13px]">
+          WA
         </span>
         <span className="hidden sm:inline">Escríbenos por WhatsApp</span>
       </a>
