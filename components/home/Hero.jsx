@@ -1,72 +1,195 @@
-import { PrimaryButton, SecondaryButton } from "@/components/ui/Buttons";
-import { buildWhatsappLink } from "@/lib/site";
+"use client";
+
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+
+const chips = [
+  "Diseño premium",
+  "SEO-ready",
+  "Mobile-first",
+  "WhatsApp integrado",
+];
 
 export default function Hero() {
   return (
-    <section className="shell grid gap-12 pb-20 pt-16 lg:grid-cols-[1.05fr,0.95fr] lg:items-center lg:pb-28 lg:pt-20">
-      <div>
-        <p className="section-eyebrow">Estudio digital para negocios que quieren verse mejor, comunicar con más claridad y vender con menos fricción</p>
-        <h1 className="hero-title mt-6 max-w-4xl">
-          Diseñamos webs premium que hacen que tu negocio se vea al nivel de lo que ya ofrece.
-        </h1>
-        <p className="section-copy mt-6 max-w-2xl text-base md:text-lg">
-          Creamos landing pages, webs corporativas, tiendas online y automatizaciones para marcas, empresas y negocios que necesitan una presencia digital más seria, más clara y mejor pensada para convertir.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <PrimaryButton href="/contacto">Solicitar cotización</PrimaryButton>
-          <SecondaryButton href="/servicios">Ver servicios</SecondaryButton>
-          <SecondaryButton href={buildWhatsappLink("Hola LulabTech, quiero hablar sobre mi proyecto.")}>Hablar por WhatsApp</SecondaryButton>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-600">
-          <span className="chip">Propuesta personalizada</span>
-          <span className="chip">Enfoque en conversión</span>
-          <span className="chip">Experiencia mobile-first</span>
-        </div>
-      </div>
+    <section className="relative overflow-hidden pt-10 md:pt-16">
+      <div className="shell">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+          >
+            <span className="section-eyebrow">
+              Estudio digital para negocios que quieren verse mejor y vender con más claridad
+            </span>
 
-      <div className="relative">
-        <div className="absolute -left-6 top-10 h-44 w-44 rounded-full bg-brand-green/15 blur-3xl" />
-        <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-brand-blue/18 blur-3xl" />
-        <div className="panel relative overflow-hidden p-5 md:p-7">
-          <div className="rounded-[28px] border border-slate-200 bg-slate-950 px-4 py-3 text-xs text-slate-300">
-            lulabtech.com — preview premium
-          </div>
-          <div className="mt-5 grid gap-4 md:grid-cols-[1.1fr,0.9fr]">
-            <div className="rounded-[28px] border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-5 shadow-soft">
-              <div className="h-3 w-24 rounded-full bg-slate-200" />
-              <div className="mt-4 h-8 w-4/5 rounded-full bg-slate-950/90" />
-              <div className="mt-3 h-3 w-full rounded-full bg-slate-200" />
-              <div className="mt-2 h-3 w-5/6 rounded-full bg-slate-200" />
-              <div className="mt-6 flex gap-2">
-                <div className="h-10 w-36 rounded-full bg-brand-blue" />
-                <div className="h-10 w-28 rounded-full border border-slate-200 bg-white" />
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-3">
-                <div className="rounded-2xl bg-slate-100 p-4">
-                  <div className="h-3 w-16 rounded-full bg-slate-300" />
-                  <div className="mt-3 h-10 rounded-2xl bg-white" />
+            <h1 className="hero-title mt-6 max-w-4xl">
+              Diseñamos webs premium que hacen que tu negocio se vea al nivel
+              de lo que ya ofrece.
+            </h1>
+
+            <p className="section-copy mt-6 max-w-2xl text-base md:text-lg">
+              Creamos landing pages, webs corporativas, tiendas online y
+              automatizaciones para marcas y negocios que necesitan una
+              presencia digital más seria, clara y orientada a conversión.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contacto" className="btn-primary">
+                Solicitar cotización
+                <ArrowRight size={16} />
+              </Link>
+
+              <Link href="/servicios" className="btn-secondary">
+                Ver servicios
+              </Link>
+            </div>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              {chips.map((chip) => (
+                <span key={chip} className="chip">
+                  {chip}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
+              <div className="rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-soft">
+                <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <CheckCircle2 size={16} className="text-brand-green" />
+                  Propuesta personalizada
                 </div>
-                <div className="rounded-2xl bg-slate-100 p-4">
-                  <div className="h-3 w-16 rounded-full bg-slate-300" />
-                  <div className="mt-3 h-10 rounded-2xl bg-white" />
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Cotizamos según alcance real, objetivo comercial y estructura
+                  que realmente necesita tu negocio.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-soft">
+                <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <Sparkles size={16} className="text-brand-blue" />
+                  Enfoque comercial
+                </div>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  No solo buscamos que se vea bien. Buscamos que comunique
+                  mejor y convierta con menos fricción.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.08 }}
+            className="relative"
+          >
+            <div className="absolute -left-10 top-8 h-44 w-44 rounded-full bg-[rgba(16,120,255,0.12)] blur-3xl" />
+            <div className="absolute -right-10 bottom-4 h-40 w-40 rounded-full bg-[rgba(16,184,128,0.12)] blur-3xl" />
+
+            <div className="panel relative p-4 md:p-6">
+              <div className="rounded-[28px] border border-slate-200 bg-slate-950 p-5 text-white shadow-soft">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-300">
+                      LulabTech Studio
+                    </p>
+                    <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-3xl">
+                      Presencia digital más seria. Más clara. Más lista para vender.
+                    </h2>
+                  </div>
+                  <div className="hidden rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 md:block">
+                    Responsive
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                      Landing Pages
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-200">
+                      Páginas enfocadas en captar leads o cotizaciones con una sola
+                      propuesta clara y CTA directo.
+                    </p>
+                  </div>
+
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                      Webs Corporativas
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-200">
+                      Sitios para marcas y empresas que necesitan autoridad,
+                      estructura y mejor percepción.
+                    </p>
+                  </div>
+
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                      Tiendas Online
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-200">
+                      Catálogos y ecommerce con mejor orden, mejor experiencia y
+                      más claridad comercial.
+                    </p>
+                  </div>
+
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                      Automatizaciones
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-200">
+                      Flujos útiles para ordenar atención, seguimiento y tareas
+                      repetitivas.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+                    SEO-ready
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+                    WhatsApp integrado
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+                    Diseño con intención comercial
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-3xl border border-slate-200 bg-white p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Conversión
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Estructuras claras para captar desde Meta Ads, Google y redes.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Método
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Propuesta, diseño, desarrollo y publicación con proceso ordenado.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Mobile-first
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Cuidada desde el inicio para el tráfico real que llega desde celular.
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue">Responsive</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">Diseño premium, limpio y optimizado para móvil desde el inicio.</p>
-              </div>
-              <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green">SEO-ready</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">Arquitectura preparada para crecer con páginas de servicio, FAQs y casos.</p>
-              </div>
-              <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">Contacto estratégico</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">WhatsApp, correo y formularios organizados por intención de servicio.</p>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
