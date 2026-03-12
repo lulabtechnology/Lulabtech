@@ -1,37 +1,64 @@
 import Link from "next/link";
-import SectionIntro from "@/components/ui/SectionIntro";
-import { projects } from "@/data/projects";
 
-export default function FeaturedProjects() {
-  const [featured, ...rest] = projects;
-
+export default function FeaturedProjects({ projects = [] }) {
   return (
-    <section className="section-space bg-slate-950 text-white">
+    <section className="pb-20 md:pb-28">
       <div className="shell">
-        <SectionIntro
-          eyebrow="Proyectos seleccionados"
-          title="Algunos proyectos que muestran cómo pensamos diseño, claridad y conversión."
-          description="Cada proyecto responde a una necesidad distinta, pero todos parten de la misma idea: construir una presencia digital que se vea mejor, explique mejor y funcione mejor para vender."
-        />
+        <div className="max-w-3xl">
+          <span className="section-eyebrow">Proyectos destacados</span>
+          <h2 className="section-heading mt-4">
+            Proyectos seleccionados para marcas y negocios que necesitaban una
+            presencia digital más clara, más sólida y mejor pensada para convertir.
+          </h2>
+          <p className="section-copy mt-5">
+            Cada proyecto responde a una necesidad distinta, pero todos parten
+            de la misma idea: construir una presencia digital que se vea mejor,
+            explique mejor y funcione mejor para vender.
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-6 xl:grid-cols-[1.15fr,0.85fr]">
-          <article className="overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-6">
-            <div className="rounded-[28px] bg-gradient-to-br from-white/10 to-white/5 p-6">
-              <div className="h-80 rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(33,150,243,0.18),transparent_25%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]" />
-            </div>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green">{featured.type}</p>
-            <h3 className="mt-3 text-3xl font-semibold tracking-tight">{featured.title}</h3>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">{featured.summary}</p>
-            <div className="mt-6"><Link href="/proyectos" className="btn-secondary border-white/15 bg-white/5 text-white hover:bg-white/10">Ver proyectos</Link></div>
-          </article>
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+          {projects[0] && (
+            <article className="rounded-[34px] border border-slate-200 bg-slate-950 p-6 text-white shadow-soft md:p-8">
+              <div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
+                  {projects[0].type}
+                </p>
+                <h3 className="mt-3 text-3xl font-semibold">{projects[0].title}</h3>
+                <p className="mt-2 text-sm text-slate-300">{projects[0].industry}</p>
+                <p className="mt-5 text-sm leading-7 text-slate-200 md:text-base">
+                  {projects[0].summary}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/contacto" className="btn-primary">
+                    Quiero algo similar
+                  </Link>
+                  <Link href="/proyectos" className="btn-secondary">
+                    Ver proyectos
+                  </Link>
+                </div>
+              </div>
+            </article>
+          )}
 
-          <div className="grid gap-6">
-            {rest.map((project) => (
-              <article key={project.slug} className="rounded-[32px] border border-white/10 bg-white/5 p-6">
-                <div className="h-36 rounded-[24px] bg-[radial-gradient(circle_at_top_left,rgba(16,184,128,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]" />
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green">{project.type}</p>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight">{project.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{project.summary}</p>
+          <div className="grid gap-5">
+            {projects.slice(1).map((project) => (
+              <article key={project.slug} className="panel p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-blue">
+                  {project.type}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-slate-950">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-500">{project.industry}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {project.summary}
+                </p>
+                <div className="mt-6">
+                  <Link href="/contacto" className="btn-secondary">
+                    Quiero algo similar
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
