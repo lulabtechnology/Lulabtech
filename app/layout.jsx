@@ -1,66 +1,28 @@
 import "./globals.css";
 import { Manrope } from "next/font/google";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
+import SchemaMarkup from "@/components/layout/SchemaMarkup";
+import { buildMetadata } from "@/lib/site";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata = {
-  metadataBase: new URL("https://lulabtech.com"),
-  title: {
-    default: "Lulabtech Studio | Landing pages, webs y tiendas online",
-    template: "%s | Lulabtech Studio",
-  },
+export const metadata = buildMetadata({
   description:
-    "Lulabtech Studio diseña landing pages, webs corporativas, tiendas online y automatizaciones con enfoque en conversión, diseño premium y experiencia móvil.",
-  applicationName: "Lulabtech Studio",
+    "Agencia digital en Panamá especializada en landing pages, webs corporativas, tiendas online y automatizaciones con enfoque en diseño premium, claridad comercial y conversión.",
   keywords: [
-    "landing pages",
+    "diseño web en Panamá",
+    "landing pages en Panamá",
     "web corporativa",
     "tienda online",
-    "diseño web Panamá",
-    "desarrollo web Panamá",
-    "automatizaciones para negocios",
-    "agencia digital",
-    "páginas web para negocios",
+    "automatización para negocios",
   ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://lulabtech.com",
-    siteName: "Lulabtech Studio",
-    title: "Lulabtech Studio | Webs con enfoque en conversión y diseño premium",
-    description:
-      "Landing pages, webs corporativas, tiendas online y automatizaciones para marcas que quieren verse serias y vender mejor.",
-    locale: "es_PA",
-    images: [
-      {
-        url: "/logo-lulab.png",
-        width: 512,
-        height: 512,
-        alt: "Logo Lulabtech Studio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: "Lulabtech Studio",
-    description:
-      "Webs y automatizaciones con enfoque en conversión, diseño premium y experiencia móvil.",
-    images: ["/logo-lulab.png"],
-  },
-  icons: {
-    icon: "/logo-lulab.png",
-    shortcut: "/logo-lulab.png",
-    apple: "/logo-lulab.png",
-  },
-  category: "business",
-};
+});
 
 export const viewport = {
   width: "device-width",
@@ -71,7 +33,12 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={manrope.variable}>
-      <body className="antialiased">{children}</body>
+      <body>
+        <SchemaMarkup />
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
