@@ -1,26 +1,26 @@
 export const projects = [
   {
-    slug: "corporativa-premium",
-    title: "Web corporativa premium",
+    slug: "krasa",
+    title: "Krása",
     type: "Web Corporativa",
-    industry: "Servicios profesionales",
+    industry: "Belleza / dermopigmentación",
     summary:
-      "Replanteada para presentar servicios con más claridad, elevar percepción de marca y facilitar el contacto desde móvil.",
+      "Rediseñada para elevar percepción de marca, organizar mejor tratamientos y facilitar consultas desde móvil con una presentación más premium.",
   },
   {
-    slug: "landing-captacion",
-    title: "Landing de captación",
+    slug: "quality-techno",
+    title: "Quality Techno",
     type: "Landing Page",
-    industry: "Servicios / campañas",
+    industry: "Servicios tecnológicos",
     summary:
-      "Estructura enfocada en una sola oferta con mensaje directo, CTA visible y una narrativa orientada a consulta.",
+      "Estructura enfocada en una propuesta clara con mejor jerarquía visual, CTA directo y una ruta de contacto más simple para campañas.",
   },
   {
-    slug: "ecommerce-catalogo",
-    title: "Tienda o catálogo web",
-    type: "Tienda Online",
-    industry: "Retail / productos",
+    slug: "nova-shipping",
+    title: "Nova Shipping Services",
+    type: "Solución Digital",
+    industry: "Logística",
     summary:
-      "Diseñada para mejorar la experiencia de catálogo, organizar productos y profesionalizar la presencia de venta.",
+      "Proyecto orientado a mejorar claridad operativa, experiencia digital y percepción profesional en una categoría donde la confianza pesa mucho.",
   },
 ];
