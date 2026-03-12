@@ -1,41 +1,55 @@
 import ServicePage from "@/components/services/ServicePage";
-import { services } from "@/data/services";
-import { buildMetadata } from "@/lib/site";
 
-const service = services.find((item) => item.slug === "landing-pages");
-
-export const metadata = buildMetadata({
-  title: "Landing Pages en Panamá",
-  path: "/servicios/landing-pages",
+export const metadata = {
+  title: "Landing Pages en Panamá | LulabTech",
   description:
-    "Diseñamos landing pages para campañas, servicios y captación de leads con estructura clara, diseño premium y enfoque en conversión.",
-  keywords: ["landing pages en Panamá", "diseño de landing page", "landing page para captar clientes"],
-});
+    "Landing pages diseñadas para captar mejor, explicar con claridad y convertir con menos distracción.",
+};
 
-const faqItems = [
-  {
-    question: "¿Una landing page sirve aunque no haga anuncios todavía?",
-    answer: "Sí. También puede funcionar para tráfico desde redes, enlaces directos, referencias o presentaciones comerciales.",
-  },
-  {
-    question: "¿La landing puede incluir WhatsApp, formulario o correo?",
-    answer: "Sí. La estructura puede integrar el canal más conveniente según el tipo de negocio.",
-  },
-  {
-    question: "¿Qué pasa si después necesito una web más grande?",
-    answer: "La landing puede ser un buen primer paso y luego evolucionar hacia una estructura más amplia si el proyecto lo necesita.",
-  },
-];
+const whatsappHref =
+  "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20me%20interesa%20cotizar%20una%20landing%20page%20para%20captar%20clientes.";
 
 export default function LandingPagesPage() {
   return (
-    <main>
-      <ServicePage
-        service={service}
-        pageTitle="Landing pages diseñadas para captar mejor, explicar con claridad y convertir con menos distracción."
-        pageDescription="Creamos landing pages para campañas, servicios, promociones, lanzamientos y ofertas que necesitan una estructura directa, una narrativa clara y una experiencia pensada para generar consultas reales."
-        faqItems={faqItems}
-      />
-    </main>
+    <ServicePage
+      eyebrow="Landing Pages"
+      title="Landing pages diseñadas para captar mejor, explicar con claridad y convertir con menos distracción."
+      description="Creamos landing pages para campañas, servicios, promociones, lanzamientos y ofertas que necesitan una estructura directa, una narrativa clara y una experiencia pensada para generar consultas reales."
+      useCasesTitle="¿Cuándo conviene una landing page?"
+      useCases={[
+        "Campañas publicitarias",
+        "Servicios puntuales",
+        "Lanzamientos",
+        "Promociones y captación de leads",
+        "Validación de una oferta o propuesta comercial",
+      ]}
+      valueTitle="Una buena landing no solo se ve bien. Debe hacer que el usuario entienda rápido, confíe y avance."
+      valueText="En LulabTech diseñamos landing pages para que la oferta se entienda mejor, la percepción de marca suba y el contacto sea más fácil. No buscamos llenar la página de bloques innecesarios. Buscamos que cada sección tenga una función."
+      bullets={[
+        "Mensaje claro desde el primer scroll",
+        "Estructura enfocada en una sola acción",
+        "Jerarquía visual bien trabajada",
+        "CTA visibles y bien ubicados",
+        "Experiencia móvil muy cuidada",
+      ]}
+      faqs={[
+        {
+          question: "¿Una landing page sirve aunque no haga anuncios todavía?",
+          answer:
+            "Sí. También puede funcionar para tráfico desde redes, enlaces directos, referencias o presentaciones comerciales.",
+        },
+        {
+          question: "¿La landing puede incluir WhatsApp, formulario o correo?",
+          answer:
+            "Sí. La estructura puede integrar el canal más conveniente según el tipo de negocio.",
+        },
+        {
+          question: "¿Qué pasa si después necesito una web más grande?",
+          answer:
+            "La landing puede ser un buen primer paso y luego evolucionar hacia una estructura más amplia si el proyecto lo necesita.",
+        },
+      ]}
+      whatsappHref={whatsappHref}
+    />
   );
 }
