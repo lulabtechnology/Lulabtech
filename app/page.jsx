@@ -1,34 +1,39 @@
 import Hero from "@/components/home/Hero";
 import TrustStrip from "@/components/home/TrustStrip";
-import ValueBlock from "@/components/home/ValueBlock";
-import AudienceGrid from "@/components/home/AudienceGrid";
-import ServicesGrid from "@/components/home/ServicesGrid";
+import PremiumValue from "@/components/home/PremiumValue";
+import ServiceMatrix from "@/components/home/ServiceMatrix";
 import SolutionSelector from "@/components/home/SolutionSelector";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
-import Differentiators from "@/components/home/Differentiators";
-import ProcessSteps from "@/components/home/ProcessSteps";
-import FaqAccordion from "@/components/ui/FaqAccordion";
-import SectionIntro from "@/components/ui/SectionIntro";
-import ContactCta from "@/components/home/ContactCta";
+import ProofSection from "@/components/home/ProofSection";
+import ProcessSection from "@/components/home/ProcessSection";
+import FaqAccordion from "@/components/home/FaqAccordion";
+import FinalCta from "@/components/home/FinalCta";
 import { homeFaqs } from "@/data/faqs";
+import { projects } from "@/data/projects";
+
+export const metadata = {
+  title: "LulabTech | Diseño web premium para negocios en Panamá",
+  description:
+    "Landing pages, webs corporativas, tiendas online y automatizaciones para negocios que necesitan una presencia digital más seria, clara y orientada a conversión.",
+};
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <Hero />
       <TrustStrip />
-      <ValueBlock />
-      <AudienceGrid />
-      <ServicesGrid />
+      <PremiumValue />
+      <ServiceMatrix />
       <SolutionSelector />
-      <FeaturedProjects />
-      <Differentiators />
-      <ProcessSteps />
-      <section className="shell section-space">
-        <SectionIntro eyebrow="Preguntas frecuentes" title="Preguntas frecuentes antes de solicitar tu propuesta" />
-        <div className="mt-10"><FaqAccordion items={homeFaqs} /></div>
-      </section>
-      <ContactCta />
-    </main>
+      <FeaturedProjects projects={projects.slice(0, 3)} />
+      <ProofSection />
+      <ProcessSection />
+      <FaqAccordion
+        eyebrow="Preguntas frecuentes"
+        title="Resolvemos dudas antes de que pierdas tiempo"
+        items={homeFaqs}
+      />
+      <FinalCta />
+    </>
   );
 }
