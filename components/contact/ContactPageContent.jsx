@@ -1,97 +1,149 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { contactEmail, buildWhatsappLink } from "@/lib/site";
+import Link from "next/link";
 
 const options = [
   {
-    key: "landing",
+    id: "landing",
     label: "Landing Page",
-    text: "Hola LulabTech, me interesa cotizar una landing page para captar clientes o presentar una oferta específica.",
+    whatsapp:
+      "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20me%20interesa%20cotizar%20una%20landing%20page%20para%20mi%20negocio.",
   },
   {
-    key: "corporativa",
+    id: "corporativa",
     label: "Web Corporativa",
-    text: "Hola LulabTech, me interesa cotizar una web corporativa para presentar mejor mi negocio, servicios o marca.",
+    whatsapp:
+      "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20me%20interesa%20cotizar%20una%20web%20corporativa%20para%20mi%20negocio.",
   },
   {
-    key: "tienda",
+    id: "tienda",
     label: "Tienda Online",
-    text: "Hola LulabTech, me interesa cotizar una tienda online o catálogo web para vender mis productos con una presentación más profesional.",
+    whatsapp:
+      "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20me%20interesa%20cotizar%20una%20tienda%20online%20o%20cat%C3%A1logo%20web.",
   },
   {
-    key: "automatizacion",
+    id: "automatizacion",
     label: "Automatización",
-    text: "Hola LulabTech, me interesa una automatización para mejorar atención, seguimiento o procesos en mi negocio.",
+    whatsapp:
+      "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20me%20interesa%20una%20automatizaci%C3%B3n%20para%20mi%20negocio.",
   },
   {
-    key: "nose",
+    id: "nose",
     label: "No estoy seguro todavía",
-    text: "Hola LulabTech, no tengo claro todavía qué tipo de solución necesita mi negocio y quisiera orientación.",
+    whatsapp:
+      "https://wa.me/50767069044?text=Hola%20LulabTech%2C%20todav%C3%ADa%20no%20tengo%20claro%20qu%C3%A9%20tipo%20de%20soluci%C3%B3n%20necesita%20mi%20negocio.",
   },
 ];
 
 export default function ContactPageContent() {
-  const [selected, setSelected] = useState(options[0]);
-  const whatsappLink = useMemo(() => buildWhatsappLink(selected.text), [selected]);
+  const [selected, setSelected] = useState(options[0].id);
+
+  const current = useMemo(
+    () => options.find((item) => item.id === selected) ?? options[0],
+    [selected]
+  );
 
   return (
-    <section className="shell section-space grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
-      <div>
-        <p className="section-eyebrow">Contacto</p>
-        <h1 className="hero-title mt-6">Cuéntanos qué necesita tu negocio y te ayudamos a definir la mejor solución.</h1>
-        <p className="section-copy mt-6">
-          Puedes escribirnos por WhatsApp para una conversación más rápida o enviarnos tu solicitud por correo/formulario si prefieres una consulta más estructurada.
-        </p>
-        <div className="panel mt-8 p-6">
-          <h2 className="text-lg font-semibold tracking-tight text-slate-950">Canales</h2>
-          <div className="mt-4 space-y-3 text-sm text-slate-600">
-            <a href={`mailto:${contactEmail}`} className="block">{contactEmail}</a>
-            <a href={whatsappLink} target="_blank" rel="noreferrer" className="block">WhatsApp según el servicio elegido</a>
-          </div>
-        </div>
-      </div>
-
-      <div className="panel p-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">¿Qué te interesa?</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {options.map((option) => (
-            <button
-              key={option.key}
-              type="button"
-              onClick={() => setSelected(option)}
-              className={`rounded-2xl border px-4 py-4 text-left text-sm font-medium transition ${selected.key === option.key ? "border-brand-blue bg-brand-blue text-white" : "border-slate-200 bg-slate-50 text-slate-700 hover:bg-white"}`}
-            >
-              {option.label}
-            </button>
-          ))}
+    <section className="section-space">
+      <div className="shell">
+        <div className="max-w-4xl">
+          <span className="section-eyebrow">Contacto</span>
+          <h1 className="section-heading mt-4">
+            Cuéntanos qué necesita tu negocio y te ayudamos a definir la mejor
+            solución.
+          </h1>
+          <p className="section-copy mt-5 max-w-3xl">
+            Puedes escribirnos por WhatsApp para una conversación más rápida o
+            enviarnos tu solicitud por correo si prefieres una consulta más
+            estructurada.
+          </p>
         </div>
 
-        <form className="mt-8 grid gap-4">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm font-medium text-slate-700">
-              Nombre
-              <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 focus:border-brand-blue" placeholder="Tu nombre" />
-            </label>
-            <label className="text-sm font-medium text-slate-700">
-              Negocio o marca
-              <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 focus:border-brand-blue" placeholder="Nombre de tu negocio" />
-            </label>
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="panel p-6 md:p-7">
+            <h2 className="text-2xl font-semibold text-slate-950">
+              ¿Qué te interesa?
+            </h2>
+
+            <div className="mt-6 grid gap-3">
+              {options.map((option) => {
+                const active = option.id === selected;
+
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setSelected(option.id)}
+                    className={`rounded-2xl border px-4 py-4 text-left text-sm font-medium transition ${
+                      active
+                        ? "border-brand-blue bg-[rgba(16,120,255,0.06)] text-slate-950 shadow-soft"
+                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+              <p className="text-sm font-semibold text-slate-950">
+                Trabajamos por propuesta personalizada
+              </p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Definimos el alcance según el tipo de proyecto, el objetivo y la
+                estructura real que necesite tu negocio.
+              </p>
+            </div>
           </div>
-          <label className="text-sm font-medium text-slate-700">
-            ¿Qué necesitas?
-            <textarea rows="5" className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 focus:border-brand-blue" placeholder="Cuéntanos brevemente qué quieres lograr" />
-          </label>
-          <label className="text-sm font-medium text-slate-700">
-            Web actual o Instagram (opcional)
-            <input className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 focus:border-brand-blue" placeholder="https://..." />
-          </label>
-          <p className="text-sm leading-7 text-slate-500">Este formulario puede conectarse luego a un backend o servicio de email. Por ahora queda la estructura premium y la ruta de WhatsApp contextual.</p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a href={whatsappLink} className="btn-primary" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
-            <a href={`mailto:${contactEmail}?subject=Solicitud%20de%20propuesta%20-%20${encodeURIComponent(selected.label)}`} className="btn-secondary">Enviar por correo</a>
+
+          <div className="rounded-[32px] border border-slate-200 bg-slate-950 p-6 text-white shadow-soft md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
+              Servicio seleccionado
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold">{current.label}</h2>
+
+            <p className="mt-5 text-sm leading-7 text-slate-200 md:text-base">
+              La forma más rápida de avanzar ahora mismo es escribirnos por
+              WhatsApp con tu necesidad. También puedes enviarnos un correo más
+              estructurado si prefieres explicar el proyecto con más detalle.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Link href={current.whatsapp} className="btn-primary">
+                Hablar por WhatsApp
+              </Link>
+
+              <a
+                href="mailto:ventas@lulabtech.com?subject=Consulta%20desde%20LulabTech&body=Hola%20LulabTech%2C%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20un%20proyecto."
+                className="btn-secondary"
+              >
+                Enviar correo
+              </a>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                  Correo
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-100">
+                  ventas@lulabtech.com
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+                  WhatsApp
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-100">
+                  +507 6706-9044
+                </p>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );
