@@ -1,196 +1,140 @@
-import {
-  Bot,
-  Globe,
-  LayoutTemplate,
-  ShoppingBag,
-  BarChart3,
-  Smartphone,
-  MessageCircleMore,
-  ArrowRight,
-} from "lucide-react";
-import { buildWhatsappLink } from "@/lib/site";
+const wa = (text) =>
+  `https://wa.me/50767069044?text=${encodeURIComponent(text)}`;
 
 export const services = [
   {
     slug: "landing-pages",
     title: "Landing Pages",
-    shortTitle: "Landing Pages",
-    icon: LayoutTemplate,
-    eyebrow: "Para campañas, servicios y captación directa",
-    description:
-      "Páginas enfocadas en una sola oferta, pensadas para explicar con claridad y convertir con menos distracción.",
-    idealFor:
-      "Ideal para campañas, lanzamientos, servicios puntuales y negocios que necesitan una estructura directa para captar consultas.",
-    bullets: [
-      "Narrativa enfocada en una sola acción",
-      "CTA estratégicos a WhatsApp o formulario",
-      "Jerarquía visual clara desde el primer scroll",
-      "Versión móvil cuidada de verdad",
+    kicker: "Captación y campañas",
+    badge: "Conversión",
+    shortDescription:
+      "Páginas enfocadas en una sola oferta, pensadas para captar mejor y distraer menos.",
+    highlights: [
+      "Ideales para campañas, lanzamientos, servicios puntuales o validación de oferta.",
+      "Narrativa clara desde el primer scroll con CTA directo y jerarquía comercial.",
+      "Integración con WhatsApp, formularios o rutas de contacto más eficientes.",
     ],
-    useCases: [
-      "Campañas publicitarias",
-      "Servicios específicos",
-      "Lanzamientos y promociones",
-      "Captación de leads",
-    ],
-    benefitTitle: "Una landing bien pensada no distrae: guía.",
-    benefitCopy:
-      "La clave está en dejar claro qué ofreces, por qué conviene y qué debe hacer el usuario después.",
-    whatsappMessage:
-      "Hola LulabTech, me interesa cotizar una landing page para captar clientes o presentar una oferta específica.",
+    whatsappHref: wa(
+      "Hola LulabTech, me interesa cotizar una landing page para captar clientes o presentar una oferta específica."
+    ),
   },
   {
     slug: "webs-corporativas",
     title: "Webs Corporativas",
-    shortTitle: "Webs Corporativas",
-    icon: Globe,
-    eyebrow: "Para empresas, profesionales y marcas",
-    description:
-      "Sitios para negocios que necesitan una presencia más seria, más clara y más confiable.",
-    idealFor:
-      "Perfectas para presentar servicios, fortalecer marca y facilitar el contacto desde Google, redes o referencias.",
-    bullets: [
-      "Arquitectura clara de servicios y mensajes",
-      "Bloques de confianza y autoridad",
-      "Experiencia premium en desktop y mobile",
-      "Base sólida para crecer con SEO",
+    kicker: "Confianza y presencia",
+    badge: "Autoridad",
+    shortDescription:
+      "Sitios para empresas, profesionales y marcas que necesitan una presencia más seria, clara y confiable.",
+    highlights: [
+      "Perfectas para presentar servicios, ordenar mejor la información y elevar percepción de marca.",
+      "Diseñadas para referencias, Google, redes sociales y ventas consultivas.",
+      "Experiencia mobile-first cuidada para el tráfico real que llega desde celular.",
     ],
-    useCases: [
-      "Empresas con varios servicios",
-      "Marcas personales y profesionales",
-      "Negocios que quieren verse más serios",
-      "Rediseños de webs desactualizadas",
-    ],
-    benefitTitle: "Cuando tu negocio ya tiene nivel, tu web también debería reflejarlo.",
-    benefitCopy:
-      "Una web corporativa bien estructurada ordena la oferta, mejora percepción y reduce fricción comercial.",
-    whatsappMessage:
-      "Hola LulabTech, me interesa cotizar una web corporativa para presentar mejor mi negocio, servicios o marca.",
+    whatsappHref: wa(
+      "Hola LulabTech, me interesa cotizar una web corporativa para presentar mejor mi negocio, servicios o marca."
+    ),
   },
   {
     slug: "tiendas-online",
     title: "Tiendas Online",
-    shortTitle: "Tiendas Online",
-    icon: ShoppingBag,
-    eyebrow: "Para vender productos con más orden",
-    description:
-      "Tiendas y catálogos web pensados para vender con mejor experiencia, mejor presentación y mejor estructura.",
-    idealFor:
-      "Ideales para negocios que hoy venden por redes o WhatsApp y necesitan una experiencia más profesional.",
-    bullets: [
-      "Catálogo mejor organizado",
-      "Experiencia de compra o consulta más clara",
-      "Rutas a WhatsApp o checkout según el caso",
-      "Base preparada para campañas y crecimiento",
+    kicker: "Catálogo y venta",
+    badge: "Ecommerce",
+    shortDescription:
+      "Tiendas y catálogos digitales pensados para vender con mejor experiencia, más orden y una presentación más sólida.",
+    highlights: [
+      "Desde vitrinas simples hasta estructuras listas para crecer con productos y categorías.",
+      "Mejor claridad para catálogo, experiencia de compra o contacto por WhatsApp.",
+      "Base pensada para campañas y una operación más ordenada.",
     ],
-    useCases: [
-      "Catálogos digitales",
-      "Tiendas con varios productos",
-      "Marcas que venden por Instagram",
-      "Negocios que quieren profesionalizar ventas",
-    ],
-    benefitTitle: "No todos necesitan el mismo ecommerce, pero sí una mejor estructura para vender.",
-    benefitCopy:
-      "En algunos casos conviene una tienda completa; en otros, un catálogo bien diseñado con contacto directo puede ser el mejor primer paso.",
-    whatsappMessage:
-      "Hola LulabTech, me interesa cotizar una tienda online o catálogo web para vender mis productos con una presentación más profesional.",
+    whatsappHref: wa(
+      "Hola LulabTech, me interesa cotizar una tienda online o catálogo web para vender mis productos."
+    ),
   },
   {
     slug: "automatizaciones",
     title: "Automatizaciones",
-    shortTitle: "Automatizaciones",
-    icon: Bot,
-    eyebrow: "Para ordenar procesos y atención",
-    description:
-      "Soluciones digitales para responder mejor, reducir tareas repetitivas y ganar eficiencia real.",
-    idealFor:
-      "Ideales para negocios que ya tienen movimiento y necesitan más orden en atención, seguimiento o flujos repetitivos.",
-    bullets: [
-      "Flujos simples y aterrizados",
-      "Más velocidad de respuesta",
-      "Menos fricción operativa",
-      "Integración útil con la web o captación",
+    kicker: "Orden y eficiencia",
+    badge: "Soporte",
+    shortDescription:
+      "Soluciones digitales para responder mejor, ordenar procesos y reducir fricción comercial.",
+    highlights: [
+      "Ideales para negocios que ya tienen movimiento y necesitan ganar eficiencia.",
+      "Útiles para atención, seguimiento, captación y tareas repetitivas.",
+      "Complementan una web mejor pensada en lugar de reemplazarla.",
     ],
-    useCases: [
-      "Atención por WhatsApp",
-      "Seguimiento de leads",
-      "Formularios y respuestas automáticas",
-      "Procesos manuales repetitivos",
-    ],
-    benefitTitle: "Automatizar no es complicar: es diseñar mejor cómo responde tu negocio.",
-    benefitCopy:
-      "Solo tiene sentido cuando la automatización quita fricción, mejora experiencia y ahorra tiempo real.",
-    whatsappMessage:
-      "Hola LulabTech, me interesa una automatización para mejorar atención, seguimiento o procesos en mi negocio.",
+    whatsappHref: wa(
+      "Hola LulabTech, me interesa una automatización para mejorar atención, seguimiento o procesos en mi negocio."
+    ),
   },
 ];
 
-export const comparisonOptions = [
+export const serviceSolutions = [
   {
     id: "captar",
-    label: "Quiero captar clientes para un servicio específico",
+    question: "Quiero captar clientes para un servicio específico",
+    hint: "Campañas, lanzamientos, captación de leads o validación de oferta.",
     recommendation: "Landing Page",
-    copy:
-      "Si tu foco está en una sola oferta, campaña o servicio, lo más eficiente suele ser una landing page enfocada y directa.",
-    href: "/servicios/landing-pages",
-    whatsappLink: buildWhatsappLink(
-      "Hola LulabTech, quiero captar clientes para un servicio específico y me gustaría saber si me conviene una landing page."
+    description:
+      "La mejor ruta suele ser una landing page enfocada, directa y pensada para convertir tráfico en consultas reales.",
+    points: [
+      "Una sola propuesta clara",
+      "CTA directo a WhatsApp o formulario",
+      "Pensada para tráfico frío y campañas",
+    ],
+    pageHref: "/servicios/landing-pages",
+    whatsappHref: wa(
+      "Hola LulabTech, quiero orientación para una landing page enfocada en captar clientes."
     ),
   },
   {
     id: "presentar",
-    label: "Necesito presentar mejor mi negocio o empresa",
+    question: "Necesito presentar mejor mi negocio o empresa",
+    hint: "Más confianza, mejor imagen, mejor explicación de servicios.",
     recommendation: "Web Corporativa",
-    copy:
-      "Cuando necesitas una presencia más completa para explicar servicios y transmitir confianza, una web corporativa suele ser la mejor ruta.",
-    href: "/servicios/webs-corporativas",
-    whatsappLink: buildWhatsappLink(
-      "Hola LulabTech, necesito presentar mejor mi negocio o empresa y quiero saber si me conviene una web corporativa."
+    description:
+      "Lo más conveniente suele ser una web corporativa con estructura clara, jerarquía visual y una propuesta mejor organizada.",
+    points: [
+      "Mejor percepción de marca",
+      "Servicios bien explicados",
+      "Base sólida para referencias y ventas consultivas",
+    ],
+    pageHref: "/servicios/webs-corporativas",
+    whatsappHref: wa(
+      "Hola LulabTech, quiero orientación para una web corporativa para mi negocio."
     ),
   },
   {
     id: "vender",
-    label: "Quiero vender productos o mostrar un catálogo serio",
+    question: "Quiero vender productos o mostrar un catálogo serio",
+    hint: "Más orden, mejor presentación y una experiencia más profesional.",
     recommendation: "Tienda Online",
-    copy:
-      "Si vendes productos, una tienda online o catálogo web puede ayudarte a ordenar mejor la experiencia y presentar mejor tu marca.",
-    href: "/servicios/tiendas-online",
-    whatsappLink: buildWhatsappLink(
-      "Hola LulabTech, vendo productos y quiero saber si me conviene una tienda online o un catálogo web."
+    description:
+      "Una tienda online o un catálogo web puede ayudarte a vender con más orden y una mejor experiencia.",
+    points: [
+      "Productos y categorías mejor organizados",
+      "Experiencia más clara para el cliente",
+      "Más preparada para campañas y crecimiento",
+    ],
+    pageHref: "/servicios/tiendas-online",
+    whatsappHref: wa(
+      "Hola LulabTech, quiero orientación para una tienda online o catálogo web."
     ),
   },
   {
     id: "automatizar",
-    label: "Quiero ordenar atención, respuestas o procesos repetitivos",
+    question: "Quiero mejorar atención, seguimiento o procesos repetitivos",
+    hint: "Respuestas, seguimiento, formularios, tareas repetitivas.",
     recommendation: "Automatización",
-    copy:
-      "Cuando hay tareas repetitivas o mucha fricción en atención y seguimiento, una automatización útil puede marcar una gran diferencia.",
-    href: "/servicios/automatizaciones",
-    whatsappLink: buildWhatsappLink(
-      "Hola LulabTech, quiero ordenar atención, respuestas o procesos repetitivos y me gustaría conversar sobre automatización."
+    description:
+      "Una automatización bien implementada puede ayudarte a responder mejor y operar con menos fricción.",
+    points: [
+      "Menos pasos manuales",
+      "Mayor orden en atención o seguimiento",
+      "Complemento útil para tu operación digital",
+    ],
+    pageHref: "/servicios/automatizaciones",
+    whatsappHref: wa(
+      "Hola LulabTech, quiero orientación para una automatización para mi negocio."
     ),
-  },
-];
-
-export const homeDifferentiators = [
-  {
-    icon: BarChart3,
-    title: "Diseño con intención comercial",
-    text: "Cada bloque debe ayudar a entender mejor, confiar más y avanzar con claridad.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile-first real",
-    text: "La experiencia móvil se cuida desde el inicio, no como un ajuste al final.",
-  },
-  {
-    icon: MessageCircleMore,
-    title: "Contacto bien pensado",
-    text: "WhatsApp, correo y formularios organizados según el servicio de interés.",
-  },
-  {
-    icon: ArrowRight,
-    title: "Propuesta personalizada",
-    text: "Cada proyecto se trabaja según alcance, objetivo y tipo de negocio.",
   },
 ];
