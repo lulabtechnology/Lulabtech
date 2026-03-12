@@ -34,7 +34,10 @@ body {
 }
 
 @layer base {
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply tracking-tight;
   }
 }
@@ -49,7 +52,8 @@ body {
   }
 
   .section-eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-blue;
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em];
+    color: var(--brand-blue);
   }
 
   .hero-title {
@@ -65,7 +69,9 @@ body {
   }
 
   .panel {
-    @apply rounded-[32px] border border-slate-200 bg-white/88 shadow-soft backdrop-blur-sm;
+    @apply rounded-[32px] border border-slate-200 backdrop-blur-sm;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   }
 
   .chip {
@@ -73,7 +79,14 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-[1px] hover:bg-brand-blue-dark;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition;
+    background-color: var(--brand-blue);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--brand-blue-dark);
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
@@ -98,6 +111,10 @@ body {
     background-color: var(--brand-blue);
   }
 
+  .bg-brand-blue-dark {
+    background-color: var(--brand-blue-dark);
+  }
+
   .bg-brand-green {
     background-color: var(--brand-green);
   }
@@ -112,7 +129,9 @@ body {
     scroll-behavior: auto;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
