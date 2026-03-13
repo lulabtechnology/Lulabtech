@@ -1,150 +1,117 @@
-"use client";
+import { PageHero } from "../../components/sections/page-hero";
+import { Container } from "../../components/ui/container";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { Container } from "../ui/container";
-
-const navigation = [
-  { href: "/servicios", label: "Servicios" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/sobre", label: "Sobre LulabTech" },
-  { href: "/contacto", label: "Contacto" }
-];
-
-function BrandMark() {
+export default function ContactoPage() {
   return (
-    <Link href="/" className="inline-flex items-center gap-3">
-      <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl border border-white/70 bg-white/85 shadow-soft backdrop-blur">
-        <span className="absolute inset-0 bg-gradient-to-br from-[#1673ff]/10 via-transparent to-[#12b8a7]/10" />
-        <span className="relative text-lg font-black tracking-[-0.04em] text-[var(--text-strong)]">
-          L
-        </span>
-        <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--brand-teal)] shadow-[0_0_18px_rgba(18,184,167,0.6)]" />
-      </span>
+    <>
+      <PageHero
+        eyebrow="contacto"
+        title="Cuéntanos qué estás construyendo."
+        description="Si necesitas una presencia digital más clara, más seria y mejor pensada, podemos ayudarte a definir la mejor ruta."
+      />
 
-      <span className="flex flex-col leading-none">
-        <span className="font-[var(--font-sora)] text-[1.02rem] font-semibold tracking-[-0.04em] text-[var(--text-strong)]">
-          LulabTech
-        </span>
-        <span className="text-[0.73rem] text-[var(--text-soft)]">
-          estudio digital premium
-        </span>
-      </span>
-    </Link>
-  );
-}
+      <section className="section-padding pt-0">
+        <Container>
+          <div className="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+            <div className="surface rounded-[32px] p-6 md:p-7">
+              <h2 className="text-2xl font-semibold tracking-[-0.04em]">
+                Contacto directo
+              </h2>
 
-export function SiteHeader() {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  return (
-    <header className="sticky top-0 z-50 w-full">
-      <Container className="pt-4">
-        <div
-          className={`transition-all duration-300 ${
-            isScrolled
-              ? "surface rounded-[28px] border border-white/70"
-              : "rounded-[28px] border border-transparent"
-          }`}
-        >
-          <div className="flex items-center justify-between px-4 py-3 md:px-5">
-            <BrandMark />
-
-            <nav className="hidden items-center gap-2 md:flex">
-              {navigation.map((item) => {
-                const active = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                      active
-                        ? "bg-white text-[var(--text-strong)] shadow-sm"
-                        : "text-[var(--text-main)] hover:bg-white/70 hover:text-[var(--text-strong)]"
-                    }`}
+              <div className="mt-6 space-y-5 text-[var(--text-main)]">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                    Correo
+                  </p>
+                  <a
+                    href="mailto:ventas@lulabtech.com"
+                    className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
                   >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
+                    ventas@lulabtech.com
+                  </a>
+                </div>
 
-            <div className="hidden items-center gap-3 md:flex">
-              <a
-                href="https://wa.me/50700000000"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-              >
-                WhatsApp
-              </a>
-              <Link href="/contacto" className="btn-primary">
-                Solicitar cotización
-              </Link>
-            </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                    WhatsApp
+                  </p>
+                  <a
+                    href="https://wa.me/50700000000"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
+                  >
+                    Abrir conversación
+                  </a>
+                </div>
 
-            <button
-              type="button"
-              aria-label="Abrir menú"
-              onClick={() => setMenuOpen((prev) => !prev)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--border-soft)] bg-white/80 text-[var(--text-strong)] md:hidden"
-            >
-              <span className="text-lg">{menuOpen ? "×" : "☰"}</span>
-            </button>
-          </div>
-
-          {menuOpen && (
-            <div className="border-t border-[var(--border-soft)] px-4 pb-4 pt-2 md:hidden">
-              <nav className="flex flex-col gap-2">
-                {navigation.map((item) => {
-                  const active = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                        active
-                          ? "bg-white text-[var(--text-strong)] shadow-sm"
-                          : "text-[var(--text-main)] hover:bg-white/70"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </nav>
-
-              <div className="mt-4 flex flex-col gap-3">
-                <a
-                  href="https://wa.me/50700000000"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary w-full"
-                >
-                  WhatsApp
-                </a>
-                <Link href="/contacto" className="btn-primary w-full">
-                  Solicitar cotización
-                </Link>
+                <div className="rounded-[24px] border border-[var(--border-soft)] bg-white/75 p-5">
+                  <p className="text-sm leading-7 text-[var(--text-main)]">
+                    No publicamos precios. Cada proyecto se evalúa según el nivel de
+                    diseño, estructura y alcance que necesite tu marca.
+                  </p>
+                </div>
               </div>
             </div>
-          )}
-        </div>
-      </Container>
-    </header>
+
+            <div className="surface-strong rounded-[32px] p-6 md:p-7">
+              <form className="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label className="label">Nombre</label>
+                  <input className="form-input" type="text" placeholder="Tu nombre" />
+                </div>
+
+                <div>
+                  <label className="label">Empresa o marca</label>
+                  <input className="form-input" type="text" placeholder="Nombre de tu marca" />
+                </div>
+
+                <div>
+                  <label className="label">Email</label>
+                  <input className="form-input" type="email" placeholder="correo@empresa.com" />
+                </div>
+
+                <div>
+                  <label className="label">WhatsApp</label>
+                  <input className="form-input" type="text" placeholder="+507 ..." />
+                </div>
+
+                <div>
+                  <label className="label">Servicio de interés</label>
+                  <select className="form-select" defaultValue="">
+                    <option value="" disabled>
+                      Selecciona una opción
+                    </option>
+                    <option>Landing Page</option>
+                    <option>Web Corporativa</option>
+                    <option>Tienda Online</option>
+                    <option>Automatización</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="label">Presupuesto estimado (opcional)</label>
+                  <input className="form-input" type="text" placeholder="Referencia opcional" />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="label">Mensaje / necesidades</label>
+                  <textarea
+                    className="form-textarea"
+                    placeholder="Cuéntanos qué necesitas, qué buscas mejorar y qué tipo de proyecto tienes en mente."
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <button type="submit" className="btn-primary">
+                    Enviar solicitud
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
