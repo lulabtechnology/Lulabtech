@@ -1,5 +1,6 @@
 import { PageHero } from "../../components/sections/page-hero";
 import { Container } from "../../components/ui/container";
+import ContactForm from "../../components/forms/contact-form";
 
 export default function ContactoPage() {
   return (
@@ -7,107 +8,89 @@ export default function ContactoPage() {
       <PageHero
         eyebrow="contacto"
         title="Cuéntanos qué estás construyendo."
-        description="Si necesitas una presencia digital más clara, más seria y mejor pensada, podemos ayudarte a definir la mejor ruta."
+        description="Si necesitas una presencia digital más clara, más seria y mejor pensada, podemos ayudarte a definir la mejor ruta para tu proyecto."
       />
 
       <section className="section-padding pt-0">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
-            <div className="surface rounded-[32px] p-6 md:p-7">
-              <h2 className="text-2xl font-semibold tracking-[-0.04em]">
-                Contacto directo
-              </h2>
+          <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+            <div className="space-y-6">
+              <div className="surface rounded-[32px] p-6 md:p-7">
+                <h2 className="text-2xl font-semibold tracking-[-0.04em]">
+                  Contacto directo
+                </h2>
 
-              <div className="mt-6 space-y-5 text-[var(--text-main)]">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
-                    Correo
-                  </p>
-                  <a
-                    href="mailto:ventas@lulabtech.com"
-                    className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
-                  >
-                    ventas@lulabtech.com
-                  </a>
-                </div>
+                <div className="mt-6 space-y-5 text-[var(--text-main)]">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                      Correo
+                    </p>
+                    <a
+                      href="mailto:ventas@lulabtech.com"
+                      className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
+                    >
+                      ventas@lulabtech.com
+                    </a>
+                  </div>
 
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
-                    WhatsApp
-                  </p>
-                  <a
-                    href="https://wa.me/50700000000"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
-                  >
-                    Abrir conversación
-                  </a>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                      WhatsApp
+                    </p>
+                    <a
+                      href="https://wa.me/50767069044"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 block text-lg font-medium text-[var(--text-strong)]"
+                    >
+                      +507 67069044
+                    </a>
+                  </div>
                 </div>
+              </div>
 
-                <div className="rounded-[24px] border border-[var(--border-soft)] bg-white/75 p-5">
-                  <p className="text-sm leading-7 text-[var(--text-main)]">
-                    No publicamos precios. Cada proyecto se evalúa según el nivel de
-                    diseño, estructura y alcance que necesite tu marca.
-                  </p>
+              <div className="surface rounded-[32px] p-6 md:p-7">
+                <h3 className="text-xl font-semibold tracking-[-0.04em]">
+                  Qué puedes enviarnos aquí
+                </h3>
+
+                <div className="mt-5 space-y-4 text-[15px] leading-7 text-[var(--text-main)]">
+                  <p>Landing pages para campañas o captación.</p>
+                  <p>Webs corporativas con una presencia más seria.</p>
+                  <p>Tiendas online con mejor estructura visual y comercial.</p>
+                  <p>Automatizaciones o proyectos que necesitan una ruta más clara.</p>
                 </div>
+              </div>
+
+              <div className="surface-strong rounded-[32px] p-6 md:p-7">
+                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                  Forma de trabajo
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em]">
+                  Cotización personalizada, sin precios publicados.
+                </h3>
+                <p className="mt-4 text-[15px] leading-7 text-[var(--text-main)]">
+                  Cada proyecto se evalúa según alcance, nivel visual, estructura,
+                  necesidades técnicas y objetivos reales de la marca.
+                </p>
               </div>
             </div>
 
             <div className="surface-strong rounded-[32px] p-6 md:p-7">
-              <form className="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label className="label">Nombre</label>
-                  <input className="form-input" type="text" placeholder="Tu nombre" />
-                </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
+                  Solicitud de cotización
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] md:text-4xl">
+                  Envíanos el contexto de tu proyecto.
+                </h2>
+                <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--text-main)]">
+                  Mientras más claro nos expliques lo que buscas, mejor podremos
+                  orientarte y prepararte una propuesta más alineada a tu marca.
+                </p>
+              </div>
 
-                <div>
-                  <label className="label">Empresa o marca</label>
-                  <input className="form-input" type="text" placeholder="Nombre de tu marca" />
-                </div>
-
-                <div>
-                  <label className="label">Email</label>
-                  <input className="form-input" type="email" placeholder="correo@empresa.com" />
-                </div>
-
-                <div>
-                  <label className="label">WhatsApp</label>
-                  <input className="form-input" type="text" placeholder="+507 ..." />
-                </div>
-
-                <div>
-                  <label className="label">Servicio de interés</label>
-                  <select className="form-select" defaultValue="">
-                    <option value="" disabled>
-                      Selecciona una opción
-                    </option>
-                    <option>Landing Page</option>
-                    <option>Web Corporativa</option>
-                    <option>Tienda Online</option>
-                    <option>Automatización</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="label">Presupuesto estimado (opcional)</label>
-                  <input className="form-input" type="text" placeholder="Referencia opcional" />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="label">Mensaje / necesidades</label>
-                  <textarea
-                    className="form-textarea"
-                    placeholder="Cuéntanos qué necesitas, qué buscas mejorar y qué tipo de proyecto tienes en mente."
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <button type="submit" className="btn-primary">
-                    Enviar solicitud
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </Container>
