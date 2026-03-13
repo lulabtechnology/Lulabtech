@@ -43,7 +43,7 @@ export const siteMetadata: Metadata = {
     locale: "es_PA",
     images: [
       {
-        url: "/og/og-cover.jpg",
+        url: "/og/og-cover.png",
         width: 1200,
         height: 630,
         alt: "LulabTech — Soluciones digitales premium"
@@ -54,7 +54,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og/og-cover.jpg"]
+    images: ["/og/og-cover.png"]
   },
   applicationName: SITE_NAME,
   category: "technology",
