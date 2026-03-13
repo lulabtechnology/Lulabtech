@@ -4,30 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "../ui/container";
-
-const projects = [
-  {
-    category: "Dermoestética premium",
-    title: "Krása",
-    description:
-      "Dirección visual más refinada, estética premium y una experiencia que transmite confianza, sofisticación y especialización.",
-    tag: "branding + web"
-  },
-  {
-    category: "Solución tecnológica",
-    title: "Quality Techno",
-    description:
-      "Una presencia más clara y corporativa para una propuesta tecnológica que necesita orden, estructura y una percepción profesional sólida.",
-    tag: "web corporativa"
-  },
-  {
-    category: "Logística y portal",
-    title: "Nova Shipping Services",
-    description:
-      "Base visual más seria y mejor organizada para una operación con procesos, paneles y una experiencia más alineada con profesionalismo.",
-    tag: "portal + sistema"
-  }
-];
+import { projects } from "../../data/projects";
 
 export function HomeShowcasePreview() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -48,7 +25,7 @@ export function HomeShowcasePreview() {
           <div className="max-w-2xl">
             <span className="section-kicker">trabajos seleccionados</span>
             <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
-              Un showcase más visual, más elegante y mejor presentado.
+              Proyectos que ya deben verse en Inicio.
             </h2>
           </div>
 
@@ -76,7 +53,7 @@ export function HomeShowcasePreview() {
           <div className="surface-strong relative overflow-hidden rounded-[36px] p-4 md:p-6">
             <AnimatePresence mode="wait">
               <motion.div
-                key={current.title}
+                key={current.slug}
                 initial={{ opacity: 0, y: 18, scale: 0.985 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -12, scale: 0.985 }}
@@ -108,7 +85,7 @@ export function HomeShowcasePreview() {
           <div className="surface rounded-[36px] p-6 md:p-7">
             <AnimatePresence mode="wait">
               <motion.div
-                key={`${current.title}-content`}
+                key={`${current.slug}-content`}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
@@ -133,7 +110,7 @@ export function HomeShowcasePreview() {
                 <div className="mt-8 flex items-center gap-3">
                   {projects.map((project, index) => (
                     <button
-                      key={project.title}
+                      key={project.slug}
                       type="button"
                       onClick={() => setActiveIndex(index)}
                       className={`h-2.5 rounded-full transition-all ${
@@ -148,7 +125,7 @@ export function HomeShowcasePreview() {
 
                 <div className="mt-8">
                   <Link href="/proyectos" className="link-inline">
-                    Ver proyectos <span aria-hidden="true">→</span>
+                    Ver todos los proyectos <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </motion.div>
