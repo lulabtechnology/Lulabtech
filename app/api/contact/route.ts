@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
@@ -11,7 +10,7 @@ type ContactPayload = {
   service?: string;
   budget?: string;
   message?: string;
-  website?: string; // honeypot
+  website?: string;
 };
 
 function isValidEmail(email: string) {
@@ -58,30 +57,21 @@ export async function POST(request: Request) {
 
     if (!name || !email || !whatsapp || !service || !message) {
       return NextResponse.json(
-        {
-          ok: false,
-          message: "Completa los campos obligatorios.",
-        },
+        { ok: false, message: "Completa los campos obligatorios." },
         { status: 400 }
       );
     }
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
-        {
-          ok: false,
-          message: "El email no es válido.",
-        },
+        { ok: false, message: "El email no es válido." },
         { status: 400 }
       );
     }
 
     const resendApiKey = requiredEnv("RESEND_API_KEY");
     const mailTo = process.env.MAIL_TO || "ventas@lulabtech.com";
-    const mailFrom =
-      process.env.MAIL_FROM || "LulabTech <onboarding@resend.dev>";
-
-    const resend = new Resend(resendApiKey);
+    const mailFrom = requiredEnv("MAIL_FROM");
 
     const safeName = escapeHtml(name);
     const safeCompany = escapeHtml(company || "No indicado");
@@ -94,13 +84,13 @@ export async function POST(request: Request) {
     const subject = `[LulabTech] Nueva solicitud de cotización - ${name}`;
 
     const html = `
-      <div style="font-family:Arial,Helvetica,sans-serif; background:#f7fbfc; padding:24px; color:#0e1726;">
-        <div style="max-width:700px; margin:0 auto; background:#ffffff; border:1px solid #d7e5ea; border-radius:20px; overflow:hidden;">
-          <div style="padding:24px 24px 16px; background:linear-gradient(135deg,#1673ff12,#12b8a712); border-bottom:1px solid #d7e5ea;">
-            <p style="margin:0; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#607086; font-weight:700;">
+      <div style="font-family:Arial,Helvetica,sans-serif;background:#f7fbfc;padding:24px;color:#0e1726;">
+        <div style="max-width:700px;margin:0 auto;background:#ffffff;border:1px solid #d7e5ea;border-radius:20px;overflow:hidden;">
+          <div style="padding:24px 24px 16px;background:linear-gradient(135deg,#1673ff12,#12b8a712);border-bottom:1px solid #d7e5ea;">
+            <p style="margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#607086;font-weight:700;">
               LulabTech · Nueva solicitud
             </p>
-            <h1 style="margin:10px 0 0; font-size:28px; line-height:1.1; color:#0e1726;">
+            <h1 style="margin:10px 0 0;font-size:28px;line-height:1.1;color:#0e1726;">
               Nueva solicitud de cotización
             </h1>
           </div>
@@ -108,34 +98,34 @@ export async function POST(request: Request) {
           <div style="padding:24px;">
             <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>Nombre</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeName}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>Nombre</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeName}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>Empresa o marca</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeCompany}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>Empresa o marca</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeCompany}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>Email</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeEmail}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>Email</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeEmail}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>WhatsApp</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeWhatsapp}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>WhatsApp</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeWhatsapp}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>Servicio</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeService}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>Servicio</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeService}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;"><strong>Presupuesto estimado</strong></td>
-                <td style="padding:10px 0; border-bottom:1px solid #eef3f5;">${safeBudget}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;"><strong>Presupuesto estimado</strong></td>
+                <td style="padding:10px 0;border-bottom:1px solid #eef3f5;">${safeBudget}</td>
               </tr>
             </table>
 
             <div style="margin-top:24px;">
-              <p style="margin:0 0 10px; font-size:14px; font-weight:700; color:#243447;">Mensaje / necesidades</p>
-              <div style="padding:16px; border:1px solid #d7e5ea; border-radius:16px; background:#f9fcfd; font-size:15px; line-height:1.7; color:#243447;">
+              <p style="margin:0 0 10px;font-size:14px;font-weight:700;color:#243447;">Mensaje / necesidades</p>
+              <div style="padding:16px;border:1px solid #d7e5ea;border-radius:16px;background:#f9fcfd;font-size:15px;line-height:1.7;color:#243447;">
                 ${safeMessage}
               </div>
             </div>
@@ -158,16 +148,26 @@ Mensaje / necesidades:
 ${message}
     `.trim();
 
-    const { error } = await resend.emails.send({
-      from: mailFrom,
-      to: [mailTo],
-      subject,
-      html,
-      text,
+    const resendResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: mailFrom,
+        to: [mailTo],
+        reply_to: email,
+        subject,
+        html,
+        text,
+      }),
     });
 
-    if (error) {
-      console.error("RESEND_ERROR", error);
+    const resendJson = await resendResponse.json();
+
+    if (!resendResponse.ok) {
+      console.error("RESEND_API_ERROR", resendJson);
       return NextResponse.json(
         {
           ok: false,
