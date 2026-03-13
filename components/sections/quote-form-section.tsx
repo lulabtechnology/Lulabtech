@@ -1,26 +1,26 @@
 import { NAV_ANCHORS } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
+import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { QuoteForm } from "@/components/sections/quote-form";
 
 export function QuoteFormSection() {
   return (
-    <SectionShell id={NAV_ANCHORS.quote}>
-      <SectionHeading
-        eyebrow="Cotización"
-        title="Formulario listo para integrar"
-        description="En FASE 4 conectamos esta sección con Resend, validaciones reales y estados de envío."
-      />
+    <SectionShell
+      id={NAV_ANCHORS.quote}
+      className="overflow-hidden bg-gradient-to-b from-white via-brand-50/25 to-white"
+    >
+      <Reveal>
+        <SectionHeading
+          eyebrow="Cotización"
+          title="Solicita una propuesta para tu proyecto"
+          description="Formulario premium conectado con Resend, con validaciones, loading, success y error para dejar esta landing lista para producción."
+        />
+      </Reveal>
 
-      <div className="mt-10 surface-card p-6 sm:p-8">
-        <div className="rounded-[24px] border border-dashed border-slate-200 bg-slate-50 p-10 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-700">
-            Formulario Placeholder
-          </p>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-ink-500">
-            Aquí irá el formulario premium de cotización con Resend, loading, success, error y validaciones.
-          </p>
-        </div>
-      </div>
+      <Reveal delay={0.06} className="mt-10">
+        <QuoteForm />
+      </Reveal>
     </SectionShell>
   );
 }
