@@ -50,25 +50,25 @@ export const projectCategories: ProjectCategory[] = [
         title: "Corporate Placeholder 01",
         subtitle: "Presencia sólida",
         description: "Espacio para mostrar una web corporativa destacada.",
-        image: "/projects/corporate/corporate-01.png"
+        image: "/projects/Corporate/corporate-01.png"
       },
       {
         title: "Corporate Placeholder 02",
         subtitle: "Marca y autoridad",
         description: "Diseñado para verse premium desde el primer vistazo.",
-        image: "/projects/corporate/corporate-02.png"
+        image: "/projects/Corporate/corporate-02.png"
       },
       {
         title: "Corporate Placeholder 03",
         subtitle: "Experiencia ordenada",
         description: "Bloque listo para contenido real.",
-        image: "/projects/corporate/corporate-03.png"
+        image: "/projects/Corporate/corporate-03.png"
       },
       {
         title: "Corporate Placeholder 04",
         subtitle: "Comunicación clara",
         description: "Preparado para reemplazar imagen y texto fácilmente.",
-        image: "/projects/corporate/corporate-04.png"
+        image: "/projects/Corporate/corporate-04.png"
       }
     ]
   },
