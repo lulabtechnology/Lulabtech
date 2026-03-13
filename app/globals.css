@@ -4,22 +4,23 @@
 
 :root {
   --font-sans: system-ui;
-  --brand-blue: #1677ff;
-  --brand-blue-strong: #0f5ed4;
-  --brand-green: #11c28a;
-  --brand-green-strong: #0b9a6d;
-  --brand-ink: #07111f;
-  --brand-ink-soft: #0b1627;
-  --brand-deep: #030712;
-  --brand-surface: #f7fbff;
-  --brand-surface-2: #eef5ff;
-  --brand-line: rgba(148, 163, 184, 0.22);
-  --brand-line-strong: rgba(148, 163, 184, 0.34);
-  --brand-text: #0f172a;
-  --brand-muted: #5b6678;
-  --shadow-soft: 0 20px 50px rgba(2, 8, 23, 0.08);
-  --shadow-panel: 0 24px 80px rgba(2, 8, 23, 0.14);
-  --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 30px 90px rgba(4, 12, 27, 0.32);
+  --brand-blue: #2678f2;
+  --brand-blue-strong: #1d62c9;
+  --brand-green: #20b784;
+  --brand-green-strong: #14966b;
+  --brand-white: #f5f7fb;
+  --brand-ink: #07111d;
+  --brand-ink-2: #0b1523;
+  --brand-ink-3: #101d2f;
+  --brand-text: #eef4ff;
+  --brand-copy: #b7c3d8;
+  --surface-light: rgba(255, 255, 255, 0.06);
+  --surface-light-2: rgba(255, 255, 255, 0.1);
+  --surface-dark: rgba(7, 17, 29, 0.82);
+  --line-light: rgba(255, 255, 255, 0.08);
+  --line-mid: rgba(255, 255, 255, 0.16);
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.22);
+  --shadow-heavy: 0 34px 100px rgba(0, 0, 0, 0.38);
 }
 
 html {
@@ -28,20 +29,20 @@ html {
 
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
   color: var(--brand-text);
   background:
-    radial-gradient(circle at top left, rgba(22, 119, 255, 0.18) 0%, transparent 28%),
-    radial-gradient(circle at top right, rgba(17, 194, 138, 0.09) 0%, transparent 18%),
-    linear-gradient(180deg, #f7fbff 0%, #ffffff 24%, #f4f8fc 100%);
-  min-height: 100vh;
+    radial-gradient(circle at top left, rgba(38, 120, 242, 0.18) 0%, transparent 24%),
+    radial-gradient(circle at top right, rgba(32, 183, 132, 0.08) 0%, transparent 18%),
+    linear-gradient(180deg, #07111d 0%, #0a1422 45%, #08111b 100%);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(22, 119, 255, 0.18);
-  color: #07111f;
+  background: rgba(38, 120, 242, 0.22);
+  color: white;
 }
 
 @layer base {
@@ -56,11 +57,12 @@ body {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 36px 36px;
-    mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
-    opacity: 0.18;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(circle at center, black 22%, transparent 82%);
+    opacity: 0.32;
     z-index: -1;
   }
 
@@ -95,31 +97,32 @@ body {
 
   .section-eyebrow {
     @apply inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em];
-    color: var(--brand-blue);
-    border-color: rgba(22, 119, 255, 0.14);
-    background: rgba(255, 255, 255, 0.72);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    color: #d7e6ff;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
   }
 
   .hero-title {
-    @apply text-4xl font-semibold leading-[0.96] text-slate-950 sm:text-5xl md:text-6xl xl:text-7xl;
-    letter-spacing: -0.06em;
+    @apply text-4xl font-semibold leading-[0.94] text-white sm:text-5xl md:text-6xl xl:text-7xl;
+    letter-spacing: -0.065em;
   }
 
   .section-heading {
-    @apply text-3xl font-semibold leading-[1.02] text-slate-950 sm:text-4xl md:text-5xl;
-    letter-spacing: -0.045em;
+    @apply text-3xl font-semibold leading-[1.02] text-white sm:text-4xl md:text-5xl;
+    letter-spacing: -0.05em;
   }
 
   .section-copy {
     @apply text-sm leading-7 md:text-base md:leading-8;
-    color: var(--brand-muted);
+    color: var(--brand-copy);
   }
 
   .panel {
     @apply rounded-[30px] border backdrop-blur-xl;
-    border-color: rgba(255, 255, 255, 0.56);
-    background: linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.72) 100%);
+    border-color: var(--line-light);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.045) 100%);
     box-shadow: var(--shadow-soft);
   }
 
@@ -127,56 +130,55 @@ body {
     @apply rounded-[32px] border text-white backdrop-blur-xl;
     border-color: rgba(255, 255, 255, 0.08);
     background:
-      radial-gradient(circle at top left, rgba(22, 119, 255, 0.14) 0%, transparent 28%),
-      radial-gradient(circle at right, rgba(17, 194, 138, 0.08) 0%, transparent 20%),
-      linear-gradient(180deg, rgba(7, 17, 31, 0.98) 0%, rgba(2, 8, 23, 0.98) 100%);
-    box-shadow: var(--shadow-glow);
+      radial-gradient(circle at top left, rgba(38, 120, 242, 0.16) 0%, transparent 24%),
+      radial-gradient(circle at right, rgba(32, 183, 132, 0.08) 0%, transparent 18%),
+      linear-gradient(180deg, rgba(10, 20, 34, 0.96) 0%, rgba(5, 12, 22, 0.98) 100%);
+    box-shadow: var(--shadow-heavy);
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-700 backdrop-blur-sm;
-    border-color: rgba(148, 163, 184, 0.24);
-    background: rgba(255, 255, 255, 0.72);
+    @apply inline-flex items-center rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300;
-    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-strong) 100%);
-    box-shadow: 0 18px 48px rgba(16, 93, 212, 0.28);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+    box-shadow: 0 20px 50px rgba(24, 101, 210, 0.26);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 24px 60px rgba(16, 93, 212, 0.34);
+    box-shadow: 0 28px 60px rgba(24, 101, 210, 0.34);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold text-slate-800 transition duration-300;
-    border-color: rgba(148, 163, 184, 0.24);
-    background: rgba(255, 255, 255, 0.72);
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold text-white transition duration-300;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(18px);
   }
 
   .btn-secondary:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: var(--shadow-soft);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .btn-dark {
     @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold text-white transition duration-300;
-    border-color: rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(5, 12, 22, 0.82);
     backdrop-filter: blur(18px);
   }
 
   .btn-dark:hover {
     transform: translateY(-2px);
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .brand-gradient-text {
-    background: linear-gradient(135deg, #0b1220 0%, #1677ff 45%, #0ec192 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #89b9ff 50%, #7de3bd 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -185,16 +187,25 @@ body {
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    background-image:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size: 44px 44px;
-    mask-image: radial-gradient(circle at center, black 30%, transparent 78%);
-    opacity: 0.42;
+    mask-image: radial-gradient(circle at center, black 32%, transparent 78%);
+    opacity: 0.34;
   }
 
   .hero-orb {
     @apply absolute rounded-full blur-3xl;
     will-change: transform;
+  }
+
+  .text-strong {
+    color: #f4f8ff;
+  }
+
+  .text-soft {
+    color: #b7c3d8;
   }
 }
 
@@ -204,7 +215,7 @@ body {
   }
 
   .shadow-panel {
-    box-shadow: var(--shadow-panel);
+    box-shadow: var(--shadow-heavy);
   }
 
   .text-brand-blue {
@@ -217,10 +228,6 @@ body {
 
   .bg-brand-blue {
     background-color: var(--brand-blue);
-  }
-
-  .bg-brand-blue-dark {
-    background-color: var(--brand-blue-strong);
   }
 
   .bg-brand-green {
@@ -238,7 +245,7 @@ body {
 
 @media (max-width: 640px) {
   .hero-title {
-    letter-spacing: -0.045em;
+    letter-spacing: -0.05em;
   }
 }
 
