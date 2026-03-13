@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
@@ -36,16 +37,14 @@ export function Navbar() {
           )}
         >
           <a href="#top" className="flex items-center gap-3">
-            <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 via-brand-500 to-accent-500 text-base font-bold text-white shadow-soft">
-              <span className="relative z-10">L</span>
-              <span className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.28),transparent_55%)]" />
-            </div>
-
-            <div className="leading-none">
-              <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-500">
-                Premium digital
-              </span>
-              <span className="mt-1 block text-lg font-bold text-ink-900">LulabTech</span>
+            <div className="relative h-11 w-[150px] sm:h-12 sm:w-[165px]">
+              <Image
+                src="/brand/lulabtech-logo.png"
+                alt="LulabTech"
+                fill
+                priority
+                className="object-contain object-left"
+              />
             </div>
           </a>
 
