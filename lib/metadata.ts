@@ -11,8 +11,7 @@ export const siteMetadata: Metadata = {
     default: `${SITE_NAME} | Soluciones digitales premium`,
     template: `%s | ${SITE_NAME}`
   },
-  description:
-    "Creamos landing pages, webs corporativas, tiendas online y software a la medida con enfoque premium, conversión y experiencia de marca.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "LulabTech",
     "landing pages",
@@ -50,6 +49,5 @@ export const siteMetadata: Metadata = {
     canonical: "/"
   },
   applicationName: SITE_NAME,
-  category: "technology",
-  description: SITE_DESCRIPTION
+  category: "technology"
 };
