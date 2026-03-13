@@ -1,75 +1,62 @@
 import Link from "next/link";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 import { projects } from "@/data/projects";
+import { buildMetadata, buildWhatsappLink } from "@/lib/site";
 
-export const metadata = {
-  title: "Proyectos Web y Casos | LulabTech",
+export const metadata = buildMetadata({
+  title: "Proyectos",
   description:
-    "Proyectos seleccionados para marcas y negocios que necesitaban una presencia digital más clara, más sólida y mejor pensada para convertir.",
-};
+    "Showcase de proyectos y estructuras visuales creadas para marcas que necesitaban una presencia digital más fuerte, más limpia y mejor presentada.",
+  path: "/proyectos",
+  keywords: [
+    "proyectos web",
+    "portfolio agencia digital",
+    "casos de diseño web",
+    "showcase web premium",
+  ],
+});
+
+const whatsappHref = buildWhatsappLink(
+  "Hola LulabTech, vi sus proyectos y quiero cotizar algo similar."
+);
 
 export default function ProyectosPage() {
   return (
     <section className="section-space">
       <div className="shell">
         <div className="max-w-4xl">
-          <span className="section-eyebrow">Proyectos</span>
+          <span className="section-eyebrow">Portfolio</span>
           <h1 className="section-heading mt-4">
-            Proyectos seleccionados para marcas y negocios que necesitaban una
-            presencia digital más clara, más sólida y mejor pensada para convertir.
+            Proyectos mostrados con más presencia visual y una sensación mucho más premium.
           </h1>
           <p className="section-copy mt-5 max-w-3xl">
-            Cada proyecto responde a una necesidad distinta, pero todos parten de
-            la misma idea: construir una experiencia digital que se vea mejor,
-            explique mejor y funcione mejor para vender.
+            Esta sección ahora sí funciona como showcase. Aquí la idea es que los proyectos se sientan protagonistas y no simples tarjetas de texto.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article key={project.slug} className="panel p-6 md:p-7">
-              <div className="rounded-[24px] border border-slate-200 bg-slate-950 p-5 text-white">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-300">
-                  {project.type}
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold">{project.title}</h2>
-                <p className="mt-2 text-sm text-slate-300">{project.industry}</p>
-              </div>
+        <div className="mt-10">
+          <FeaturedProjects projects={projects} />
+        </div>
 
-              <p className="mt-5 text-sm leading-7 text-slate-600 md:text-base">
-                {project.summary}
+        <div className="mt-12 panel-dark px-6 py-10 md:px-10 md:py-14">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
+                ¿Quieres algo con este nivel de presentación?
+              </h2>
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 md:text-base">
+                Cuéntanos qué estás construyendo y armamos una propuesta visual y estratégica mucho más alineada con el nivel que quieres proyectar.
               </p>
+            </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/contacto" className="btn-primary">
-                  Quiero algo similar
-                </Link>
-                <Link href="/servicios" className="btn-secondary">
-                  Ver servicios
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-12 rounded-[36px] border border-slate-200 bg-slate-950 px-6 py-10 text-white shadow-soft md:px-10 md:py-14">
-          <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-            ¿Tienes un proyecto en mente?
-          </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 md:text-base">
-            Hablemos sobre la estructura que más le conviene a tu negocio y la
-            mejor forma de convertirlo en una presencia digital más clara y más seria.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/contacto" className="btn-primary">
-              Solicitar cotización
-            </Link>
-            <Link
-              href="https://wa.me/50767069044?text=Hola%20LulabTech%2C%20vi%20sus%20proyectos%20y%20quiero%20cotizar%20algo%20similar."
-              className="btn-secondary"
-            >
-              Hablar por WhatsApp
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Link href="/contacto" className="btn-primary">
+                Solicitar cotización
+              </Link>
+              <Link href={whatsappHref} className="btn-secondary">
+                Hablar por WhatsApp
+              </Link>
+            </div>
           </div>
         </div>
       </div>
