@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { contactData } from "@/data/contact";
 import { navigationItems } from "@/data/navigation";
@@ -11,8 +12,13 @@ export function Footer() {
         <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-brand-50/40 p-6 shadow-soft sm:p-8 lg:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div>
-              <div className="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">
-                LulabTech
+              <div className="relative h-12 w-[180px] sm:h-14 sm:w-[210px]">
+                <Image
+                  src="/brand/lulabtech-logo.png"
+                  alt="LulabTech"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
 
               <h2 className="mt-5 max-w-xl text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
