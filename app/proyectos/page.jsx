@@ -53,9 +53,14 @@ export default function ProyectosPage() {
               <Link href="/contacto" className="btn-primary">
                 Solicitar cotización
               </Link>
-              <Link href={whatsappHref} className="btn-secondary">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+              >
                 Hablar por WhatsApp
-              </Link>
+              </a>
             </div>
           </div>
         </div>
