@@ -17,27 +17,27 @@ export const projectCategories: ProjectCategory[] = [
     label: "Landing Pages",
     items: [
       {
-        title: "Landing Placeholder 01",
-        subtitle: "Captación premium",
-        description: "Espacio listo para reemplazar con tu proyecto real.",
+        title: "Eurides Young",
+        subtitle: "Traducción profesional",
+        description: "Landing enfocada en credibilidad, claridad de oferta y contacto directo para cotizaciones rápidas.",
         image: "/projects/landing/landing-01.png"
       },
       {
-        title: "Landing Placeholder 02",
-        subtitle: "Campaña digital",
-        description: "Tarjeta editable con imagen, nombre y descripción.",
+        title: "Landing Proyecto 02",
+        subtitle: "Captación premium",
+        description: "Espacio listo para reemplazar por tu siguiente landing real.",
         image: "/projects/landing/landing-02.png"
       },
       {
-        title: "Landing Placeholder 03",
-        subtitle: "Conversión clara",
-        description: "Preparado para mostrar oferta, diseño y enfoque comercial.",
+        title: "Landing Proyecto 03",
+        subtitle: "Campaña digital",
+        description: "Preparado para mostrar una propuesta clara con enfoque en conversión.",
         image: "/projects/landing/landing-03.png"
       },
       {
-        title: "Landing Placeholder 04",
+        title: "Landing Proyecto 04",
         subtitle: "Visual impactante",
-        description: "Listo para sustituir por screenshots finales.",
+        description: "Listo para sustituir por un screenshot final de tu cuarto proyecto.",
         image: "/projects/landing/landing-04.png"
       }
     ]
@@ -47,27 +47,27 @@ export const projectCategories: ProjectCategory[] = [
     label: "Webs Corporativas",
     items: [
       {
-        title: "Corporate Placeholder 01",
-        subtitle: "Presencia sólida",
-        description: "Espacio para mostrar una web corporativa destacada.",
+        title: "Solmas Legal",
+        subtitle: "Firma boutique",
+        description: "Web corporativa pensada para autoridad, confianza y una presentación más seria de la firma.",
         image: "/projects/Corporate/corporate-01.png"
       },
       {
-        title: "Corporate Placeholder 02",
+        title: "Corporate Proyecto 02",
         subtitle: "Marca y autoridad",
-        description: "Diseñado para verse premium desde el primer vistazo.",
+        description: "Espacio listo para reemplazar por otra web corporativa real.",
         image: "/projects/Corporate/corporate-02.png"
       },
       {
-        title: "Corporate Placeholder 03",
+        title: "Corporate Proyecto 03",
         subtitle: "Experiencia ordenada",
-        description: "Bloque listo para contenido real.",
+        description: "Preparado para mostrar otro sitio corporativo con presencia premium.",
         image: "/projects/Corporate/corporate-03.png"
       },
       {
-        title: "Corporate Placeholder 04",
+        title: "Corporate Proyecto 04",
         subtitle: "Comunicación clara",
-        description: "Preparado para reemplazar imagen y texto fácilmente.",
+        description: "Listo para sustituir por una captura final de proyecto corporativo.",
         image: "/projects/Corporate/corporate-04.png"
       }
     ]
@@ -77,27 +77,27 @@ export const projectCategories: ProjectCategory[] = [
     label: "Tiendas Online",
     items: [
       {
-        title: "Ecommerce Placeholder 01",
+        title: "Ecommerce Proyecto 01",
         subtitle: "Venta digital",
         description: "Espacio listo para mostrar catálogo o tienda final.",
         image: "/projects/ecommerce/ecommerce-01.png"
       },
       {
-        title: "Ecommerce Placeholder 02",
+        title: "Ecommerce Proyecto 02",
         subtitle: "UX de compra",
         description: "Tarjeta preparada para presentar experiencia e-commerce.",
         image: "/projects/ecommerce/ecommerce-02.png"
       },
       {
-        title: "Ecommerce Placeholder 03",
+        title: "Ecommerce Proyecto 03",
         subtitle: "Escalabilidad",
         description: "Perfecto para mostrar una tienda moderna y limpia.",
         image: "/projects/ecommerce/ecommerce-03.png"
       },
       {
-        title: "Ecommerce Placeholder 04",
+        title: "Ecommerce Proyecto 04",
         subtitle: "Performance comercial",
-        description: "Contenido editable para caso real futuro.",
+        description: "Contenido listo para caso real futuro.",
         image: "/projects/ecommerce/ecommerce-04.png"
       }
     ]
@@ -107,27 +107,27 @@ export const projectCategories: ProjectCategory[] = [
     label: "Software a la Medida",
     items: [
       {
-        title: "Software Placeholder 01",
+        title: "Software Proyecto 01",
         subtitle: "Solución personalizada",
         description: "Espacio reservado para dashboard o sistema real.",
         image: "/projects/software/software-01.png"
       },
       {
-        title: "Software Placeholder 02",
+        title: "Software Proyecto 02",
         subtitle: "Procesos optimizados",
         description: "Listo para mostrar software hecho a medida.",
         image: "/projects/software/software-02.png"
       },
       {
-        title: "Software Placeholder 03",
+        title: "Software Proyecto 03",
         subtitle: "Operación digital",
         description: "Bloque preparado para screenshots y copy real.",
         image: "/projects/software/software-03.png"
       },
       {
-        title: "Software Placeholder 04",
+        title: "Software Proyecto 04",
         subtitle: "Escala y control",
-        description: "Tarjeta editable para un sistema futuro.",
+        description: "Tarjeta lista para un sistema futuro.",
         image: "/projects/software/software-04.png"
       }
     ]
