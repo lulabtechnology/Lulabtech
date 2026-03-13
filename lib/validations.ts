@@ -9,14 +9,45 @@ export const projectTypeOptions = [
   "Aún no lo tengo claro"
 ] as const;
 
+const isValidProjectType = (value: string) =>
+  projectTypeOptions.includes(value as (typeof projectTypeOptions)[number]);
+
 export const quoteSchema = z.object({
-  name: z.string().min(2, "Ingresa tu nombre"),
-  brand: z.string().min(2, "Ingresa tu empresa o marca"),
-  email: z.string().email("Ingresa un email válido"),
-  whatsapp: z.string().min(7, "Ingresa tu WhatsApp"),
-  projectType: z.string().min(1, "Selecciona un tipo de proyecto"),
-  budget: z.string().optional(),
-  message: z.string().min(10, "Cuéntanos un poco más sobre el proyecto")
+  name: z
+    .string()
+    .trim()
+    .min(2, "Ingresa tu nombre")
+    .max(100, "Tu nombre es demasiado largo"),
+  brand: z
+    .string()
+    .trim()
+    .min(2, "Ingresa tu empresa o marca")
+    .max(120, "El nombre de la empresa es demasiado largo"),
+  email: z
+    .string()
+    .trim()
+    .email("Ingresa un email válido")
+    .max(120, "El email es demasiado largo"),
+  whatsapp: z
+    .string()
+    .trim()
+    .min(7, "Ingresa tu WhatsApp")
+    .max(30, "El WhatsApp es demasiado largo"),
+  projectType: z
+    .string()
+    .trim()
+    .refine(isValidProjectType, "Selecciona un tipo de proyecto válido"),
+  budget: z
+    .string()
+    .trim()
+    .max(80, "El presupuesto es demasiado largo")
+    .optional()
+    .or(z.literal("")),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Cuéntanos un poco más sobre el proyecto")
+    .max(2000, "El mensaje es demasiado largo")
 });
 
 export type QuoteFormValues = z.infer<typeof quoteSchema>;
