@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
@@ -52,7 +52,6 @@ export async function POST(request: Request) {
     const message = clean(body.message, 4000);
     const website = clean(body.website, 120);
 
-    // Honeypot simple anti-spam
     if (website) {
       return NextResponse.json({ ok: true });
     }
@@ -77,24 +76,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const smtpHost = requiredEnv("SMTP_HOST");
-    const smtpPort = Number(requiredEnv("SMTP_PORT"));
-    const smtpSecure = requiredEnv("SMTP_SECURE") === "true";
-    const smtpUser = requiredEnv("SMTP_USER");
-    const smtpPass = requiredEnv("SMTP_PASS");
-
+    const resendApiKey = requiredEnv("RESEND_API_KEY");
     const mailTo = process.env.MAIL_TO || "ventas@lulabtech.com";
-    const mailFrom = process.env.MAIL_FROM || smtpUser;
+    const mailFrom =
+      process.env.MAIL_FROM || "LulabTech <onboarding@resend.dev>";
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpSecure,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
+    const resend = new Resend(resendApiKey);
 
     const safeName = escapeHtml(name);
     const safeCompany = escapeHtml(company || "No indicado");
@@ -171,14 +158,25 @@ Mensaje / necesidades:
 ${message}
     `.trim();
 
-    await transporter.sendMail({
+    const { error } = await resend.emails.send({
       from: mailFrom,
-      to: mailTo,
-      replyTo: email,
+      to: [mailTo],
       subject,
-      text,
       html,
+      text,
     });
+
+    if (error) {
+      console.error("RESEND_ERROR", error);
+      return NextResponse.json(
+        {
+          ok: false,
+          message:
+            "No se pudo enviar la solicitud en este momento. Intenta nuevamente o escríbenos por WhatsApp.",
+        },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({
       ok: true,
