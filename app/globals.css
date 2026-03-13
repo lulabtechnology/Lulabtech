@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+  --brand: 14 118 255;
+  --accent: 16 185 129;
+  --muted: 241 245 249;
+  --border: 226 232 240;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-feature-settings: "ss01", "cv02", "cv03", "cv04";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(14, 118, 255, 0.14);
+  color: #0f172a;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-ink-900 tracking-tight;
+  }
+
+  p {
+    @apply text-ink-600;
+  }
+}
+
+@layer components {
+  .surface-panel {
+    @apply rounded-3xl border border-slate-200/80 bg-white/80 backdrop-blur;
+  }
+
+  .surface-card {
+    @apply rounded-[28px] border border-slate-200 bg-white shadow-soft;
+  }
+
+  .ring-brand {
+    @apply ring-1 ring-brand-100;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #0E76FF 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grid-brand {
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-24 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700;
+  }
+}
+
+@layer utilities {
+  .balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .mask-bottom-fade {
+    mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  }
+}
