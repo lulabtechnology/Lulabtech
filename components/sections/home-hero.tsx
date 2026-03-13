@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "../ui/container";
@@ -24,7 +25,7 @@ export function HomeHero() {
       <div className="hero-orb hero-orb--teal right-[-80px] top-[60px] h-[280px] w-[280px]" />
 
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_.98fr] lg:gap-14">
           <div className="relative z-10">
             <motion.span
               custom={0}
@@ -33,33 +34,33 @@ export function HomeHero() {
               variants={fadeUp}
               className="section-kicker"
             >
-              diseño, criterio y conversión
+              estudio digital premium
             </motion.span>
 
             <motion.h1
-              custom={0.1}
+              custom={0.08}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="mt-6 max-w-[12ch] text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-[var(--text-strong)] sm:text-6xl lg:text-7xl"
+              className="mt-6 max-w-[11ch] text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-[var(--text-strong)] sm:text-6xl lg:text-7xl"
             >
-              Presencia digital con nivel premium de verdad.
+              Experiencias digitales con más nivel, más criterio y más impacto.
             </motion.h1>
 
             <motion.p
-              custom={0.2}
+              custom={0.18}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
               className="mt-6 max-w-xl text-lg leading-8 text-[var(--text-main)] md:text-xl"
             >
-              LulabTech diseña landing pages, webs corporativas, ecommerce y
-              automatizaciones para marcas que necesitan verse más serias,
-              modernas y listas para convertir mejor.
+              En LulabTech diseñamos landing pages, webs corporativas, tiendas online
+              y automatizaciones para marcas que no quieren verse genéricas,
+              sino mejor posicionadas, más claras y listas para convertir.
             </motion.p>
 
             <motion.div
-              custom={0.3}
+              custom={0.28}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
@@ -70,7 +71,7 @@ export function HomeHero() {
               </Link>
 
               <a
-                href="https://wa.me/50700000000"
+                href="https://wa.me/50767069044"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"
@@ -80,7 +81,7 @@ export function HomeHero() {
             </motion.div>
 
             <motion.div
-              custom={0.4}
+              custom={0.38}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
@@ -111,33 +112,32 @@ export function HomeHero() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-[#dff8f3]/35" />
 
               <div className="relative rounded-[28px] border border-white/70 bg-white/70 p-4 shadow-soft backdrop-blur md:p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--text-strong)]">
-                      Dirección visual premium
-                    </p>
-                    <p className="text-sm text-[var(--text-soft)]">
-                      claridad, elegancia y jerarquía real
-                    </p>
-                  </div>
+                <div className="mb-5 flex items-center justify-between">
+                  <Image
+                    src="/logo-lulab.png"
+                    alt="LulabTech"
+                    width={150}
+                    height={40}
+                    className="h-9 w-auto object-contain"
+                  />
                   <span className="rounded-full bg-[var(--brand-blue-soft)] px-3 py-1 text-xs font-semibold text-[var(--brand-blue)]">
-                    LulabTech
+                    premium / responsive
                   </span>
                 </div>
 
                 <div className="grid gap-4">
                   <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(22,115,255,0.1),rgba(18,184,167,0.08))] p-5">
                     <div className="mb-8 flex items-center justify-between">
-                      <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[var(--text-main)]">
-                        interfaz
+                      <span className="rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-[var(--text-main)]">
+                        dirección visual
                       </span>
                       <span className="text-xs font-medium text-[var(--text-soft)]">
-                        premium / responsive
+                        claridad + percepción
                       </span>
                     </div>
 
                     <div className="grid gap-3">
-                      <div className="h-4 w-3/5 rounded-full bg-white/90" />
+                      <div className="h-4 w-3/5 rounded-full bg-white/95" />
                       <div className="h-4 w-4/5 rounded-full bg-white/75" />
                       <div className="grid grid-cols-3 gap-3 pt-2">
                         <div className="h-24 rounded-2xl bg-white/80" />
@@ -153,7 +153,7 @@ export function HomeHero() {
                         enfoque
                       </p>
                       <h3 className="mt-3 text-xl font-semibold tracking-[-0.04em]">
-                        Diseño que eleva percepción de marca.
+                        Presencia digital que sí se siente de alto nivel.
                       </h3>
                     </div>
 
@@ -161,13 +161,13 @@ export function HomeHero() {
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--text-soft)]">
                         conversión
                       </p>
-                      <div className="mt-3 flex items-end justify-between">
+                      <div className="mt-3 flex items-end justify-between gap-4">
                         <div>
                           <h3 className="text-xl font-semibold tracking-[-0.04em]">
-                            Más claridad.
+                            Mejor estructura.
                           </h3>
                           <p className="mt-1 text-sm text-[var(--text-soft)]">
-                            Mejor estructura para captar leads de calidad.
+                            Más claridad para captar leads de calidad.
                           </p>
                         </div>
                         <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-[var(--brand-blue)] to-[var(--brand-teal)] opacity-90" />
