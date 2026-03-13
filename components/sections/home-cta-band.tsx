@@ -9,15 +9,15 @@ export function HomeCtaBand() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(22,115,255,0.14),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(18,184,167,0.14),transparent_35%)]" />
 
           <div className="relative z-10 max-w-3xl">
-            <span className="section-kicker">cotización personalizada</span>
+            <span className="section-kicker">siguiente paso</span>
 
             <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.05em] md:text-5xl">
-              Si tu marca necesita una presencia digital más seria, más clara y más premium, conversemos.
+              Si tu marca necesita verse más seria, más clara y mejor construida, conversemos.
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--text-main)]">
-              Sin precios públicos. Evaluamos lo que necesitas, te ayudamos a definir
-              la mejor ruta y preparamos una propuesta con criterio.
+              No publicamos precios porque cada proyecto necesita una dirección distinta.
+              Evaluamos alcance, nivel visual y estructura para proponerte la mejor ruta.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -25,10 +25,12 @@ export function HomeCtaBand() {
                 Solicitar cotización
               </Link>
               <a
-                href="mailto:ventas@lulabtech.com"
+                href="https://wa.me/50767069044"
+                target="_blank"
+                rel="noreferrer"
                 className="btn-secondary"
               >
-                ventas@lulabtech.com
+                WhatsApp directo
               </a>
             </div>
           </div>
