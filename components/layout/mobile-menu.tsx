@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
+import { WHATSAPP_URL } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +19,7 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-900 transition hover:bg-slate-50"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-900 shadow-soft transition hover:bg-slate-50"
         aria-label="Abrir menú"
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -26,12 +27,21 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
 
       <div
         className={cn(
-          "absolute left-0 top-[calc(100%+12px)] w-full rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-elevated backdrop-blur transition-all duration-300",
+          "absolute left-0 top-[calc(100%+12px)] w-full rounded-[28px] border border-slate-200 bg-white/95 p-4 shadow-elevated backdrop-blur-xl transition-all duration-300",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0"
         )}
       >
+        <div className="mb-4 rounded-[24px] border border-brand-100 bg-gradient-to-br from-brand-50 to-accent-50 p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
+            LulabTech
+          </p>
+          <p className="mt-2 text-sm leading-6 text-ink-700">
+            Soluciones digitales premium para marcas que quieren verse mejor y convertir más.
+          </p>
+        </div>
+
         <nav className="flex flex-col gap-2">
           {navigationItems.map((item) => (
             <a
@@ -43,13 +53,25 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
               {item.label}
             </a>
           ))}
-
-          <div className="pt-2">
-            <ButtonLink href={quoteHref} className="w-full" onClick={() => setOpen(false)}>
-              Solicitar cotización
-            </ButtonLink>
-          </div>
         </nav>
+
+        <div className="mt-4 grid gap-3">
+          <ButtonLink href={quoteHref} className="w-full" onClick={() => setOpen(false)}>
+            Solicitar cotización
+          </ButtonLink>
+
+          <ButtonLink
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            variant="outline"
+            className="w-full"
+            onClick={() => setOpen(false)}
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp
+          </ButtonLink>
+        </div>
       </div>
     </div>
   );
