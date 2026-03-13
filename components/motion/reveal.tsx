@@ -1,16 +1,18 @@
 "use client";
 
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/components/motion/fade-up";
 
-type RevealProps = HTMLAttributes<HTMLDivElement> & {
+type RevealProps = {
   children: ReactNode;
+  className?: string;
   delay?: number;
   y?: number;
   once?: boolean;
   amount?: number;
+  id?: string;
 };
 
 export function Reveal({
@@ -20,13 +22,13 @@ export function Reveal({
   y = 24,
   once = true,
   amount = 0.2,
-  ...props
+  id
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
     return (
-      <div className={className} {...props}>
+      <div id={id} className={className}>
         {children}
       </div>
     );
@@ -34,12 +36,12 @@ export function Reveal({
 
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount }}
       transition={{ duration: 0.65, delay, ease: easeOutExpo }}
       className={cn(className)}
-      {...props}
     >
       {children}
     </motion.div>
