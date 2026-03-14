@@ -7,13 +7,13 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const categoryDescriptions: Record<string, string> = {
   landing:
-    "Carrusel preparado para mostrar tus landing pages con enfoque visual, CTA claros y sensación premium.",
+    "Landing pages diseñadas para presentar valor con claridad, elevar percepción y empujar la conversión.",
   corporate:
-    "Espacio para webs corporativas que transmiten autoridad, estructura y confianza de marca.",
+    "Webs corporativas enfocadas en autoridad, estructura comercial y una presencia digital más sólida.",
   ecommerce:
-    "Bloque visual para enseñar tiendas online con experiencia cuidada, catálogo y flujo comercial.",
+    "Tiendas online con mejor experiencia visual, recorrido de compra más claro y enfoque comercial.",
   software:
-    "Carrusel pensado para dashboards, portales o sistemas personalizados con look moderno y profesional."
+    "Software a la medida con interfaces modernas, organización inteligente y sensación profesional."
 };
 
 export function ProjectShowcaseSection() {
@@ -24,9 +24,9 @@ export function ProjectShowcaseSection() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Tipos de proyecto"
-          title="Cuatro carruseles premium listos para tus proyectos"
-          description="Cada categoría queda preparada con autoplay suave, tarjetas elegantes y rutas claras para que luego reemplaces imágenes y textos sin romper nada."
+          eyebrow="Proyectos"
+          title="Experiencias digitales diseñadas para verse mejor y comunicar con más fuerza"
+          description="Una muestra visual de los tipos de soluciones que desarrollamos para marcas que buscan un nivel superior de presencia digital."
         />
       </Reveal>
 
@@ -35,7 +35,7 @@ export function ProjectShowcaseSection() {
           <Reveal key={category.id} delay={index * 0.04}>
             <ProjectCarousel
               title={category.label}
-              description={categoryDescriptions[category.id] ?? "Carrusel listo para editar."}
+              description={categoryDescriptions[category.id] ?? "Soluciones digitales premium."}
               items={category.items}
             />
           </Reveal>
