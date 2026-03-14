@@ -17,27 +17,31 @@ export const projectCategories: ProjectCategory[] = [
     label: "Landing Pages",
     items: [
       {
-        title: "Eurides Young",
-        subtitle: "Traducción profesional",
-        description: "Landing enfocada en credibilidad, claridad de oferta y contacto directo para cotizaciones rápidas.",
+        title: "Landing de captación",
+        subtitle: "Conversión premium",
+        description:
+          "Diseño enfocado en claridad de oferta, autoridad visual y contacto directo.",
         image: "/projects/landing/landing-01.png"
       },
       {
-        title: "Landing Proyecto 02",
-        subtitle: "Captación premium",
-        description: "Espacio listo para reemplazar por tu siguiente landing real.",
+        title: "Landing comercial",
+        subtitle: "Campaña digital",
+        description:
+          "Estructura pensada para presentar valor rápido y mover al usuario a cotizar.",
         image: "/projects/landing/landing-02.png"
       },
       {
-        title: "Landing Proyecto 03",
-        subtitle: "Campaña digital",
-        description: "Preparado para mostrar una propuesta clara con enfoque en conversión.",
+        title: "Landing de marca",
+        subtitle: "Impacto visual",
+        description:
+          "Composición premium con mejor jerarquía, narrativa y presencia digital.",
         image: "/projects/landing/landing-03.png"
       },
       {
-        title: "Landing Proyecto 04",
-        subtitle: "Visual impactante",
-        description: "Listo para sustituir por un screenshot final de tu cuarto proyecto.",
+        title: "Landing estratégica",
+        subtitle: "CTA claro",
+        description:
+          "Diseñada para elevar percepción y facilitar una acción comercial inmediata.",
         image: "/projects/landing/landing-04.png"
       }
     ]
@@ -47,27 +51,31 @@ export const projectCategories: ProjectCategory[] = [
     label: "Webs Corporativas",
     items: [
       {
-        title: "Solmas Legal",
-        subtitle: "Firma boutique",
-        description: "Web corporativa pensada para autoridad, confianza y una presentación más seria de la firma.",
+        title: "Web corporativa premium",
+        subtitle: "Autoridad de marca",
+        description:
+          "Sitio pensado para transmitir seriedad, confianza y mejor presentación del negocio.",
         image: "/projects/Corporate/corporate-01.png"
       },
       {
-        title: "Corporate Proyecto 02",
-        subtitle: "Marca y autoridad",
-        description: "Espacio listo para reemplazar por otra web corporativa real.",
+        title: "Web institucional",
+        subtitle: "Comunicación clara",
+        description:
+          "Estructura limpia para explicar mejor servicios, propuesta y respaldo profesional.",
         image: "/projects/Corporate/corporate-02.png"
       },
       {
-        title: "Corporate Proyecto 03",
-        subtitle: "Experiencia ordenada",
-        description: "Preparado para mostrar otro sitio corporativo con presencia premium.",
+        title: "Web empresarial",
+        subtitle: "Presencia sólida",
+        description:
+          "Diseño ordenado con enfoque en reputación, claridad y experiencia premium.",
         image: "/projects/Corporate/corporate-03.png"
       },
       {
-        title: "Corporate Proyecto 04",
-        subtitle: "Comunicación clara",
-        description: "Listo para sustituir por una captura final de proyecto corporativo.",
+        title: "Web de firma",
+        subtitle: "Confianza visual",
+        description:
+          "Composición seria y elegante para reforzar credibilidad y percepción de nivel.",
         image: "/projects/Corporate/corporate-04.png"
       }
     ]
@@ -77,27 +85,31 @@ export const projectCategories: ProjectCategory[] = [
     label: "Tiendas Online",
     items: [
       {
-        title: "Ecommerce Proyecto 01",
+        title: "E-commerce premium",
         subtitle: "Venta digital",
-        description: "Espacio listo para mostrar catálogo o tienda final.",
+        description:
+          "Diseño orientado a catálogo, experiencia de compra y presentación comercial.",
         image: "/projects/ecommerce/ecommerce-01.png"
       },
       {
-        title: "Ecommerce Proyecto 02",
+        title: "Tienda online moderna",
         subtitle: "UX de compra",
-        description: "Tarjeta preparada para presentar experiencia e-commerce.",
+        description:
+          "Layout limpio pensado para navegación fluida, productos claros y mejor conversión.",
         image: "/projects/ecommerce/ecommerce-02.png"
       },
       {
-        title: "Ecommerce Proyecto 03",
+        title: "Catálogo e-commerce",
         subtitle: "Escalabilidad",
-        description: "Perfecto para mostrar una tienda moderna y limpia.",
+        description:
+          "Experiencia visual premium para marcas que necesitan vender con más orden y presencia.",
         image: "/projects/ecommerce/ecommerce-03.png"
       },
       {
-        title: "Ecommerce Proyecto 04",
+        title: "Storefront digital",
         subtitle: "Performance comercial",
-        description: "Contenido listo para caso real futuro.",
+        description:
+          "Interfaz enfocada en valor percibido, confianza y recorrido de compra más claro.",
         image: "/projects/ecommerce/ecommerce-04.png"
       }
     ]
@@ -107,27 +119,31 @@ export const projectCategories: ProjectCategory[] = [
     label: "Software a la Medida",
     items: [
       {
-        title: "Software Proyecto 01",
+        title: "Dashboard operativo",
         subtitle: "Solución personalizada",
-        description: "Espacio reservado para dashboard o sistema real.",
+        description:
+          "Interfaz diseñada para procesos internos, control visual y operación más eficiente.",
         image: "/projects/software/software-01.png"
       },
       {
-        title: "Software Proyecto 02",
+        title: "Sistema empresarial",
         subtitle: "Procesos optimizados",
-        description: "Listo para mostrar software hecho a medida.",
+        description:
+          "Diseño moderno para centralizar información, métricas y flujo de trabajo.",
         image: "/projects/software/software-02.png"
       },
       {
-        title: "Software Proyecto 03",
-        subtitle: "Operación digital",
-        description: "Bloque preparado para screenshots y copy real.",
+        title: "Plataforma digital",
+        subtitle: "Operación clara",
+        description:
+          "Arquitectura visual enfocada en orden, productividad y experiencia profesional.",
         image: "/projects/software/software-03.png"
       },
       {
-        title: "Software Proyecto 04",
+        title: "Software de gestión",
         subtitle: "Escala y control",
-        description: "Tarjeta lista para un sistema futuro.",
+        description:
+          "Composición premium para mostrar un sistema serio, limpio y listo para crecer.",
         image: "/projects/software/software-04.png"
       }
     ]
