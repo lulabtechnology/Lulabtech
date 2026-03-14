@@ -34,14 +34,10 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
             sizes="(max-width: 640px) 88vw, (max-width: 1024px) 62vw, 34vw"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/28 via-black/5 to-transparent" />
-
-          <div className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/92 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-700 backdrop-blur">
-            Proyecto
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/22 via-black/6 to-transparent" />
 
           <div className="absolute bottom-4 left-4 right-4">
-            <div className="rounded-[20px] border border-white/20 bg-black/20 p-4 backdrop-blur-sm">
+            <div className="rounded-[20px] border border-white/20 bg-black/18 p-4 backdrop-blur-sm">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/85">
@@ -50,12 +46,12 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
                   <h3 className="mt-2 text-lg font-semibold text-white">{item.title}</h3>
                 </div>
 
-                <div className="rounded-full bg-white/16 p-2 text-white">
+                <div className="rounded-full bg-white/15 p-2 text-white">
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-6 text-white/90">
+              <p className="mt-3 text-sm leading-6 text-white/92">
                 {item.description}
               </p>
             </div>
