@@ -92,7 +92,7 @@ export function ProjectCarousel({
           {items.map((item) => (
             <div
               key={`${title}-${item.title}`}
-              className="min-w-0 flex-[0_0_88%] pl-4 sm:flex-[0_0_62%] lg:flex-[0_0_42%] xl:flex-[0_0_34%]"
+              className="min-w-0 flex-[0_0_88%] pl-4 sm:flex-[0_0_68%] lg:flex-[0_0_48%] xl:flex-[0_0_40%]"
             >
               <ProjectCard item={item} categoryLabel={title} />
             </div>
