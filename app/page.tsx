@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SitePreloader } from "@/components/layout/site-preloader";
 import { StructuredData } from "@/components/seo/structured-data";
 import { HeroSection } from "@/components/sections/hero";
 import { CredibilityStrip } from "@/components/sections/credibility-strip";
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <div id="top" className="relative overflow-x-clip bg-white">
       <StructuredData />
+      <SitePreloader />
       <Navbar />
 
       <main>

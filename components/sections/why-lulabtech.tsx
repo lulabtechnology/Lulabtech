@@ -1,4 +1,5 @@
 import {
+  CheckCircle2,
   GaugeCircle,
   Palette,
   ShieldCheck,
@@ -15,34 +16,40 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const differentiators = [
   {
     icon: Palette,
-    title: "Diseño premium real",
+    title: "Diseño con mejor criterio",
     description:
-      "Composición, jerarquía y detalle visual pensados para que la marca se vea más seria y más cuidada."
+      "No es solo estética: cuidamos composición, jerarquía y detalle para que la marca se sienta mejor construida."
   },
   {
     icon: Sparkles,
-    title: "Claridad comercial",
+    title: "Mensaje más fácil de entender",
     description:
-      "Ordenamos el mensaje para que el visitante entienda rápido qué haces, por qué importa y cómo contactarte."
+      "Ordenamos el contenido para que el visitante entienda qué haces, por qué importa y qué paso debe dar."
   },
   {
     icon: GaugeCircle,
-    title: "Velocidad y experiencia",
+    title: "Experiencia más fluida",
     description:
-      "Sitios ligeros y fluidos, preparados para sentirse sólidos tanto en desktop como en móvil."
+      "Responsive real, carga cuidada y recorrido visual limpio para que todo se sienta más sólido."
   },
   {
     icon: Workflow,
-    title: "Soluciones a medida",
+    title: "Solución hecha para el negocio",
     description:
-      "Cada proyecto se adapta al negocio, al tipo de usuario y al objetivo comercial real."
+      "Cada proyecto responde al objetivo comercial y al tipo de usuario, no a una plantilla genérica."
   },
   {
     icon: ShieldCheck,
-    title: "Confianza profesional",
+    title: "Presencia más confiable",
     description:
-      "Diseño, tecnología y estructura alineados para proyectar una presencia más fuerte y confiable."
+      "Diseño, estructura y tecnología alineados para transmitir más seriedad y respaldo profesional."
   }
+];
+
+const valuePoints = [
+  "Se entiende mejor lo que ofreces.",
+  "La marca se percibe más seria.",
+  "El contacto queda más fácil de tomar."
 ];
 
 export function WhyLulabTechSection() {
@@ -54,33 +61,44 @@ export function WhyLulabTechSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Por qué LulabTech"
-          title="No se trata solo de verse bien: se trata de transmitir nivel, ordenar el mensaje y facilitar el contacto"
-          description="Diseño, estructura y claridad para que tu marca se vea más sólida y el visitante entienda más rápido el valor de lo que ofreces."
+          title="Una web no solo debe verse bien: debe dejar más claro tu valor y mover mejor al usuario"
+          description="Trabajamos la parte visual, la estructura comercial y la experiencia para que el sitio no se quede en algo bonito, sino útil para tu negocio."
         />
       </Reveal>
 
       <div className="mt-10 grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-        <Reveal className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-ink-950 via-ink-900 to-brand-900 p-7 text-white shadow-elevated sm:p-8">
+        <Reveal className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-[#0A1227] via-[#0E1D45] to-[#12397A] p-7 text-white shadow-elevated sm:p-8">
           <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">
-            Ventaja competitiva
+            Lo que cambia
           </div>
 
-          <h3 className="mt-5 max-w-lg text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl">
-            Más percepción de valor, más claridad y una experiencia digital mucho mejor cuidada.
+          <h3 className="mt-5 max-w-md text-balance text-[1.95rem] font-semibold leading-[1.08] text-white sm:text-[2.4rem]">
+            Una presencia más cuidada, un mensaje más claro y un contacto mejor guiado.
           </h3>
 
-          <p className="mt-4 max-w-lg text-sm leading-7 text-white/80 sm:text-base">
-            En LulabTech cada sección cumple una función: presentar mejor la marca,
-            hacer que el mensaje se entienda más rápido y dejar el camino más claro hacia el contacto.
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/88 sm:text-base">
+            En LulabTech cada bloque tiene una función concreta: ordenar la oferta, reforzar la percepción de marca y acercar al visitante al siguiente paso.
           </p>
+
+          <div className="mt-7 grid gap-3">
+            {valuePoints.map((point) => (
+              <div
+                key={point}
+                className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/8 px-4 py-3 backdrop-blur"
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-accent-300" />
+                <p className="text-sm font-medium leading-6 text-white/92">{point}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <div className="rounded-[22px] border border-white/10 bg-white/8 p-4 backdrop-blur">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                 Enfoque
               </p>
-              <p className="mt-2 text-sm font-medium text-white">
-                Diseño + estrategia + ejecución
+              <p className="mt-2 text-sm font-medium leading-6 text-white">
+                Diseño, estructura y copy trabajando juntos.
               </p>
             </div>
 
@@ -88,8 +106,8 @@ export function WhyLulabTechSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
                 Resultado
               </p>
-              <p className="mt-2 text-sm font-medium text-white">
-                Presencia más sólida y contacto más claro
+              <p className="mt-2 text-sm font-medium leading-6 text-white">
+                Más claridad, más confianza y una mejor ruta hacia cotizar.
               </p>
             </div>
           </div>
@@ -102,7 +120,7 @@ export function WhyLulabTechSection() {
               className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
             >
               <IconBox icon={item.icon} />
-              <h3 className="mt-5 text-lg font-semibold text-ink-900">{item.title}</h3>
+              <h3 className="mt-5 text-lg font-semibold leading-snug text-ink-900">{item.title}</h3>
               <p className="mt-3 text-sm leading-6 text-ink-600">{item.description}</p>
             </div>
           ))}

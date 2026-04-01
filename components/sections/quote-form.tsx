@@ -281,31 +281,31 @@ export function QuoteForm() {
       </div>
 
       <div className="grid gap-6">
-        <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-gradient-to-br from-ink-950 via-ink-900 to-brand-900 p-6 text-white shadow-elevated sm:p-8">
-          <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">
+        <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white p-6 shadow-elevated sm:p-8">
+          <div className="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">
             Contacto directo
           </div>
 
-          <h3 className="mt-4 max-w-md text-2xl font-semibold text-white sm:text-3xl">
-            También puedes escribirnos por WhatsApp o correo.
+          <h3 className="mt-4 max-w-md text-2xl font-semibold text-ink-900 sm:text-3xl">
+            También puedes escribirnos por WhatsApp o por correo.
           </h3>
 
-          <p className="mt-4 max-w-md text-sm leading-7 text-white/80 sm:text-base">
-            Si ya tienes claro lo que necesitas, puedes ir directo al canal que te resulte más cómodo.
+          <p className="mt-4 max-w-md text-sm leading-7 text-ink-600 sm:text-base">
+            Si prefieres ir directo, aquí tienes dos formas claras de empezar la conversación con LulabTech.
           </p>
 
           <div className="mt-8 grid gap-4">
-            <div className="rounded-[24px] border border-white/10 bg-white/8 p-5 backdrop-blur">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10">
+            <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
                   <MessageCircle className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
                     WhatsApp
                   </p>
-                  <p className="mt-1 text-sm text-white/90">
-                    Respuesta directa para iniciar la conversación.
+                  <p className="mt-1 text-sm font-medium text-ink-900">
+                    Chat directo para contarnos tu idea y el tipo de proyecto que necesitas.
                   </p>
                 </div>
               </div>
@@ -314,24 +314,26 @@ export function QuoteForm() {
                 href={contactData.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                variant="outline"
-                className="mt-5 w-full border-white/15 bg-white/10 text-white hover:bg-white/14"
+                className="mt-5 w-full"
               >
                 Abrir WhatsApp
               </ButtonLink>
             </div>
 
-            <div className="rounded-[24px] border border-white/10 bg-white/8 p-5 backdrop-blur">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10">
+            <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
                     Correo
                   </p>
-                  <p className="mt-1 break-all text-sm text-white/90">
+                  <p className="mt-1 break-all text-sm font-medium text-ink-900">
                     {contactData.email}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-ink-600">
+                    Ideal si quieres enviar contexto, referencias o detalles del alcance.
                   </p>
                 </div>
               </div>
@@ -339,7 +341,7 @@ export function QuoteForm() {
               <ButtonLink
                 href={`mailto:${contactData.email}`}
                 variant="outline"
-                className="mt-5 w-full border-white/15 bg-white/10 text-white hover:bg-white/14"
+                className="mt-5 w-full"
               >
                 Enviar correo
               </ButtonLink>

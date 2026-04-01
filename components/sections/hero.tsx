@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -17,27 +18,46 @@ import { Reveal } from "@/components/motion/reveal";
 import { Stagger } from "@/components/motion/stagger";
 
 const heroBadges = [
-  "Diseño premium",
-  "Conversión clara",
-  "Motion elegante",
-  "Responsive real"
+  "Landing pages",
+  "Webs corporativas",
+  "Tiendas online",
+  "Software a medida"
 ];
 
 const heroMetrics = [
   {
     icon: Sparkles,
-    label: "Percepción de marca",
-    value: "Nivel más alto"
+    label: "Imagen de marca",
+    value: "Más sólida y mejor presentada"
   },
   {
     icon: MonitorSmartphone,
-    label: "Experiencia móvil",
-    value: "Pulida y rápida"
+    label: "Mobile",
+    value: "Bien resuelto desde el primer scroll"
   },
   {
     icon: Layers3,
-    label: "Estructura comercial",
-    value: "Lista para convertir"
+    label: "Ruta de contacto",
+    value: "CTA claros y recorrido mejor pensado"
+  }
+];
+
+const heroPreviewCards = [
+  {
+    eyebrow: "Landing pages",
+    value: "Captación"
+  },
+  {
+    eyebrow: "Web corporativa",
+    value: "Autoridad"
+  },
+  {
+    eyebrow: "Tienda online",
+    value: "Venta digital"
+  },
+  {
+    eyebrow: "Software",
+    value: "Operación clara"
   }
 ];
 
@@ -106,11 +126,11 @@ export function HeroSection() {
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-brand-600" />
                   <span className="text-sm font-semibold text-ink-900">
-                    Estructura clara
+                    Oferta bien explicada
                   </span>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-ink-600">
-                  Oferta mejor explicada para acelerar decisión y contacto.
+                  Estructura, jerarquía y copy pensados para que el visitante entienda rápido.
                 </p>
               </div>
 
@@ -118,11 +138,11 @@ export function HeroSection() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-brand-600" />
                   <span className="text-sm font-semibold text-ink-900">
-                    Marca elevada
+                    Presencia más seria
                   </span>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-ink-600">
-                  Visual limpio, serio y de alto nivel para transmitir confianza.
+                  Visual limpio y dirección de marca para proyectar más nivel y confianza.
                 </p>
               </div>
 
@@ -130,11 +150,11 @@ export function HeroSection() {
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-accent-600" />
                   <span className="text-sm font-semibold text-ink-900">
-                    Conversión lista
+                    Contacto mejor guiado
                   </span>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-ink-600">
-                  CTA visibles, WhatsApp directo y formulario de cotización.
+                  CTA visibles, WhatsApp directo y recorrido pensado para cotizar sin fricción.
                 </p>
               </div>
             </div>
@@ -144,7 +164,7 @@ export function HeroSection() {
         <Reveal delay={0.16} className="relative">
           <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-white p-4 shadow-elevated sm:p-5">
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-r from-brand-500/10 via-transparent to-accent-500/10" />
-            <div className="relative rounded-[28px] border border-slate-200 bg-slate-950 p-3">
+            <div className="relative rounded-[28px] border border-white/10 bg-slate-950 p-3">
               <div className="flex items-center justify-between rounded-[20px] border border-white/10 bg-white/5 px-4 py-3">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
@@ -152,57 +172,53 @@ export function HeroSection() {
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  LulabTech showcase
+                  Vista de propuesta
                 </span>
               </div>
 
-              <div className="mt-3 grid gap-3 lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600 via-brand-500 to-accent-500 p-5 sm:p-6">
-                  <div className="w-fit rounded-full border border-white/25 bg-white/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90">
-                    Vista principal
+              <div className="mt-3 grid gap-3 lg:grid-cols-[1.08fr_0.92fr]">
+                <div className="grid gap-3">
+                  <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/60">
+                    <div className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-slate-950/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur">
+                      Preview real
+                    </div>
+
+                    <div className="relative h-[260px] w-full sm:h-[290px]">
+                      <Image
+                        src="/projects/landing/landing-01.png"
+                        alt="Vista real de un proyecto desarrollado por LulabTech"
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 520px"
+                        className="object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/12 to-transparent" />
+                    </div>
+
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                      <h2 className="max-w-sm text-balance text-xl font-semibold leading-tight text-white sm:text-[1.5rem]">
+                        Diseño visual fuerte, oferta clara y contacto directo.
+                      </h2>
+                      <p className="mt-2 max-w-sm text-sm leading-6 text-white/78">
+                        Así se ve una landing pensada para proyectar más nivel y facilitar la acción.
+                      </p>
+                    </div>
                   </div>
 
-                  <h2 className="mt-5 max-w-sm text-balance text-[1.9rem] font-semibold leading-[1.05] text-white sm:text-[2.2rem]">
-                    Webs con presencia premium y enfoque comercial.
-                  </h2>
-
-                  <p className="mt-4 max-w-sm text-sm leading-6 text-white/78 sm:text-[15px]">
-                    Diseño, estructura y tecnología alineados para que la marca se vea sólida y el contacto llegue más claro.
-                  </p>
-
-                  <div className="mt-8 grid grid-cols-2 gap-3">
-                    <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
-                        Landing pages
-                      </p>
-                      <p className="mt-2 text-sm font-medium text-white">
-                        Captación
-                      </p>
-                    </div>
-                    <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
-                        Web corporativa
-                      </p>
-                      <p className="mt-2 text-sm font-medium text-white">
-                        Autoridad
-                      </p>
-                    </div>
-                    <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
-                        Tienda online
-                      </p>
-                      <p className="mt-2 text-sm font-medium text-white">
-                        Conversión
-                      </p>
-                    </div>
-                    <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
-                        Software
-                      </p>
-                      <p className="mt-2 text-sm font-medium text-white">
-                        Escala
-                      </p>
-                    </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {heroPreviewCards.map((card) => (
+                      <div
+                        key={card.eyebrow}
+                        className="rounded-[20px] border border-white/10 bg-white/6 p-4 backdrop-blur"
+                      >
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/62 sm:text-[11px]">
+                          {card.eyebrow}
+                        </p>
+                        <p className="mt-2 text-sm font-medium text-white">
+                          {card.value}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -215,15 +231,15 @@ export function HeroSection() {
                         key={metric.label}
                         className="rounded-[24px] border border-white/10 bg-white/6 p-4 backdrop-blur"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
+                        <div className="flex items-start gap-3">
+                          <div className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
                             <Icon className="h-5 w-5" />
                           </div>
                           <div>
                             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
                               {metric.label}
                             </p>
-                            <p className="mt-1 text-base font-semibold text-white">
+                            <p className="mt-1 text-sm font-semibold leading-6 text-white sm:text-[15px]">
                               {metric.value}
                             </p>
                           </div>
@@ -232,15 +248,15 @@ export function HeroSection() {
                     );
                   })}
 
-                  <div className="rounded-[24px] border border-white/10 bg-white/6 p-5 backdrop-blur">
+                  <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600/28 to-accent-500/16 p-5 backdrop-blur">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
-                      Contacto directo
+                      Siguiente paso
                     </p>
                     <p className="mt-2 text-xl font-semibold text-white">
-                      Solicitar cotización
+                      Cotización clara
                     </p>
-                    <p className="mt-3 text-sm leading-6 text-white/75">
-                      Un recorrido claro para llevar al visitante al siguiente paso sin fricción.
+                    <p className="mt-3 text-sm leading-6 text-white/78">
+                      El objetivo no es solo que se vea bien, sino dejar claro qué haces y cómo contactarte.
                     </p>
                   </div>
                 </Stagger>
