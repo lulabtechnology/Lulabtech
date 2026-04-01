@@ -10,7 +10,7 @@ import { useSiteLanguage } from "@/components/providers/site-language";
 type ProjectCarouselProps = {
   title: string;
   description: string;
-  items: ProjectItem[];
+  items: readonly ProjectItem[];
 };
 
 export function ProjectCarousel({ title, description, items }: ProjectCarouselProps) {
