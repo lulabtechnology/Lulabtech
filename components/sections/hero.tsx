@@ -26,8 +26,8 @@ const heroBadges = [
 const heroMetrics = [
   {
     icon: Sparkles,
-    label: "Feeling premium",
-    value: "Alta percepción"
+    label: "Percepción de marca",
+    value: "Nivel más alto"
   },
   {
     icon: MonitorSmartphone,
@@ -36,8 +36,8 @@ const heroMetrics = [
   },
   {
     icon: Layers3,
-    label: "Arquitectura limpia",
-    value: "Lista para escalar"
+    label: "Estructura comercial",
+    value: "Lista para convertir"
   }
 ];
 
@@ -157,50 +157,50 @@ export function HeroSection() {
               </div>
 
               <div className="mt-3 grid gap-3 lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600 via-brand-500 to-accent-500 p-5">
-                  <div className="rounded-full border border-white/25 bg-white/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 w-fit">
-                    Hero visual
+                <div className="overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600 via-brand-500 to-accent-500 p-5 sm:p-6">
+                  <div className="w-fit rounded-full border border-white/25 bg-white/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90">
+                    Vista principal
                   </div>
 
-                  <h2 className="mt-5 max-w-sm text-2xl font-semibold leading-tight text-white sm:text-[2rem]">
-                    Landing premium con estructura comercial clara.
+                  <h2 className="mt-5 max-w-sm text-balance text-[1.9rem] font-semibold leading-[1.05] text-white sm:text-[2.2rem]">
+                    Webs con presencia premium y enfoque comercial.
                   </h2>
 
-                  <p className="mt-4 max-w-sm text-sm leading-6 text-white/78">
-                    Espacio visual pensado para proyectar autoridad, tecnología y conversión desde el primer scroll.
+                  <p className="mt-4 max-w-sm text-sm leading-6 text-white/78 sm:text-[15px]">
+                    Diseño, estructura y tecnología alineados para que la marca se vea sólida y el contacto llegue más claro.
                   </p>
 
                   <div className="mt-8 grid grid-cols-2 gap-3">
                     <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-                        Landing Pages
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
+                        Landing pages
                       </p>
                       <p className="mt-2 text-sm font-medium text-white">
                         Captación
                       </p>
                     </div>
                     <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-                        Corporativas
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
+                        Web corporativa
                       </p>
                       <p className="mt-2 text-sm font-medium text-white">
                         Autoridad
                       </p>
                     </div>
                     <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-                        E-commerce
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
+                        Tienda online
                       </p>
                       <p className="mt-2 text-sm font-medium text-white">
                         Conversión
                       </p>
                     </div>
                     <div className="rounded-[20px] border border-white/14 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">
                         Software
                       </p>
                       <p className="mt-2 text-sm font-medium text-white">
-                        Escalabilidad
+                        Escala
                       </p>
                     </div>
                   </div>
@@ -234,13 +234,13 @@ export function HeroSection() {
 
                   <div className="rounded-[24px] border border-white/10 bg-white/6 p-5 backdrop-blur">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
-                      CTA principal
+                      Contacto directo
                     </p>
                     <p className="mt-2 text-xl font-semibold text-white">
                       Solicitar cotización
                     </p>
                     <p className="mt-3 text-sm leading-6 text-white/75">
-                      Flujo pensado para llevar al usuario directo al contacto.
+                      Un recorrido claro para llevar al visitante al siguiente paso sin fricción.
                     </p>
                   </div>
                 </Stagger>

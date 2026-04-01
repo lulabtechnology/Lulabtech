@@ -30,8 +30,8 @@ export function ServicesSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Capacidades"
-          title="LulabTech desarrolla experiencias digitales con intención comercial"
-          description="Servicios presentados de forma limpia, premium y clara para que el visitante entienda rápido el tipo de solución que puede solicitar."
+          title="Soluciones pensadas para presentar mejor la marca y mover al usuario a la acción"
+          description="Landing pages, webs corporativas, tiendas online, software y automatizaciones desarrolladas con claridad comercial y una ejecución más cuidada."
         />
       </Reveal>
 
@@ -51,7 +51,7 @@ export function ServicesSection() {
               <div className="mt-6 h-px w-full bg-gradient-to-r from-brand-200 via-slate-200 to-transparent" />
 
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
-                Premium • responsive • editable
+                A medida · claro · listo para crecer
               </p>
             </div>
           );

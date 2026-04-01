@@ -14,7 +14,7 @@ export function QuoteFormSection() {
         <SectionHeading
           eyebrow="Cotización"
           title="Solicita una propuesta para tu proyecto"
-          description="Formulario premium conectado con Resend, con validaciones, loading, success y error para dejar esta landing lista para producción."
+          description="Déjanos los datos clave y te responderemos para aterrizar alcance, tiempos y el siguiente paso con claridad."
         />
       </Reveal>
 

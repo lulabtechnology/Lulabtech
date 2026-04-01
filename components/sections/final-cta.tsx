@@ -20,12 +20,12 @@ export function FinalCtaSection() {
             CTA final
           </div>
 
-          <h2 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-            Si tu marca necesita una presencia más seria, más premium y más clara, hablemos.
+          <h2 className="mt-5 max-w-3xl text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+            Si tu marca necesita una presencia más seria, más clara y mejor ejecutada, hablemos.
           </h2>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">
-            {contactData.ctaDescription}
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">
+            Cuéntanos qué necesitas y te ayudamos a aterrizar la mejor solución para tu sitio, tienda online o software.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

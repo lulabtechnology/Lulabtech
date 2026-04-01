@@ -17,31 +17,31 @@ const differentiators = [
     icon: Palette,
     title: "Diseño premium real",
     description:
-      "Nada de apariencia genérica. Cuidamos composición, jerarquía y percepción de marca."
+      "Composición, jerarquía y detalle visual pensados para que la marca se vea más seria y más cuidada."
   },
   {
     icon: Sparkles,
     title: "Claridad comercial",
     description:
-      "Ordenamos el mensaje para que el visitante entienda rápido qué haces y por qué debería contactarte."
+      "Ordenamos el mensaje para que el visitante entienda rápido qué haces, por qué importa y cómo contactarte."
   },
   {
     icon: GaugeCircle,
     title: "Velocidad y experiencia",
     description:
-      "Sitios ligeros, responsive y pensados para sentirse fluidos en desktop y móvil."
+      "Sitios ligeros y fluidos, preparados para sentirse sólidos tanto en desktop como en móvil."
   },
   {
     icon: Workflow,
     title: "Soluciones a medida",
     description:
-      "Cada proyecto responde al negocio real, no a una plantilla rígida."
+      "Cada proyecto se adapta al negocio, al tipo de usuario y al objetivo comercial real."
   },
   {
     icon: ShieldCheck,
     title: "Confianza profesional",
     description:
-      "Diseño, tecnología y estructura alineados para proyectar un nivel serio y sólido."
+      "Diseño, tecnología y estructura alineados para proyectar una presencia más fuerte y confiable."
   }
 ];
 
@@ -54,8 +54,8 @@ export function WhyLulabTechSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Por qué LulabTech"
-          title="Una landing o web no solo debe verse bien: debe transmitir nivel y mover al usuario."
-          description="Aquí se refuerza la propuesta de valor con una sección más clara, más visual y más premium."
+          title="No se trata solo de verse bien: se trata de transmitir nivel, ordenar el mensaje y facilitar el contacto"
+          description="Diseño, estructura y claridad para que tu marca se vea más sólida y el visitante entienda más rápido el valor de lo que ofreces."
         />
       </Reveal>
 
@@ -65,14 +65,13 @@ export function WhyLulabTechSection() {
             Ventaja competitiva
           </div>
 
-          <h3 className="mt-5 text-2xl font-semibold leading-tight sm:text-3xl">
-            Más claridad, más percepción de valor y una experiencia mucho más cuidada.
+          <h3 className="mt-5 max-w-lg text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl">
+            Más percepción de valor, más claridad y una experiencia digital mucho mejor cuidada.
           </h3>
 
-          <p className="mt-4 text-sm leading-7 text-white/75 sm:text-base">
-            LulabTech combina diseño premium, estructura comercial y desarrollo moderno
-            para construir activos digitales que ayudan a presentar mejor la marca y a
-            facilitar la conversión.
+          <p className="mt-4 max-w-lg text-sm leading-7 text-white/80 sm:text-base">
+            En LulabTech cada sección cumple una función: presentar mejor la marca,
+            hacer que el mensaje se entienda más rápido y dejar el camino más claro hacia el contacto.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -81,7 +80,7 @@ export function WhyLulabTechSection() {
                 Enfoque
               </p>
               <p className="mt-2 text-sm font-medium text-white">
-                Diseño + negocio + ejecución
+                Diseño + estrategia + ejecución
               </p>
             </div>
 
@@ -90,7 +89,7 @@ export function WhyLulabTechSection() {
                 Resultado
               </p>
               <p className="mt-2 text-sm font-medium text-white">
-                Presencia más fuerte y contacto más claro
+                Presencia más sólida y contacto más claro
               </p>
             </div>
           </div>

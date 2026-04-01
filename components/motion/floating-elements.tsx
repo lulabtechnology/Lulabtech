@@ -39,7 +39,7 @@ export function FloatingElements() {
         animate={chipAnimation}
       >
         <Sparkles className="h-4 w-4 text-brand-600" />
-        <span className="text-xs font-semibold text-ink-700">Premium execution</span>
+        <span className="text-xs font-semibold text-ink-700">Diseño a medida</span>
       </motion.div>
 
       <motion.div
@@ -54,7 +54,7 @@ export function FloatingElements() {
         }}
       >
         <Layers3 className="h-4 w-4 text-accent-600" />
-        <span className="text-xs font-semibold text-ink-700">Responsive first</span>
+        <span className="text-xs font-semibold text-ink-700">Experiencia fluida</span>
       </motion.div>
 
       <motion.div
@@ -69,7 +69,7 @@ export function FloatingElements() {
         }}
       >
         <Zap className="h-4 w-4 text-brand-600" />
-        <span className="text-xs font-semibold text-ink-700">Fast and polished</span>
+        <span className="text-xs font-semibold text-ink-700">Ejecución sólida</span>
       </motion.div>
     </>
   );

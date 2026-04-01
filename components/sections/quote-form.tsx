@@ -286,13 +286,12 @@ export function QuoteForm() {
             Contacto directo
           </div>
 
-          <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
+          <h3 className="mt-4 max-w-md text-2xl font-semibold text-white sm:text-3xl">
             También puedes escribirnos por WhatsApp o correo.
           </h3>
 
-          <p className="mt-4 text-sm leading-7 text-white/75 sm:text-base">
-            Si ya tienes claro lo que quieres, puedes ir directo al canal que te
-            resulte más cómodo.
+          <p className="mt-4 max-w-md text-sm leading-7 text-white/80 sm:text-base">
+            Si ya tienes claro lo que necesitas, puedes ir directo al canal que te resulte más cómodo.
           </p>
 
           <div className="mt-8 grid gap-4">
@@ -356,27 +355,18 @@ export function QuoteForm() {
 
             <div>
               <h4 className="text-lg font-semibold text-ink-900">
-                Qué recibirá LulabTech
+                Qué pasa después
               </h4>
               <p className="mt-2 text-sm leading-6 text-ink-600">
-                Nombre, marca, email, WhatsApp, tipo de proyecto, presupuesto
-                estimado y mensaje. Todo llega ordenado al correo de ventas.
+                Revisamos tu mensaje, entendemos el tipo de proyecto y te respondemos con el siguiente paso más conveniente.
               </p>
             </div>
           </div>
 
-          <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50/80 p-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
-              Integración
-            </p>
-            <p className="mt-3 text-sm leading-6 text-ink-700">
-              Esta fase ya queda lista para trabajar con Resend en Vercel usando:
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Tag>RESEND_API_KEY</Tag>
-              <Tag>RESEND_FROM_EMAIL</Tag>
-              <Tag>CONTACT_TO_EMAIL</Tag>
-            </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <InfoPill label="01" title="Revisión" description="Leemos lo que necesitas y entendemos el contexto del proyecto." />
+            <InfoPill label="02" title="Contacto" description="Te escribimos por correo o WhatsApp para aclarar detalles clave." />
+            <InfoPill label="03" title="Propuesta" description="Aterrizamos alcance, tiempos y la mejor dirección para avanzar." />
           </div>
         </div>
       </div>
@@ -415,10 +405,22 @@ function Field({
   );
 }
 
-function Tag({ children }: { children: React.ReactNode }) {
+function InfoPill({
+  label,
+  title,
+  description
+}: {
+  label: string;
+  title: string;
+  description: string;
+}) {
   return (
-    <span className="rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-      {children}
-    </span>
+    <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4">
+      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+        {label}
+      </span>
+      <p className="mt-2 text-sm font-semibold text-ink-900">{title}</p>
+      <p className="mt-2 text-sm leading-6 text-ink-600">{description}</p>
+    </div>
   );
 }

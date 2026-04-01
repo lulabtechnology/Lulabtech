@@ -46,8 +46,8 @@ export function ProcessSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Proceso"
-          title="Un flujo claro para pasar de idea a presencia digital lista para captar oportunidades"
-          description="Esta parte ayuda a reducir fricción y a darle confianza al visitante sobre cómo trabaja LulabTech."
+          title="Un flujo claro para pasar de idea a una presencia digital lista para moverse con tu negocio"
+          description="Así trabajamos para aterrizar la idea, ordenar la experiencia y dejar el proyecto listo para salir con buena base visual y técnica."
         />
       </Reveal>
 
