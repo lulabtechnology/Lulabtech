@@ -1,27 +1,20 @@
-import {
-  Bot,
-  Building2,
-  LayoutTemplate,
-  ShoppingBag,
-  Workflow
-} from "lucide-react";
-import { servicesData } from "@/data/services";
+"use client";
+
+import { Bot, Building2, LayoutTemplate, ShoppingBag, Workflow } from "lucide-react";
 import { NAV_ANCHORS } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Stagger } from "@/components/motion/stagger";
 import { IconBox } from "@/components/ui/icon-box";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { useSiteLanguage } from "@/components/providers/site-language";
 
-const serviceIcons = [
-  LayoutTemplate,
-  Building2,
-  ShoppingBag,
-  Workflow,
-  Bot
-];
+const serviceIcons = [LayoutTemplate, Building2, ShoppingBag, Workflow, Bot];
 
 export function ServicesSection() {
+  const { copy } = useSiteLanguage();
+  const services = copy.services;
+
   return (
     <SectionShell
       id={NAV_ANCHORS.services}
@@ -29,14 +22,14 @@ export function ServicesSection() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Capacidades"
-          title="Soluciones pensadas para presentar mejor la marca y mover al usuario a la acción"
-          description="Landing pages, webs corporativas, tiendas online, software y automatizaciones desarrolladas con claridad comercial y una ejecución más cuidada."
+          eyebrow={services.eyebrow}
+          title={services.title}
+          description={services.description}
         />
       </Reveal>
 
       <Stagger className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {servicesData.map((service, index) => {
+        {services.items.map((service, index) => {
           const Icon = serviceIcons[index % serviceIcons.length];
 
           return (
@@ -51,7 +44,7 @@ export function ServicesSection() {
               <div className="mt-6 h-px w-full bg-gradient-to-r from-brand-200 via-slate-200 to-transparent" />
 
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
-                A medida · claro · listo para crecer
+                {services.suffix}
               </p>
             </div>
           );

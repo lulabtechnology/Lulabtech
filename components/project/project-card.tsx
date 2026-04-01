@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import type { ProjectItem } from "@/data/projects";
+import type { ProjectItem } from "@/lib/site-copy";
+import { useSiteLanguage } from "@/components/providers/site-language";
 
 type ProjectCardProps = {
   item: ProjectItem;
@@ -10,6 +11,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
+  const { copy } = useSiteLanguage();
+
   return (
     <article className="group h-full overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
       <div className="border-b border-slate-200 bg-slate-50/90 px-4 py-3">
@@ -29,7 +32,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
         <Image
           src={item.image}
-          alt={item.title}
+          alt={`${copy.projectShowcase.altPrefix} ${item.title}`}
           fill
           className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
           sizes="(max-width: 640px) 88vw, (max-width: 1024px) 62vw, 44vw"
@@ -38,7 +41,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
         <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/6" />
 
         <div className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/92 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-700 backdrop-blur">
-          Proyecto
+          {copy.projectShowcase.projectBadge}
         </div>
       </div>
 
@@ -58,9 +61,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
           </div>
         </div>
 
-        <p className="mt-3 text-sm leading-6 text-ink-600">
-          {item.description}
-        </p>
+        <p className="mt-3 text-sm leading-6 text-ink-600">{item.description}</p>
       </div>
     </article>
   );

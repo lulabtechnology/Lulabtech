@@ -1,14 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { Loader2, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
+import { useMemo, useState } from "react";
 import { contactData } from "@/data/contact";
-import { projectTypeOptions } from "@/lib/validations";
+import { projectTypeOptions } from "@/lib/site-copy";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { StatusMessage } from "@/components/ui/status-message";
 import { Textarea } from "@/components/ui/textarea";
+import { useSiteLanguage } from "@/components/providers/site-language";
+import { getProjectTypeLabel } from "@/lib/site-copy";
 
 type FormValues = {
   name: string;
@@ -33,6 +35,8 @@ const initialValues: FormValues = {
 };
 
 export function QuoteForm() {
+  const { copy, locale } = useSiteLanguage();
+  const formCopy = copy.form;
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,7 +75,7 @@ export function QuoteForm() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify({ ...values, locale })
       });
 
       const result = (await response.json()) as {
@@ -87,7 +91,7 @@ export function QuoteForm() {
 
         setStatus({
           type: "error",
-          message: result.message || "No se pudo enviar la solicitud."
+          message: result.message || formCopy.validationGeneric
         });
         return;
       }
@@ -95,13 +99,12 @@ export function QuoteForm() {
       setValues(initialValues);
       setStatus({
         type: "success",
-        message:
-          "Tu solicitud fue enviada correctamente. Pronto revisaremos tu información."
+        message: result.message || formCopy.success
       });
     } catch {
       setStatus({
         type: "error",
-        message: "Ocurrió un error inesperado al enviar el formulario."
+        message: formCopy.errorGeneric
       });
     } finally {
       setIsSubmitting(false);
@@ -113,72 +116,56 @@ export function QuoteForm() {
       <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
         <div className="mb-6">
           <div className="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">
-            Cotización formal
+            {formCopy.badge}
           </div>
           <h3 className="mt-4 text-2xl font-semibold text-ink-900 sm:text-3xl">
-            Cuéntanos lo que quieres construir
+            {formCopy.title}
           </h3>
           <p className="mt-3 text-sm leading-6 text-ink-600 sm:text-base">
-            Déjanos los datos clave de tu proyecto y te contactaremos por correo o
-            WhatsApp para continuar la conversación.
+            {formCopy.description}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           <div className="grid gap-5 md:grid-cols-2">
-            <Field
-              label="Nombre"
-              required
-              error={errors.name}
-              htmlFor="quote-name"
-            >
+            <Field label={formCopy.fields.name} required error={errors.name} htmlFor="quote-name">
               <Input
                 id="quote-name"
                 name="name"
                 value={values.name}
                 onChange={(e) => setField("name", e.target.value)}
-                placeholder="Tu nombre"
+                placeholder={formCopy.placeholders.name}
                 autoComplete="name"
               />
             </Field>
 
-            <Field
-              label="Empresa / Marca"
-              required
-              error={errors.brand}
-              htmlFor="quote-brand"
-            >
+            <Field label={formCopy.fields.brand} required error={errors.brand} htmlFor="quote-brand">
               <Input
                 id="quote-brand"
                 name="brand"
                 value={values.brand}
                 onChange={(e) => setField("brand", e.target.value)}
-                placeholder="Nombre de tu marca"
+                placeholder={formCopy.placeholders.brand}
                 autoComplete="organization"
               />
             </Field>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <Field
-              label="Email"
-              required
-              error={errors.email}
-              htmlFor="quote-email"
-            >
+            <Field label={formCopy.fields.email} required error={errors.email} htmlFor="quote-email">
               <Input
                 id="quote-email"
                 name="email"
                 type="email"
                 value={values.email}
                 onChange={(e) => setField("email", e.target.value)}
-                placeholder="tu@correo.com"
+                placeholder={formCopy.placeholders.email}
                 autoComplete="email"
               />
             </Field>
 
             <Field
-              label="WhatsApp"
+              label={formCopy.fields.whatsapp}
               required
               error={errors.whatsapp}
               htmlFor="quote-whatsapp"
@@ -188,7 +175,7 @@ export function QuoteForm() {
                 name="whatsapp"
                 value={values.whatsapp}
                 onChange={(e) => setField("whatsapp", e.target.value)}
-                placeholder="+507 6000-0000"
+                placeholder={formCopy.placeholders.whatsapp}
                 autoComplete="tel"
               />
             </Field>
@@ -196,7 +183,7 @@ export function QuoteForm() {
 
           <div className="grid gap-5 md:grid-cols-2">
             <Field
-              label="Tipo de proyecto"
+              label={formCopy.fields.projectType}
               required
               error={errors.projectType}
               htmlFor="quote-project-type"
@@ -208,53 +195,42 @@ export function QuoteForm() {
                 onChange={(e) => setField("projectType", e.target.value)}
               >
                 <option value="" disabled>
-                  Selecciona una opción
+                  {formCopy.placeholders.projectType}
                 </option>
                 {projectTypeOptions.map((option) => (
                   <option key={option} value={option}>
-                    {option}
+                    {getProjectTypeLabel(option, locale)}
                   </option>
                 ))}
               </Select>
             </Field>
 
-            <Field
-              label="Presupuesto estimado"
-              error={errors.budget}
-              htmlFor="quote-budget"
-            >
+            <Field label={formCopy.fields.budget} error={errors.budget} htmlFor="quote-budget">
               <Input
                 id="quote-budget"
                 name="budget"
                 value={values.budget}
                 onChange={(e) => setField("budget", e.target.value)}
-                placeholder="Opcional"
+                placeholder={formCopy.placeholders.budget}
               />
             </Field>
           </div>
 
-          <Field
-            label="Mensaje"
-            required
-            error={errors.message}
-            htmlFor="quote-message"
-          >
+          <Field label={formCopy.fields.message} required error={errors.message} htmlFor="quote-message">
             <Textarea
               id="quote-message"
               name="message"
               value={values.message}
               onChange={(e) => setField("message", e.target.value)}
-              placeholder="Cuéntanos qué quieres lograr, qué tipo de proyecto tienes en mente y cualquier detalle importante."
+              placeholder={formCopy.placeholders.message}
             />
           </Field>
 
-          {status ? (
-            <StatusMessage type={status.type} message={status.message} />
-          ) : null}
+          {status ? <StatusMessage type={status.type} message={status.message} /> : null}
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs leading-6 text-ink-500">
-              Al enviar este formulario, tu solicitud llegará a{" "}
+              {formCopy.footnoteStart}{" "}
               <span className="font-semibold text-ink-700">{contactData.email}</span>.
             </p>
 
@@ -267,12 +243,12 @@ export function QuoteForm() {
               {isSubmitting ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  Enviando...
+                  {formCopy.submitLoading}
                 </>
               ) : (
                 <>
                   <Send className="h-4 w-4" />
-                  Enviar solicitud
+                  {formCopy.submitIdle}
                 </>
               )}
             </Button>
@@ -283,15 +259,15 @@ export function QuoteForm() {
       <div className="grid gap-6">
         <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white p-6 shadow-elevated sm:p-8">
           <div className="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">
-            Contacto directo
+            {formCopy.directContactBadge}
           </div>
 
           <h3 className="mt-4 max-w-md text-2xl font-semibold text-ink-900 sm:text-3xl">
-            También puedes escribirnos por WhatsApp o por correo.
+            {formCopy.directContactTitle}
           </h3>
 
           <p className="mt-4 max-w-md text-sm leading-7 text-ink-600 sm:text-base">
-            Si prefieres ir directo, aquí tienes dos formas claras de empezar la conversación con LulabTech.
+            {formCopy.directContactDescription}
           </p>
 
           <div className="mt-8 grid gap-4">
@@ -302,21 +278,16 @@ export function QuoteForm() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
-                    WhatsApp
+                    {formCopy.whatsappTitle}
                   </p>
                   <p className="mt-1 text-sm font-medium text-ink-900">
-                    Chat directo para contarnos tu idea y el tipo de proyecto que necesitas.
+                    {formCopy.whatsappDescription}
                   </p>
                 </div>
               </div>
 
-              <ButtonLink
-                href={contactData.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 w-full"
-              >
-                Abrir WhatsApp
+              <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 w-full">
+                {formCopy.whatsappButton}
               </ButtonLink>
             </div>
 
@@ -327,23 +298,15 @@ export function QuoteForm() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
-                    Correo
+                    {formCopy.emailTitle}
                   </p>
-                  <p className="mt-1 break-all text-sm font-medium text-ink-900">
-                    {contactData.email}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-ink-600">
-                    Ideal si quieres enviar contexto, referencias o detalles del alcance.
-                  </p>
+                  <p className="mt-1 break-all text-sm font-medium text-ink-900">{contactData.email}</p>
+                  <p className="mt-2 text-sm leading-6 text-ink-600">{formCopy.emailDescription}</p>
                 </div>
               </div>
 
-              <ButtonLink
-                href={`mailto:${contactData.email}`}
-                variant="outline"
-                className="mt-5 w-full"
-              >
-                Enviar correo
+              <ButtonLink href={`mailto:${contactData.email}`} variant="outline" className="mt-5 w-full">
+                {formCopy.emailButton}
               </ButtonLink>
             </div>
           </div>
@@ -356,19 +319,20 @@ export function QuoteForm() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-ink-900">
-                Qué pasa después
-              </h4>
-              <p className="mt-2 text-sm leading-6 text-ink-600">
-                Revisamos tu mensaje, entendemos el tipo de proyecto y te respondemos con el siguiente paso más conveniente.
-              </p>
+              <h4 className="text-lg font-semibold text-ink-900">{formCopy.nextBadgeTitle}</h4>
+              <p className="mt-2 text-sm leading-6 text-ink-600">{formCopy.nextBadgeDescription}</p>
             </div>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <InfoPill label="01" title="Revisión" description="Leemos lo que necesitas y entendemos el contexto del proyecto." />
-            <InfoPill label="02" title="Contacto" description="Te escribimos por correo o WhatsApp para aclarar detalles clave." />
-            <InfoPill label="03" title="Propuesta" description="Aterrizamos alcance, tiempos y la mejor dirección para avanzar." />
+            {formCopy.nextSteps.map((step) => (
+              <InfoPill
+                key={step.label}
+                label={step.label}
+                title={step.title}
+                description={step.description}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -389,13 +353,15 @@ function Field({
   error?: string;
   children: React.ReactNode;
 }) {
+  const { copy } = useSiteLanguage();
+
   return (
     <label htmlFor={htmlFor} className="block">
       <div className="mb-2 flex items-center gap-2">
         <span className="text-sm font-semibold text-ink-900">{label}</span>
         {required ? (
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-700">
-            requerido
+            {copy.form.required}
           </span>
         ) : null}
       </div>
@@ -418,9 +384,7 @@ function InfoPill({
 }) {
   return (
     <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4">
-      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
-        {label}
-      </span>
+      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{label}</span>
       <p className="mt-2 text-sm font-semibold text-ink-900">{title}</p>
       <p className="mt-2 text-sm leading-6 text-ink-600">{description}</p>
     </div>

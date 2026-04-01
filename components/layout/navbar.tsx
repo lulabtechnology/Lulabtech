@@ -3,16 +3,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
-import { navigationItems } from "@/data/navigation";
 import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { LanguageToggle } from "@/components/layout/language-toggle";
+import { useSiteLanguage } from "@/components/providers/site-language";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const quoteHref = `#${NAV_ANCHORS.quote}`;
+  const { copy } = useSiteLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 14);
@@ -49,7 +51,7 @@ export function Navbar() {
           </a>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {navigationItems.map((item) => (
+            {copy.navigation.items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -61,6 +63,8 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <LanguageToggle />
+
             <ButtonLink
               href={WHATSAPP_URL}
               target="_blank"
@@ -69,11 +73,11 @@ export function Navbar() {
               className="text-ink-700"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp
+              {copy.navigation.whatsapp}
             </ButtonLink>
 
             <ButtonLink href={quoteHref}>
-              Solicitar cotización
+              {copy.navigation.quote}
               <ArrowUpRight className="h-4 w-4" />
             </ButtonLink>
           </div>

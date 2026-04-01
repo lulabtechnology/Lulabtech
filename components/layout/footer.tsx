@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { contactData } from "@/data/contact";
-import { navigationItems } from "@/data/navigation";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
+import { useSiteLanguage } from "@/components/providers/site-language";
 
 export function Footer() {
+  const { copy } = useSiteLanguage();
+
   return (
     <footer className="border-t border-slate-200 bg-white">
       <Container className="py-12 sm:py-14">
@@ -22,22 +26,17 @@ export function Footer() {
               </div>
 
               <h2 className="mt-5 max-w-xl text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
-                Soluciones digitales premium para marcas que quieren verse mejor y convertir más.
+                {copy.footer.title}
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-ink-600 sm:text-base">
-                Landing pages, webs corporativas, tiendas online y software a la medida
-                con una ejecución visual más cuidada, más clara y más comercial.
+                {copy.footer.description}
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink
-                  href={contactData.whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer">
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp
+                  {copy.footer.whatsapp}
                 </ButtonLink>
 
                 <ButtonLink href={`mailto:${contactData.email}`} variant="outline">
@@ -50,10 +49,10 @@ export function Footer() {
             <div className="grid gap-8 sm:grid-cols-2">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
-                  Navegación
+                  {copy.footer.navigation}
                 </p>
                 <nav className="mt-4 grid gap-3">
-                  {navigationItems.map((item) => (
+                  {copy.navigation.items.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
@@ -68,13 +67,13 @@ export function Footer() {
 
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
-                  Contacto
+                  {copy.footer.contact}
                 </p>
 
                 <div className="mt-4 grid gap-4">
                   <div className="rounded-[22px] border border-slate-200 bg-white p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">
-                      Email
+                      {copy.footer.email}
                     </p>
                     <a
                       href={`mailto:${contactData.email}`}
@@ -86,7 +85,7 @@ export function Footer() {
 
                   <div className="rounded-[22px] border border-slate-200 bg-white p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">
-                      Canal directo
+                      {copy.footer.directChannel}
                     </p>
                     <a
                       href={contactData.whatsappUrl}
@@ -94,7 +93,7 @@ export function Footer() {
                       rel="noreferrer"
                       className="mt-2 block text-sm font-semibold text-ink-900"
                     >
-                      WhatsApp
+                      {copy.footer.whatsapp}
                     </a>
                   </div>
                 </div>
@@ -103,8 +102,10 @@ export function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col gap-3 border-t border-slate-200 pt-6 text-sm text-ink-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} LulabTech. Todos los derechos reservados.</p>
-            <p>Diseño premium · enfoque comercial · experiencia responsive</p>
+            <p>
+              © {new Date().getFullYear()} LulabTech. {copy.footer.rights}
+            </p>
+            <p>{copy.footer.bottom}</p>
           </div>
         </div>
       </Container>

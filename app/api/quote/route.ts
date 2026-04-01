@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
 import { getResendClient } from "@/lib/resend";
 import { quoteSchema } from "@/lib/validations";
+import { getProjectTypeLabel, type Locale } from "@/lib/site-copy";
 
 function escapeHtml(value: string) {
   return value
@@ -12,10 +13,31 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+function getLocale(value: unknown): Locale {
+  return value === "en" ? "en" : "es";
+}
+
+const messages = {
+  es: {
+    invalid: "Hay campos que necesitan corrección.",
+    missingFrom: "Falta configurar RESEND_FROM_EMAIL en Vercel.",
+    success: "Tu solicitud fue enviada correctamente.",
+    failure: "No se pudo enviar la solicitud en este momento.",
+    unspecified: "No especificado"
+  },
+  en: {
+    invalid: "Some fields need your attention.",
+    missingFrom: "RESEND_FROM_EMAIL is missing in Vercel.",
+    success: "Your request was sent successfully.",
+    failure: "The request could not be sent right now.",
+    unspecified: "Not specified"
+  }
+} as const;
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-
+    const locale = getLocale(body?.locale);
     const parsed = quoteSchema.safeParse(body);
 
     if (!parsed.success) {
@@ -24,7 +46,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          message: "Hay campos que necesitan corrección.",
+          message: messages[locale].invalid,
           errors: {
             name: fieldErrors.name?.[0],
             brand: fieldErrors.brand?.[0],
@@ -48,7 +70,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          message: "Falta configurar RESEND_FROM_EMAIL en Vercel."
+          message: messages[locale].missingFrom
         },
         { status: 500 }
       );
@@ -58,8 +80,8 @@ export async function POST(request: Request) {
     const safeBrand = escapeHtml(data.brand);
     const safeEmail = escapeHtml(data.email);
     const safeWhatsapp = escapeHtml(data.whatsapp);
-    const safeProjectType = escapeHtml(data.projectType);
-    const safeBudget = escapeHtml(data.budget || "No especificado");
+    const safeProjectType = escapeHtml(getProjectTypeLabel(data.projectType, locale));
+    const safeBudget = escapeHtml(data.budget || messages[locale].unspecified);
     const safeMessage = escapeHtml(data.message).replace(/\n/g, "<br />");
 
     await resend.emails.send({
@@ -140,8 +162,8 @@ Nombre: ${data.name}
 Empresa / Marca: ${data.brand}
 Email: ${data.email}
 WhatsApp: ${data.whatsapp}
-Tipo de proyecto: ${data.projectType}
-Presupuesto estimado: ${data.budget || "No especificado"}
+Tipo de proyecto: ${getProjectTypeLabel(data.projectType, locale)}
+Presupuesto estimado: ${data.budget || messages[locale].unspecified}
 
 Mensaje:
 ${data.message}
@@ -150,7 +172,7 @@ ${data.message}
 
     return NextResponse.json({
       ok: true,
-      message: "Tu solicitud fue enviada correctamente."
+      message: messages[locale].success
     });
   } catch (error) {
     console.error("QUOTE_ROUTE_ERROR", error);
@@ -158,7 +180,7 @@ ${data.message}
     return NextResponse.json(
       {
         ok: false,
-        message: "No se pudo enviar la solicitud en este momento."
+        message: messages.es.failure
       },
       { status: 500 }
     );

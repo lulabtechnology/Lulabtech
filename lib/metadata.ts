@@ -70,6 +70,11 @@ export const siteMetadata: Metadata = {
     }
   },
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: "/brand/lulabtech-mark.png?v=4", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico?v=4", sizes: "any" }
+    ],
+    shortcut: ["/favicon.ico?v=4"],
+    apple: [{ url: "/brand/lulabtech-mark.png?v=4", sizes: "180x180", type: "image/png" }]
   }
 };

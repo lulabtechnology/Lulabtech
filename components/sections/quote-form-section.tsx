@@ -1,10 +1,16 @@
+"use client";
+
 import { NAV_ANCHORS } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { QuoteForm } from "@/components/sections/quote-form";
+import { useSiteLanguage } from "@/components/providers/site-language";
 
 export function QuoteFormSection() {
+  const { copy } = useSiteLanguage();
+  const section = copy.quoteSection;
+
   return (
     <SectionShell
       id={NAV_ANCHORS.quote}
@@ -12,9 +18,9 @@ export function QuoteFormSection() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Cotización"
-          title="Solicita una propuesta para tu proyecto"
-          description="Déjanos los datos clave y te responderemos para aterrizar alcance, tiempos y el siguiente paso con claridad."
+          eyebrow={section.eyebrow}
+          title={section.title}
+          description={section.description}
         />
       </Reveal>
 

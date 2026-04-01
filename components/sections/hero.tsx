@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   ArrowUpRight,
@@ -7,7 +9,6 @@ import {
   ShieldCheck,
   Sparkles
 } from "lucide-react";
-import { heroContent } from "@/data/hero";
 import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
 import { ButtonLink } from "@/components/ui/button";
@@ -16,52 +17,15 @@ import { GridPattern } from "@/components/ui/grid-pattern";
 import { FloatingElements } from "@/components/motion/floating-elements";
 import { Reveal } from "@/components/motion/reveal";
 import { Stagger } from "@/components/motion/stagger";
+import { useSiteLanguage } from "@/components/providers/site-language";
 
-const heroBadges = [
-  "Landing pages",
-  "Webs corporativas",
-  "Tiendas online",
-  "Software a medida"
-];
-
-const heroMetrics = [
-  {
-    icon: Sparkles,
-    label: "Imagen de marca",
-    value: "Más sólida y mejor presentada"
-  },
-  {
-    icon: MonitorSmartphone,
-    label: "Mobile",
-    value: "Bien resuelto desde el primer scroll"
-  },
-  {
-    icon: Layers3,
-    label: "Ruta de contacto",
-    value: "CTA claros y recorrido mejor pensado"
-  }
-];
-
-const heroPreviewCards = [
-  {
-    eyebrow: "Landing pages",
-    value: "Captación"
-  },
-  {
-    eyebrow: "Web corporativa",
-    value: "Autoridad"
-  },
-  {
-    eyebrow: "Tienda online",
-    value: "Venta digital"
-  },
-  {
-    eyebrow: "Software",
-    value: "Operación clara"
-  }
-];
+const metricIcons = [Sparkles, MonitorSmartphone, Layers3] as const;
+const cardIcons = [ShieldCheck, Sparkles, CheckCircle2] as const;
 
 export function HeroSection() {
+  const { copy } = useSiteLanguage();
+  const hero = copy.hero;
+
   return (
     <SectionShell className="relative overflow-hidden bg-gradient-to-b from-white via-brand-50/40 to-white pt-10 md:pt-14 lg:pt-16">
       <GridPattern className="opacity-30" />
@@ -72,26 +36,26 @@ export function HeroSection() {
       <div className="relative grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
         <div className="max-w-3xl">
           <Reveal>
-            <span className="eyebrow">{heroContent.eyebrow}</span>
+            <span className="eyebrow">{hero.eyebrow}</span>
           </Reveal>
 
           <Reveal delay={0.06}>
             <h1 className="mt-5 balance text-4xl font-bold leading-[1.02] sm:text-5xl lg:text-[4.5rem]">
-              Soluciones digitales que se ven{" "}
-              <span className="text-gradient-brand">premium</span> y convierten con intención.
+              {hero.titleStart} <span className="text-gradient-brand">{hero.titleGradient}</span>{" "}
+              {hero.titleEnd}
             </h1>
           </Reveal>
 
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-2xl text-base leading-7 text-ink-600 sm:text-lg">
-              {heroContent.description}
+              {hero.description}
             </p>
           </Reveal>
 
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={`#${NAV_ANCHORS.quote}`} size="lg">
-                {heroContent.primaryCta}
+                {hero.primaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
 
@@ -102,14 +66,14 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
               >
-                {heroContent.secondaryCta}
+                {hero.secondaryCta}
               </ButtonLink>
             </div>
           </Reveal>
 
           <Reveal delay={0.24}>
             <div className="mt-8 flex flex-wrap gap-2.5">
-              {heroBadges.map((badge) => (
+              {hero.badges.map((badge) => (
                 <span
                   key={badge}
                   className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-ink-700 shadow-soft"
@@ -122,41 +86,22 @@ export function HeroSection() {
 
           <Reveal delay={0.3}>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-soft">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-brand-600" />
-                  <span className="text-sm font-semibold text-ink-900">
-                    Oferta bien explicada
-                  </span>
-                </div>
-                <p className="mt-2 text-sm leading-6 text-ink-600">
-                  Estructura, jerarquía y copy pensados para que el visitante entienda rápido.
-                </p>
-              </div>
+              {hero.cards.map((card, index) => {
+                const Icon = cardIcons[index];
 
-              <div className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-soft">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-brand-600" />
-                  <span className="text-sm font-semibold text-ink-900">
-                    Presencia más seria
-                  </span>
-                </div>
-                <p className="mt-2 text-sm leading-6 text-ink-600">
-                  Visual limpio y dirección de marca para proyectar más nivel y confianza.
-                </p>
-              </div>
-
-              <div className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-soft">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-accent-600" />
-                  <span className="text-sm font-semibold text-ink-900">
-                    Contacto mejor guiado
-                  </span>
-                </div>
-                <p className="mt-2 text-sm leading-6 text-ink-600">
-                  CTA visibles, WhatsApp directo y recorrido pensado para cotizar sin fricción.
-                </p>
-              </div>
+                return (
+                  <div
+                    key={card.title}
+                    className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-soft"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Icon className={`h-4 w-4 ${index === 2 ? "text-accent-600" : "text-brand-600"}`} />
+                      <span className="text-sm font-semibold text-ink-900">{card.title}</span>
+                    </div>
+                    <p className="mt-2 text-sm leading-6 text-ink-600">{card.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>
@@ -172,7 +117,7 @@ export function HeroSection() {
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Vista de propuesta
+                  {hero.previewWindow}
                 </span>
               </div>
 
@@ -180,13 +125,13 @@ export function HeroSection() {
                 <div className="grid gap-3">
                   <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/60">
                     <div className="absolute left-4 top-4 z-10 rounded-full border border-white/20 bg-slate-950/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur">
-                      Preview real
+                      {hero.previewBadge}
                     </div>
 
                     <div className="relative h-[260px] w-full sm:h-[290px]">
                       <Image
                         src="/projects/landing/landing-01.png"
-                        alt="Vista real de un proyecto desarrollado por LulabTech"
+                        alt={hero.previewTitle}
                         fill
                         priority
                         sizes="(max-width: 1024px) 100vw, 520px"
@@ -197,16 +142,16 @@ export function HeroSection() {
 
                     <div className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
                       <h2 className="max-w-sm text-balance text-xl font-semibold leading-tight text-white sm:text-[1.5rem]">
-                        Diseño visual fuerte, oferta clara y contacto directo.
+                        {hero.previewTitle}
                       </h2>
                       <p className="mt-2 max-w-sm text-sm leading-6 text-white/78">
-                        Así se ve una landing pensada para proyectar más nivel y facilitar la acción.
+                        {hero.previewDescription}
                       </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    {heroPreviewCards.map((card) => (
+                    {hero.previewCards.map((card) => (
                       <div
                         key={card.eyebrow}
                         className="rounded-[20px] border border-white/10 bg-white/6 p-4 backdrop-blur"
@@ -214,17 +159,15 @@ export function HeroSection() {
                         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/62 sm:text-[11px]">
                           {card.eyebrow}
                         </p>
-                        <p className="mt-2 text-sm font-medium text-white">
-                          {card.value}
-                        </p>
+                        <p className="mt-2 text-sm font-medium text-white">{card.value}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <Stagger className="grid gap-3">
-                  {heroMetrics.map((metric) => {
-                    const Icon = metric.icon;
+                  {hero.metrics.map((metric, index) => {
+                    const Icon = metricIcons[index];
 
                     return (
                       <div
@@ -250,13 +193,11 @@ export function HeroSection() {
 
                   <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600/28 to-accent-500/16 p-5 backdrop-blur">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
-                      Siguiente paso
+                      {hero.nextStepLabel}
                     </p>
-                    <p className="mt-2 text-xl font-semibold text-white">
-                      Cotización clara
-                    </p>
+                    <p className="mt-2 text-xl font-semibold text-white">{hero.nextStepTitle}</p>
                     <p className="mt-3 text-sm leading-6 text-white/78">
-                      El objetivo no es solo que se vea bien, sino dejar claro qué haces y cómo contactarte.
+                      {hero.nextStepDescription}
                     </p>
                   </div>
                 </Stagger>

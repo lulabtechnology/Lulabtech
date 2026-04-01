@@ -10,26 +10,29 @@ import { WhyLulabTechSection } from "@/components/sections/why-lulabtech";
 import { ProcessSection } from "@/components/sections/process";
 import { FinalCtaSection } from "@/components/sections/final-cta";
 import { QuoteFormSection } from "@/components/sections/quote-form-section";
+import { SiteLanguageProvider } from "@/components/providers/site-language";
 
 export default function HomePage() {
   return (
-    <div id="top" className="relative overflow-x-clip bg-white">
-      <StructuredData />
-      <SitePreloader />
-      <Navbar />
+    <SiteLanguageProvider>
+      <div id="top" className="relative overflow-x-clip bg-white">
+        <StructuredData />
+        <SitePreloader />
+        <Navbar />
 
-      <main>
-        <HeroSection />
-        <CredibilityStrip />
-        <ProjectShowcaseSection />
-        <ServicesSection />
-        <WhyLulabTechSection />
-        <ProcessSection />
-        <FinalCtaSection />
-        <QuoteFormSection />
-      </main>
+        <main>
+          <HeroSection />
+          <CredibilityStrip />
+          <ProjectShowcaseSection />
+          <ServicesSection />
+          <WhyLulabTechSection />
+          <ProcessSection />
+          <FinalCtaSection />
+          <QuoteFormSection />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </SiteLanguageProvider>
   );
 }

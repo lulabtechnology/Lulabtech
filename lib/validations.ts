@@ -1,13 +1,5 @@
 import { z } from "zod";
-
-export const projectTypeOptions = [
-  "Landing page",
-  "Web corporativa",
-  "Tienda online",
-  "Software a la medida",
-  "Automatización / solución digital",
-  "Aún no lo tengo claro"
-] as const;
+import { projectTypeOptions } from "@/lib/site-copy";
 
 const isValidProjectType = (value: string) =>
   projectTypeOptions.includes(value as (typeof projectTypeOptions)[number]);

@@ -1,22 +1,16 @@
-import { projectCategories } from "@/data/projects";
+"use client";
+
 import { NAV_ANCHORS } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { ProjectCarousel } from "@/components/project/project-carousel";
 import { SectionHeading } from "@/components/ui/section-heading";
-
-const categoryDescriptions: Record<string, string> = {
-  landing:
-    "Landing pages diseñadas para presentar valor con claridad, elevar percepción y empujar la conversión.",
-  corporate:
-    "Webs corporativas enfocadas en autoridad, estructura comercial y una presencia digital más sólida.",
-  ecommerce:
-    "Tiendas online con mejor experiencia visual, recorrido de compra más claro y enfoque comercial.",
-  software:
-    "Software a la medida con interfaces modernas, organización inteligente y sensación profesional."
-};
+import { useSiteLanguage } from "@/components/providers/site-language";
 
 export function ProjectShowcaseSection() {
+  const { copy } = useSiteLanguage();
+  const showcase = copy.projectShowcase;
+
   return (
     <SectionShell
       id={NAV_ANCHORS.projects}
@@ -24,18 +18,18 @@ export function ProjectShowcaseSection() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Proyectos"
-          title="Experiencias digitales diseñadas para verse mejor y comunicar con más fuerza"
-          description="Una muestra visual de los tipos de soluciones que desarrollamos para marcas que buscan un nivel superior de presencia digital."
+          eyebrow={showcase.eyebrow}
+          title={showcase.title}
+          description={showcase.description}
         />
       </Reveal>
 
       <div className="mt-12 space-y-8">
-        {projectCategories.map((category, index) => (
+        {showcase.categories.map((category, index) => (
           <Reveal key={category.id} delay={index * 0.04}>
             <ProjectCarousel
               title={category.label}
-              description={categoryDescriptions[category.id] ?? "Soluciones digitales premium."}
+              description={category.description}
               items={category.items}
             />
           </Reveal>
