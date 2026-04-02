@@ -447,7 +447,7 @@ export const siteCopy = {
         name: "Tu nombre",
         brand: "Nombre de tu marca",
         email: "tu@correo.com",
-        whatsapp: "+507 6000-0000",
+        whatsapp: "+507 6706-9044",
         projectType: "Selecciona una opción",
         budget: "Opcional",
         message:
@@ -907,7 +907,7 @@ export const siteCopy = {
         name: "Your name",
         brand: "Your brand name",
         email: "you@email.com",
-        whatsapp: "+1 555 000 0000",
+        whatsapp: "+507 6706-9044",
         projectType: "Select an option",
         budget: "Optional",
         message:
