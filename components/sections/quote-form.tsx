@@ -12,6 +12,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { getProjectTypeLabel } from "@/lib/site-copy";
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 type FormValues = {
   name: string;
   brand: string;
@@ -95,6 +101,8 @@ export function QuoteForm() {
         });
         return;
       }
+
+      window.fbq?.("track", "Lead");
 
       setValues(initialValues);
       setStatus({
