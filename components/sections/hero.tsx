@@ -116,7 +116,7 @@ export function HeroSection() {
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/72">
                   {hero.previewWindow}
                 </span>
               </div>
@@ -191,8 +191,8 @@ export function HeroSection() {
                     );
                   })}
 
-                  <div className="rounded-[24px] border border-white/12 bg-gradient-to-br from-white/18 via-slate-200/16 to-white/10 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
+                  <div className="rounded-[24px] border border-white/14 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_34%),linear-gradient(135deg,rgba(59,130,246,0.42),rgba(14,23,55,0.94)_58%,rgba(16,185,129,0.18))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_12px_30px_rgba(2,6,23,0.24)] backdrop-blur">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/74">
                       {hero.nextStepLabel}
                     </p>
                     <p className="mt-2 text-xl font-semibold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">{hero.nextStepTitle}</p>

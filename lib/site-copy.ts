@@ -82,26 +82,26 @@ export const siteCopy = {
       badges: ["Landing pages", "Webs corporativas", "Tiendas online", "Software a medida"],
       cards: [
         {
-          title: "Oferta bien explicada",
+          title: "Tu oferta se entiende mejor",
           description:
-            "Estructura, jerarquía y copy pensados para que el visitante entienda rápido."
+            "El visitante comprende rápido qué haces, cómo ayudas y por qué vale la pena escribirte."
         },
         {
-          title: "Presencia más seria",
+          title: "Tu marca se ve más sólida",
           description:
-            "Visual limpio y dirección de marca para proyectar más nivel y confianza."
+            "Una presencia visual más cuidada ayuda a transmitir confianza desde el primer vistazo."
         },
         {
-          title: "Contacto mejor guiado",
+          title: "Contactarte se vuelve más fácil",
           description:
-            "CTA visibles, WhatsApp directo y recorrido pensado para cotizar sin fricción."
+            "WhatsApp, formularios y llamados claros para que pedir información sea natural y directo."
         }
       ],
-      previewWindow: "Vista de propuesta",
-      previewBadge: "Preview real",
-      previewTitle: "Diseño visual fuerte, oferta clara y contacto directo.",
+      previewWindow: "Muestra visual",
+      previewBadge: "Sitio premium",
+      previewTitle: "Una presencia más seria, clara y lista para convertir.",
       previewDescription:
-        "Así se ve una landing pensada para proyectar más nivel y facilitar la acción.",
+        "Así se ve una web pensada para transmitir confianza, explicar mejor la oferta y llevar al visitante al contacto.",
       previewCards: [
         { eyebrow: "Landing pages", value: "Captación" },
         { eyebrow: "Web corporativa", value: "Autoridad" },
@@ -113,10 +113,10 @@ export const siteCopy = {
         { label: "Mobile", value: "Bien resuelto desde el primer scroll" },
         { label: "Ruta de contacto", value: "CTA claros y recorrido mejor pensado" }
       ],
-      nextStepLabel: "Paso siguiente",
-      nextStepTitle: "Cotiza tu proyecto",
+      nextStepLabel: "Contacto claro",
+      nextStepTitle: "Da el siguiente paso",
       nextStepDescription:
-        "CTA visible y recorrido claro para que el visitante pase de interesarse a escribirte sin fricción."
+        "Una ruta simple para que quien entra a tu sitio pueda pedir información o cotizar sin perderse."
     },
     credibility: [
       {
@@ -542,26 +542,26 @@ export const siteCopy = {
       badges: ["Landing pages", "Corporate websites", "Online stores", "Custom software"],
       cards: [
         {
-          title: "Clearer offer",
+          title: "Your offer is easier to understand",
           description:
-            "Structure, hierarchy and copy shaped so visitors understand the value quickly."
+            "Visitors can quickly understand what you do, how you help and why it makes sense to contact you."
         },
         {
-          title: "Stronger presence",
+          title: "Your brand looks stronger",
           description:
-            "Clean visuals and sharper brand direction to project more confidence and level."
+            "A more refined visual presence helps build trust from the very first impression."
         },
         {
-          title: "Guided contact",
+          title: "Getting in touch feels easier",
           description:
-            "Visible CTAs, direct WhatsApp and a smoother path toward the quote request."
+            "Clear WhatsApp access, visible forms and direct calls to action remove friction from the next step."
         }
       ],
-      previewWindow: "Project preview",
-      previewBadge: "Real preview",
-      previewTitle: "Strong visual design, clearer offer and direct contact.",
+      previewWindow: "Visual preview",
+      previewBadge: "Premium website",
+      previewTitle: "A stronger, clearer presence that is ready to convert.",
       previewDescription:
-        "This is how a landing page looks when it is built to elevate perception and drive action.",
+        "This is what a website looks like when it is built to inspire trust, explain the offer better and guide visitors to contact.",
       previewCards: [
         { eyebrow: "Landing pages", value: "Lead capture" },
         { eyebrow: "Corporate website", value: "Authority" },
@@ -573,10 +573,10 @@ export const siteCopy = {
         { label: "Mobile", value: "Well resolved from the first scroll" },
         { label: "Contact path", value: "Clear CTAs and a smarter route" }
       ],
-      nextStepLabel: "Next step",
-      nextStepTitle: "Quote your project",
+      nextStepLabel: "Clear contact",
+      nextStepTitle: "Take the next step",
       nextStepDescription:
-        "A visible CTA and a clearer path so the visitor can move from interest to direct contact without friction."
+        "A simple route so anyone landing on your website can ask for information or request a quote without getting lost."
     },
     credibility: [
       {
