@@ -113,10 +113,10 @@ export const siteCopy = {
         { label: "Mobile", value: "Bien resuelto desde el primer scroll" },
         { label: "Ruta de contacto", value: "CTA claros y recorrido mejor pensado" }
       ],
-      nextStepLabel: "Siguiente paso",
-      nextStepTitle: "Cotización clara",
+      nextStepLabel: "Paso siguiente",
+      nextStepTitle: "Cotiza tu proyecto",
       nextStepDescription:
-        "El objetivo no es solo que se vea bien, sino dejar claro qué haces y cómo contactarte."
+        "CTA visible y recorrido claro para que el visitante pase de interesarse a escribirte sin fricción."
     },
     credibility: [
       {
@@ -338,11 +338,11 @@ export const siteCopy = {
       panelTitle:
         "Una presencia más cuidada, un mensaje más claro y un contacto mejor guiado.",
       panelDescription:
-        "En LulabTech cada bloque tiene una función concreta: ordenar la oferta, reforzar la percepción de marca y acercar al visitante al siguiente paso.",
+        "En LulabTech cada bloque cumple una función real: ordenar la oferta, reforzar la percepción de marca y hacer que el siguiente paso sea mucho más claro.",
       valuePoints: [
-        "Se entiende mejor lo que ofreces.",
-        "La marca se percibe más seria.",
-        "El contacto queda más fácil de tomar."
+        "Tu oferta se entiende más rápido.",
+        "La marca se percibe más seria y mejor construida.",
+        "Contactarte se vuelve más fácil y directo."
       ],
       focusLabel: "Enfoque",
       focusValue: "Diseño, estructura y copy trabajando juntos.",
@@ -574,9 +574,9 @@ export const siteCopy = {
         { label: "Contact path", value: "Clear CTAs and a smarter route" }
       ],
       nextStepLabel: "Next step",
-      nextStepTitle: "Clear quote request",
+      nextStepTitle: "Quote your project",
       nextStepDescription:
-        "The goal is not only to look good, but to make what you do and how to contact you immediately clear."
+        "A visible CTA and a clearer path so the visitor can move from interest to direct contact without friction."
     },
     credibility: [
       {
@@ -798,11 +798,11 @@ export const siteCopy = {
       panelTitle:
         "A more polished presence, a clearer message and a better guided contact path.",
       panelDescription:
-        "At LulabTech, every block has a concrete purpose: organize the offer, reinforce brand perception and bring the visitor closer to the next step.",
+        "At LulabTech, every block serves a real purpose: organize the offer, strengthen brand perception and make the next step much clearer.",
       valuePoints: [
-        "What you offer becomes easier to understand.",
-        "The brand feels more serious.",
-        "The contact path becomes easier to take."
+        "Your offer becomes easier to understand quickly.",
+        "The brand feels more solid and better built.",
+        "Getting in touch becomes easier and more direct."
       ],
       focusLabel: "Approach",
       focusValue: "Design, structure and copy working together.",

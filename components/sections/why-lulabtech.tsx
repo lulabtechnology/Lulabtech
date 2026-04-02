@@ -41,7 +41,7 @@ export function WhyLulabTechSection() {
             {why.panelTitle}
           </h3>
 
-          <p className="mt-5 max-w-md text-sm leading-7 text-white/88 sm:text-base">
+          <p className="mt-5 max-w-md text-sm leading-7 text-white sm:text-base">
             {why.panelDescription}
           </p>
 
@@ -49,24 +49,24 @@ export function WhyLulabTechSection() {
             {why.valuePoints.map((point) => (
               <div
                 key={point}
-                className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/8 px-4 py-3 backdrop-blur"
+                className="flex items-start gap-3 rounded-[20px] border border-white/14 bg-white/10 px-4 py-3 backdrop-blur"
               >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 text-accent-300" />
-                <p className="text-sm font-medium leading-6 text-white/92">{point}</p>
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-200" />
+                <p className="text-sm font-medium leading-6 text-white">{point}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <div className="rounded-[22px] border border-white/10 bg-white/8 p-4 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">
                 {why.focusLabel}
               </p>
               <p className="mt-2 text-sm font-medium leading-6 text-white">{why.focusValue}</p>
             </div>
 
             <div className="rounded-[22px] border border-white/10 bg-white/8 p-4 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">
                 {why.resultLabel}
               </p>
               <p className="mt-2 text-sm font-medium leading-6 text-white">{why.resultValue}</p>

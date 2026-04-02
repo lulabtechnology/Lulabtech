@@ -179,7 +179,7 @@ export function HeroSection() {
                             <Icon className="h-5 w-5" />
                           </div>
                           <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/72">
                               {metric.label}
                             </p>
                             <p className="mt-1 text-sm font-semibold leading-6 text-white sm:text-[15px]">
@@ -191,12 +191,12 @@ export function HeroSection() {
                     );
                   })}
 
-                  <div className="rounded-[24px] border border-white/10 bg-gradient-to-br from-brand-600/28 to-accent-500/16 p-5 backdrop-blur">
+                  <div className="rounded-[24px] border border-white/12 bg-gradient-to-br from-white/18 via-slate-200/16 to-white/10 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
                       {hero.nextStepLabel}
                     </p>
-                    <p className="mt-2 text-xl font-semibold text-white">{hero.nextStepTitle}</p>
-                    <p className="mt-3 text-sm leading-6 text-white/78">
+                    <p className="mt-2 text-xl font-semibold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">{hero.nextStepTitle}</p>
+                    <p className="mt-3 text-sm leading-6 text-white/90">
                       {hero.nextStepDescription}
                     </p>
                   </div>
