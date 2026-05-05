@@ -1,22 +1,82 @@
-import { CONTACT_EMAIL, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_DESCRIPTION, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
-export function StructuredData() {
-  const sameAs = [`https://wa.me/${WHATSAPP_NUMBER}`];
+const services = [
+  {
+    name: "Diseño de páginas web en Panamá",
+    description:
+      "Diseño y desarrollo de páginas web profesionales para empresas, marcas personales y negocios de servicios en Panamá."
+  },
+  {
+    name: "Landing pages en Panamá",
+    description:
+      "Landing pages orientadas a captación de leads, campañas digitales, WhatsApp y formularios de cotización."
+  },
+  {
+    name: "Páginas web corporativas",
+    description:
+      "Webs corporativas con estructura clara, diseño premium, servicios, confianza y rutas de contacto."
+  },
+  {
+    name: "Tiendas online",
+    description:
+      "Tiendas online y catálogos digitales con experiencia responsive, presentación de productos y enfoque comercial."
+  },
+  {
+    name: "Software a medida en Panamá",
+    description:
+      "Sistemas web, paneles administrativos, reservas, inventarios, reportes y automatizaciones para procesos internos."
+  },
+  {
+    name: "SEO inicial y campañas digitales",
+    description:
+      "Base SEO, estructura técnica, metadata, formularios, WhatsApp y preparación para Google Ads o Meta Ads."
+  }
+];
 
-  const services = [
-    "Diseño de páginas web en Panamá",
-    "Landing pages en Panamá",
-    "Páginas web corporativas",
-    "Tiendas online",
-    "Software a medida",
-    "Automatizaciones digitales",
-    "SEO inicial",
-    "Google Ads"
-  ];
+const faqs = [
+  {
+    question: "¿LulabTech hace páginas web en Panamá?",
+    answer:
+      "Sí. LulabTech diseña páginas web en Panamá, landing pages, tiendas online y sistemas digitales para empresas, marcas personales y servicios profesionales que necesitan una presencia más seria y una ruta clara de contacto."
+  },
+  {
+    question: "¿La web queda preparada para Google?",
+    answer:
+      "La base queda ordenada con estructura semántica, textos orientados a búsqueda, metadata, sitemap, robots, datos estructurados y una arquitectura preparada para crecer con páginas internas y contenido SEO."
+  },
+  {
+    question: "¿Puedo conectar WhatsApp y formularios?",
+    answer:
+      "Sí. La web puede llevar botones de WhatsApp, formularios de cotización, enlaces a redes, correo y recorridos de contacto pensados para convertir visitantes en oportunidades reales."
+  },
+  {
+    question: "¿Trabajan solo landing pages o también sistemas?",
+    answer:
+      "Trabajamos desde landing pages y páginas corporativas hasta tiendas online, sistemas de reservas, inventarios, paneles administrativos, automatizaciones y software a medida."
+  },
+  {
+    question: "¿Qué tipo de negocios pueden trabajar con LulabTech?",
+    answer:
+      "Podemos trabajar con firmas legales, restaurantes, clínicas, academias, empresas logísticas, inmobiliarias, negocios de servicios, tiendas y marcas que necesitan mejorar su presencia digital."
+  },
+  {
+    question: "¿Una landing page sirve para campañas de Google Ads o Meta Ads?",
+    answer:
+      "Sí. Una landing page bien estructurada ayuda a presentar una oferta específica, ordenar el mensaje, conectar WhatsApp o formularios y medir mejor las oportunidades generadas por campañas."
+  },
+  {
+    question: "¿Pueden mejorar una web existente?",
+    answer:
+      "Sí. Podemos rediseñar, ordenar contenido, mejorar estructura visual, reforzar SEO inicial, optimizar rutas de contacto y preparar la web para una etapa de crecimiento más seria."
+  }
+];
+
+export function StructuredData() {
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
   const data = {
     "@context": "https://schema.org",
@@ -27,20 +87,9 @@ export function StructuredData() {
         name: SITE_NAME,
         url: baseUrl,
         email: CONTACT_EMAIL,
-        sameAs,
-        logo: `${baseUrl}/brand/lulabtech-logo.png`
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${baseUrl}/#website`,
-        url: baseUrl,
-        name: SITE_NAME,
-        description:
-          "Agencia de diseño web en Panamá especializada en landing pages, páginas corporativas, tiendas online y software a medida.",
-        publisher: {
-          "@id": `${baseUrl}/#organization`
-        },
-        inLanguage: "es-PA"
+        logo: `${baseUrl}/brand/lulabtech-logo.png`,
+        image: `${baseUrl}/og/og-cover.png`,
+        sameAs: [whatsappUrl]
       },
       {
         "@type": "ProfessionalService",
@@ -48,59 +97,120 @@ export function StructuredData() {
         name: SITE_NAME,
         url: baseUrl,
         email: CONTACT_EMAIL,
-        areaServed: {
-          "@type": "Country",
-          name: "Panamá"
+        telephone: `+${WHATSAPP_NUMBER}`,
+        image: `${baseUrl}/og/og-cover.png`,
+        logo: `${baseUrl}/brand/lulabtech-logo.png`,
+        description: SITE_DESCRIPTION,
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Panamá"
+          },
+          {
+            "@type": "City",
+            name: "Ciudad de Panamá"
+          }
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "PA",
+          addressRegion: "Panamá"
         },
-        serviceType: services,
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            email: CONTACT_EMAIL,
+            telephone: `+${WHATSAPP_NUMBER}`,
+            areaServed: "PA",
+            availableLanguage: ["es", "en"]
+          }
+        ],
         provider: {
           "@id": `${baseUrl}/#organization`
-        }
+        },
+        makesOffer: services.map((service, index) => ({
+          "@type": "Offer",
+          "@id": `${baseUrl}/#offer-${index + 1}`,
+          itemOffered: {
+            "@id": `${baseUrl}/#service-${index + 1}`
+          },
+          areaServed: "Panamá"
+        }))
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${baseUrl}/#website`,
+        url: baseUrl,
+        name: SITE_NAME,
+        description:
+          "Agencia de diseño web en Panamá especializada en landing pages, páginas corporativas, tiendas online, software a medida y SEO inicial.",
+        publisher: {
+          "@id": `${baseUrl}/#organization`
+        },
+        inLanguage: "es-PA"
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${baseUrl}/#webpage`,
+        url: baseUrl,
+        name: "Diseño de páginas web en Panamá | LulabTech",
+        description: SITE_DESCRIPTION,
+        isPartOf: {
+          "@id": `${baseUrl}/#website`
+        },
+        about: {
+          "@id": `${baseUrl}/#professional-service`
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/og/og-cover.png`
+        },
+        inLanguage: "es-PA"
       },
       ...services.map((service, index) => ({
         "@type": "Service",
         "@id": `${baseUrl}/#service-${index + 1}`,
-        name: service,
+        name: service.name,
+        description: service.description,
+        serviceType: service.name,
         areaServed: "Panamá",
         provider: {
-          "@id": `${baseUrl}/#organization`
+          "@id": `${baseUrl}/#professional-service`
         }
       })),
       {
+        "@type": "ItemList",
+        "@id": `${baseUrl}/#services-list`,
+        name: "Servicios digitales de LulabTech",
+        itemListElement: services.map((service, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: service.name,
+          item: `${baseUrl}/#service-${index + 1}`
+        }))
+      },
+      {
         "@type": "FAQPage",
         "@id": `${baseUrl}/#faq`,
-        mainEntity: [
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${baseUrl}/#breadcrumb`,
+        itemListElement: [
           {
-            "@type": "Question",
-            name: "¿LulabTech hace páginas web en Panamá?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Sí. LulabTech trabaja páginas web, landing pages, tiendas online y sistemas digitales para negocios que necesitan una presencia más profesional y una ruta clara de contacto."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "¿La web queda preparada para Google?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "La base se deja ordenada con estructura, textos, metadata y rendimiento. Luego se puede escalar con páginas internas, contenido SEO y optimización continua."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "¿Puedo conectar WhatsApp y formularios?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Sí. La web puede llevar botones de WhatsApp, formularios de cotización, enlaces a redes, correos y rutas de contacto pensadas para convertir mejor."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "¿Trabajan solo landing pages o también sistemas?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "LulabTech trabaja desde landing pages y páginas corporativas hasta tiendas online, sistemas de reservas, inventarios, paneles administrativos y automatizaciones."
-            }
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: baseUrl
           }
         ]
       }

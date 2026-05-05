@@ -1,6 +1,6 @@
 export const SITE_NAME = "LulabTech";
 export const SITE_DESCRIPTION =
-  "Landing page premium para captar cotizaciones de proyectos digitales de alto impacto.";
+  "Agencia de diseño de páginas web en Panamá: landing pages, webs corporativas, tiendas online, software a medida, SEO inicial y campañas digitales.";
 export const CONTACT_EMAIL =
   process.env.CONTACT_TO_EMAIL || "ventas@lulabtech.com";
 

@@ -4,10 +4,12 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   CheckCircle2,
+  Code2,
   LayoutTemplate,
   MonitorSmartphone,
   SearchCheck,
   ShoppingBag,
+  Sparkles,
   Workflow
 } from "lucide-react";
 import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
@@ -33,7 +35,7 @@ export function HeroSection() {
       <GlowOrb className="right-0 top-0 h-60 w-60 bg-accent-400/20" />
       <FloatingElements />
 
-      <div className="relative grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
+      <div className="relative grid items-center gap-14 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12">
         <div className="max-w-3xl">
           <Reveal>
             <span className="eyebrow">{hero.eyebrow}</span>
@@ -107,93 +109,91 @@ export function HeroSection() {
         </div>
 
         <Reveal delay={0.16} className="relative">
-          <div className="relative overflow-hidden rounded-[38px] border border-slate-200 bg-white p-4 shadow-elevated sm:p-5">
-            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-r from-brand-500/12 via-transparent to-accent-500/14" />
+          <div className="relative mx-auto max-w-[520px]">
+            <div className="absolute -inset-8 rounded-[44px] bg-gradient-to-br from-brand-500/12 via-white to-accent-400/18 blur-2xl" />
 
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#050A18] p-4 text-white sm:p-5">
-              <div className="mb-4 flex items-center justify-between rounded-[22px] border border-white/10 bg-white/5 px-4 py-3">
+            <div className="relative overflow-hidden rounded-[38px] border border-slate-200 bg-white/92 p-5 shadow-elevated backdrop-blur sm:p-6">
+              <div className="flex items-center justify-between gap-4 rounded-[24px] border border-slate-200 bg-slate-50/80 px-4 py-3">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-500">
                   {hero.previewWindow}
                 </span>
               </div>
 
-              <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-                <div className="relative min-h-[390px] overflow-hidden rounded-[28px] border border-white/10 bg-white/6 p-3 sm:min-h-[440px]">
-                  <div className="relative h-full min-h-[360px] overflow-hidden rounded-[24px] bg-slate-900 sm:min-h-[410px]">
-                    <Image
-                      src="/projects/landing/landing-03.png"
-                      alt={hero.previewTitle}
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 520px"
-                      className="object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/5 to-transparent" />
-                  </div>
-
-                  <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-slate-950/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur">
-                    {hero.previewBadge}
-                  </div>
-
-                  <div className="absolute bottom-6 left-6 right-6 rounded-[22px] border border-white/16 bg-slate-950/72 p-4 backdrop-blur-xl">
-                    <h2 className="text-balance text-xl font-semibold leading-tight text-white sm:text-[1.45rem]">
+              <div className="mt-5 overflow-hidden rounded-[32px] border border-slate-900/10 bg-gradient-to-br from-[#061026] via-[#07152F] to-[#0E2545] p-7 text-white shadow-soft sm:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-200">
+                      {hero.previewBadge}
+                    </p>
+                    <h2 className="mt-4 max-w-sm text-balance text-3xl font-semibold leading-tight sm:text-[2.35rem]">
                       {hero.previewTitle}
                     </h2>
-                    <p className="mt-2 text-sm leading-6 text-white/78">
-                      {hero.previewDescription}
+                  </div>
+
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-white/14 bg-white p-3 shadow-soft">
+                    <Image
+                      src="/brand/lulabtech-mark.png"
+                      alt="LulabTech"
+                      fill
+                      sizes="64px"
+                      className="object-contain p-2"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                <p className="mt-5 max-w-md text-sm leading-6 text-white/76">
+                  {hero.previewDescription}
+                </p>
+
+                <div className="mt-7 grid grid-cols-2 gap-3">
+                  {hero.previewCards.map((card, index) => {
+                    const Icon = serviceIcons[index % serviceIcons.length];
+
+                    return (
+                      <div
+                        key={card.eyebrow}
+                        className="rounded-[22px] border border-white/12 bg-white/[0.07] p-4 backdrop-blur"
+                      >
+                        <Icon className="h-4 w-4 text-accent-200" />
+                        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/55 sm:text-[11px]">
+                          {card.eyebrow}
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-white">{card.value}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {hero.metrics.map((metric, index) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-[22px] border border-slate-200 bg-white p-4 shadow-soft"
+                  >
+                    <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+                      {index === 0 ? (
+                        <Sparkles className="h-4 w-4" />
+                      ) : index === 1 ? (
+                        <Code2 className="h-4 w-4" />
+                      ) : (
+                        <SearchCheck className="h-4 w-4" />
+                      )}
+                    </div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-400">
+                      {metric.label}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold leading-5 text-ink-900">
+                      {metric.value}
                     </p>
                   </div>
-                </div>
-
-                <div className="grid gap-4">
-                  <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/6 p-3">
-                    <div className="relative h-44 overflow-hidden rounded-[22px] bg-slate-900 sm:h-52">
-                      <Image
-                        src="/projects/Corporate/corporate-01.png"
-                        alt={hero.sidePreviewAlt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 360px"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/6 p-3">
-                    <div className="relative h-44 overflow-hidden rounded-[22px] bg-slate-900 sm:h-52">
-                      <Image
-                        src="/projects/software/software-01.png"
-                        alt={hero.sidePreviewAlt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 360px"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    {hero.previewCards.map((card, index) => {
-                      const Icon = serviceIcons[index % serviceIcons.length];
-
-                      return (
-                        <div
-                          key={card.eyebrow}
-                          className="rounded-[20px] border border-white/10 bg-white/7 p-4 backdrop-blur"
-                        >
-                          <Icon className="h-4 w-4 text-accent-200" />
-                          <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/55 sm:text-[11px]">
-                            {card.eyebrow}
-                          </p>
-                          <p className="mt-1 text-sm font-medium text-white">{card.value}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

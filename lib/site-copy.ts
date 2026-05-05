@@ -73,35 +73,35 @@ export const siteCopy = {
     hero: {
       eyebrow: "Agencia de diseño web en Panamá",
       titleStart: "Diseño de páginas web en Panamá",
-      titleGradient: "para marcas que quieren verse profesionales",
-      titleEnd: "y vender mejor.",
+      titleGradient: "para empresas que quieren verse profesionales",
+      titleEnd: "y convertir más.",
       description:
-        "Creamos landing pages, páginas web corporativas, tiendas online y sistemas digitales con diseño premium, estructura comercial, enfoque responsive y una ruta clara para convertir visitantes en oportunidades reales.",
+        "Creamos landing pages, páginas web corporativas, tiendas online y software a medida para negocios en Panamá. Diseñamos sitios rápidos, responsive, claros y preparados para captar clientes desde Google, WhatsApp y campañas digitales.",
       primaryCta: "Solicitar cotización",
       secondaryCta: "Hablar por WhatsApp",
       badges: ["Landing pages", "Webs corporativas", "Tiendas online", "Software a medida"],
       cards: [
         {
-          title: "Diseño premium",
+          title: "Diseño que vende",
           description:
-            "Una presencia visual más seria, moderna y alineada con el nivel de tu marca."
+            "Una presencia visual seria, moderna y pensada para que el negocio se entienda rápido."
         },
         {
           title: "Mobile primero",
           description:
-            "Experiencia cuidada para que la web se vea bien desde el primer scroll."
+            "Experiencia responsive para que la web se vea sólida en celular, tablet y escritorio."
         },
         {
-          title: "Base para SEO",
+          title: "SEO desde la base",
           description:
-            "Estructura preparada para crecer con contenido, Google y campañas digitales."
+            "Estructura, copy y metadata preparados para escalar con Google y contenido local."
         }
       ],
-      previewWindow: "Portafolio visual",
-      previewBadge: "Diseño web premium",
-      previewTitle: "Webs modernas, claras y listas para convertir.",
+      previewWindow: "Estructura limpia",
+      previewBadge: "LulabTech",
+      previewTitle: "Una web clara, premium y lista para captar oportunidades.",
       previewDescription:
-        "Una composición más visual para mostrar proyectos, confianza y dirección digital desde el primer vistazo.",
+        "Hero más limpio, mensaje directo y una estructura pensada para diseño web en Panamá, captación por WhatsApp, SEO local y campañas digitales.",
       sidePreviewAlt: "Vista previa de proyecto digital desarrollado por LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Captación" },
@@ -110,9 +110,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operación" }
       ],
       metrics: [
-        { label: "Imagen de marca", value: "Más sólida y mejor presentada" },
-        { label: "Mobile", value: "Bien resuelto desde el primer scroll" },
-        { label: "Ruta de contacto", value: "CTA claros y recorrido mejor pensado" }
+        { label: "Diseño", value: "Más limpio y profesional" },
+        { label: "Código", value: "Base moderna y responsive" },
+        { label: "SEO", value: "Preparado para crecer" }
       ],
       nextStepLabel: "Contacto claro",
       nextStepTitle: "Da el siguiente paso",
@@ -138,24 +138,24 @@ export const siteCopy = {
     ],
     clients: {
       title: "Nuestros clientes",
-      altPrefix: "Proyecto o cliente de LulabTech",
       images: [
-        "/projects/landing/landing-01.png",
-        "/projects/landing/landing-02.png",
-        "/projects/Corporate/corporate-01.png",
-        "/projects/Corporate/corporate-02.png",
-        "/projects/ecommerce/ecommerce-01.png",
-        "/projects/ecommerce/ecommerce-02.png",
-        "/projects/software/software-01.png",
-        "/projects/software/software-02.png"
+        { src: "/clients/remax.webp", alt: "Logo de cliente RE/MAX" },
+        { src: "/clients/nova-shipping.webp", alt: "Logo de cliente Nova Shipping Services" },
+        { src: "/clients/los-cholos.webp", alt: "Logo de cliente Los Cholos Salchipapería" },
+        { src: "/clients/krasa-dermoestudio.webp", alt: "Logo de cliente Krasa Dermoestudio" },
+        { src: "/clients/enis-caicedo.webp", alt: "Logo de cliente Enis Caicedo" },
+        { src: "/clients/alcira-trigueros.webp", alt: "Logo de cliente Alcira Trigueros" },
+        { src: "/clients/alaf-international-academy.webp", alt: "Logo de cliente ALAF International Academy" },
+        { src: "/clients/reyes-echevers-petroni.webp", alt: "Logo de cliente Reyes Echevers Petroni" },
+        { src: "/clients/fundacion-alada.webp", alt: "Logo de cliente Fundación Alada" }
       ]
     },
     projectShowcase: {
       eyebrow: "Portafolio",
       title:
-        "Proyectos digitales con diseño premium, estructura clara y enfoque comercial",
+        "Portafolio de páginas web, tiendas online y sistemas digitales",
       description:
-        "Filtra por tipo de solución y explora una muestra visual de landing pages, páginas web corporativas, tiendas online y sistemas digitales desarrollados para marcas que quieren verse mejor.",
+        "Filtra por tipo de solución y explora una muestra visual de proyectos desarrollados por LulabTech: landing pages, páginas web corporativas, tiendas online y software a medida para negocios que quieren verse más profesionales.",
       allLabel: "Todos",
       categories: [
         {
@@ -312,30 +312,30 @@ export const siteCopy = {
     services: {
       eyebrow: "Servicios",
       title:
-        "Diseño web, tiendas online y sistemas digitales para negocios en Panamá",
+        "Diseño web, landing pages, tiendas online y software para negocios en Panamá",
       description:
-        "Soluciones digitales desarrolladas con claridad comercial, estética premium, experiencia responsive y una base lista para crecer con SEO, campañas y automatización.",
+        "Soluciones digitales desarrolladas con claridad comercial, estética premium, experiencia responsive y una base SEO lista para crecer con Google, campañas, WhatsApp y automatización.",
       suffix: "A medida · claro · listo para crecer",
       items: [
         {
           title: "Landing pages",
           description:
-            "Páginas de alto impacto para campañas, captación de leads y lanzamientos."
+            "Páginas de alto impacto para campañas, captación de leads, WhatsApp y servicios profesionales."
         },
         {
           title: "Webs corporativas",
           description:
-            "Sitios profesionales que transmiten autoridad, confianza y claridad comercial."
+            "Páginas web profesionales para empresas en Panamá que necesitan autoridad, confianza y claridad comercial."
         },
         {
           title: "Tiendas online",
           description:
-            "E-commerce con enfoque en conversión, experiencia de compra y escalabilidad."
+            "E-commerce con catálogo, experiencia de compra, presentación de productos y enfoque en conversión."
         },
         {
           title: "Software a la medida",
           description:
-            "Herramientas digitales hechas según procesos, necesidades y objetivos reales."
+            "Sistemas digitales, paneles administrativos, reservas, inventarios y herramientas hechas según procesos reales."
         },
         {
           title: "Automatizaciones",
@@ -428,29 +428,44 @@ export const siteCopy = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      title: "Lo que suelen preguntar antes de cotizar una página web",
+      title: "Preguntas frecuentes sobre diseño de páginas web en Panamá",
       description:
-        "Respuestas rápidas para negocios que están evaluando una landing page, página corporativa, tienda online o sistema digital.",
+        "Respuestas rápidas para negocios que están evaluando una landing page, página corporativa, tienda online, SEO inicial o sistema digital.",
       items: [
         {
           question: "¿LulabTech hace páginas web en Panamá?",
           answer:
-            "Sí. Trabajamos páginas web, landing pages, tiendas online y sistemas digitales para negocios que necesitan una presencia más profesional y una ruta clara de contacto."
+            "Sí. LulabTech diseña páginas web en Panamá, landing pages, tiendas online y sistemas digitales para empresas, marcas personales y servicios profesionales que necesitan una presencia más seria y una ruta clara de contacto."
         },
         {
           question: "¿La web queda preparada para Google?",
           answer:
-            "La base se deja ordenada con estructura, textos, metadata y rendimiento. Luego se puede escalar con páginas internas, contenido SEO y optimización continua."
+            "La base queda ordenada con estructura semántica, textos orientados a búsqueda, metadata, sitemap, robots, datos estructurados y una arquitectura preparada para crecer con páginas internas y contenido SEO."
         },
         {
           question: "¿Puedo conectar WhatsApp y formularios?",
           answer:
-            "Sí. La web puede llevar botones de WhatsApp, formularios de cotización, enlaces a redes, correos y rutas de contacto pensadas para convertir mejor."
+            "Sí. La web puede llevar botones de WhatsApp, formularios de cotización, enlaces a redes, correo y recorridos de contacto pensados para convertir visitantes en oportunidades reales."
         },
         {
           question: "¿Trabajan solo landing pages o también sistemas?",
           answer:
-            "Trabajamos desde landing pages y páginas corporativas hasta tiendas online, sistemas de reservas, inventarios, paneles administrativos y automatizaciones."
+            "Trabajamos desde landing pages y páginas corporativas hasta tiendas online, sistemas de reservas, inventarios, paneles administrativos, automatizaciones y software a medida."
+        },
+        {
+          question: "¿Qué tipo de negocios pueden trabajar con LulabTech?",
+          answer:
+            "Podemos trabajar con firmas legales, restaurantes, clínicas, academias, empresas logísticas, inmobiliarias, negocios de servicios, tiendas y marcas que necesitan mejorar su presencia digital."
+        },
+        {
+          question: "¿Una landing page sirve para campañas de Google Ads o Meta Ads?",
+          answer:
+            "Sí. Una landing page bien estructurada ayuda a presentar una oferta específica, ordenar el mensaje, conectar WhatsApp o formularios y medir mejor las oportunidades generadas por campañas."
+        },
+        {
+          question: "¿Pueden mejorar una web existente?",
+          answer:
+            "Sí. Podemos rediseñar, ordenar contenido, mejorar estructura visual, reforzar SEO inicial, optimizar rutas de contacto y preparar la web para una etapa de crecimiento más seria."
         }
       ]
     },
@@ -542,7 +557,7 @@ export const siteCopy = {
       title:
         "Soluciones digitales premium para marcas que quieren verse mejor y convertir más.",
       description:
-        "Landing pages, webs corporativas, tiendas online y software a la medida con una ejecución visual más cuidada, más clara y más comercial.",
+        "Diseño de páginas web en Panamá, landing pages, webs corporativas, tiendas online y software a medida con ejecución visual cuidada, estructura comercial y base SEO.",
       navigation: "Navegación",
       contact: "Contacto",
       email: "Email",
@@ -577,35 +592,35 @@ export const siteCopy = {
     hero: {
       eyebrow: "Web design agency in Panama",
       titleStart: "Web design in Panama",
-      titleGradient: "for brands that want to look professional",
-      titleEnd: "and sell better.",
+      titleGradient: "for companies that want to look professional",
+      titleEnd: "and convert better.",
       description:
-        "We create landing pages, corporate websites, online stores and digital systems with premium design, commercial structure, responsive execution and a clear path to turn visitors into real opportunities.",
+        "We create landing pages, corporate websites, online stores and custom software for businesses in Panama. We design fast, responsive and clear websites prepared to capture clients from Google, WhatsApp and digital campaigns.",
       primaryCta: "Request a quote",
       secondaryCta: "Chat on WhatsApp",
       badges: ["Landing pages", "Corporate websites", "Online stores", "Custom software"],
       cards: [
         {
-          title: "Premium design",
+          title: "Design that sells",
           description:
-            "A stronger, modern visual presence aligned with the level of your brand."
+            "A serious, modern presence designed so the business is understood quickly."
         },
         {
           title: "Mobile first",
           description:
-            "A polished experience so the website looks solid from the very first scroll."
+            "A responsive experience so the website looks solid on phone, tablet and desktop."
         },
         {
-          title: "SEO foundation",
+          title: "SEO from the base",
           description:
-            "A structure prepared to grow through content, Google and digital campaigns."
+            "Structure, copy and metadata prepared to scale through Google and local content."
         }
       ],
-      previewWindow: "Visual portfolio",
-      previewBadge: "Premium web design",
-      previewTitle: "Modern, clear websites built to convert.",
+      previewWindow: "Clean structure",
+      previewBadge: "LulabTech",
+      previewTitle: "A clear, premium website ready to capture opportunities.",
       previewDescription:
-        "A more visual composition to show projects, trust and digital direction from the first impression.",
+        "A cleaner hero, direct message and structure designed for web design in Panama, WhatsApp lead capture, local SEO and digital campaigns.",
       sidePreviewAlt: "Preview of a digital project built by LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Lead capture" },
@@ -614,9 +629,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operations" }
       ],
       metrics: [
-        { label: "Brand image", value: "Stronger and better presented" },
-        { label: "Mobile", value: "Well resolved from the first scroll" },
-        { label: "Contact path", value: "Clear CTAs and a smarter route" }
+        { label: "Design", value: "Cleaner and more professional" },
+        { label: "Code", value: "Modern responsive foundation" },
+        { label: "SEO", value: "Prepared to grow" }
       ],
       nextStepLabel: "Clear contact",
       nextStepTitle: "Take the next step",
@@ -642,24 +657,24 @@ export const siteCopy = {
     ],
     clients: {
       title: "Our clients",
-      altPrefix: "LulabTech project or client",
       images: [
-        "/projects/landing/landing-01.png",
-        "/projects/landing/landing-02.png",
-        "/projects/Corporate/corporate-01.png",
-        "/projects/Corporate/corporate-02.png",
-        "/projects/ecommerce/ecommerce-01.png",
-        "/projects/ecommerce/ecommerce-02.png",
-        "/projects/software/software-01.png",
-        "/projects/software/software-02.png"
+        { src: "/clients/remax.webp", alt: "RE/MAX client logo" },
+        { src: "/clients/nova-shipping.webp", alt: "Nova Shipping Services client logo" },
+        { src: "/clients/los-cholos.webp", alt: "Los Cholos Salchipapería client logo" },
+        { src: "/clients/krasa-dermoestudio.webp", alt: "Krasa Dermoestudio client logo" },
+        { src: "/clients/enis-caicedo.webp", alt: "Enis Caicedo client logo" },
+        { src: "/clients/alcira-trigueros.webp", alt: "Alcira Trigueros client logo" },
+        { src: "/clients/alaf-international-academy.webp", alt: "ALAF International Academy client logo" },
+        { src: "/clients/reyes-echevers-petroni.webp", alt: "Reyes Echevers Petroni client logo" },
+        { src: "/clients/fundacion-alada.webp", alt: "Fundación Alada client logo" }
       ]
     },
     projectShowcase: {
       eyebrow: "Portfolio",
       title:
-        "Digital projects with premium design, clear structure and commercial focus",
+        "Portfolio of websites, online stores and digital systems",
       description:
-        "Filter by solution type and explore a visual sample of landing pages, corporate websites, online stores and digital systems built for brands that want to look stronger.",
+        "Filter by solution type and explore a visual sample of projects built by LulabTech: landing pages, corporate websites, online stores and custom software for businesses that want to look more professional.",
       allLabel: "All",
       categories: [
         {
@@ -816,9 +831,9 @@ export const siteCopy = {
     services: {
       eyebrow: "Services",
       title:
-        "Web design, online stores and digital systems for businesses in Panama",
+        "Web design, landing pages, online stores and software for businesses in Panama",
       description:
-        "Digital solutions built with commercial clarity, premium aesthetics, responsive experience and a foundation ready to grow with SEO, campaigns and automation.",
+        "Digital solutions built with commercial clarity, premium aesthetics, responsive experience and an SEO foundation ready to grow with Google, campaigns, WhatsApp and automation.",
       suffix: "Tailored · clear · ready to grow",
       items: [
         {
@@ -932,29 +947,44 @@ export const siteCopy = {
     },
     faq: {
       eyebrow: "FAQ",
-      title: "Common questions before quoting a website",
+      title: "FAQ about web design in Panama",
       description:
-        "Quick answers for businesses evaluating a landing page, corporate website, online store or digital system.",
+        "Quick answers for businesses evaluating a landing page, corporate website, online store, initial SEO or digital system.",
       items: [
         {
           question: "Does LulabTech build websites in Panama?",
           answer:
-            "Yes. We work on websites, landing pages, online stores and digital systems for businesses that need a more professional presence and a clear contact path."
+            "Yes. LulabTech designs websites in Panama, landing pages, online stores and digital systems for companies, personal brands and professional services that need a stronger presence and a clear contact path."
         },
         {
           question: "Will the website be prepared for Google?",
           answer:
-            "The foundation is organized with structure, copy, metadata and performance. It can then scale with internal pages, SEO content and continuous optimization."
+            "The foundation is organized with semantic structure, search-oriented copy, metadata, sitemap, robots, structured data and an architecture prepared to grow with internal pages and SEO content."
         },
         {
           question: "Can WhatsApp and forms be connected?",
           answer:
-            "Yes. The website can include WhatsApp buttons, quote forms, social links, email paths and conversion-focused contact routes."
+            "Yes. The website can include WhatsApp buttons, quote forms, social links, email and contact journeys designed to turn visitors into real opportunities."
         },
         {
           question: "Do you only build landing pages or also systems?",
           answer:
-            "We work from landing pages and corporate websites to online stores, booking systems, inventory platforms, admin dashboards and automations."
+            "We work from landing pages and corporate websites to online stores, booking systems, inventory platforms, admin dashboards, automations and custom software."
+        },
+        {
+          question: "What type of businesses can work with LulabTech?",
+          answer:
+            "We can work with law firms, restaurants, clinics, academies, logistics companies, real estate businesses, service providers, stores and brands that need a stronger digital presence."
+        },
+        {
+          question: "Can a landing page be used for Google Ads or Meta Ads campaigns?",
+          answer:
+            "Yes. A well-structured landing page helps present a specific offer, organize the message, connect WhatsApp or forms and measure opportunities generated by campaigns more clearly."
+        },
+        {
+          question: "Can you improve an existing website?",
+          answer:
+            "Yes. We can redesign, organize content, improve visual structure, strengthen initial SEO, optimize contact paths and prepare the website for a more serious growth stage."
         }
       ]
     },
@@ -1046,7 +1076,7 @@ export const siteCopy = {
       title:
         "Premium digital solutions for brands that want to look stronger and convert better.",
       description:
-        "Landing pages, corporate websites, online stores and custom software with more refined, clearer and more commercial execution.",
+        "Web design in Panama, landing pages, corporate websites, online stores and custom software with polished visuals, commercial structure and SEO foundation.",
       navigation: "Navigation",
       contact: "Contact",
       email: "Email",
