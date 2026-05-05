@@ -57,10 +57,10 @@ export const siteCopy = {
   es: {
     navigation: {
       items: [
-        { label: "Proyectos", href: "#proyectos" },
-        { label: "Servicios", href: "#servicios" },
-        { label: "Por qué LulabTech", href: "#por-que-lulabtech" },
-        { label: "Proceso", href: "#proceso" }
+        { label: "Proyectos", href: "/proyectos" },
+        { label: "Servicios", href: "/#servicios" },
+        { label: "Soluciones", href: "/#soluciones" },
+        { label: "Proceso", href: "/#proceso" }
       ],
       whatsapp: "WhatsApp",
       quote: "Solicitar cotización",
@@ -98,11 +98,11 @@ export const siteCopy = {
             "Estructura, copy y metadata preparados para escalar con Google y contenido local."
         }
       ],
-      previewWindow: "Estructura limpia",
+      previewWindow: "Sitio web profesional",
       previewBadge: "LulabTech",
-      previewTitle: "Una web clara, premium y lista para captar oportunidades.",
+      previewTitle: "Presencia digital clara, moderna y preparada para captar clientes.",
       previewDescription:
-        "Hero más limpio, mensaje directo y una estructura pensada para diseño web en Panamá, captación por WhatsApp, SEO local y campañas digitales.",
+        "Una estructura visual limpia para explicar tus servicios, conectar WhatsApp, reforzar confianza y preparar la base SEO local en Panamá.",
       sidePreviewAlt: "Vista previa de proyecto digital desarrollado por LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Captación" },
@@ -165,13 +165,13 @@ export const siteCopy = {
           id: "landing",
           label: "Landing Pages",
           description:
-            "Landing pages diseñadas para presentar valor con claridad, elevar percepción y empujar la conversión.",
+            "Landing pages reales para servicios, campañas, turismo, salud, educación y negocios que necesitan captar consultas.",
           items: [
             {
               title: "Cardio Kids & English",
               subtitle: "Landing educativa",
               description:
-                "Página de captación para explicar clases, beneficios y contacto directo con una presentación más clara.",
+                "Página de captación para explicar clases, beneficios y contacto directo con una presentación clara y responsive.",
               image: "/projects/landing/landing-01.png"
             },
             {
@@ -201,7 +201,7 @@ export const siteCopy = {
           id: "corporate",
           label: "Webs Corporativas",
           description:
-            "Webs corporativas enfocadas en autoridad, estructura comercial y una presencia digital más sólida.",
+            "Webs corporativas enfocadas en autoridad, estructura comercial y una presencia digital más sólida para empresas.",
           items: [
             {
               title: "Alcira Trigueros",
@@ -218,10 +218,10 @@ export const siteCopy = {
               image: "/projects/Corporate/corporate-02.png"
             },
             {
-              title: "NOVA Shipping Services",
-              subtitle: "Portal logístico",
+              title: "Solarled",
+              subtitle: "Web de energía solar",
               description:
-                "Solución digital para organizar información, clientes, envíos y comunicación operativa de forma más clara.",
+                "Página comercial para explicar servicios solares, certificaciones, beneficios y contacto directo.",
               image: "/projects/Corporate/corporate-03.png"
             },
             {
@@ -234,73 +234,37 @@ export const siteCopy = {
           ]
         },
         {
-          id: "ecommerce",
-          label: "Tiendas Online",
-          description:
-            "Tiendas online con mejor experiencia visual, recorrido de compra más claro y enfoque comercial.",
-          items: [
-            {
-              title: "Catálogo comercial",
-              subtitle: "Tienda online",
-              description:
-                "Diseño para mostrar productos con mejor orden, navegación clara y enfoque en conversión.",
-              image: "/projects/ecommerce/ecommerce-01.png"
-            },
-            {
-              title: "Experiencia de producto",
-              subtitle: "UX de compra",
-              description:
-                "Interfaz pensada para que el usuario explore categorías, compare productos y avance con menos fricción.",
-              image: "/projects/ecommerce/ecommerce-02.png"
-            },
-            {
-              title: "Catálogo escalable",
-              subtitle: "Presentación comercial",
-              description:
-                "Base visual para marcas que necesitan ordenar inventario, destacar productos y crecer por etapas.",
-              image: "/projects/ecommerce/ecommerce-03.png"
-            },
-            {
-              title: "Vitrina digital",
-              subtitle: "Recorrido comercial",
-              description:
-                "Diseño enfocado en valor percibido, confianza y una ruta de compra o consulta más directa.",
-              image: "/projects/ecommerce/ecommerce-04.png"
-            }
-          ]
-        },
-        {
           id: "software",
-          label: "Software a la Medida",
+          label: "Software y Portales",
           description:
-            "Software a la medida con interfaces modernas, organización inteligente y sensación profesional.",
+            "Sistemas a medida para casilleros, restaurantes, reservas, inventarios, reportes y operaciones internas.",
           items: [
             {
-              title: "Panel de operaciones",
-              subtitle: "Software a medida",
+              title: "NOVA Shipping Services",
+              subtitle: "Software para casilleros",
               description:
-                "Interfaz para centralizar procesos internos, controlar información y operar con más orden.",
+                "Portal para organizar clientes, casilleros, envíos, contenedores, estados, comprobantes y operación logística.",
               image: "/projects/software/software-01.png"
             },
             {
-              title: "Sistema empresarial",
-              subtitle: "Gestión interna",
+              title: "Transformación 360",
+              subtitle: "Sistema de reservas",
               description:
-                "Plataforma para ordenar datos, métricas, usuarios y flujos de trabajo en un solo lugar.",
+                "Sistema para servicios, disponibilidad, solicitudes, confirmaciones, estados y panel administrativo.",
               image: "/projects/software/software-02.png"
             },
             {
-              title: "Plataforma digital",
-              subtitle: "Control visual",
+              title: "Los Cholos Cafetería",
+              subtitle: "Software para restaurante",
               description:
-                "Arquitectura enfocada en productividad, navegación simple y experiencia profesional para equipos.",
+                "Solución interna para ordenar ventas, datos operativos, reportes y control del negocio.",
               image: "/projects/software/software-03.png"
             },
             {
-              title: "Software de gestión",
-              subtitle: "Escala y control",
+              title: "Biofest Reservas",
+              subtitle: "Gestión de reservas",
               description:
-                "Base limpia para administrar módulos, reportes, estados y procesos con una experiencia más sólida.",
+                "Flujo digital para solicitudes, comprobantes, comunicación con visitantes y administración de reservas.",
               image: "/projects/software/software-04.png"
             }
           ]
@@ -323,27 +287,27 @@ export const siteCopy = {
         {
           title: "Landing pages",
           description:
-            "Páginas de alto impacto para campañas, captación de leads, WhatsApp y servicios profesionales."
+            "Páginas de captación para campañas, WhatsApp, formularios, servicios profesionales y ofertas específicas."
         },
         {
           title: "Webs corporativas",
           description:
-            "Páginas web profesionales para empresas en Panamá que necesitan autoridad, confianza y claridad comercial."
+            "Páginas web para empresas en Panamá con secciones de servicios, equipo, respaldo, proyectos y contacto."
+        },
+        {
+          title: "Páginas informativas",
+          description:
+            "Sitios claros para abogados, clínicas, restaurantes, academias y negocios que necesitan explicar qué ofrecen."
         },
         {
           title: "Tiendas online",
           description:
-            "E-commerce con catálogo, experiencia de compra, presentación de productos y enfoque en conversión."
+            "Ecommerce y catálogos digitales con productos, categorías, carrito, pagos o consulta directa por WhatsApp."
         },
         {
           title: "Software a la medida",
           description:
-            "Sistemas digitales, paneles administrativos, reservas, inventarios y herramientas hechas según procesos reales."
-        },
-        {
-          title: "Automatizaciones",
-          description:
-            "Flujos y soluciones digitales para ahorrar tiempo y mejorar operaciones."
+            "Sistemas para casilleros, restaurantes, reservas, inventarios, reportes, usuarios y procesos internos."
         }
       ]
     },
@@ -578,10 +542,10 @@ export const siteCopy = {
   en: {
     navigation: {
       items: [
-        { label: "Projects", href: "#proyectos" },
-        { label: "Services", href: "#servicios" },
-        { label: "Why LulabTech", href: "#por-que-lulabtech" },
-        { label: "Process", href: "#proceso" }
+        { label: "Projects", href: "/proyectos" },
+        { label: "Services", href: "/#servicios" },
+        { label: "Solutions", href: "/#soluciones" },
+        { label: "Process", href: "/#proceso" }
       ],
       whatsapp: "WhatsApp",
       quote: "Request a quote",
@@ -619,11 +583,11 @@ export const siteCopy = {
             "Structure, copy and metadata prepared to scale through Google and local content."
         }
       ],
-      previewWindow: "Clean structure",
+      previewWindow: "Professional website",
       previewBadge: "LulabTech",
-      previewTitle: "A clear, premium website ready to capture opportunities.",
+      previewTitle: "A clear, modern digital presence prepared to capture clients.",
       previewDescription:
-        "A cleaner hero, direct message and structure designed for web design in Panama, WhatsApp lead capture, local SEO and digital campaigns.",
+        "A clean visual structure to explain services, connect WhatsApp, strengthen trust and prepare the local SEO base in Panama.",
       sidePreviewAlt: "Preview of a digital project built by LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Lead capture" },
@@ -686,13 +650,13 @@ export const siteCopy = {
           id: "landing",
           label: "Landing Pages",
           description:
-            "Landing pages built to present value clearly, elevate perception and push conversion.",
+            "Real landing pages for services, campaigns, tourism, health, education and businesses that need to capture inquiries.",
           items: [
             {
               title: "Cardio Kids & English",
               subtitle: "Educational landing",
               description:
-                "A lead capture page to explain classes, benefits and direct contact with a clearer presentation.",
+                "Lead capture page to explain classes, benefits and direct contact with a clear responsive presentation.",
               image: "/projects/landing/landing-01.png"
             },
             {
@@ -710,10 +674,10 @@ export const siteCopy = {
               image: "/projects/landing/landing-03.png"
             },
             {
-              title: "Biofest Panama",
+              title: "Biofest Panamá",
               subtitle: "Tourism landing",
               description:
-                "Visual experience for tours, locations, reservations and bilingual communication in an organized flow.",
+                "Visual experience to present tours, locations, bookings and bilingual communication in an organized way.",
               image: "/projects/landing/landing-04.png"
             }
           ]
@@ -722,7 +686,7 @@ export const siteCopy = {
           id: "corporate",
           label: "Corporate Websites",
           description:
-            "Corporate websites focused on authority, commercial structure and a stronger digital presence.",
+            "Corporate websites focused on authority, commercial structure and a stronger digital presence for companies.",
           items: [
             {
               title: "Alcira Trigueros",
@@ -735,93 +699,57 @@ export const siteCopy = {
               title: "Quality Techno Services",
               subtitle: "Industrial website",
               description:
-                "Corporate site to present technical services, professional backing and clear contact channels.",
+                "Corporate website to present technical services, professional proof and clear contact channels.",
               image: "/projects/Corporate/corporate-02.png"
             },
             {
-              title: "NOVA Shipping Services",
-              subtitle: "Logistics portal",
+              title: "Solarled",
+              subtitle: "Solar energy website",
               description:
-                "Digital solution to organize information, clients, shipments and operational communication more clearly.",
+                "Commercial page to explain solar services, certifications, benefits and direct contact.",
               image: "/projects/Corporate/corporate-03.png"
             },
             {
               title: "ALAF International Academy",
               subtitle: "Educational website",
               description:
-                "Structure for an academy, programs, institutional communication and responsive student experience.",
+                "Structure for academy programs, institutional communication and responsive student experience.",
               image: "/projects/Corporate/corporate-04.png"
             }
           ]
         },
         {
-          id: "ecommerce",
-          label: "Online Stores",
-          description:
-            "Online stores with a stronger visual experience, clearer buying journey and commercial focus.",
-          items: [
-            {
-              title: "Commercial catalog",
-              subtitle: "Online store",
-              description:
-                "Design to display products with better order, clear navigation and conversion focus.",
-              image: "/projects/ecommerce/ecommerce-01.png"
-            },
-            {
-              title: "Product experience",
-              subtitle: "Shopping UX",
-              description:
-                "Interface designed so users can explore categories, compare products and move forward with less friction.",
-              image: "/projects/ecommerce/ecommerce-02.png"
-            },
-            {
-              title: "Scalable catalog",
-              subtitle: "Commercial presentation",
-              description:
-                "Visual base for brands that need to organize inventory, highlight products and grow in stages.",
-              image: "/projects/ecommerce/ecommerce-03.png"
-            },
-            {
-              title: "Digital storefront",
-              subtitle: "Commercial journey",
-              description:
-                "Design focused on perceived value, trust and a more direct buying or inquiry path.",
-              image: "/projects/ecommerce/ecommerce-04.png"
-            }
-          ]
-        },
-        {
           id: "software",
-          label: "Custom Software",
+          label: "Software and Portals",
           description:
-            "Custom software with modern interfaces, smart organization and a professional feel.",
+            "Custom systems for lockers, restaurants, bookings, inventories, reports and internal operations.",
           items: [
             {
-              title: "Operations panel",
-              subtitle: "Custom software",
+              title: "NOVA Shipping Services",
+              subtitle: "Locker software",
               description:
-                "Interface to centralize internal processes, control information and operate with more order.",
+                "Portal to organize clients, lockers, shipments, containers, statuses, receipts and logistics operations.",
               image: "/projects/software/software-01.png"
             },
             {
-              title: "Enterprise system",
-              subtitle: "Internal management",
+              title: "Transformación 360",
+              subtitle: "Booking system",
               description:
-                "Platform to organize data, metrics, users and workflows in one place.",
+                "System for services, availability, requests, confirmations, statuses and an admin panel.",
               image: "/projects/software/software-02.png"
             },
             {
-              title: "Digital platform",
-              subtitle: "Visual control",
+              title: "Los Cholos Cafetería",
+              subtitle: "Restaurant software",
               description:
-                "Architecture focused on productivity, simple navigation and a professional experience for teams.",
+                "Internal solution to organize sales, operational data, reports and business control.",
               image: "/projects/software/software-03.png"
             },
             {
-              title: "Management software",
-              subtitle: "Scale and control",
+              title: "Biofest Bookings",
+              subtitle: "Booking management",
               description:
-                "Clean base to manage modules, reports, statuses and processes with a stronger experience.",
+                "Digital flow for requests, receipts, visitor communication and booking administration.",
               image: "/projects/software/software-04.png"
             }
           ]
@@ -844,27 +772,27 @@ export const siteCopy = {
         {
           title: "Landing pages",
           description:
-            "High-impact pages for campaigns, lead generation and launches."
+            "Lead capture pages for campaigns, WhatsApp, forms, professional services and specific offers."
         },
         {
           title: "Corporate websites",
           description:
-            "Professional sites that communicate authority, trust and commercial clarity."
+            "Websites for companies in Panama with services, team, proof, projects and contact sections."
+        },
+        {
+          title: "Informational pages",
+          description:
+            "Clear websites for law firms, clinics, restaurants, academies and businesses that need to explain what they offer."
         },
         {
           title: "Online stores",
           description:
-            "E-commerce focused on conversion, shopping experience and scalability."
+            "Ecommerce and digital catalogs with products, categories, cart, payments or direct WhatsApp inquiries."
         },
         {
           title: "Custom software",
           description:
-            "Digital tools built around real processes, needs and business goals."
-        },
-        {
-          title: "Automations",
-          description:
-            "Flows and digital solutions designed to save time and improve operations."
+            "Systems for lockers, restaurants, bookings, inventories, reports, users and internal processes."
         }
       ]
     },

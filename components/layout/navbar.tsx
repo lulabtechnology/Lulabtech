@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const quoteHref = `#${NAV_ANCHORS.quote}`;
+  const quoteHref = `/#${NAV_ANCHORS.quote}`;
   const { copy } = useSiteLanguage();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function Navbar() {
               "border-slate-200/80 bg-white/85 px-4 shadow-elevated backdrop-blur-xl"
           )}
         >
-          <a href="#top" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <div className="relative h-11 w-[150px] sm:h-12 sm:w-[165px]">
               <Image
                 src="/brand/lulabtech-logo.png"

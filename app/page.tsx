@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { CredibilityStrip } from "@/components/sections/credibility-strip";
 import { ProjectShowcaseSection } from "@/components/sections/project-showcase";
 import { ServicesSection } from "@/components/sections/services";
+import { SolutionUseCasesSection } from "@/components/sections/solution-use-cases";
 import { WhyLulabTechSection } from "@/components/sections/why-lulabtech";
 import { ProcessSection } from "@/components/sections/process";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -26,6 +27,7 @@ export default function HomePage() {
           <CredibilityStrip />
           <ProjectShowcaseSection />
           <ServicesSection />
+          <SolutionUseCasesSection />
           <WhyLulabTechSection />
           <ProcessSection />
           <FaqSection />

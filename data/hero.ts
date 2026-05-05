@@ -1,8 +1,8 @@
 export const heroContent = {
-  eyebrow: "Experiencias digitales premium",
-  title: "Soluciones digitales que elevan tu marca y convierten mejor.",
+  eyebrow: "Agencia de diseño web en Panamá",
+  title: "Diseño de páginas web en Panamá para negocios que quieren captar más clientes.",
   description:
-    "Diseñamos y desarrollamos landing pages, webs corporativas, tiendas online y software a la medida con una dirección visual más premium, claridad comercial y ejecución técnica seria.",
+    "Creamos landing pages, webs corporativas, tiendas online y software a medida con diseño premium, estructura comercial, WhatsApp y base SEO.",
   primaryCta: "Solicitar cotización",
   secondaryCta: "Hablar por WhatsApp"
 };

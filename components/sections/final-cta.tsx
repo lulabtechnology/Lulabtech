@@ -36,7 +36,7 @@ export function FinalCtaSection() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`#${NAV_ANCHORS.quote}`} size="lg">
+              <ButtonLink href={`/#${NAV_ANCHORS.quote}`} size="lg">
                 {cta.primaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>

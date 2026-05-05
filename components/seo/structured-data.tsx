@@ -7,33 +7,39 @@ const baseUrl =
 const services = [
   {
     name: "Diseño de páginas web en Panamá",
+    url: `${baseUrl}/diseno-web-panama`,
     description:
       "Diseño y desarrollo de páginas web profesionales para empresas, marcas personales y negocios de servicios en Panamá."
   },
   {
     name: "Landing pages en Panamá",
+    url: `${baseUrl}/landing-pages-panama`,
     description:
       "Landing pages orientadas a captación de leads, campañas digitales, WhatsApp y formularios de cotización."
   },
   {
-    name: "Páginas web corporativas",
+    name: "Páginas web para empresas en Panamá",
+    url: `${baseUrl}/paginas-web-empresas-panama`,
     description:
       "Webs corporativas con estructura clara, diseño premium, servicios, confianza y rutas de contacto."
   },
   {
-    name: "Tiendas online",
+    name: "Tiendas online en Panamá",
+    url: `${baseUrl}/tiendas-online-panama`,
     description:
-      "Tiendas online y catálogos digitales con experiencia responsive, presentación de productos y enfoque comercial."
+      "Tiendas online y catálogos digitales con experiencia responsive, presentación de productos, carrito, pagos o WhatsApp."
   },
   {
     name: "Software a medida en Panamá",
+    url: `${baseUrl}/software-a-medida-panama`,
     description:
-      "Sistemas web, paneles administrativos, reservas, inventarios, reportes y automatizaciones para procesos internos."
+      "Sistemas web, paneles administrativos, reservas, inventarios, reportes, software para casilleros y restaurantes."
   },
   {
-    name: "SEO inicial y campañas digitales",
+    name: "Configuración de Google Ads en Panamá",
+    url: `${baseUrl}/google-ads-panama`,
     description:
-      "Base SEO, estructura técnica, metadata, formularios, WhatsApp y preparación para Google Ads o Meta Ads."
+      "Configuración inicial de campañas de Google Ads, palabras clave, anuncios, ubicación y conexión con landing pages."
   }
 ];
 
@@ -78,12 +84,18 @@ const faqs = [
 const seoTopics = [
   "diseño de páginas web en Panamá",
   "desarrollo web Panamá",
+  "páginas informativas Panamá",
+  "páginas para abogados Panamá",
   "landing pages Panamá",
-  "páginas web corporativas",
+  "páginas web corporativas Panamá",
   "tiendas online Panamá",
+  "ecommerce Panamá",
   "software a medida Panamá",
+  "software para casilleros",
+  "software para restaurantes",
+  "sistemas de reservas",
   "SEO inicial",
-  "Google Ads",
+  "Google Ads Panamá",
   "Meta Ads",
   "formularios de cotización",
   "WhatsApp para negocios"
@@ -204,6 +216,7 @@ export function StructuredData() {
         name: service.name,
         description: service.description,
         serviceType: service.name,
+        url: service.url,
         areaServed: "Panamá",
         audience: {
           "@type": "BusinessAudience",

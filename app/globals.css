@@ -12,7 +12,16 @@
 }
 
 html {
+  max-width: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 body {

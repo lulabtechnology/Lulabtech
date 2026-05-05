@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   CheckCircle2,
-  Code2,
   LayoutTemplate,
   MonitorSmartphone,
   SearchCheck,
@@ -21,8 +20,8 @@ import { FloatingElements } from "@/components/motion/floating-elements";
 import { Reveal } from "@/components/motion/reveal";
 import { useSiteLanguage } from "@/components/providers/site-language";
 
-const cardIcons = [CheckCircle2, MonitorSmartphone, SearchCheck] as const;
-const serviceIcons = [LayoutTemplate, MonitorSmartphone, ShoppingBag, Workflow] as const;
+const cardIcons = [LayoutTemplate, MonitorSmartphone, ShoppingBag, Workflow] as const;
+const trustIcons = [Sparkles, CheckCircle2, SearchCheck] as const;
 
 export function HeroSection() {
   const { copy } = useSiteLanguage();
@@ -42,7 +41,7 @@ export function HeroSection() {
           </Reveal>
 
           <Reveal delay={0.06}>
-            <h1 className="mt-5 balance text-3xl font-bold leading-[1.05] sm:text-5xl lg:text-[4.25rem]">
+            <h1 className="mt-5 text-balance text-3xl font-bold leading-[1.05] text-ink-900 sm:text-5xl lg:text-[4.25rem]">
               {hero.titleStart} <span className="text-gradient-brand">{hero.titleGradient}</span>{" "}
               {hero.titleEnd}
             </h1>
@@ -56,7 +55,7 @@ export function HeroSection() {
 
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`#${NAV_ANCHORS.quote}`} size="lg">
+              <ButtonLink href={`/#${NAV_ANCHORS.quote}`} size="lg">
                 {hero.primaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
@@ -89,7 +88,7 @@ export function HeroSection() {
           <Reveal delay={0.3}>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {hero.cards.map((card, index) => {
-                const Icon = cardIcons[index];
+                const Icon = trustIcons[index % trustIcons.length];
 
                 return (
                   <div
@@ -124,21 +123,21 @@ export function HeroSection() {
                 </span>
               </div>
 
-              <div className="mt-5 rounded-[30px] border border-slate-900/10 bg-gradient-to-br from-[#06122A] via-[#08234C] to-[#0E76FF] p-5 text-white shadow-soft sm:p-6">
-                <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="max-w-sm">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-100">
+              <div className="mt-5 rounded-[30px] border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-brand-50/70 p-5 shadow-soft sm:p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-700">
                       {hero.previewBadge}
                     </p>
-                    <h2 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                    <h2 className="mt-3 max-w-sm text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
                       {hero.previewTitle}
                     </h2>
-                    <p className="mt-4 text-sm leading-6 text-white/80">
+                    <p className="mt-4 max-w-sm text-sm leading-6 text-ink-600">
                       {hero.previewDescription}
                     </p>
                   </div>
 
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-white p-3 shadow-soft">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-brand-100 bg-white p-2 shadow-soft sm:h-16 sm:w-16">
                     <Image
                       src="/brand/lulabtech-mark.png"
                       alt="LulabTech"
@@ -152,18 +151,18 @@ export function HeroSection() {
 
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {hero.previewCards.map((card, index) => {
-                    const Icon = serviceIcons[index % serviceIcons.length];
+                    const Icon = cardIcons[index % cardIcons.length];
 
                     return (
                       <div
                         key={card.eyebrow}
-                        className="rounded-[20px] border border-white/15 bg-white/[0.08] p-4 backdrop-blur"
+                        className="rounded-[20px] border border-slate-200 bg-white p-4 shadow-soft"
                       >
-                        <Icon className="h-4 w-4 text-accent-100" />
-                        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60 sm:text-[11px]">
+                        <Icon className="h-4 w-4 text-brand-600" />
+                        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-400 sm:text-[11px]">
                           {card.eyebrow}
                         </p>
-                        <p className="mt-1 text-sm font-semibold text-white">{card.value}</p>
+                        <p className="mt-1 text-sm font-semibold text-ink-900">{card.value}</p>
                       </div>
                     );
                   })}
@@ -180,7 +179,7 @@ export function HeroSection() {
                       {index === 0 ? (
                         <Sparkles className="h-4 w-4" />
                       ) : index === 1 ? (
-                        <Code2 className="h-4 w-4" />
+                        <CheckCircle2 className="h-4 w-4" />
                       ) : (
                         <SearchCheck className="h-4 w-4" />
                       )}

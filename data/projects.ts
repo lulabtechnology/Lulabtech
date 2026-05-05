@@ -17,31 +17,31 @@ export const projectCategories: ProjectCategory[] = [
     label: "Landing Pages",
     items: [
       {
-        title: "Landing de captación",
-        subtitle: "Conversión premium",
+        title: "Cardio Kids & English",
+        subtitle: "Landing educativa",
         description:
-          "Diseño enfocado en claridad de oferta, autoridad visual y contacto directo.",
+          "Página de captación para explicar clases, beneficios y contacto directo con una presentación clara.",
         image: "/projects/landing/landing-01.png"
       },
       {
-        title: "Landing comercial",
-        subtitle: "Campaña digital",
+        title: "Krasa Dermoestudio",
+        subtitle: "Landing estética",
         description:
-          "Estructura pensada para presentar valor rápido y mover al usuario a cotizar.",
+          "Diseño comercial para presentar servicios, generar confianza visual y facilitar solicitudes de cita.",
         image: "/projects/landing/landing-02.png"
       },
       {
-        title: "Landing de marca",
-        subtitle: "Impacto visual",
+        title: "Chabonnet Comercial",
+        subtitle: "Landing inmobiliaria",
         description:
-          "Composición premium con mejor jerarquía, narrativa y presencia digital.",
+          "Estructura de alto impacto para explicar la oferta, recibir consultas y dirigir al visitante al contacto.",
         image: "/projects/landing/landing-03.png"
       },
       {
-        title: "Landing estratégica",
-        subtitle: "CTA claro",
+        title: "Biofest Panamá",
+        subtitle: "Landing turística",
         description:
-          "Diseñada para elevar percepción y facilitar una acción comercial inmediata.",
+          "Experiencia visual para presentar tours, locaciones, reservas y comunicación bilingüe de forma ordenada.",
         image: "/projects/landing/landing-04.png"
       }
     ]
@@ -51,99 +51,65 @@ export const projectCategories: ProjectCategory[] = [
     label: "Webs Corporativas",
     items: [
       {
-        title: "Web corporativa premium",
-        subtitle: "Autoridad de marca",
+        title: "Alcira Trigueros",
+        subtitle: "Web legal inmobiliaria",
         description:
-          "Sitio pensado para transmitir seriedad, confianza y mejor presentación del negocio.",
+          "Presencia profesional para comunicar servicios legales e inmobiliarios con tono serio y elegante.",
         image: "/projects/Corporate/corporate-01.png"
       },
       {
-        title: "Web institucional",
-        subtitle: "Comunicación clara",
+        title: "Quality Techno Services",
+        subtitle: "Web industrial",
         description:
-          "Estructura limpia para explicar mejor servicios, propuesta y respaldo profesional.",
+          "Sitio corporativo para presentar servicios técnicos, respaldo profesional y canales de contacto claros.",
         image: "/projects/Corporate/corporate-02.png"
       },
       {
-        title: "Web empresarial",
-        subtitle: "Presencia sólida",
+        title: "Solarled",
+        subtitle: "Web de energía solar",
         description:
-          "Diseño ordenado con enfoque en reputación, claridad y experiencia premium.",
+          "Página comercial para explicar servicios solares, certificaciones, beneficios y contacto directo.",
         image: "/projects/Corporate/corporate-03.png"
       },
       {
-        title: "Web de firma",
-        subtitle: "Confianza visual",
+        title: "ALAF International Academy",
+        subtitle: "Web educativa",
         description:
-          "Composición seria y elegante para reforzar credibilidad y percepción de nivel.",
+          "Estructura para academia, programas, comunicación institucional y experiencia responsive para estudiantes.",
         image: "/projects/Corporate/corporate-04.png"
       }
     ]
   },
   {
-    id: "ecommerce",
-    label: "Tiendas Online",
-    items: [
-      {
-        title: "E-commerce premium",
-        subtitle: "Venta digital",
-        description:
-          "Diseño orientado a catálogo, experiencia de compra y presentación comercial.",
-        image: "/projects/ecommerce/ecommerce-01.png"
-      },
-      {
-        title: "Tienda online moderna",
-        subtitle: "UX de compra",
-        description:
-          "Layout limpio pensado para navegación fluida, productos claros y mejor conversión.",
-        image: "/projects/ecommerce/ecommerce-02.png"
-      },
-      {
-        title: "Catálogo e-commerce",
-        subtitle: "Escalabilidad",
-        description:
-          "Experiencia visual premium para marcas que necesitan vender con más orden y presencia.",
-        image: "/projects/ecommerce/ecommerce-03.png"
-      },
-      {
-        title: "Storefront digital",
-        subtitle: "Performance comercial",
-        description:
-          "Interfaz enfocada en valor percibido, confianza y recorrido de compra más claro.",
-        image: "/projects/ecommerce/ecommerce-04.png"
-      }
-    ]
-  },
-  {
     id: "software",
-    label: "Software a la Medida",
+    label: "Software y Portales",
     items: [
       {
-        title: "Dashboard operativo",
-        subtitle: "Solución personalizada",
+        title: "NOVA Shipping Services",
+        subtitle: "Software para casilleros",
         description:
-          "Interfaz diseñada para procesos internos, control visual y operación más eficiente.",
+          "Portal para organizar clientes, casilleros, envíos, contenedores, estados y comprobantes.",
         image: "/projects/software/software-01.png"
       },
       {
-        title: "Sistema empresarial",
-        subtitle: "Procesos optimizados",
+        title: "Transformación 360",
+        subtitle: "Sistema de reservas",
         description:
-          "Diseño moderno para centralizar información, métricas y flujo de trabajo.",
+          "Sistema para servicios, disponibilidad, solicitudes, confirmaciones, estados y panel administrativo.",
         image: "/projects/software/software-02.png"
       },
       {
-        title: "Plataforma digital",
-        subtitle: "Operación clara",
+        title: "Los Cholos Cafetería",
+        subtitle: "Software para restaurante",
         description:
-          "Arquitectura visual enfocada en orden, productividad y experiencia profesional.",
+          "Solución interna para ordenar ventas, datos operativos, reportes y control del negocio.",
         image: "/projects/software/software-03.png"
       },
       {
-        title: "Software de gestión",
-        subtitle: "Escala y control",
+        title: "Biofest Reservas",
+        subtitle: "Gestión de reservas",
         description:
-          "Composición premium para mostrar un sistema serio, limpio y listo para crecer.",
+          "Flujo digital para solicitudes, comprobantes, comunicación con visitantes y administración de reservas.",
         image: "/projects/software/software-04.png"
       }
     ]

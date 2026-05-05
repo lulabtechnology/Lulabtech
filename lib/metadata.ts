@@ -5,10 +5,10 @@ const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
-const title = `Diseño de Páginas Web en Panamá | Landing Pages, Tiendas Online y Software | ${SITE_NAME}`;
+const title = `Diseño de páginas web en Panamá | ${SITE_NAME}`;
 
 const description =
-  "Agencia de diseño web en Panamá. Creamos páginas web profesionales, landing pages, tiendas online y software a medida con diseño premium, SEO inicial y conexión a WhatsApp.";
+  "Creamos páginas web, landing pages, tiendas online y software a medida en Panamá para negocios que quieren verse profesionales, captar clientes y vender más.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -21,6 +21,8 @@ export const siteMetadata: Metadata = {
     "diseño de páginas web en Panamá",
     "páginas web en Panamá",
     "páginas web Panamá",
+    "páginas informativas Panamá",
+    "páginas para abogados Panamá",
     "diseño web Panamá",
     "agencia de diseño web Panamá",
     "desarrollo de páginas web Panamá",
@@ -31,6 +33,8 @@ export const siteMetadata: Metadata = {
     "ecommerce Panamá",
     "software a medida Panamá",
     "sistemas web Panamá",
+    "software para casilleros Panamá",
+    "software para restaurantes Panamá",
     "SEO Panamá",
     "Google Ads Panamá",
     "agencia digital Panamá",
@@ -51,7 +55,7 @@ export const siteMetadata: Metadata = {
     locale: "es_PA",
     images: [
       {
-        url: "/og/og-cover.png?v=6",
+        url: "/og/og-cover.png?v=7",
         width: 1200,
         height: 630,
         alt: "LulabTech — Diseño de páginas web en Panamá"
@@ -62,7 +66,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og/og-cover.png?v=6"]
+    images: ["/og/og-cover.png?v=7"]
   },
   applicationName: SITE_NAME,
   category: "technology",
@@ -80,11 +84,11 @@ export const siteMetadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/brand/lulabtech-mark.png?v=6", type: "image/png", sizes: "1024x1024" },
-      { url: "/favicon.ico?v=6", sizes: "any" }
+      { url: "/brand/lulabtech-mark.png?v=7", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico?v=7", sizes: "any" }
     ],
-    shortcut: ["/favicon.ico?v=6"],
-    apple: [{ url: "/brand/lulabtech-mark.png?v=6", sizes: "180x180", type: "image/png" }]
+    shortcut: ["/favicon.ico?v=7"],
+    apple: [{ url: "/brand/lulabtech-mark.png?v=7", sizes: "180x180", type: "image/png" }]
   },
   other: {
     "geo.region": "PA",
