@@ -8,6 +8,7 @@ import { ProjectShowcaseSection } from "@/components/sections/project-showcase";
 import { ServicesSection } from "@/components/sections/services";
 import { WhyLulabTechSection } from "@/components/sections/why-lulabtech";
 import { ProcessSection } from "@/components/sections/process";
+import { FaqSection } from "@/components/sections/faq-section";
 import { FinalCtaSection } from "@/components/sections/final-cta";
 import { QuoteFormSection } from "@/components/sections/quote-form-section";
 import { SiteLanguageProvider } from "@/components/providers/site-language";
@@ -27,6 +28,7 @@ export default function HomePage() {
           <ServicesSection />
           <WhyLulabTechSection />
           <ProcessSection />
+          <FaqSection />
           <FinalCtaSection />
           <QuoteFormSection />
         </main>

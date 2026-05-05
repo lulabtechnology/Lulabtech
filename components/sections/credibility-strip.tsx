@@ -1,34 +1,46 @@
 "use client";
 
-import { GaugeCircle, ShieldCheck, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
-import { IconBox } from "@/components/ui/icon-box";
 import { useSiteLanguage } from "@/components/providers/site-language";
-
-const icons = [Sparkles, GaugeCircle, ShieldCheck] as const;
 
 export function CredibilityStrip() {
   const { copy } = useSiteLanguage();
+  const clients = copy.clients;
+  const marqueeImages = [...clients.images, ...clients.images];
 
   return (
-    <SectionShell className="py-10 md:py-12">
-      <Reveal className="rounded-[30px] border border-slate-200 bg-white p-5 shadow-soft sm:p-6">
-        <div className="grid gap-4 md:grid-cols-3">
-          {copy.credibility.map((item, index) => {
-            const Icon = icons[index];
+    <SectionShell className="overflow-hidden py-12 md:py-14">
+      <Reveal>
+        <div className="rounded-[34px] border border-slate-200 bg-white/90 p-5 shadow-soft sm:p-6">
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h2 className="text-xl font-semibold text-ink-900 sm:text-2xl">{clients.title}</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-slate-200 via-brand-100 to-transparent" />
+          </div>
 
-            return (
-              <div
-                key={item.title}
-                className="rounded-[24px] border border-slate-200 bg-slate-50/70 p-5"
-              >
-                <IconBox icon={Icon} />
-                <h2 className="mt-4 text-lg font-semibold text-ink-900">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-ink-600">{item.description}</p>
-              </div>
-            );
-          })}
+          <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50/70 py-4">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-slate-50 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-slate-50 to-transparent" />
+
+            <div className="client-marquee flex w-max gap-4 px-4">
+              {marqueeImages.map((image, index) => (
+                <div
+                  key={`${image}-${index}`}
+                  className="relative h-24 w-44 shrink-0 overflow-hidden rounded-[22px] border border-slate-200 bg-white shadow-soft sm:h-28 sm:w-56"
+                >
+                  <Image
+                    src={image}
+                    alt={`${clients.altPrefix} ${index + 1}`}
+                    fill
+                    sizes="224px"
+                    className="object-cover object-top"
+                  />
+                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </Reveal>
     </SectionShell>

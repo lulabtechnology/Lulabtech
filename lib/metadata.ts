@@ -5,10 +5,10 @@ const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
-const title = `${SITE_NAME} | Landing pages, webs premium, e-commerce y software a la medida`;
+const title = `Diseño de Páginas Web en Panamá | Landing Pages, Tiendas Online y Software | ${SITE_NAME}`;
 
 const description =
-  "LulabTech diseña y desarrolla landing pages, webs corporativas, tiendas online y software a la medida con enfoque premium, claridad comercial y alta conversión.";
+  "Agencia de diseño web en Panamá. Creamos landing pages, páginas web corporativas, tiendas online y software a medida con diseño premium, enfoque comercial y conexión a WhatsApp.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -18,15 +18,16 @@ export const siteMetadata: Metadata = {
   },
   description,
   keywords: [
-    "LulabTech",
+    "diseño de páginas web en Panamá",
+    "páginas web Panamá",
+    "diseño web Panamá",
+    "agencia de diseño web Panamá",
     "landing pages Panamá",
     "desarrollo web Panamá",
-    "web corporativa premium",
-    "tienda online",
-    "software a la medida",
-    "agencia digital",
-    "Next.js Panamá",
-    "diseño web premium"
+    "tiendas online Panamá",
+    "software a medida Panamá",
+    "agencia digital Panamá",
+    "LulabTech"
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -46,7 +47,7 @@ export const siteMetadata: Metadata = {
         url: "/og/og-cover.png",
         width: 1200,
         height: 630,
-        alt: "LulabTech — Soluciones digitales premium"
+        alt: "LulabTech — Diseño de páginas web en Panamá"
       }
     ]
   },
@@ -71,10 +72,10 @@ export const siteMetadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/brand/lulabtech-mark.png?v=4", type: "image/png", sizes: "1024x1024" },
-      { url: "/favicon.ico?v=4", sizes: "any" }
+      { url: "/brand/lulabtech-mark.png?v=5", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico?v=5", sizes: "any" }
     ],
-    shortcut: ["/favicon.ico?v=4"],
-    apple: [{ url: "/brand/lulabtech-mark.png?v=4", sizes: "180x180", type: "image/png" }]
+    shortcut: ["/favicon.ico?v=5"],
+    apple: [{ url: "/brand/lulabtech-mark.png?v=5", sizes: "180x180", type: "image/png" }]
   }
 };

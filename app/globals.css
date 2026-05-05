@@ -98,3 +98,27 @@ body {
     mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
   }
 }
+
+@keyframes client-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.client-marquee {
+  animation: client-marquee 34s linear infinite;
+}
+
+.client-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee {
+    animation: none;
+    transform: translateX(0);
+  }
+}

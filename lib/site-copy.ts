@@ -71,42 +71,43 @@ export const siteCopy = {
         "Soluciones digitales premium para marcas que quieren verse mejor y convertir más."
     },
     hero: {
-      eyebrow: "Experiencias digitales premium",
-      titleStart: "Soluciones digitales que se ven",
-      titleGradient: "premium",
-      titleEnd: "y convierten con intención.",
+      eyebrow: "Agencia de diseño web en Panamá",
+      titleStart: "Diseño de páginas web en Panamá",
+      titleGradient: "para marcas que quieren verse profesionales",
+      titleEnd: "y vender mejor.",
       description:
-        "Diseñamos y desarrollamos landing pages, webs corporativas, tiendas online y software a la medida con una dirección visual más premium, claridad comercial y ejecución técnica seria.",
+        "Creamos landing pages, páginas web corporativas, tiendas online y sistemas digitales con diseño premium, estructura comercial, enfoque responsive y una ruta clara para convertir visitantes en oportunidades reales.",
       primaryCta: "Solicitar cotización",
       secondaryCta: "Hablar por WhatsApp",
       badges: ["Landing pages", "Webs corporativas", "Tiendas online", "Software a medida"],
       cards: [
         {
-          title: "Tu oferta se entiende mejor",
+          title: "Diseño premium",
           description:
-            "El visitante comprende rápido qué haces, cómo ayudas y por qué vale la pena escribirte."
+            "Una presencia visual más seria, moderna y alineada con el nivel de tu marca."
         },
         {
-          title: "Tu marca se ve más sólida",
+          title: "Mobile primero",
           description:
-            "Una presencia visual más cuidada ayuda a transmitir confianza desde el primer vistazo."
+            "Experiencia cuidada para que la web se vea bien desde el primer scroll."
         },
         {
-          title: "Contactarte se vuelve más fácil",
+          title: "Base para SEO",
           description:
-            "WhatsApp, formularios y llamados claros para que pedir información sea natural y directo."
+            "Estructura preparada para crecer con contenido, Google y campañas digitales."
         }
       ],
-      previewWindow: "Muestra visual",
-      previewBadge: "Sitio premium",
-      previewTitle: "Una presencia más seria, clara y lista para convertir.",
+      previewWindow: "Portafolio visual",
+      previewBadge: "Diseño web premium",
+      previewTitle: "Webs modernas, claras y listas para convertir.",
       previewDescription:
-        "Así se ve una web pensada para transmitir confianza, explicar mejor la oferta y llevar al visitante al contacto.",
+        "Una composición más visual para mostrar proyectos, confianza y dirección digital desde el primer vistazo.",
+      sidePreviewAlt: "Vista previa de proyecto digital desarrollado por LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Captación" },
         { eyebrow: "Web corporativa", value: "Autoridad" },
         { eyebrow: "Tienda online", value: "Venta digital" },
-        { eyebrow: "Software", value: "Operación clara" }
+        { eyebrow: "Software", value: "Operación" }
       ],
       metrics: [
         { label: "Imagen de marca", value: "Más sólida y mejor presentada" },
@@ -135,12 +136,27 @@ export const siteCopy = {
           "Visual limpio, estructura premium y mejor claridad para marcas que quieren verse a otro nivel."
       }
     ],
+    clients: {
+      title: "Nuestros clientes",
+      altPrefix: "Proyecto o cliente de LulabTech",
+      images: [
+        "/projects/landing/landing-01.png",
+        "/projects/landing/landing-02.png",
+        "/projects/Corporate/corporate-01.png",
+        "/projects/Corporate/corporate-02.png",
+        "/projects/ecommerce/ecommerce-01.png",
+        "/projects/ecommerce/ecommerce-02.png",
+        "/projects/software/software-01.png",
+        "/projects/software/software-02.png"
+      ]
+    },
     projectShowcase: {
-      eyebrow: "Proyectos",
+      eyebrow: "Portafolio",
       title:
-        "Experiencias digitales diseñadas para verse mejor y comunicar con más fuerza",
+        "Proyectos digitales con diseño premium, estructura clara y enfoque comercial",
       description:
-        "Una muestra visual de los tipos de soluciones que desarrollamos para marcas que buscan un nivel superior de presencia digital.",
+        "Filtra por tipo de solución y explora una muestra visual de landing pages, páginas web corporativas, tiendas online y sistemas digitales desarrollados para marcas que quieren verse mejor.",
+      allLabel: "Todos",
       categories: [
         {
           id: "landing",
@@ -294,11 +310,11 @@ export const siteCopy = {
       altPrefix: "Vista de"
     },
     services: {
-      eyebrow: "Capacidades",
+      eyebrow: "Servicios",
       title:
-        "Soluciones pensadas para presentar mejor la marca y mover al usuario a la acción",
+        "Diseño web, tiendas online y sistemas digitales para negocios en Panamá",
       description:
-        "Landing pages, webs corporativas, tiendas online, software y automatizaciones desarrolladas con claridad comercial y una ejecución más cuidada.",
+        "Soluciones digitales desarrolladas con claridad comercial, estética premium, experiencia responsive y una base lista para crecer con SEO, campañas y automatización.",
       suffix: "A medida · claro · listo para crecer",
       items: [
         {
@@ -407,6 +423,34 @@ export const siteCopy = {
           title: "Lanzamiento",
           description:
             "Se publica, se revisa y queda lista para captar oportunidades reales."
+        }
+      ]
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Lo que suelen preguntar antes de cotizar una página web",
+      description:
+        "Respuestas rápidas para negocios que están evaluando una landing page, página corporativa, tienda online o sistema digital.",
+      items: [
+        {
+          question: "¿LulabTech hace páginas web en Panamá?",
+          answer:
+            "Sí. Trabajamos páginas web, landing pages, tiendas online y sistemas digitales para negocios que necesitan una presencia más profesional y una ruta clara de contacto."
+        },
+        {
+          question: "¿La web queda preparada para Google?",
+          answer:
+            "La base se deja ordenada con estructura, textos, metadata y rendimiento. Luego se puede escalar con páginas internas, contenido SEO y optimización continua."
+        },
+        {
+          question: "¿Puedo conectar WhatsApp y formularios?",
+          answer:
+            "Sí. La web puede llevar botones de WhatsApp, formularios de cotización, enlaces a redes, correos y rutas de contacto pensadas para convertir mejor."
+        },
+        {
+          question: "¿Trabajan solo landing pages o también sistemas?",
+          answer:
+            "Trabajamos desde landing pages y páginas corporativas hasta tiendas online, sistemas de reservas, inventarios, paneles administrativos y automatizaciones."
         }
       ]
     },
@@ -531,42 +575,43 @@ export const siteCopy = {
         "Premium digital solutions for brands that want to look stronger and convert better."
     },
     hero: {
-      eyebrow: "Premium digital experiences",
-      titleStart: "Digital solutions that look",
-      titleGradient: "premium",
-      titleEnd: "and convert with intention.",
+      eyebrow: "Web design agency in Panama",
+      titleStart: "Web design in Panama",
+      titleGradient: "for brands that want to look professional",
+      titleEnd: "and sell better.",
       description:
-        "We design and build landing pages, corporate websites, online stores and custom software with stronger visual direction, clearer commercial structure and solid technical execution.",
+        "We create landing pages, corporate websites, online stores and digital systems with premium design, commercial structure, responsive execution and a clear path to turn visitors into real opportunities.",
       primaryCta: "Request a quote",
       secondaryCta: "Chat on WhatsApp",
       badges: ["Landing pages", "Corporate websites", "Online stores", "Custom software"],
       cards: [
         {
-          title: "Your offer is easier to understand",
+          title: "Premium design",
           description:
-            "Visitors can quickly understand what you do, how you help and why it makes sense to contact you."
+            "A stronger, modern visual presence aligned with the level of your brand."
         },
         {
-          title: "Your brand looks stronger",
+          title: "Mobile first",
           description:
-            "A more refined visual presence helps build trust from the very first impression."
+            "A polished experience so the website looks solid from the very first scroll."
         },
         {
-          title: "Getting in touch feels easier",
+          title: "SEO foundation",
           description:
-            "Clear WhatsApp access, visible forms and direct calls to action remove friction from the next step."
+            "A structure prepared to grow through content, Google and digital campaigns."
         }
       ],
-      previewWindow: "Visual preview",
-      previewBadge: "Premium website",
-      previewTitle: "A stronger, clearer presence that is ready to convert.",
+      previewWindow: "Visual portfolio",
+      previewBadge: "Premium web design",
+      previewTitle: "Modern, clear websites built to convert.",
       previewDescription:
-        "This is what a website looks like when it is built to inspire trust, explain the offer better and guide visitors to contact.",
+        "A more visual composition to show projects, trust and digital direction from the first impression.",
+      sidePreviewAlt: "Preview of a digital project built by LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Lead capture" },
         { eyebrow: "Corporate website", value: "Authority" },
         { eyebrow: "Online store", value: "Digital sales" },
-        { eyebrow: "Software", value: "Clear operations" }
+        { eyebrow: "Software", value: "Operations" }
       ],
       metrics: [
         { label: "Brand image", value: "Stronger and better presented" },
@@ -595,12 +640,27 @@ export const siteCopy = {
           "Clean visuals, premium structure and better clarity for brands that want to look a level above."
       }
     ],
+    clients: {
+      title: "Our clients",
+      altPrefix: "LulabTech project or client",
+      images: [
+        "/projects/landing/landing-01.png",
+        "/projects/landing/landing-02.png",
+        "/projects/Corporate/corporate-01.png",
+        "/projects/Corporate/corporate-02.png",
+        "/projects/ecommerce/ecommerce-01.png",
+        "/projects/ecommerce/ecommerce-02.png",
+        "/projects/software/software-01.png",
+        "/projects/software/software-02.png"
+      ]
+    },
     projectShowcase: {
-      eyebrow: "Projects",
+      eyebrow: "Portfolio",
       title:
-        "Digital experiences designed to look better and communicate with more strength",
+        "Digital projects with premium design, clear structure and commercial focus",
       description:
-        "A visual sample of the types of solutions we build for brands looking for a stronger digital presence.",
+        "Filter by solution type and explore a visual sample of landing pages, corporate websites, online stores and digital systems built for brands that want to look stronger.",
+      allLabel: "All",
       categories: [
         {
           id: "landing",
@@ -754,11 +814,11 @@ export const siteCopy = {
       altPrefix: "View of"
     },
     services: {
-      eyebrow: "Capabilities",
+      eyebrow: "Services",
       title:
-        "Solutions built to present the brand better and move the user toward action",
+        "Web design, online stores and digital systems for businesses in Panama",
       description:
-        "Landing pages, corporate websites, online stores, software and automations developed with commercial clarity and more refined execution.",
+        "Digital solutions built with commercial clarity, premium aesthetics, responsive experience and a foundation ready to grow with SEO, campaigns and automation.",
       suffix: "Tailored · clear · ready to grow",
       items: [
         {
@@ -867,6 +927,34 @@ export const siteCopy = {
           title: "Launch",
           description:
             "It goes live, gets reviewed and is left ready to capture real opportunities."
+        }
+      ]
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "Common questions before quoting a website",
+      description:
+        "Quick answers for businesses evaluating a landing page, corporate website, online store or digital system.",
+      items: [
+        {
+          question: "Does LulabTech build websites in Panama?",
+          answer:
+            "Yes. We work on websites, landing pages, online stores and digital systems for businesses that need a more professional presence and a clear contact path."
+        },
+        {
+          question: "Will the website be prepared for Google?",
+          answer:
+            "The foundation is organized with structure, copy, metadata and performance. It can then scale with internal pages, SEO content and continuous optimization."
+        },
+        {
+          question: "Can WhatsApp and forms be connected?",
+          answer:
+            "Yes. The website can include WhatsApp buttons, quote forms, social links, email paths and conversion-focused contact routes."
+        },
+        {
+          question: "Do you only build landing pages or also systems?",
+          answer:
+            "We work from landing pages and corporate websites to online stores, booking systems, inventory platforms, admin dashboards and automations."
         }
       ]
     },
