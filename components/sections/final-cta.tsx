@@ -18,7 +18,7 @@ export function FinalCtaSection() {
     <SectionShell className="relative overflow-hidden">
       <div className="relative overflow-hidden rounded-[36px] border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-brand-50/70 px-6 py-10 shadow-elevated sm:px-8 sm:py-12 lg:px-12 lg:py-14">
         <GridPattern className="opacity-20" />
-        <GlowOrb className="-left-10 top-0 h-48 w-48 bg-brand-400/12" />
+        <GlowOrb className="-left-10 top-0 h-48 w-48 bg-brand-400/10" />
         <GlowOrb className="right-0 top-10 h-52 w-52 bg-accent-400/10" />
 
         <Reveal className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">

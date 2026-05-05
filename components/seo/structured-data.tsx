@@ -75,6 +75,20 @@ const faqs = [
   }
 ];
 
+const seoTopics = [
+  "diseño de páginas web en Panamá",
+  "desarrollo web Panamá",
+  "landing pages Panamá",
+  "páginas web corporativas",
+  "tiendas online Panamá",
+  "software a medida Panamá",
+  "SEO inicial",
+  "Google Ads",
+  "Meta Ads",
+  "formularios de cotización",
+  "WhatsApp para negocios"
+];
+
 export function StructuredData() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
@@ -85,6 +99,7 @@ export function StructuredData() {
         "@type": "Organization",
         "@id": `${baseUrl}/#organization`,
         name: SITE_NAME,
+        alternateName: "Lulab Technology",
         url: baseUrl,
         email: CONTACT_EMAIL,
         logo: `${baseUrl}/brand/lulabtech-logo.png`,
@@ -95,12 +110,15 @@ export function StructuredData() {
         "@type": "ProfessionalService",
         "@id": `${baseUrl}/#professional-service`,
         name: SITE_NAME,
+        alternateName: "Lulab Technology",
         url: baseUrl,
         email: CONTACT_EMAIL,
         telephone: `+${WHATSAPP_NUMBER}`,
         image: `${baseUrl}/og/og-cover.png`,
         logo: `${baseUrl}/brand/lulabtech-logo.png`,
         description: SITE_DESCRIPTION,
+        keywords: seoTopics.join(", "),
+        knowsAbout: seoTopics,
         areaServed: [
           {
             "@type": "Country",
@@ -126,6 +144,17 @@ export function StructuredData() {
             availableLanguage: ["es", "en"]
           }
         ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Servicios de diseño web, software y marketing digital",
+          itemListElement: services.map((service, index) => ({
+            "@type": "Offer",
+            "@id": `${baseUrl}/#catalog-offer-${index + 1}`,
+            itemOffered: {
+              "@id": `${baseUrl}/#service-${index + 1}`
+            }
+          }))
+        },
         provider: {
           "@id": `${baseUrl}/#organization`
         },
@@ -145,6 +174,7 @@ export function StructuredData() {
         name: SITE_NAME,
         description:
           "Agencia de diseño web en Panamá especializada en landing pages, páginas corporativas, tiendas online, software a medida y SEO inicial.",
+        keywords: seoTopics.join(", "),
         publisher: {
           "@id": `${baseUrl}/#organization`
         },
@@ -175,6 +205,18 @@ export function StructuredData() {
         description: service.description,
         serviceType: service.name,
         areaServed: "Panamá",
+        audience: {
+          "@type": "BusinessAudience",
+          name: "Empresas, emprendedores y profesionales en Panamá"
+        },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: whatsappUrl,
+          servicePhone: {
+            "@type": "ContactPoint",
+            telephone: `+${WHATSAPP_NUMBER}`
+          }
+        },
         provider: {
           "@id": `${baseUrl}/#professional-service`
         }

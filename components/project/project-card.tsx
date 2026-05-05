@@ -14,7 +14,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
   const { copy } = useSiteLanguage();
 
   return (
-    <article className="group h-full overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
       <div className="border-b border-slate-200 bg-slate-50/90 px-4 py-3">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-1.5">
@@ -23,7 +23,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
           </div>
 
-          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">
+          <span className="truncate text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">
             {categoryLabel}
           </span>
         </div>
@@ -35,17 +35,13 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
           alt={`${copy.projectShowcase.altPrefix} ${item.title}`}
           fill
           className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
-          sizes="(max-width: 640px) 88vw, (max-width: 1024px) 62vw, 44vw"
+          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 70vw, 42vw"
         />
 
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/6" />
-
-        <div className="absolute left-4 top-4 rounded-full border border-white/80 bg-white/92 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-700 backdrop-blur">
-          {copy.projectShowcase.projectBadge}
-        </div>
+        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5" />
       </div>
 
-      <div className="p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
@@ -56,7 +52,7 @@ export function ProjectCard({ item, categoryLabel }: ProjectCardProps) {
             </h3>
           </div>
 
-          <div className="rounded-full border border-slate-200 bg-white p-2 text-ink-700 transition group-hover:border-brand-200 group-hover:text-brand-700">
+          <div className="shrink-0 rounded-full border border-slate-200 bg-white p-2 text-ink-700 transition group-hover:border-brand-200 group-hover:text-brand-700">
             <ArrowUpRight className="h-4 w-4" />
           </div>
         </div>

@@ -16,6 +16,7 @@ export type ProjectItem = {
   subtitle: string;
   description: string;
   image: string;
+  categoryLabel?: string;
 };
 
 export type ProjectCategory = {
@@ -155,7 +156,9 @@ export const siteCopy = {
       title:
         "Portafolio de páginas web, tiendas online y sistemas digitales",
       description:
-        "Filtra por tipo de solución y explora una muestra visual de proyectos desarrollados por LulabTech: landing pages, páginas web corporativas, tiendas online y software a medida para negocios que quieren verse más profesionales.",
+        "Explora trabajos visuales de LulabTech en landing pages, páginas corporativas, tiendas online y sistemas digitales. Cada proyecto muestra una dirección más profesional, clara y preparada para captar oportunidades.",
+      carouselDescription:
+        "Desliza el carrusel para ver diferentes estilos de diseño web, estructura comercial y experiencias digitales desarrolladas para negocios reales.",
       allLabel: "Todos",
       categories: [
         {
@@ -165,31 +168,31 @@ export const siteCopy = {
             "Landing pages diseñadas para presentar valor con claridad, elevar percepción y empujar la conversión.",
           items: [
             {
-              title: "Landing de captación",
-              subtitle: "Conversión premium",
+              title: "Cardio Kids & English",
+              subtitle: "Landing educativa",
               description:
-                "Diseño enfocado en claridad de oferta, autoridad visual y contacto directo.",
+                "Página de captación para explicar clases, beneficios y contacto directo con una presentación más clara.",
               image: "/projects/landing/landing-01.png"
             },
             {
-              title: "Landing comercial",
-              subtitle: "Campaña digital",
+              title: "Krasa Dermoestudio",
+              subtitle: "Landing estética",
               description:
-                "Estructura pensada para presentar valor rápido y mover al usuario a cotizar.",
+                "Diseño comercial para presentar servicios, generar confianza visual y facilitar solicitudes de cita.",
               image: "/projects/landing/landing-02.png"
             },
             {
-              title: "Landing de marca",
-              subtitle: "Impacto visual",
+              title: "Chabonnet Comercial",
+              subtitle: "Landing inmobiliaria",
               description:
-                "Composición premium con mejor jerarquía, narrativa y presencia digital.",
+                "Estructura de alto impacto para explicar la oferta, recibir consultas y dirigir al visitante al contacto.",
               image: "/projects/landing/landing-03.png"
             },
             {
-              title: "Landing estratégica",
-              subtitle: "CTA claro",
+              title: "Biofest Panamá",
+              subtitle: "Landing turística",
               description:
-                "Diseñada para elevar percepción y facilitar una acción comercial inmediata.",
+                "Experiencia visual para presentar tours, locaciones, reservas y comunicación bilingüe de forma ordenada.",
               image: "/projects/landing/landing-04.png"
             }
           ]
@@ -201,31 +204,31 @@ export const siteCopy = {
             "Webs corporativas enfocadas en autoridad, estructura comercial y una presencia digital más sólida.",
           items: [
             {
-              title: "Web corporativa premium",
-              subtitle: "Autoridad de marca",
+              title: "Alcira Trigueros",
+              subtitle: "Web legal inmobiliaria",
               description:
-                "Sitio pensado para transmitir seriedad, confianza y mejor presentación del negocio.",
+                "Presencia profesional para comunicar servicios legales e inmobiliarios con tono serio y elegante.",
               image: "/projects/Corporate/corporate-01.png"
             },
             {
-              title: "Web institucional",
-              subtitle: "Comunicación clara",
+              title: "Quality Techno Services",
+              subtitle: "Web industrial",
               description:
-                "Estructura limpia para explicar mejor servicios, propuesta y respaldo profesional.",
+                "Sitio corporativo para presentar servicios técnicos, respaldo profesional y canales de contacto claros.",
               image: "/projects/Corporate/corporate-02.png"
             },
             {
-              title: "Web empresarial",
-              subtitle: "Presencia sólida",
+              title: "NOVA Shipping Services",
+              subtitle: "Portal logístico",
               description:
-                "Diseño ordenado con enfoque en reputación, claridad y experiencia premium.",
+                "Solución digital para organizar información, clientes, envíos y comunicación operativa de forma más clara.",
               image: "/projects/Corporate/corporate-03.png"
             },
             {
-              title: "Web de firma",
-              subtitle: "Confianza visual",
+              title: "ALAF International Academy",
+              subtitle: "Web educativa",
               description:
-                "Composición seria y elegante para reforzar credibilidad y percepción de nivel.",
+                "Estructura para academia, programas, comunicación institucional y experiencia responsive para estudiantes.",
               image: "/projects/Corporate/corporate-04.png"
             }
           ]
@@ -237,31 +240,31 @@ export const siteCopy = {
             "Tiendas online con mejor experiencia visual, recorrido de compra más claro y enfoque comercial.",
           items: [
             {
-              title: "E-commerce premium",
-              subtitle: "Venta digital",
+              title: "Catálogo comercial",
+              subtitle: "Tienda online",
               description:
-                "Diseño orientado a catálogo, experiencia de compra y presentación comercial.",
+                "Diseño para mostrar productos con mejor orden, navegación clara y enfoque en conversión.",
               image: "/projects/ecommerce/ecommerce-01.png"
             },
             {
-              title: "Tienda online moderna",
+              title: "Experiencia de producto",
               subtitle: "UX de compra",
               description:
-                "Layout limpio pensado para navegación fluida, productos claros y mejor conversión.",
+                "Interfaz pensada para que el usuario explore categorías, compare productos y avance con menos fricción.",
               image: "/projects/ecommerce/ecommerce-02.png"
             },
             {
-              title: "Catálogo e-commerce",
-              subtitle: "Escalabilidad",
+              title: "Catálogo escalable",
+              subtitle: "Presentación comercial",
               description:
-                "Experiencia visual premium para marcas que necesitan vender con más orden y presencia.",
+                "Base visual para marcas que necesitan ordenar inventario, destacar productos y crecer por etapas.",
               image: "/projects/ecommerce/ecommerce-03.png"
             },
             {
-              title: "Storefront digital",
-              subtitle: "Performance comercial",
+              title: "Vitrina digital",
+              subtitle: "Recorrido comercial",
               description:
-                "Interfaz enfocada en valor percibido, confianza y recorrido de compra más claro.",
+                "Diseño enfocado en valor percibido, confianza y una ruta de compra o consulta más directa.",
               image: "/projects/ecommerce/ecommerce-04.png"
             }
           ]
@@ -273,37 +276,37 @@ export const siteCopy = {
             "Software a la medida con interfaces modernas, organización inteligente y sensación profesional.",
           items: [
             {
-              title: "Dashboard operativo",
-              subtitle: "Solución personalizada",
+              title: "Panel de operaciones",
+              subtitle: "Software a medida",
               description:
-                "Interfaz diseñada para procesos internos, control visual y operación más eficiente.",
+                "Interfaz para centralizar procesos internos, controlar información y operar con más orden.",
               image: "/projects/software/software-01.png"
             },
             {
               title: "Sistema empresarial",
-              subtitle: "Procesos optimizados",
+              subtitle: "Gestión interna",
               description:
-                "Diseño moderno para centralizar información, métricas y flujo de trabajo.",
+                "Plataforma para ordenar datos, métricas, usuarios y flujos de trabajo en un solo lugar.",
               image: "/projects/software/software-02.png"
             },
             {
               title: "Plataforma digital",
-              subtitle: "Operación clara",
+              subtitle: "Control visual",
               description:
-                "Arquitectura visual enfocada en orden, productividad y experiencia profesional.",
+                "Arquitectura enfocada en productividad, navegación simple y experiencia profesional para equipos.",
               image: "/projects/software/software-03.png"
             },
             {
               title: "Software de gestión",
               subtitle: "Escala y control",
               description:
-                "Composición premium para mostrar un sistema serio, limpio y listo para crecer.",
+                "Base limpia para administrar módulos, reportes, estados y procesos con una experiencia más sólida.",
               image: "/projects/software/software-04.png"
             }
           ]
         }
       ],
-      projectBadge: "Proyecto",
+      projectBadge: "",
       previousAria: "Anterior en",
       nextAria: "Siguiente en",
       goToSlideAria: "Ir al slide",
@@ -674,7 +677,9 @@ export const siteCopy = {
       title:
         "Portfolio of websites, online stores and digital systems",
       description:
-        "Filter by solution type and explore a visual sample of projects built by LulabTech: landing pages, corporate websites, online stores and custom software for businesses that want to look more professional.",
+        "Explore visual work by LulabTech across landing pages, corporate websites, online stores and digital systems. Each project shows a clearer, more professional direction prepared to capture opportunities.",
+      carouselDescription:
+        "Swipe through the carousel to see different styles of web design, commercial structure and digital experiences built for real businesses.",
       allLabel: "All",
       categories: [
         {
@@ -684,31 +689,31 @@ export const siteCopy = {
             "Landing pages built to present value clearly, elevate perception and push conversion.",
           items: [
             {
-              title: "Lead capture landing",
-              subtitle: "Premium conversion",
+              title: "Cardio Kids & English",
+              subtitle: "Educational landing",
               description:
-                "A design focused on offer clarity, visual authority and direct contact.",
+                "A lead capture page to explain classes, benefits and direct contact with a clearer presentation.",
               image: "/projects/landing/landing-01.png"
             },
             {
-              title: "Commercial landing",
-              subtitle: "Digital campaign",
+              title: "Krasa Dermoestudio",
+              subtitle: "Aesthetic landing",
               description:
-                "Structured to present value fast and move the user toward a quote request.",
+                "Commercial design to present services, build visual trust and make appointment requests easier.",
               image: "/projects/landing/landing-02.png"
             },
             {
-              title: "Brand landing",
-              subtitle: "Visual impact",
+              title: "Chabonnet Comercial",
+              subtitle: "Real estate landing",
               description:
-                "Premium composition with stronger hierarchy, narrative and digital presence.",
+                "High-impact structure to explain the offer, receive inquiries and guide visitors toward contact.",
               image: "/projects/landing/landing-03.png"
             },
             {
-              title: "Strategic landing",
-              subtitle: "Clear CTA",
+              title: "Biofest Panama",
+              subtitle: "Tourism landing",
               description:
-                "Designed to elevate perception and enable immediate commercial action.",
+                "Visual experience for tours, locations, reservations and bilingual communication in an organized flow.",
               image: "/projects/landing/landing-04.png"
             }
           ]
@@ -720,31 +725,31 @@ export const siteCopy = {
             "Corporate websites focused on authority, commercial structure and a stronger digital presence.",
           items: [
             {
-              title: "Premium corporate website",
-              subtitle: "Brand authority",
+              title: "Alcira Trigueros",
+              subtitle: "Legal real estate website",
               description:
-                "A site built to communicate seriousness, trust and a stronger business presentation.",
+                "Professional presence to communicate legal and real estate services with a serious, elegant tone.",
               image: "/projects/Corporate/corporate-01.png"
             },
             {
-              title: "Institutional website",
-              subtitle: "Clear communication",
+              title: "Quality Techno Services",
+              subtitle: "Industrial website",
               description:
-                "A clean structure to explain services, value and professional backing more clearly.",
+                "Corporate site to present technical services, professional backing and clear contact channels.",
               image: "/projects/Corporate/corporate-02.png"
             },
             {
-              title: "Business website",
-              subtitle: "Solid presence",
+              title: "NOVA Shipping Services",
+              subtitle: "Logistics portal",
               description:
-                "An ordered design focused on reputation, clarity and premium experience.",
+                "Digital solution to organize information, clients, shipments and operational communication more clearly.",
               image: "/projects/Corporate/corporate-03.png"
             },
             {
-              title: "Firm website",
-              subtitle: "Visual trust",
+              title: "ALAF International Academy",
+              subtitle: "Educational website",
               description:
-                "A serious and elegant composition to reinforce credibility and premium perception.",
+                "Structure for an academy, programs, institutional communication and responsive student experience.",
               image: "/projects/Corporate/corporate-04.png"
             }
           ]
@@ -756,31 +761,31 @@ export const siteCopy = {
             "Online stores with a stronger visual experience, clearer buying journey and commercial focus.",
           items: [
             {
-              title: "Premium e-commerce",
-              subtitle: "Digital sales",
+              title: "Commercial catalog",
+              subtitle: "Online store",
               description:
-                "A design oriented toward catalog structure, buying experience and commercial presentation.",
+                "Design to display products with better order, clear navigation and conversion focus.",
               image: "/projects/ecommerce/ecommerce-01.png"
             },
             {
-              title: "Modern online store",
+              title: "Product experience",
               subtitle: "Shopping UX",
               description:
-                "A clean layout designed for fluid navigation, clearer products and better conversion.",
+                "Interface designed so users can explore categories, compare products and move forward with less friction.",
               image: "/projects/ecommerce/ecommerce-02.png"
             },
             {
-              title: "E-commerce catalog",
-              subtitle: "Scalability",
+              title: "Scalable catalog",
+              subtitle: "Commercial presentation",
               description:
-                "A premium visual experience for brands that need to sell with more order and presence.",
+                "Visual base for brands that need to organize inventory, highlight products and grow in stages.",
               image: "/projects/ecommerce/ecommerce-03.png"
             },
             {
               title: "Digital storefront",
-              subtitle: "Commercial performance",
+              subtitle: "Commercial journey",
               description:
-                "An interface focused on perceived value, trust and a clearer buying journey.",
+                "Design focused on perceived value, trust and a more direct buying or inquiry path.",
               image: "/projects/ecommerce/ecommerce-04.png"
             }
           ]
@@ -792,37 +797,37 @@ export const siteCopy = {
             "Custom software with modern interfaces, smart organization and a professional feel.",
           items: [
             {
-              title: "Operations dashboard",
-              subtitle: "Tailored solution",
+              title: "Operations panel",
+              subtitle: "Custom software",
               description:
-                "An interface built for internal processes, visual control and more efficient operations.",
+                "Interface to centralize internal processes, control information and operate with more order.",
               image: "/projects/software/software-01.png"
             },
             {
               title: "Enterprise system",
-              subtitle: "Optimized workflows",
+              subtitle: "Internal management",
               description:
-                "A modern design to centralize information, metrics and team workflow.",
+                "Platform to organize data, metrics, users and workflows in one place.",
               image: "/projects/software/software-02.png"
             },
             {
               title: "Digital platform",
-              subtitle: "Clear operations",
+              subtitle: "Visual control",
               description:
-                "A visual architecture focused on order, productivity and professional experience.",
+                "Architecture focused on productivity, simple navigation and a professional experience for teams.",
               image: "/projects/software/software-03.png"
             },
             {
               title: "Management software",
               subtitle: "Scale and control",
               description:
-                "A premium composition that shows a serious, clean system ready to grow.",
+                "Clean base to manage modules, reports, statuses and processes with a stronger experience.",
               image: "/projects/software/software-04.png"
             }
           ]
         }
       ],
-      projectBadge: "Project",
+      projectBadge: "",
       previousAria: "Previous in",
       nextAria: "Next in",
       goToSlideAria: "Go to slide",

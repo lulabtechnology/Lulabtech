@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: rgb(var(--background));
   color: rgb(var(--foreground));
   font-feature-settings: "ss01", "cv02", "cv03", "cv04";
@@ -120,5 +121,12 @@ body {
   .client-marquee {
     animation: none;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
   }
 }

@@ -91,6 +91,9 @@ export const siteMetadata: Metadata = {
     "geo.placename": "Panamá",
     "business:contact_data:country_name": "Panama",
     "business:contact_data:email": "ventas@lulabtech.com",
-    "description:extended": SITE_DESCRIPTION
+    "description:extended": SITE_DESCRIPTION,
+    "classification": "Agencia de diseño web, desarrollo web, software y marketing digital en Panamá",
+    "coverage": "Panamá",
+    "target": "empresas en Panamá, emprendedores, servicios profesionales, negocios locales"
   }
 };
