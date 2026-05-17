@@ -148,7 +148,15 @@ export const siteCopy = {
         { src: "/clients/alcira-trigueros.webp", alt: "Logo de cliente Alcira Trigueros" },
         { src: "/clients/alaf-international-academy.webp", alt: "Logo de cliente ALAF International Academy" },
         { src: "/clients/reyes-echevers-petroni.webp", alt: "Logo de cliente Reyes Echevers Petroni" },
-        { src: "/clients/fundacion-alada.webp", alt: "Logo de cliente Fundación Alada" }
+        { src: "/clients/fundacion-alada.webp", alt: "Logo de cliente Fundación Alada" },
+        { src: "/clients/orthoclinix.webp", alt: "Logo de cliente OrthoClinix" },
+        { src: "/clients/solmas.webp", alt: "Logo de cliente SOLMAS" },
+        { src: "/clients/veranieras-flor.webp", alt: "Logo de cliente Veranieras" },
+        { src: "/clients/servi-estufa.webp", alt: "Logo de cliente Servi-Estufa" },
+        { src: "/clients/aa-law-firm.webp", alt: "Logo de cliente A&A Law Firm" },
+        { src: "/clients/bd-logistic.webp", alt: "Logo de cliente B&D Logistic" },
+        { src: "/clients/cerebritos.webp", alt: "Logo de cliente Cerebritos" },
+        { src: "/clients/quality-techno-services.webp", alt: "Logo de cliente Quality Techno Services" }
       ]
     },
     projectShowcase: {
@@ -633,7 +641,15 @@ export const siteCopy = {
         { src: "/clients/alcira-trigueros.webp", alt: "Alcira Trigueros client logo" },
         { src: "/clients/alaf-international-academy.webp", alt: "ALAF International Academy client logo" },
         { src: "/clients/reyes-echevers-petroni.webp", alt: "Reyes Echevers Petroni client logo" },
-        { src: "/clients/fundacion-alada.webp", alt: "Fundación Alada client logo" }
+        { src: "/clients/fundacion-alada.webp", alt: "Fundación Alada client logo" },
+        { src: "/clients/orthoclinix.webp", alt: "OrthoClinix client logo" },
+        { src: "/clients/solmas.webp", alt: "SOLMAS client logo" },
+        { src: "/clients/veranieras-flor.webp", alt: "Veranieras client logo" },
+        { src: "/clients/servi-estufa.webp", alt: "Servi-Estufa client logo" },
+        { src: "/clients/aa-law-firm.webp", alt: "A&A Law Firm client logo" },
+        { src: "/clients/bd-logistic.webp", alt: "B&D Logistic client logo" },
+        { src: "/clients/cerebritos.webp", alt: "Cerebritos client logo" },
+        { src: "/clients/quality-techno-services.webp", alt: "Quality Techno Services client logo" }
       ]
     },
     projectShowcase: {

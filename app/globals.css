@@ -119,7 +119,7 @@ body {
 }
 
 .client-marquee {
-  animation: client-marquee 34s linear infinite;
+  animation: client-marquee 56s linear infinite;
 }
 
 .client-marquee:hover {
