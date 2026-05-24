@@ -5,9 +5,22 @@ const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
+const priceFromBySlug: Record<string, string> = {
+  "landing-pages-panama": "149",
+  "paginas-web-corporativas-panama": "299",
+  "tiendas-online-panama": "499",
+  "software-a-medida-panama": "899",
+  "software-para-restaurantes-panama": "899",
+  "software-para-casilleros-panama": "899",
+  "diseno-web-para-abogados-panama": "149",
+  "sistemas-de-reservas-panama": "899",
+  "cuanto-cuesta-una-pagina-web-en-panama": "149"
+};
+
 export function ServicePageStructuredData({ page }: { page: ServicePage }) {
   const url = `${baseUrl}/${page.slug}`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
+  const priceFrom = page.priceFrom?.replace(/[^0-9.]/g, "") || priceFromBySlug[page.slug];
 
   const data = {
     "@context": "https://schema.org",
@@ -37,7 +50,17 @@ export function ServicePageStructuredData({ page }: { page: ServicePage }) {
             "@type": "ContactPoint",
             telephone: `+${WHATSAPP_NUMBER}`
           }
-        }
+        },
+        offers: priceFrom
+          ? {
+              "@type": "Offer",
+              priceCurrency: "USD",
+              price: priceFrom,
+              availability: "https://schema.org/InStock",
+              areaServed: "Panamá",
+              url
+            }
+          : undefined
       },
       {
         "@type": "WebPage",

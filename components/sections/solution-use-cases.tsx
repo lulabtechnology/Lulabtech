@@ -26,13 +26,13 @@ const content = {
         title: "Páginas para abogados",
         description:
           "Webs serias para comunicar áreas legales, perfil profesional, confianza y llamadas a consulta sin caer en diseños genéricos.",
-        href: "/paginas-web-empresas-panama"
+        href: "/diseno-web-para-abogados-panama"
       },
       {
         title: "Webs corporativas",
         description:
           "Para empresas que necesitan presentar servicios, equipo, respaldo, proyectos y canales de contacto con más autoridad.",
-        href: "/paginas-web-empresas-panama"
+        href: "/paginas-web-corporativas-panama"
       },
       {
         title: "Ecommerce y catálogos",
@@ -44,19 +44,19 @@ const content = {
         title: "Software para casilleros",
         description:
           "Sistemas para clientes, casilleros, envíos, contenedores, estados, comprobantes, facturación y panel administrativo.",
-        href: "/software-a-medida-panama"
+        href: "/software-para-casilleros-panama"
       },
       {
         title: "Software para restaurantes",
         description:
           "Herramientas para ventas, inventario, empleados, horarios, reportes, estados de pago y control operativo interno.",
-        href: "/software-a-medida-panama"
+        href: "/software-para-restaurantes-panama"
       },
       {
         title: "Sistemas de reservas",
         description:
           "Flujos para servicios, disponibilidad, solicitudes, aprobaciones, correos, estados y administración de citas.",
-        href: "/software-a-medida-panama"
+        href: "/sistemas-de-reservas-panama"
       },
       {
         title: "Automatizaciones",
@@ -83,13 +83,13 @@ const content = {
         title: "Websites for law firms",
         description:
           "Serious websites to communicate legal practice areas, professional profile, trust and consultation calls.",
-        href: "/paginas-web-empresas-panama"
+        href: "/diseno-web-para-abogados-panama"
       },
       {
         title: "Corporate websites",
         description:
           "For companies that need to present services, team, proof, projects and contact channels with more authority.",
-        href: "/paginas-web-empresas-panama"
+        href: "/paginas-web-corporativas-panama"
       },
       {
         title: "Ecommerce and catalogs",
@@ -101,19 +101,19 @@ const content = {
         title: "Locker software",
         description:
           "Systems for clients, lockers, shipments, containers, statuses, receipts, billing and admin panels.",
-        href: "/software-a-medida-panama"
+        href: "/software-para-casilleros-panama"
       },
       {
         title: "Restaurant software",
         description:
           "Tools for sales, inventory, employees, schedules, reports, payment statements and internal control.",
-        href: "/software-a-medida-panama"
+        href: "/software-para-restaurantes-panama"
       },
       {
         title: "Booking systems",
         description:
           "Flows for services, availability, requests, approvals, emails, statuses and appointment management.",
-        href: "/software-a-medida-panama"
+        href: "/sistemas-de-reservas-panama"
       },
       {
         title: "Automations",

@@ -19,6 +19,7 @@ import { GridPattern } from "@/components/ui/grid-pattern";
 import { FloatingElements } from "@/components/motion/floating-elements";
 import { Reveal } from "@/components/motion/reveal";
 import { useSiteLanguage } from "@/components/providers/site-language";
+import { trackEvent } from "@/lib/tracking";
 
 const cardIcons = [LayoutTemplate, MonitorSmartphone, ShoppingBag, Workflow] as const;
 const trustIcons = [Sparkles, CheckCircle2, SearchCheck] as const;
@@ -55,7 +56,7 @@ export function HeroSection() {
 
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`/#${NAV_ANCHORS.quote}`} size="lg">
+              <ButtonLink href={`/#${NAV_ANCHORS.quote}`} size="lg" onClick={() => trackEvent("click_formulario_contacto", { source: "hero" })}>
                 {hero.primaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
@@ -66,6 +67,7 @@ export function HeroSection() {
                 rel="noreferrer"
                 variant="outline"
                 size="lg"
+                onClick={() => trackEvent("click_whatsapp_hero")}
               >
                 {hero.secondaryCta}
               </ButtonLink>

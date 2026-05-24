@@ -7,6 +7,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/layout/language-toggle";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/tracking";
 
 type MobileMenuProps = {
   quoteHref: string;
@@ -53,7 +54,12 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
             <a
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                if (item.href === "/proyectos") {
+                  trackEvent("click_portafolio", { source: "mobile_menu" });
+                }
+                setOpen(false);
+              }}
               className="rounded-2xl px-4 py-3 text-sm font-medium text-ink-700 transition hover:bg-slate-50 hover:text-ink-900"
             >
               {item.label}
@@ -62,7 +68,14 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
         </nav>
 
         <div className="mt-4 grid gap-3">
-          <ButtonLink href={quoteHref} className="w-full" onClick={() => setOpen(false)}>
+          <ButtonLink
+            href={quoteHref}
+            className="w-full"
+            onClick={() => {
+              trackEvent("click_formulario_contacto", { source: "mobile_menu" });
+              setOpen(false);
+            }}
+          >
             {copy.navigation.quote}
           </ButtonLink>
 
@@ -72,7 +85,10 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
             rel="noreferrer"
             variant="outline"
             className="w-full"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              trackEvent("click_whatsapp_header", { source: "mobile_menu" });
+              setOpen(false);
+            }}
           >
             <MessageCircle className="h-4 w-4" />
             {copy.navigation.whatsapp}

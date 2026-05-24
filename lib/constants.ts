@@ -4,7 +4,8 @@ export const SITE_DESCRIPTION =
 export const CONTACT_EMAIL =
   process.env.CONTACT_TO_EMAIL || "ventas@lulabtech.com";
 
-export const WHATSAPP_NUMBER = "50767069044";
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "50767069044";
+export const INSTAGRAM_URL = "https://www.instagram.com/lulab.technology/";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Hola, quiero solicitar una cotización para un proyecto con LulabTech."

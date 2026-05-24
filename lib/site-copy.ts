@@ -60,7 +60,8 @@ export const siteCopy = {
         { label: "Proyectos", href: "/proyectos" },
         { label: "Servicios", href: "/#servicios" },
         { label: "Soluciones", href: "/#soluciones" },
-        { label: "Proceso", href: "/#proceso" }
+        { label: "Proceso", href: "/#proceso" },
+        { label: "Precios", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
       ],
       whatsapp: "WhatsApp",
       quote: "Solicitar cotización",
@@ -303,9 +304,9 @@ export const siteCopy = {
             "Páginas web para empresas en Panamá con secciones de servicios, equipo, respaldo, proyectos y contacto."
         },
         {
-          title: "Páginas informativas",
+          title: "Webs para abogados",
           description:
-            "Sitios claros para abogados, clínicas, restaurantes, academias y negocios que necesitan explicar qué ofrecen."
+            "Landing pages y webs legales con áreas de práctica, perfil profesional, confianza, WhatsApp y SEO local."
         },
         {
           title: "Tiendas online",
@@ -553,7 +554,8 @@ export const siteCopy = {
         { label: "Projects", href: "/proyectos" },
         { label: "Services", href: "/#servicios" },
         { label: "Solutions", href: "/#soluciones" },
-        { label: "Process", href: "/#proceso" }
+        { label: "Process", href: "/#proceso" },
+        { label: "Pricing", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
       ],
       whatsapp: "WhatsApp",
       quote: "Request a quote",
@@ -796,9 +798,9 @@ export const siteCopy = {
             "Websites for companies in Panama with services, team, proof, projects and contact sections."
         },
         {
-          title: "Informational pages",
+          title: "Websites for lawyers",
           description:
-            "Clear websites for law firms, clinics, restaurants, academies and businesses that need to explain what they offer."
+            "Legal landing pages and websites with practice areas, professional profile, trust signals, WhatsApp and local SEO."
         },
         {
           title: "Online stores",

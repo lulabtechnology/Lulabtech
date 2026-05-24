@@ -3,9 +3,23 @@
 import Image from "next/image";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { contactData } from "@/data/contact";
+import { INSTAGRAM_URL } from "@/lib/constants";
+import { trackEvent } from "@/lib/tracking";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { useSiteLanguage } from "@/components/providers/site-language";
+
+const serviceLinks = [
+  { label: "Landing pages desde $149", href: "/landing-pages-panama" },
+  { label: "Webs corporativas desde $299", href: "/paginas-web-corporativas-panama" },
+  { label: "Tiendas online desde $499", href: "/tiendas-online-panama" },
+  { label: "Software a medida desde $899", href: "/software-a-medida-panama" },
+  { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
+  { label: "Software para casilleros/logística", href: "/software-para-casilleros-panama" },
+  { label: "Webs para abogados", href: "/diseno-web-para-abogados-panama" },
+  { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
+  { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
+];
 
 export function Footer() {
   const { copy } = useSiteLanguage();
@@ -34,25 +48,43 @@ export function Footer() {
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer">
+                <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackEvent("click_whatsapp_footer")}>
                   <MessageCircle className="h-4 w-4" />
                   {copy.footer.whatsapp}
                 </ButtonLink>
 
-                <ButtonLink href={`mailto:${contactData.email}`} variant="outline">
+                <ButtonLink href={`mailto:${contactData.email}`} variant="outline" onClick={() => trackEvent("click_email", { source: "footer_cta" })}>
                   <Mail className="h-4 w-4" />
                   {contactData.email}
                 </ButtonLink>
               </div>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
                   {copy.footer.navigation}
                 </p>
                 <nav className="mt-4 grid gap-3">
                   {copy.navigation.items.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="inline-flex items-center gap-2 text-sm font-medium text-ink-700 transition hover:text-ink-900"
+                    >
+                      {item.label}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
+                  Servicios SEO
+                </p>
+                <nav className="mt-4 grid gap-3">
+                  {serviceLinks.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
@@ -77,6 +109,7 @@ export function Footer() {
                     </p>
                     <a
                       href={`mailto:${contactData.email}`}
+                      onClick={() => trackEvent("click_email", { source: "footer_contact" })}
                       className="mt-2 block break-all text-sm font-semibold text-ink-900"
                     >
                       {contactData.email}
@@ -91,9 +124,24 @@ export function Footer() {
                       href={contactData.whatsappUrl}
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() => trackEvent("click_whatsapp_footer", { source: "footer_contact" })}
                       className="mt-2 block text-sm font-semibold text-ink-900"
                     >
                       {copy.footer.whatsapp}
+                    </a>
+                  </div>
+
+                  <div className="rounded-[22px] border border-slate-200 bg-white p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">
+                      Instagram
+                    </p>
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 block break-all text-sm font-semibold text-ink-900"
+                    >
+                      @lulab.technology
                     </a>
                   </div>
                 </div>

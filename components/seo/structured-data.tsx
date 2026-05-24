@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, SITE_DESCRIPTION, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
+import { CONTACT_EMAIL, INSTAGRAM_URL, SITE_DESCRIPTION, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -18,8 +18,8 @@ const services = [
       "Landing pages orientadas a captación de leads, campañas digitales, WhatsApp y formularios de cotización."
   },
   {
-    name: "Páginas web para empresas en Panamá",
-    url: `${baseUrl}/paginas-web-empresas-panama`,
+    name: "Páginas web corporativas en Panamá",
+    url: `${baseUrl}/paginas-web-corporativas-panama`,
     description:
       "Webs corporativas con estructura clara, diseño premium, servicios, confianza y rutas de contacto."
   },
@@ -34,6 +34,36 @@ const services = [
     url: `${baseUrl}/software-a-medida-panama`,
     description:
       "Sistemas web, paneles administrativos, reservas, inventarios, reportes, software para casilleros y restaurantes."
+  },
+  {
+    name: "Software para restaurantes en Panamá",
+    url: `${baseUrl}/software-para-restaurantes-panama`,
+    description:
+      "Sistemas para restaurantes con ventas, caja, productos, inventario, gastos, usuarios y reportes."
+  },
+  {
+    name: "Software para casilleros y logística en Panamá",
+    url: `${baseUrl}/software-para-casilleros-panama`,
+    description:
+      "Sistemas para courier, casilleros y logística con clientes, tracking, paquetes, estados y panel administrativo."
+  },
+  {
+    name: "Diseño web para abogados en Panamá",
+    url: `${baseUrl}/diseno-web-para-abogados-panama`,
+    description:
+      "Landing pages y webs corporativas para abogados y firmas legales con contacto claro y SEO local."
+  },
+  {
+    name: "Sistemas de reservas en Panamá",
+    url: `${baseUrl}/sistemas-de-reservas-panama`,
+    description:
+      "Sistemas de reservas con servicios, disponibilidad, estados, confirmaciones y panel administrativo."
+  },
+  {
+    name: "Precios de páginas web en Panamá",
+    url: `${baseUrl}/cuanto-cuesta-una-pagina-web-en-panama`,
+    description:
+      "Guía comercial de precios: landing pages, webs corporativas, ecommerce y software a medida en Panamá."
   },
   {
     name: "Configuración de Google Ads en Panamá",
@@ -116,7 +146,7 @@ export function StructuredData() {
         email: CONTACT_EMAIL,
         logo: `${baseUrl}/brand/lulabtech-logo.png`,
         image: `${baseUrl}/og/og-cover.png`,
-        sameAs: [whatsappUrl]
+        sameAs: [INSTAGRAM_URL]
       },
       {
         "@type": "ProfessionalService",

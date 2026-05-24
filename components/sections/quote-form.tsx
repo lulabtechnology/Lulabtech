@@ -11,12 +11,7 @@ import { StatusMessage } from "@/components/ui/status-message";
 import { Textarea } from "@/components/ui/textarea";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { getProjectTypeLabel } from "@/lib/site-copy";
-
-declare global {
-  interface Window {
-    fbq?: (...args: unknown[]) => void;
-  }
-}
+import { trackEvent } from "@/lib/tracking";
 
 type FormValues = {
   name: string;
@@ -76,6 +71,8 @@ export function QuoteForm() {
     setErrors({});
 
     try {
+      trackEvent("click_formulario_contacto", { source: "quote_form" });
+
       const response = await fetch("/api/quote", {
         method: "POST",
         headers: {
@@ -103,6 +100,7 @@ export function QuoteForm() {
       }
 
       window.fbq?.("track", "Lead");
+      trackEvent("submit_contact_form", { project_type: values.projectType || "not_selected" });
 
       setValues(initialValues);
       setStatus({
@@ -294,7 +292,7 @@ export function QuoteForm() {
                 </div>
               </div>
 
-              <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 w-full">
+              <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 w-full" onClick={() => trackEvent("click_whatsapp_footer", { source: "quote_form" })}>
                 {formCopy.whatsappButton}
               </ButtonLink>
             </div>
@@ -313,7 +311,7 @@ export function QuoteForm() {
                 </div>
               </div>
 
-              <ButtonLink href={`mailto:${contactData.email}`} variant="outline" className="mt-5 w-full">
+              <ButtonLink href={`mailto:${contactData.email}`} variant="outline" className="mt-5 w-full" onClick={() => trackEvent("click_email", { source: "quote_form" })}>
                 {formCopy.emailButton}
               </ButtonLink>
             </div>

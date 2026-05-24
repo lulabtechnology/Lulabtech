@@ -10,6 +10,7 @@ import { MobileMenu } from "@/components/layout/mobile-menu";
 import { LanguageToggle } from "@/components/layout/language-toggle";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/tracking";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +56,11 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={() => {
+                  if (item.href === "/proyectos") {
+                    trackEvent("click_portafolio", { source: "navbar" });
+                  }
+                }}
                 className="text-sm font-medium text-ink-600 transition hover:text-ink-900"
               >
                 {item.label}
@@ -71,12 +77,13 @@ export function Navbar() {
               rel="noreferrer"
               variant="ghost"
               className="text-ink-700"
+              onClick={() => trackEvent("click_whatsapp_header")}
             >
               <MessageCircle className="h-4 w-4" />
               {copy.navigation.whatsapp}
             </ButtonLink>
 
-            <ButtonLink href={quoteHref}>
+            <ButtonLink href={quoteHref} onClick={() => trackEvent("click_formulario_contacto", { source: "navbar" })}>
               {copy.navigation.quote}
               <ArrowUpRight className="h-4 w-4" />
             </ButtonLink>

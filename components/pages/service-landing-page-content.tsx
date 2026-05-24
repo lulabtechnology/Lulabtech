@@ -7,7 +7,8 @@ import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { getServicePageOrThrow, type ServiceLocale } from "@/data/seo-pages";
+import { trackEvent } from "@/lib/tracking";
+import { getServicePage, getServicePageOrThrow, type ServiceLocale } from "@/data/seo-pages";
 
 const uiCopy = {
   es: {
@@ -20,7 +21,9 @@ const uiCopy = {
     faq: "Preguntas frecuentes",
     faqTitle: "Dudas comunes antes de cotizar",
     related: "También puede interesarte",
-    quote: "Cotizar con LulabTech"
+    quote: "Cotizar con LulabTech",
+    priceLabel: "Precio desde",
+    priceNote: "El precio final depende del alcance, contenido, integraciones y funcionalidades requeridas."
   },
   en: {
     focus: "LulabTech approach",
@@ -32,15 +35,44 @@ const uiCopy = {
     faq: "Frequently asked questions",
     faqTitle: "Common questions before requesting a quote",
     related: "You may also be interested in",
-    quote: "Quote with LulabTech"
+    quote: "Quote with LulabTech",
+    priceLabel: "Starting at",
+    priceNote: "The final price depends on scope, content, integrations, and required functionality."
   }
 } satisfies Record<ServiceLocale, Record<string, string>>;
+
+
+const priceFromBySlug: Record<string, string> = {
+  "landing-pages-panama": "$149",
+  "paginas-web-corporativas-panama": "$299",
+  "paginas-web-empresas-panama": "$299",
+  "tiendas-online-panama": "$499",
+  "software-a-medida-panama": "$899",
+  "software-para-restaurantes-panama": "$899",
+  "software-para-casilleros-panama": "$899",
+  "diseno-web-para-abogados-panama": "$149",
+  "sistemas-de-reservas-panama": "$899",
+  "cuanto-cuesta-una-pagina-web-en-panama": "$149"
+};
+
+const serviceEventBySlug: Record<string, string> = {
+  "landing-pages-panama": "click_servicio_landing_page",
+  "paginas-web-corporativas-panama": "click_servicio_web_corporativa",
+  "paginas-web-empresas-panama": "click_servicio_web_corporativa",
+  "tiendas-online-panama": "click_servicio_ecommerce",
+  "software-a-medida-panama": "click_servicio_software",
+  "software-para-restaurantes-panama": "click_servicio_software",
+  "software-para-casilleros-panama": "click_servicio_software",
+  "sistemas-de-reservas-panama": "click_servicio_software"
+};
 
 export function ServiceLandingPageContent({ slug }: { slug: string }) {
   const { locale } = useSiteLanguage();
   const activeLocale: ServiceLocale = locale === "en" ? "en" : "es";
-  const page = getServicePageOrThrow(slug, activeLocale);
+  const page = getServicePage(slug, activeLocale) || getServicePageOrThrow(slug, "es");
   const copy = uiCopy[activeLocale];
+  const priceFrom = page.priceFrom || priceFromBySlug[slug];
+  const serviceEvent = serviceEventBySlug[slug] || "click_servicio_software";
 
   return (
     <main>
@@ -58,12 +90,31 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                 {page.intro}
               </p>
 
+              {priceFrom ? (
+                <div className="mt-7 inline-flex flex-col rounded-3xl border border-brand-100 bg-white px-5 py-4 shadow-soft sm:flex-row sm:items-center sm:gap-4">
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
+                    {copy.priceLabel}
+                  </span>
+                  <span className="mt-1 text-2xl font-bold text-ink-900 sm:mt-0">{priceFrom}</span>
+                  <span className="text-sm leading-6 text-ink-500">{copy.priceNote}</span>
+                </div>
+              ) : null}
+
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg">
+                <ButtonLink
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  size="lg"
+                  onClick={() => {
+                    trackEvent("click_whatsapp_hero", { service: slug });
+                    trackEvent(serviceEvent, { service: slug });
+                  }}
+                >
                   <MessageCircle className="h-4 w-4" />
                   {page.primaryCta}
                 </ButtonLink>
-                <ButtonLink href="/proyectos" variant="outline" size="lg">
+                <ButtonLink href="/proyectos" variant="outline" size="lg" onClick={() => trackEvent("click_portafolio", { source: slug })}>
                   {page.secondaryCta}
                   <ArrowUpRight className="h-4 w-4" />
                 </ButtonLink>
@@ -102,9 +153,11 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
 
                 <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-600 p-4 text-white">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">
-                    {copy.results}
+                    {priceFrom ? copy.priceLabel : copy.results}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-white/90">{copy.resultsText}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/90">
+                    {priceFrom ? `${priceFrom} · ${copy.priceNote}` : copy.resultsText}
+                  </p>
                 </div>
               </div>
             </aside>
@@ -221,7 +274,16 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                   ))}
                 </div>
               </div>
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg">
+              <ButtonLink
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                size="lg"
+                onClick={() => {
+                  trackEvent("click_whatsapp_footer", { service: slug });
+                  trackEvent(serviceEvent, { service: slug, placement: "service_related" });
+                }}
+              >
                 {copy.quote}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>

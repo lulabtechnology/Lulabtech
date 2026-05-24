@@ -40,6 +40,8 @@ export type ServicePage = {
   useCases: { title: string; description: string }[];
   faq: FaqItem[];
   relatedLinks: RelatedLink[];
+  priceFrom?: string;
+  priceNote?: string;
 };
 
 const servicePagesEs: ServicePage[] = [
@@ -141,7 +143,7 @@ const servicePagesEs: ServicePage[] = [
     ],
     relatedLinks: [
       { label: "Landing pages en Panamá", href: "/landing-pages-panama" },
-      { label: "Páginas web para empresas", href: "/paginas-web-empresas-panama" },
+      { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
       { label: "Ver proyectos", href: "/proyectos" }
     ]
   },
@@ -248,16 +250,16 @@ const servicePagesEs: ServicePage[] = [
     ]
   },
   {
-    slug: "paginas-web-empresas-panama",
+    slug: "paginas-web-corporativas-panama",
     eyebrow: "Webs corporativas",
-    h1: "Páginas web para empresas en Panamá",
+    h1: "Páginas web corporativas en Panamá",
     intro:
       "Construimos páginas web corporativas para empresas que necesitan una presencia formal, clara y confiable, con secciones para servicios, equipo, experiencia, proyectos y contacto.",
-    metaTitle: "Páginas web para empresas en Panamá | Lulab Technology",
+    metaTitle: "Páginas web corporativas en Panamá | Lulab Technology",
     metaDescription:
       "Páginas web corporativas para empresas en Panamá con diseño profesional, servicios, contacto, portafolio, SEO básico y experiencia responsive.",
     keywords: [
-      "páginas web para empresas Panamá",
+      "páginas web corporativas Panamá",
       "web corporativa Panamá",
       "sitio web empresarial Panamá",
       "diseño web corporativo Panamá"
@@ -553,7 +555,7 @@ const servicePagesEs: ServicePage[] = [
       }
     ],
     relatedLinks: [
-      { label: "Páginas web para empresas", href: "/paginas-web-empresas-panama" },
+      { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
       { label: "Ver proyectos", href: "/proyectos" }
     ]
@@ -660,6 +662,518 @@ const servicePagesEs: ServicePage[] = [
       { label: "Ver proyectos", href: "/proyectos" }
     ]
   }
+,
+
+  {
+    slug: "software-para-restaurantes-panama",
+    eyebrow: "Software para restaurantes en Panamá",
+    h1: "Software para restaurantes en Panamá para controlar ventas, caja e inventario",
+    intro:
+      "Desarrollamos sistemas para restaurantes, cafeterías y negocios de comida en Panamá que necesitan vender más ordenado, controlar turnos de caja, registrar gastos, medir productos y administrar operaciones desde un panel propio.",
+    metaTitle: "Software para restaurantes en Panamá desde $899 | LulabTech",
+    metaDescription:
+      "Software para restaurantes en Panamá con POS, caja, ventas, productos, inventario, reportes, usuarios y panel administrativo desde $899 según alcance.",
+    keywords: [
+      "software para restaurantes en Panamá",
+      "sistema POS Panamá",
+      "software para cafeterías Panamá",
+      "sistema de ventas para restaurantes Panamá"
+    ],
+    primaryCta: "Cotizar software para restaurante",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Un sistema hecho para la operación diaria del negocio.",
+    heroPanelDescription:
+      "La idea es que ventas, caja, productos, gastos y reportes vivan en un solo flujo, con roles claros y datos útiles para tomar decisiones.",
+    heroBullets: [
+      "Registro de ventas, métodos de pago, turnos y cierres de caja",
+      "Productos, categorías, inventario, recetas y movimientos según alcance",
+      "Reportes para entender ventas, gastos, productos más vendidos y control interno"
+    ],
+    benefitsTitle: "Más orden para vender, cerrar caja y revisar el negocio",
+    benefitsDescription:
+      "Un restaurante necesita velocidad, control y datos claros. El sistema puede adaptarse al flujo real del local para evitar hojas sueltas y cálculos manuales.",
+    benefits: [
+      "Panel para administradores y colaboradores",
+      "Ventas rápidas con productos y métodos de pago",
+      "Caja con apertura, cierre y control por turno",
+      "Gestión de productos, categorías e inventario según necesidad",
+      "Reportes de ventas, gastos y rendimiento",
+      "Base preparada para crecer con facturas, asistencia o módulos internos"
+    ],
+    processTitle: "Cómo se construye un sistema para restaurante",
+    process: [
+      {
+        title: "Mapeo del flujo",
+        description:
+          "Revisamos cómo venden, cómo cobran, cómo cierran caja y qué información necesitan ver los dueños o administradores."
+      },
+      {
+        title: "Definición de módulos",
+        description:
+          "Aterrizamos POS, caja, productos, inventario, gastos, reportes, usuarios y cualquier módulo adicional requerido."
+      },
+      {
+        title: "Desarrollo y pruebas",
+        description:
+          "Construimos el sistema con datos de prueba y validamos que el flujo sea entendible para el equipo."
+      },
+      {
+        title: "Entrega y ajustes",
+        description:
+          "Se publica, se revisa con el cliente y se ajustan detalles operativos antes de usarlo de forma estable."
+      }
+    ],
+    useCasesTitle: "Ideal para negocios de comida que quieren control real",
+    useCasesDescription:
+      "Puede adaptarse a salchipaperías, cafeterías, food trucks, restaurantes pequeños, dark kitchens o negocios con varios colaboradores.",
+    useCases: [
+      {
+        title: "POS interno",
+        description:
+          "Pantalla de ventas rápida para registrar productos, cantidades, métodos de pago y facturas si el alcance lo requiere."
+      },
+      {
+        title: "Control de caja",
+        description:
+          "Apertura y cierre de turnos, efectivo, Yappy u otros métodos, diferencias y revisión administrativa."
+      },
+      {
+        title: "Reportes de operación",
+        description:
+          "Ventas por día, productos más vendidos, gastos y métricas útiles para decidir con más claridad."
+      }
+    ],
+    faq: [
+      {
+        question: "¿El sistema sirve como POS?",
+        answer:
+          "Sí. Puede incluir un flujo POS para registrar ventas, productos, pagos y cierres, siempre ajustado al alcance acordado."
+      },
+      {
+        question: "¿Puede tener inventario?",
+        answer:
+          "Sí. Se puede trabajar inventario simple o más avanzado con insumos, recetas y movimientos según lo que necesite el restaurante."
+      },
+      {
+        question: "¿El precio es cerrado?",
+        answer:
+          "No. El precio inicia desde $899 y puede variar por módulos, reportes, usuarios, facturación, integraciones y complejidad operativa."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
+      { label: "Cuánto cuesta una página web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
+    ]
+  },
+  {
+    slug: "software-para-casilleros-panama",
+    eyebrow: "Software para casilleros y logística en Panamá",
+    h1: "Software para casilleros y logística en Panamá con tracking, clientes y administración",
+    intro:
+      "Creamos sistemas para casilleros, courier, carga y logística en Panamá que necesitan organizar clientes, paquetes, contenedores, estados, comprobantes, cobros y comunicación desde una plataforma propia.",
+    metaTitle: "Software para casilleros y logística en Panamá | LulabTech",
+    metaDescription:
+      "Software para casilleros en Panamá con clientes, tracking, paquetes, contenedores, estados, comprobantes, facturación o panel administrativo desde $899.",
+    keywords: [
+      "software para casilleros Panamá",
+      "software de logística Panamá",
+      "sistema courier Panamá",
+      "tracking de paquetes Panamá"
+    ],
+    primaryCta: "Cotizar sistema de casilleros",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una plataforma para ordenar la operación logística.",
+    heroPanelDescription:
+      "El sistema puede centralizar clientes, tracking, paquetes, estados, evidencias, cobros y reportes para reducir trabajo manual.",
+    heroBullets: [
+      "Registro de clientes, casilleros, paquetes y estados",
+      "Tracking y comunicación para clientes según el flujo del negocio",
+      "Panel administrativo con filtros, documentos, cobros y reportes"
+    ],
+    benefitsTitle: "Menos desorden operativo y más visibilidad para el cliente",
+    benefitsDescription:
+      "Un negocio de casilleros o logística necesita información clara, trazabilidad y control. La plataforma se diseña alrededor del flujo real de la empresa.",
+    benefits: [
+      "Clientes y cuentas organizadas",
+      "Estados de paquetes o cargas por etapa",
+      "Subida de comprobantes, documentos o evidencias según alcance",
+      "Panel administrativo con búsqueda y filtros",
+      "Rutas de comunicación con WhatsApp o correo",
+      "Base para reportes, cobros, facturas o módulos financieros"
+    ],
+    processTitle: "Proceso para crear un software logístico",
+    process: [
+      {
+        title: "Flujo operativo",
+        description:
+          "Definimos cómo entra una carga, cómo cambia de estado, quién actualiza información y qué ve el cliente."
+      },
+      {
+        title: "Módulos y roles",
+        description:
+          "Separamos lo que hará el administrador, el personal operativo y el cliente final."
+      },
+      {
+        title: "Desarrollo por etapas",
+        description:
+          "Construimos el sistema con módulos claros para probar tracking, clientes, documentos y reportes."
+      },
+      {
+        title: "Publicación segura",
+        description:
+          "El sistema queda preparado para uso interno, con accesos, rutas, formularios y datos organizados."
+      }
+    ],
+    useCasesTitle: "Ideal para courier, casilleros, cargas y operación interna",
+    useCasesDescription:
+      "Funciona para empresas que hoy manejan datos en Excel, WhatsApp o procesos manuales y quieren centralizar la información.",
+    useCases: [
+      {
+        title: "Portal de cliente",
+        description:
+          "El cliente puede consultar estados, datos básicos, avisos o documentos según el alcance del sistema."
+      },
+      {
+        title: "Panel de operaciones",
+        description:
+          "El equipo puede actualizar paquetes, cargas, contenedores, estados y notas internas."
+      },
+      {
+        title: "Control comercial",
+        description:
+          "Se pueden agregar cobros, facturas, comprobantes, reportes o módulos financieros por etapa."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Puede tener tracking para clientes?",
+        answer:
+          "Sí. Se puede crear un portal o consulta por código para que el cliente vea estados y datos permitidos."
+      },
+      {
+        question: "¿Sirve para carga marítima o aérea?",
+        answer:
+          "Sí, siempre que se defina el flujo real: paquetes, contenedores, guías, casilleros, estados y documentos."
+      },
+      {
+        question: "¿Puede crecer por módulos?",
+        answer:
+          "Sí. Puede iniciar con clientes y tracking, y luego sumar facturación, finanzas, rutas, reportes o portal avanzado."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "Ver proyectos", href: "/proyectos" }
+    ]
+  },
+  {
+    slug: "diseno-web-para-abogados-panama",
+    eyebrow: "Diseño web para abogados en Panamá",
+    h1: "Diseño web para abogados en Panamá con imagen profesional y contacto claro",
+    intro:
+      "Creamos landing pages y páginas web para abogados, firmas legales y asesores en Panamá que necesitan presentar áreas de práctica, generar confianza y facilitar solicitudes de consulta por WhatsApp, formulario o correo.",
+    metaTitle: "Diseño web para abogados en Panamá desde $149 | LulabTech",
+    metaDescription:
+      "Diseño web para abogados en Panamá: landing pages y webs corporativas legales con servicios, confianza, WhatsApp, SEO local y contenido profesional desde $149.",
+    keywords: [
+      "diseño web para abogados Panamá",
+      "páginas web para abogados Panamá",
+      "landing page abogados Panamá",
+      "web legal Panamá"
+    ],
+    primaryCta: "Cotizar web legal",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una presencia legal seria, clara y sin verse genérica.",
+    heroPanelDescription:
+      "El objetivo es comunicar especialidad, experiencia y canales de consulta con un diseño sobrio, elegante y preparado para SEO local.",
+    heroBullets: [
+      "Secciones para áreas de práctica, perfil, beneficios y contacto",
+      "CTA hacia WhatsApp, formulario o correo profesional",
+      "Base SEO para búsquedas legales en Panamá"
+    ],
+    benefitsTitle: "Una web legal debe transmitir confianza desde el primer vistazo",
+    benefitsDescription:
+      "Para un abogado, la página debe verse seria, ordenar servicios y facilitar que el posible cliente solicite orientación sin confundirse.",
+    benefits: [
+      "Diseño sobrio y profesional",
+      "Textos comerciales sin promesas exageradas",
+      "Áreas de práctica presentadas con claridad",
+      "Perfil profesional y señales de confianza",
+      "WhatsApp y formulario visibles",
+      "SEO inicial para búsquedas locales"
+    ],
+    processTitle: "Proceso para una página legal",
+    process: [
+      {
+        title: "Definir enfoque",
+        description:
+          "Aterrizamos si será landing page para captar consultas o web corporativa con más profundidad."
+      },
+      {
+        title: "Ordenar servicios legales",
+        description:
+          "Organizamos áreas de práctica, perfil, diferenciales y preguntas frecuentes reales."
+      },
+      {
+        title: "Diseño y copy",
+        description:
+          "Construimos una presencia elegante con lenguaje claro y una ruta de contacto directa."
+      },
+      {
+        title: "Publicación SEO",
+        description:
+          "La web queda con metadata, estructura semántica, sitemap, robots y enlaces internos."
+      }
+    ],
+    useCasesTitle: "Ideal para profesionales y firmas legales",
+    useCasesDescription:
+      "Puede servir para abogados independientes, firmas pequeñas, servicios migratorios, inmobiliarios, corporativos, familia, laboral o asesoría legal general.",
+    useCases: [
+      {
+        title: "Landing legal desde $149",
+        description:
+          "Para presentar una oferta o servicio principal con CTA directo a consulta."
+      },
+      {
+        title: "Web corporativa desde $299",
+        description:
+          "Para firmas que necesitan más secciones, equipo, áreas de práctica y estructura institucional."
+      },
+      {
+        title: "SEO local",
+        description:
+          "Estructura inicial para posicionar servicios legales en Panamá con páginas internas futuras."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Qué precio aplica para abogados?",
+        answer:
+          "Puede iniciar desde $149 si es landing page o desde $299 si requiere una web corporativa más completa."
+      },
+      {
+        question: "¿Puedo poner mis áreas de práctica?",
+        answer:
+          "Sí. Se pueden organizar áreas legales, perfil, experiencia, preguntas frecuentes y llamadas a consulta."
+      },
+      {
+        question: "¿Se puede conectar WhatsApp?",
+        answer:
+          "Sí. Se pueden colocar botones con mensajes precargados para facilitar consultas desde móvil."
+      }
+    ],
+    relatedLinks: [
+      { label: "Landing pages", href: "/landing-pages-panama" },
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" }
+    ]
+  },
+  {
+    slug: "sistemas-de-reservas-panama",
+    eyebrow: "Sistemas de reservas en Panamá",
+    h1: "Sistemas de reservas en Panamá para citas, cupos, servicios y confirmaciones",
+    intro:
+      "Desarrollamos sistemas de reservas para negocios en Panamá que necesitan recibir solicitudes, controlar disponibilidad, aprobar o reprogramar citas, enviar confirmaciones y administrar servicios desde un panel propio.",
+    metaTitle: "Sistema de reservas en Panamá desde $899 | LulabTech",
+    metaDescription:
+      "Sistema de reservas en Panamá para citas, servicios, disponibilidad, confirmaciones, estados, clientes y panel administrativo desde $899 según alcance.",
+    keywords: [
+      "sistema de reservas Panamá",
+      "sistema de citas Panamá",
+      "software de reservas Panamá",
+      "reservas online Panamá"
+    ],
+    primaryCta: "Cotizar sistema de reservas",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Reservas más ordenadas, con estados y administración clara.",
+    heroPanelDescription:
+      "El sistema puede manejar servicios, horarios, cupos, solicitudes, aprobaciones, reprogramaciones, correos y panel administrativo.",
+    heroBullets: [
+      "Servicios, disponibilidad, cupos y horarios configurables",
+      "Reservas pendientes, aprobadas, canceladas o reprogramadas",
+      "Panel administrativo para revisar solicitudes y dar seguimiento"
+    ],
+    benefitsTitle: "Un flujo de reservas evita perder solicitudes y desordena menos al equipo",
+    benefitsDescription:
+      "Ideal para negocios que hoy reciben citas por WhatsApp pero necesitan más control, historial y una experiencia más profesional.",
+    benefits: [
+      "Formulario de reserva claro para clientes",
+      "Calendarios o slots según el tipo de servicio",
+      "Estados de reserva y seguimiento administrativo",
+      "Correos o mensajes de confirmación según alcance",
+      "Panel para servicios, disponibilidad y solicitudes",
+      "Base para pagos, comprobantes o reportes en fases futuras"
+    ],
+    processTitle: "Cómo trabajamos un sistema de reservas",
+    process: [
+      {
+        title: "Servicios y reglas",
+        description:
+          "Definimos qué se reserva, duración, cupos, horarios, modalidad y restricciones."
+      },
+      {
+        title: "Flujo del cliente",
+        description:
+          "Diseñamos el camino para solicitar, confirmar y consultar el estado de una reserva."
+      },
+      {
+        title: "Panel administrativo",
+        description:
+          "Creamos herramientas para aprobar, negar, cancelar, reprogramar o administrar disponibilidad."
+      },
+      {
+        title: "Publicación y pruebas",
+        description:
+          "Probamos solicitudes, estados, correos y experiencia móvil antes de dejarlo en producción."
+      }
+    ],
+    useCasesTitle: "Para negocios que dependen de citas o cupos",
+    useCasesDescription:
+      "Funciona para academias, coaching, tours, clínicas, servicios profesionales, consultorías, salones, alquileres o experiencias con cupos limitados.",
+    useCases: [
+      {
+        title: "Citas profesionales",
+        description:
+          "Clientes solicitan una sesión y el administrador confirma, niega o reprograma."
+      },
+      {
+        title: "Tours y experiencias",
+        description:
+          "Permite manejar servicios, fechas, cupos, comprobantes o solicitudes grupales."
+      },
+      {
+        title: "Cursos y sesiones",
+        description:
+          "Útil para cupos por horario, modalidad virtual o presencial y seguimiento de interesados."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Las reservas se aprueban automáticamente?",
+        answer:
+          "Puede hacerse automático o con aprobación manual. Depende del modelo de negocio y del control que necesite el equipo."
+      },
+      {
+        question: "¿Puede enviar correos?",
+        answer:
+          "Sí. Se pueden configurar notificaciones por correo o preparar integraciones según el alcance."
+      },
+      {
+        question: "¿Puede tener pagos o comprobantes?",
+        answer:
+          "Sí, se puede sumar carga de comprobantes, pagos o pasarela en una fase del proyecto si el negocio lo requiere."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Landing pages", href: "/landing-pages-panama" },
+      { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" }
+    ]
+  },
+  {
+    slug: "cuanto-cuesta-una-pagina-web-en-panama",
+    eyebrow: "Precios de páginas web en Panamá",
+    h1: "Cuánto cuesta una página web en Panamá y qué incluye cada tipo de proyecto",
+    intro:
+      "El precio de una página web en Panamá depende del alcance real: cantidad de secciones, páginas internas, contenido, panel administrativo, integraciones, pasarela de pago, automatizaciones, SEO y funcionalidades especiales.",
+    metaTitle: "Cuánto cuesta una página web en Panamá | Precios LulabTech",
+    metaDescription:
+      "Conoce precios de páginas web en Panamá: landing desde $149, web corporativa desde $299, ecommerce desde $499 y software a medida desde $899.",
+    keywords: [
+      "cuánto cuesta una página web en Panamá",
+      "precio página web Panamá",
+      "landing page desde 149 Panamá",
+      "web corporativa desde 299 Panamá"
+    ],
+    primaryCta: "Pedir cotización exacta",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Precios desde, no paquetes cerrados para todos.",
+    heroPanelDescription:
+      "Un proyecto simple puede resolverse rápido; uno con panel, integraciones o lógica interna requiere más desarrollo y validación.",
+    heroBullets: [
+      "Landing page desde $149",
+      "Web corporativa desde $299 y ecommerce desde $499",
+      "Software a medida, reservas, restaurantes o casilleros desde $899"
+    ],
+    benefitsTitle: "Rangos de precio claros para tomar una mejor decisión",
+    benefitsDescription:
+      "Estos precios sirven como punto de partida comercial. El monto final se define después de revisar alcance, contenido y funcionalidades.",
+    benefits: [
+      "Landing page desde $149 para una oferta o servicio específico",
+      "Web corporativa desde $299 para empresas con más estructura",
+      "Ecommerce desde $499 para catálogo, productos y flujo de compra o WhatsApp",
+      "Software a medida desde $899 para paneles, reservas, inventarios o procesos internos",
+      "Dominio y correo gratis por 1 año según promoción vigente",
+      "Renovación anual desde $24.99 cuando aplique al modelo comercial de dominio/correo"
+    ],
+    processTitle: "Qué puede hacer variar el precio",
+    process: [
+      {
+        title: "Cantidad de contenido",
+        description:
+          "Más secciones, páginas internas, textos, imágenes o carga inicial pueden aumentar el alcance."
+      },
+      {
+        title: "Funcionalidades",
+        description:
+          "Formularios, panel administrativo, reservas, inventario, usuarios o reportes cambian el nivel de desarrollo."
+      },
+      {
+        title: "Integraciones",
+        description:
+          "Pasarelas de pago, correos, CRM, Analytics, Pixel, APIs o automatizaciones requieren configuración adicional."
+      },
+      {
+        title: "Nivel SEO",
+        description:
+          "Una base SEO inicial no es lo mismo que una estrategia mensual con contenido, medición y optimización continua."
+      }
+    ],
+    useCasesTitle: "Qué opción conviene según el objetivo",
+    useCasesDescription:
+      "La mejor opción depende de si necesitas captar consultas, presentar una empresa, vender productos o digitalizar una operación interna.",
+    useCases: [
+      {
+        title: "Captar clientes rápido",
+        description:
+          "Una landing page puede ser suficiente para explicar una oferta y conectar WhatsApp o formulario."
+      },
+      {
+        title: "Construir presencia formal",
+        description:
+          "Una web corporativa ayuda a mostrar servicios, confianza, equipo, proyectos y contacto."
+      },
+      {
+        title: "Automatizar operación",
+        description:
+          "Un software a medida aplica cuando hay procesos, usuarios, datos, reportes o tareas repetitivas."
+      }
+    ],
+    faq: [
+      {
+        question: "¿El precio incluye dominio y correo?",
+        answer:
+          "Puede incluir dominio y correo gratis por 1 año según promoción y modelo comercial. Luego la renovación anual puede iniciar desde $24.99 si aplica."
+      },
+      {
+        question: "¿Por qué el precio puede cambiar?",
+        answer:
+          "Porque no todos los proyectos tienen el mismo contenido, cantidad de secciones, panel administrativo, pasarela de pago, automatizaciones o integraciones."
+      },
+      {
+        question: "¿Puedo empezar con algo pequeño y crecer?",
+        answer:
+          "Sí. Se puede iniciar con una landing o web corporativa y luego sumar páginas SEO, ecommerce, reservas o software interno."
+      }
+    ],
+    relatedLinks: [
+      { label: "Landing pages desde $149", href: "/landing-pages-panama" },
+      { label: "Web corporativa desde $299", href: "/paginas-web-corporativas-panama" },
+      { label: "Software a medida desde $899", href: "/software-a-medida-panama" }
+    ]
+  },
 ];
 
 const servicePagesEn: ServicePage[] = [
@@ -756,7 +1270,7 @@ const servicePagesEn: ServicePage[] = [
     ],
     relatedLinks: [
       { label: "Landing pages in Panama", href: "/landing-pages-panama" },
-      { label: "Company websites", href: "/paginas-web-empresas-panama" },
+      { label: "Company websites", href: "/paginas-web-corporativas-panama" },
       { label: "View projects", href: "/proyectos" }
     ]
   },
@@ -1148,7 +1662,7 @@ const servicePagesEn: ServicePage[] = [
       }
     ],
     relatedLinks: [
-      { label: "Company websites", href: "/paginas-web-empresas-panama" },
+      { label: "Company websites", href: "/paginas-web-corporativas-panama" },
       { label: "Web design in Panama", href: "/diseno-web-panama" },
       { label: "View projects", href: "/proyectos" }
     ]

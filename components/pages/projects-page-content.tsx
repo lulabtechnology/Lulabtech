@@ -9,6 +9,7 @@ import { GridPattern } from "@/components/ui/grid-pattern";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { getProjectPortfolio, type ServiceLocale } from "@/data/seo-pages";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { trackEvent } from "@/lib/tracking";
 
 type ProjectsPageCopy = {
   eyebrow: string;
@@ -39,7 +40,7 @@ const copy: Record<ServiceLocale, ProjectsPageCopy> = {
     links: [
       { label: "Diseño web", href: "/diseno-web-panama" },
       { label: "Landing pages", href: "/landing-pages-panama" },
-      { label: "Webs corporativas", href: "/paginas-web-empresas-panama" },
+      { label: "Webs corporativas", href: "/paginas-web-corporativas-panama" },
       { label: "Ecommerce", href: "/tiendas-online-panama" },
       { label: "Software a medida", href: "/software-a-medida-panama" }
     ]
@@ -59,7 +60,7 @@ const copy: Record<ServiceLocale, ProjectsPageCopy> = {
     links: [
       { label: "Web design", href: "/diseno-web-panama" },
       { label: "Landing pages", href: "/landing-pages-panama" },
-      { label: "Corporate websites", href: "/paginas-web-empresas-panama" },
+      { label: "Corporate websites", href: "/paginas-web-corporativas-panama" },
       { label: "Ecommerce", href: "/tiendas-online-panama" },
       { label: "Custom software", href: "/software-a-medida-panama" }
     ]
@@ -86,11 +87,11 @@ export function ProjectsPageContent() {
               {pageCopy.description}
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg">
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" onClick={() => trackEvent("click_whatsapp_hero", { source: "projects" })}>
                 <MessageCircle className="h-4 w-4" />
                 {pageCopy.primaryCta}
               </ButtonLink>
-              <ButtonLink href="/#servicios" variant="outline" size="lg">
+              <ButtonLink href="/#servicios" variant="outline" size="lg" onClick={() => trackEvent("click_servicio_software", { source: "projects" })}>
                 {pageCopy.secondaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
@@ -168,7 +169,7 @@ export function ProjectsPageContent() {
                   {pageCopy.ctaDescription}
                 </p>
               </div>
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" className="border-white/20 bg-white text-ink-900 hover:bg-white/90">
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" className="border-white/20 bg-white text-ink-900 hover:bg-white/90" onClick={() => trackEvent("click_whatsapp_footer", { source: "projects_cta" })}>
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
