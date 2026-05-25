@@ -1997,6 +1997,728 @@ const servicePagesEs: ServicePage[] = [
     ],
     priceFrom: "$899"
   },
+
+  {
+    slug: "paginas-web-para-restaurantes-panama",
+    eyebrow: "Webs para restaurantes en Panamá",
+    h1: "Páginas web para restaurantes en Panamá con menú, WhatsApp y presencia profesional",
+    intro:
+      "Creamos páginas web para restaurantes, cafeterías, food trucks y marcas gastronómicas que necesitan mostrar su propuesta, publicar menú, reforzar confianza y recibir consultas o pedidos por WhatsApp.",
+    metaTitle: "Páginas web para restaurantes en Panamá | LulabTech",
+    metaDescription:
+      "Diseño de páginas web para restaurantes en Panamá con menú, fotos, ubicación, horarios, WhatsApp, SEO local y estructura comercial desde $149.",
+    keywords: [
+      "páginas web para restaurantes Panamá",
+      "diseño web para restaurantes Panamá",
+      "menú digital Panamá",
+      "web para restaurante con WhatsApp"
+    ],
+    primaryCta: "Cotizar web para restaurante",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Secciones para menú, horarios, ubicación, fotos y promociones",
+      "Botones claros hacia WhatsApp, llamada o redes oficiales",
+      "Base SEO local para búsquedas gastronómicas en Panamá"
+    ],
+    heroPanelTitle: "Una web gastronómica debe abrir el apetito y facilitar el contacto.",
+    heroPanelDescription:
+      "Ordenamos el menú, la propuesta del restaurante y las rutas de contacto para que el cliente entienda rápido qué ofrecen y cómo pedir información.",
+    benefitsTitle: "Más claridad para clientes que buscan dónde comer, pedir o reservar",
+    benefitsDescription:
+      "Una página bien armada ayuda a que el restaurante no dependa solo de redes sociales y pueda presentar su información de forma estable, profesional y fácil de compartir.",
+    benefits: [
+      "Menú o catálogo digital organizado por categorías",
+      "Ubicación, horarios, delivery, reservas o pedidos por WhatsApp",
+      "Galería visual para platos, local, promociones y ambiente",
+      "Preguntas frecuentes sobre pedidos, pagos, cobertura o reservas",
+      "Estructura responsive para usuarios que entran desde celular",
+      "Enlaces internos hacia software POS o sistemas de reservas si el negocio necesita operar mejor"
+    ],
+    processTitle: "Proceso para una web de restaurante",
+    process: [
+      {
+        title: "Información del local",
+        description:
+          "Recolectamos menú, horarios, ubicación, fotos, redes, promociones y datos de contacto para ordenar la información clave."
+      },
+      {
+        title: "Estructura comercial",
+        description:
+          "Definimos qué debe verse primero: platos principales, promociones, reservas, delivery, ambiente o contacto directo."
+      },
+      {
+        title: "Diseño responsive",
+        description:
+          "Creamos una experiencia visual clara para celular y escritorio, cuidando fotos, legibilidad y velocidad."
+      },
+      {
+        title: "Publicación y medición",
+        description:
+          "La página queda lista para compartir, conectar WhatsApp, usar en campañas y reforzar presencia local."
+      }
+    ],
+    useCasesTitle: "Restaurantes que pueden aprovechar una web propia",
+    useCasesDescription:
+      "Funciona para negocios gastronómicos que quieren comunicar mejor su oferta y depender menos de publicaciones sueltas en redes.",
+    useCases: [
+      {
+        title: "Restaurantes y cafeterías",
+        description:
+          "Para mostrar menú, horarios, ubicación, fotos del local, promociones y contacto directo."
+      },
+      {
+        title: "Food trucks y dark kitchens",
+        description:
+          "Para explicar productos, cobertura, pedidos por WhatsApp y diferenciadores del concepto."
+      },
+      {
+        title: "Restaurantes con operación interna",
+        description:
+          "La web puede crecer hacia reservas, POS, inventario o reportes cuando el negocio necesita más control."
+      }
+    ],
+    faq: [
+      {
+        question: "¿La página puede incluir menú digital?",
+        answer:
+          "Sí. Puede incluir menú por categorías, precios, fotos, descripción de platos y botones hacia WhatsApp según el alcance acordado."
+      },
+      {
+        question: "¿Sirve si el restaurante ya usa Instagram?",
+        answer:
+          "Sí. Instagram ayuda a mostrar contenido, pero la web ordena la información fija, mejora la confianza y permite tener una ruta propia para Google y campañas."
+      },
+      {
+        question: "¿Puede conectarse con un sistema POS?",
+        answer:
+          "Puede plantearse por fases. Primero la web comercial y luego módulos de POS, inventario, reportes o reservas si el restaurante lo necesita."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
+      { label: "Software POS", href: "/software-pos-panama" },
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" }
+    ],
+    priceFrom: "$149"
+  },
+  {
+    slug: "paginas-web-para-academias-panama",
+    eyebrow: "Webs para academias en Panamá",
+    h1: "Páginas web para academias en Panamá que necesitan presentar cursos y captar estudiantes",
+    intro:
+      "Diseñamos páginas web para academias, centros de capacitación, colegios, tutores y programas educativos que necesitan explicar su oferta, generar confianza y recibir solicitudes de información.",
+    metaTitle: "Páginas web para academias en Panamá | LulabTech",
+    metaDescription:
+      "Diseño web para academias en Panamá con catálogo de cursos, formularios, WhatsApp, SEO local y estructura profesional desde $299.",
+    keywords: [
+      "páginas web para academias Panamá",
+      "diseño web educativo Panamá",
+      "web para cursos Panamá",
+      "landing para academia Panamá"
+    ],
+    primaryCta: "Cotizar web para academia",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Catálogo de cursos, programas, modalidades y requisitos",
+      "CTA hacia WhatsApp, formulario o proceso de inscripción",
+      "Estructura profesional para transmitir confianza académica"
+    ],
+    heroPanelTitle: "Una academia necesita explicar su oferta sin confundir al estudiante.",
+    heroPanelDescription:
+      "Organizamos programas, beneficios, modalidad, duración y contacto para que el visitante entienda qué puede estudiar y cómo solicitar información.",
+    benefitsTitle: "Una web educativa clara ayuda a captar mejores solicitudes",
+    benefitsDescription:
+      "La educación vende confianza. Una página bien estructurada permite presentar programas, metodología, respaldo y próximos pasos de forma ordenada.",
+    benefits: [
+      "Secciones para programas, cursos, diplomados o servicios educativos",
+      "Formularios de interés y enlaces directos a WhatsApp",
+      "Bloques de metodología, certificación, docentes o diferenciales",
+      "Preguntas frecuentes sobre modalidad, duración, horarios y pagos",
+      "Base SEO para búsquedas de cursos y capacitación en Panamá",
+      "Posibilidad de crecer hacia panel administrativo o LMS según alcance"
+    ],
+    processTitle: "Proceso para una web académica",
+    process: [
+      {
+        title: "Oferta educativa",
+        description:
+          "Definimos cursos, áreas, programas, duración, modalidad y tipo de estudiante objetivo."
+      },
+      {
+        title: "Ruta de captación",
+        description:
+          "Organizamos formularios, WhatsApp, llamadas a inscripción y mensajes para orientar al estudiante."
+      },
+      {
+        title: "Diseño institucional",
+        description:
+          "Construimos una estética clara y confiable, cuidando jerarquía, legibilidad y estructura responsive."
+      },
+      {
+        title: "Publicación y base SEO",
+        description:
+          "La web queda lista para indexarse, compartirse y utilizarse en campañas o comunicación institucional."
+      }
+    ],
+    useCasesTitle: "Academias y proyectos educativos donde aplica",
+    useCasesDescription:
+      "La estructura puede adaptarse a cursos cortos, diplomados, tutorías, academias virtuales o centros presenciales.",
+    useCases: [
+      {
+        title: "Academias y centros de formación",
+        description:
+          "Para presentar programas, áreas académicas, metodología, certificados y canales de inscripción."
+      },
+      {
+        title: "Cursos y diplomados",
+        description:
+          "Para vender una oferta específica con fecha, modalidad, contenido, beneficios y formulario de interés."
+      },
+      {
+        title: "Programas para niños o adultos",
+        description:
+          "Para comunicar confianza, horarios, ubicación, equipo, proceso y contacto con padres o estudiantes."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Puede tener un catálogo de cursos?",
+        answer:
+          "Sí. Puede ser un catálogo estático o administrable, dependiendo de si el equipo necesita editar cursos desde un panel."
+      },
+      {
+        question: "¿Incluye plataforma para clases virtuales?",
+        answer:
+          "Una web informativa no es lo mismo que un LMS. Si se necesita plataforma educativa, usuarios, módulos o clases, se cotiza como alcance adicional."
+      },
+      {
+        question: "¿Puede captar interesados desde formularios?",
+        answer:
+          "Sí. Se puede conectar formulario, WhatsApp, correo o un flujo de solicitudes según la operación de la academia."
+      }
+    ],
+    relatedLinks: [
+      { label: "Páginas corporativas", href: "/paginas-web-corporativas-panama" },
+      { label: "Landing pages", href: "/landing-pages-panama" },
+      { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "paginas-web-para-eventos-panama",
+    eyebrow: "Webs para eventos en Panamá",
+    h1: "Páginas web para eventos, ferias y congresos en Panamá",
+    intro:
+      "Creamos páginas web para eventos, ferias, congresos, lanzamientos y actividades corporativas que necesitan comunicar fecha, sede, agenda, participantes, formularios y contacto de forma profesional.",
+    metaTitle: "Páginas web para eventos en Panamá | LulabTech",
+    metaDescription:
+      "Diseño de páginas web para eventos en Panamá: ferias, congresos, agenda, formularios, patrocinadores, documentos y contacto desde $299.",
+    keywords: [
+      "páginas web para eventos Panamá",
+      "web para ferias Panamá",
+      "landing para eventos Panamá",
+      "página para congreso Panamá"
+    ],
+    primaryCta: "Cotizar web para evento",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Secciones para fecha, sede, agenda, patrocinadores y participantes",
+      "Formularios, descargas, WhatsApp y correos organizados",
+      "Diseño responsive para promocionar el evento antes y durante la campaña"
+    ],
+    heroPanelTitle: "Un evento necesita una página clara para informar y convertir interés en acción.",
+    heroPanelDescription:
+      "Ordenamos toda la información del evento para que asistentes, expositores, patrocinadores o aliados encuentren rápido lo que necesitan.",
+    benefitsTitle: "Una página propia evita que el evento dependa solo de piezas sueltas",
+    benefitsDescription:
+      "La web puede funcionar como centro oficial de información, descargas, contacto, agenda y comunicación para campañas digitales.",
+    benefits: [
+      "Hero con fecha, sede, propuesta del evento y CTA",
+      "Bloques para visitantes, expositores, patrocinadores o aliados",
+      "Descarga de formularios, brochures o documentos del evento",
+      "Secciones para agenda, ubicación, hoteles, mapas o preguntas frecuentes",
+      "Estructura para campañas, anuncios y comunicación por redes",
+      "Base para futuras fases como registro, panel o galerías privadas"
+    ],
+    processTitle: "Proceso para una web de evento",
+    process: [
+      {
+        title: "Mapa de información",
+        description:
+          "Organizamos fecha, lugar, públicos, agenda, formularios, patrocinadores y contenidos clave."
+      },
+      {
+        title: "Estructura por audiencia",
+        description:
+          "Definimos qué necesita saber cada visitante: asistente, expositor, patrocinador, aliado o prensa."
+      },
+      {
+        title: "Diseño promocional",
+        description:
+          "Creamos una experiencia visual alineada a la marca del evento, preparada para mobile y campañas."
+      },
+      {
+        title: "Lanzamiento y ajustes",
+        description:
+          "La web queda lista para compartir y puede ir ajustándose con nuevos logos, documentos o información confirmada."
+      }
+    ],
+    useCasesTitle: "Eventos que pueden necesitar una landing o web completa",
+    useCasesDescription:
+      "La estructura puede crecer según si el evento necesita solo información, registro, descargas, participantes o paneles privados.",
+    useCases: [
+      {
+        title: "Ferias y exposiciones",
+        description:
+          "Para mostrar sede, expositores, beneficios, formulario de participación y datos de coordinación."
+      },
+      {
+        title: "Congresos y conferencias",
+        description:
+          "Para presentar agenda, ponentes, registro, ubicación, patrocinadores y preguntas frecuentes."
+      },
+      {
+        title: "Eventos corporativos",
+        description:
+          "Para lanzamientos, encuentros, actividades de marca o comunicación institucional con una página formal."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Puede incluir formularios descargables?",
+        answer:
+          "Sí. Se pueden agregar documentos PDF, botones de descarga y mensajes claros sobre a dónde enviar la información."
+      },
+      {
+        question: "¿Puede manejar participantes confirmados?",
+        answer:
+          "Puede mostrarlos en una sección pública o, si se requiere control, plantearse una fase con panel administrativo."
+      },
+      {
+        question: "¿Sirve para campañas de promoción?",
+        answer:
+          "Sí. Una web del evento ayuda a dirigir tráfico de redes, Google Ads, email marketing o WhatsApp hacia una fuente oficial."
+      }
+    ],
+    relatedLinks: [
+      { label: "Landing pages", href: "/landing-pages-panama" },
+      { label: "Páginas corporativas", href: "/paginas-web-corporativas-panama" },
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "rediseno-web-panama",
+    eyebrow: "Rediseño web en Panamá",
+    h1: "Rediseño de páginas web en Panamá para negocios que necesitan verse más profesionales",
+    intro:
+      "Mejoramos páginas existentes que se ven antiguas, cargan mal, no explican bien la oferta o no convierten. Rediseñamos estructura, contenido, experiencia mobile, SEO básico y rutas de contacto.",
+    metaTitle: "Rediseño de páginas web en Panamá | LulabTech",
+    metaDescription:
+      "Rediseño web en Panamá para empresas con sitios antiguos o poco claros. Mejoramos estructura, diseño responsive, SEO, WhatsApp y conversión desde $299.",
+    keywords: [
+      "rediseño web Panamá",
+      "rediseñar página web Panamá",
+      "mejorar página web Panamá",
+      "actualizar sitio web Panamá"
+    ],
+    primaryCta: "Evaluar mi web actual",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Revisión de estructura, mensaje, responsive y rutas de contacto",
+      "Mejora visual sin perder la esencia de la marca",
+      "Base SEO y conversión para aprovechar mejor el tráfico existente"
+    ],
+    heroPanelTitle: "A veces no necesitas empezar de cero: necesitas ordenar y elevar lo que ya tienes.",
+    heroPanelDescription:
+      "Revisamos qué funciona, qué está confundiendo al usuario y cómo convertir la web actual en una presencia más clara, moderna y útil.",
+    benefitsTitle: "Un rediseño puede mejorar percepción, confianza y consultas",
+    benefitsDescription:
+      "El objetivo no es cambiar por cambiar. Es corregir fricción, actualizar la presentación y hacer que la página ayude mejor al negocio.",
+    benefits: [
+      "Hero y mensajes principales más claros",
+      "Secciones reordenadas para explicar servicios y beneficios",
+      "Mejor experiencia en celular y pantallas pequeñas",
+      "CTAs hacia WhatsApp, correo o formulario más visibles",
+      "Revisión de títulos, metadescripciones, sitemap y enlaces internos",
+      "Aprovechamiento de contenido existente sin llenar la web de texto genérico"
+    ],
+    processTitle: "Proceso de rediseño web",
+    process: [
+      {
+        title: "Auditoría visual y comercial",
+        description:
+          "Identificamos problemas de claridad, diseño, navegación, mobile, contenido y conversión."
+      },
+      {
+        title: "Nueva estructura",
+        description:
+          "Reorganizamos secciones, mensajes y llamados a la acción según el objetivo del negocio."
+      },
+      {
+        title: "Diseño y desarrollo",
+        description:
+          "Construimos una versión más moderna y estable, cuidando responsive, performance y consistencia visual."
+      },
+      {
+        title: "Publicación controlada",
+        description:
+          "Validamos rutas, formularios, WhatsApp, metadatos y redirecciones necesarias para no perder señales importantes."
+      }
+    ],
+    useCasesTitle: "Cuándo conviene rediseñar una página",
+    useCasesDescription:
+      "Un rediseño aplica cuando la web todavía sirve como base, pero necesita una mejora visual, comercial y técnica.",
+    useCases: [
+      {
+        title: "Webs antiguas o desordenadas",
+        description:
+          "Cuando la página se ve vieja, no transmite confianza o el visitante no entiende qué debe hacer."
+      },
+      {
+        title: "Negocios que cambiaron su oferta",
+        description:
+          "Cuando nuevos servicios, precios, enfoque o públicos ya no coinciden con la web actual."
+      },
+      {
+        title: "Sitios que reciben visitas pero no consultas",
+        description:
+          "Cuando hay tráfico, pero faltan CTAs, claridad, confianza o una ruta directa hacia el contacto."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Se puede rediseñar sin perder el dominio?",
+        answer:
+          "Sí. El dominio puede mantenerse. Lo importante es revisar hosting, tecnología, accesos y rutas antes de publicar."
+      },
+      {
+        question: "¿Qué pasa con el SEO existente?",
+        answer:
+          "Se revisan URLs, metadatos, sitemap y redirecciones necesarias para reducir riesgos al cambiar la estructura."
+      },
+      {
+        question: "¿Siempre hay que cambiar todo?",
+        answer:
+          "No. A veces basta con reorganizar secciones, mejorar diseño responsive, actualizar textos y reforzar CTAs."
+      }
+    ],
+    relatedLinks: [
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Mantenimiento web", href: "/mantenimiento-web-panama" },
+      { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "sistemas-de-inventario-panama",
+    eyebrow: "Sistemas de inventario en Panamá",
+    h1: "Sistemas de inventario en Panamá para controlar productos, movimientos y reportes",
+    intro:
+      "Desarrollamos sistemas de inventario a medida para empresas que necesitan controlar productos, insumos, entradas, salidas, existencias, responsables y reportes desde un panel claro.",
+    metaTitle: "Sistemas de inventario en Panamá | LulabTech",
+    metaDescription:
+      "Sistema de inventario en Panamá para productos, insumos, movimientos, existencias, reportes, usuarios y panel administrativo desde $899.",
+    keywords: [
+      "sistema de inventario Panamá",
+      "software de inventario Panamá",
+      "control de inventario Panamá",
+      "inventario para empresas Panamá"
+    ],
+    primaryCta: "Cotizar sistema de inventario",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Productos, categorías, existencias, entradas, salidas y ajustes",
+      "Usuarios, permisos, filtros, historial y reportes",
+      "Sistema construido según el flujo real de la empresa"
+    ],
+    heroPanelTitle: "El inventario necesita trazabilidad, no solo una lista en Excel.",
+    heroPanelDescription:
+      "Creamos paneles que ordenan datos, reducen errores y permiten consultar movimientos con más claridad.",
+    benefitsTitle: "Más control para empresas que manejan productos o insumos",
+    benefitsDescription:
+      "Un sistema de inventario ayuda a saber qué entra, qué sale, quién lo registra y qué información necesita el equipo para decidir.",
+    benefits: [
+      "Catálogo de productos, insumos, unidades y categorías",
+      "Movimientos de entrada, salida, ajuste o traslado según el flujo",
+      "Alertas o reportes de bajo inventario según alcance",
+      "Roles para administradores y usuarios operativos",
+      "Filtros, búsqueda, exportaciones o reportes personalizados",
+      "Posibilidad de integrarse con ventas, POS, reservas o logística por fases"
+    ],
+    processTitle: "Proceso para crear un sistema de inventario",
+    process: [
+      {
+        title: "Mapeo del flujo",
+        description:
+          "Entendemos qué productos se manejan, cómo entran, cómo salen y quién registra cada movimiento."
+      },
+      {
+        title: "Definición de módulos",
+        description:
+          "Se establecen pantallas, permisos, reportes, filtros, alertas y datos obligatorios."
+      },
+      {
+        title: "Desarrollo y pruebas",
+        description:
+          "Construimos el sistema con base de datos, panel administrativo y validaciones para reducir errores."
+      },
+      {
+        title: "Entrega por fases",
+        description:
+          "Se entrega una primera versión funcional y se ajusta según el uso real del equipo."
+      }
+    ],
+    useCasesTitle: "Empresas que pueden necesitar inventario digital",
+    useCasesDescription:
+      "Aplica para restaurantes, tiendas, distribuidores, logística, talleres, academias con materiales o empresas con activos internos.",
+    useCases: [
+      {
+        title: "Restaurantes y comercios",
+        description:
+          "Para controlar insumos, productos, recetas, existencias y consumo operativo."
+      },
+      {
+        title: "Distribución y logística",
+        description:
+          "Para registrar mercancía, ubicaciones, movimientos, responsables y estados."
+      },
+      {
+        title: "Empresas con activos internos",
+        description:
+          "Para equipos, herramientas, uniformes, documentos, préstamos o asignaciones."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Un sistema de inventario se puede hacer a medida?",
+        answer:
+          "Sí. Se define según productos, unidades, responsables, movimientos, reportes y reglas propias del negocio."
+      },
+      {
+        question: "¿Puede conectarse con ventas o POS?",
+        answer:
+          "Sí, si se cotiza dentro del alcance. Puede integrarse por fases con ventas, recetas, compras o reportes."
+      },
+      {
+        question: "¿Incluye usuarios y permisos?",
+        answer:
+          "Sí. Se pueden crear roles para administrar, registrar movimientos o consultar información según necesidad."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Software POS", href: "/software-pos-panama" },
+      { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" }
+    ],
+    priceFrom: "$899"
+  },
+  {
+    slug: "crm-para-empresas-panama",
+    eyebrow: "CRM para empresas en Panamá",
+    h1: "CRM para empresas en Panamá que necesitan ordenar clientes, oportunidades y seguimiento",
+    intro:
+      "Creamos CRM y paneles comerciales a medida para empresas que quieren centralizar prospectos, clientes, estados, notas, responsables, formularios y seguimiento de oportunidades.",
+    metaTitle: "CRM para empresas en Panamá | LulabTech",
+    metaDescription:
+      "CRM para empresas en Panamá con clientes, prospectos, estados, responsables, seguimiento, formularios, reportes y panel administrativo desde $899.",
+    keywords: [
+      "CRM Panamá",
+      "CRM para empresas Panamá",
+      "sistema de clientes Panamá",
+      "software comercial Panamá"
+    ],
+    primaryCta: "Cotizar CRM a medida",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Clientes, prospectos, estados, responsables, notas y seguimiento",
+      "Formularios, filtros, reportes y panel administrativo",
+      "Flujo adaptado al proceso comercial real de la empresa"
+    ],
+    heroPanelTitle: "Las oportunidades se pierden cuando viven en chats sueltos y hojas separadas.",
+    heroPanelDescription:
+      "Un CRM ayuda a ordenar quién preguntó, qué necesita, en qué estado está y cuál es el próximo paso del equipo.",
+    benefitsTitle: "Un CRM propio puede ordenar ventas y atención sin forzar procesos genéricos",
+    benefitsDescription:
+      "No todas las empresas necesitan un software enorme. A veces necesitan un panel claro que centralice prospectos y seguimiento.",
+    benefits: [
+      "Registro de clientes, prospectos y contactos",
+      "Estados comerciales: nuevo, contactado, cotizado, ganado o perdido",
+      "Notas, responsables, fechas y próximos pasos",
+      "Formularios conectados a la web o landing según alcance",
+      "Reportes para medir oportunidades, fuentes y seguimiento",
+      "Roles para equipo comercial, administración o gerencia"
+    ],
+    processTitle: "Proceso para crear un CRM a medida",
+    process: [
+      {
+        title: "Proceso comercial actual",
+        description:
+          "Identificamos de dónde llegan los prospectos, cómo se atienden y en qué punto se pierde seguimiento."
+      },
+      {
+        title: "Pipeline y campos",
+        description:
+          "Definimos estados, datos obligatorios, responsables, permisos, filtros y reportes necesarios."
+      },
+      {
+        title: "Desarrollo del panel",
+        description:
+          "Construimos la herramienta con formularios, base de datos, vistas, acciones y controles."
+      },
+      {
+        title: "Prueba con casos reales",
+        description:
+          "Ajustamos el flujo según cómo el equipo realmente atiende clientes y oportunidades."
+      }
+    ],
+    useCasesTitle: "Cuándo conviene un CRM personalizado",
+    useCasesDescription:
+      "Aplica cuando la empresa necesita seguimiento, orden y visibilidad de sus oportunidades sin depender de memoria o chats.",
+    useCases: [
+      {
+        title: "Empresas de servicios",
+        description:
+          "Para registrar consultas, cotizaciones, llamadas, seguimientos y cierres."
+      },
+      {
+        title: "Inmobiliarias y asesores",
+        description:
+          "Para organizar prospectos, preferencias, propiedades, etapas y notas de contacto."
+      },
+      {
+        title: "B2B y ventas consultivas",
+        description:
+          "Para procesos con varias conversaciones, documentos, cotizaciones y responsables internos."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Es mejor un CRM a medida o una plataforma ya hecha?",
+        answer:
+          "Depende del caso. Si necesitas algo estándar, una plataforma existente puede servir. Si tu flujo es muy específico, un CRM a medida puede encajar mejor."
+      },
+      {
+        question: "¿Puede conectarse con formularios de la web?",
+        answer:
+          "Sí. Las solicitudes de formularios pueden alimentar el panel si se incluye dentro del alcance técnico."
+      },
+      {
+        question: "¿Puede tener reportes?",
+        answer:
+          "Sí. Se pueden crear reportes por estado, responsable, fecha, fuente de contacto o etapa comercial."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" },
+      { label: "Landing pages", href: "/landing-pages-panama" }
+    ],
+    priceFrom: "$899"
+  },
+  {
+    slug: "software-para-logistica-panama",
+    eyebrow: "Software para logística en Panamá",
+    h1: "Software para logística en Panamá: clientes, envíos, estados, documentos y reportes",
+    intro:
+      "Desarrollamos software logístico a medida para empresas que necesitan organizar clientes, envíos, rutas, estados, comprobantes, documentos, facturación operativa y reportes desde un panel centralizado.",
+    metaTitle: "Software para logística en Panamá | LulabTech",
+    metaDescription:
+      "Software para logística en Panamá con clientes, envíos, estados, documentos, comprobantes, reportes, usuarios y panel administrativo desde $899.",
+    keywords: [
+      "software para logística Panamá",
+      "sistema logístico Panamá",
+      "software para envíos Panamá",
+      "sistema para transporte Panamá"
+    ],
+    primaryCta: "Cotizar software logístico",
+    secondaryCta: "Ver proyectos",
+    heroBullets: [
+      "Clientes, envíos, estados, documentos y comprobantes",
+      "Panel administrativo con usuarios, filtros, historial y reportes",
+      "Flujos adaptados a logística, casilleros, transporte o distribución"
+    ],
+    heroPanelTitle: "La logística necesita estados claros y datos centralizados.",
+    heroPanelDescription:
+      "Creamos sistemas para que la operación deje de depender de mensajes sueltos, archivos dispersos o controles manuales difíciles de auditar.",
+    benefitsTitle: "Un sistema logístico ayuda a controlar operación, clientes y seguimiento",
+    benefitsDescription:
+      "El objetivo es que cada envío, documento o estado pueda consultarse con claridad y que el equipo tenga menos fricción operativa.",
+    benefits: [
+      "Módulos para clientes, envíos, estados, documentos y comprobantes",
+      "Panel para administradores, empleados o perfiles específicos",
+      "Filtros por fecha, cliente, estado, ruta, proveedor o tipo de servicio",
+      "Historial de cambios y reportes según alcance",
+      "Posibilidad de facturación, cotizaciones o carga de archivos",
+      "Estructura escalable para casilleros, transporte, distribución o carga"
+    ],
+    processTitle: "Proceso para desarrollar software logístico",
+    process: [
+      {
+        title: "Diagnóstico operativo",
+        description:
+          "Entendemos qué servicios maneja la empresa, qué estados usa, quién interviene y dónde se pierde información."
+      },
+      {
+        title: "Definición de flujo",
+        description:
+          "Se diseñan módulos, roles, documentos, estados, reportes y permisos según la operación real."
+      },
+      {
+        title: "Desarrollo por módulos",
+        description:
+          "Construimos una primera versión funcional con base de datos, panel y validaciones críticas."
+      },
+      {
+        title: "Prueba y evolución",
+        description:
+          "La herramienta se ajusta con casos reales y puede crecer con facturación, clientes o seguimiento más avanzado."
+      }
+    ],
+    useCasesTitle: "Operaciones logísticas donde aplica",
+    useCasesDescription:
+      "Puede adaptarse a casilleros, transporte interno, entregas, carga, distribución o empresas que manejan documentos y estados.",
+    useCases: [
+      {
+        title: "Casilleros y paquetería",
+        description:
+          "Clientes, paquetes, contenedores, estados, comprobantes, facturación y panel administrativo."
+      },
+      {
+        title: "Transporte y distribución",
+        description:
+          "Rutas, entregas, documentos, responsables, estados y reportes de operación."
+      },
+      {
+        title: "Empresas con seguimiento documental",
+        description:
+          "Carga de archivos, comprobantes, aprobaciones, historial y control por usuario."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Es lo mismo que software para casilleros?",
+        answer:
+          "No necesariamente. Casilleros es un caso específico. Software logístico puede cubrir transporte, distribución, envíos, documentos o rutas según el flujo."
+      },
+      {
+        question: "¿Puede tener acceso para clientes?",
+        answer:
+          "Sí, si se incluye en el alcance. Puede existir panel interno, consulta pública por código o acceso para clientes registrados."
+      },
+      {
+        question: "¿Puede manejar documentos y comprobantes?",
+        answer:
+          "Sí. Se pueden crear módulos de carga, validación, historial y descarga de archivos según necesidad."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software para casilleros", href: "/software-para-casilleros-panama" },
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Sistemas de inventario", href: "/sistemas-de-inventario-panama" }
+    ],
+    priceFrom: "$899"
+  },
 ];
 
 const servicePagesEn: ServicePage[] = [

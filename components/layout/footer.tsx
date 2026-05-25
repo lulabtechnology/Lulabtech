@@ -24,7 +24,14 @@ const serviceLinks = [
   { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" },
   { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" },
   { label: "Mantenimiento web", href: "/mantenimiento-web-panama" },
-  { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
+  { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" },
+  { label: "Webs para restaurantes", href: "/paginas-web-para-restaurantes-panama" },
+  { label: "Webs para academias", href: "/paginas-web-para-academias-panama" },
+  { label: "Webs para eventos", href: "/paginas-web-para-eventos-panama" },
+  { label: "Rediseño web", href: "/rediseno-web-panama" },
+  { label: "Sistemas de inventario", href: "/sistemas-de-inventario-panama" },
+  { label: "CRM para empresas", href: "/crm-para-empresas-panama" },
+  { label: "Software para logística", href: "/software-para-logistica-panama" },
 ];
 
 export function Footer() {

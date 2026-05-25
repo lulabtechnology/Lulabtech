@@ -84,7 +84,7 @@ export function SeoGrowthSection() {
           <div className="flex gap-3">
             <Sparkles className="mt-1 h-5 w-5 shrink-0 text-brand-700" />
             <p className="text-sm leading-7 text-ink-700">
-              La Fase 2 refuerza páginas de intención comercial: desarrollo web, SEO, mantenimiento, industrias y software operativo. Así la web no depende solo del home para posicionar servicios específicos.
+              La arquitectura SEO refuerza páginas de intención comercial: desarrollo web, SEO, mantenimiento, industrias y software operativo. Así la web no depende solo del home para posicionar servicios específicos.
             </p>
           </div>
           <Link

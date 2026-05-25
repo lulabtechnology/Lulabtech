@@ -58,7 +58,14 @@ const priceFromBySlug: Record<string, string> = {
   "diseno-web-para-clinicas-panama": "$299",
   "diseno-web-para-inmobiliarias-panama": "$299",
   "software-pos-panama": "$899",
-  "automatizaciones-para-empresas-panama": "$899"
+  "automatizaciones-para-empresas-panama": "$899",
+  "paginas-web-para-restaurantes-panama": "$149",
+  "paginas-web-para-academias-panama": "$299",
+  "paginas-web-para-eventos-panama": "$299",
+  "rediseno-web-panama": "$299",
+  "sistemas-de-inventario-panama": "$899",
+  "crm-para-empresas-panama": "$899",
+  "software-para-logistica-panama": "$899",
 };
 
 const serviceEventBySlug: Record<string, string> = {
@@ -77,7 +84,14 @@ const serviceEventBySlug: Record<string, string> = {
   "diseno-web-para-clinicas-panama": "click_servicio_web_corporativa",
   "diseno-web-para-inmobiliarias-panama": "click_servicio_web_corporativa",
   "software-pos-panama": "click_servicio_software",
-  "automatizaciones-para-empresas-panama": "click_servicio_software"
+  "automatizaciones-para-empresas-panama": "click_servicio_software",
+  "paginas-web-para-restaurantes-panama": "click_servicio_web_corporativa",
+  "paginas-web-para-academias-panama": "click_servicio_web_corporativa",
+  "paginas-web-para-eventos-panama": "click_servicio_web_corporativa",
+  "rediseno-web-panama": "click_servicio_web_corporativa",
+  "sistemas-de-inventario-panama": "click_servicio_software",
+  "crm-para-empresas-panama": "click_servicio_software",
+  "software-para-logistica-panama": "click_servicio_software",
 };
 
 export function ServiceLandingPageContent({ slug }: { slug: string }) {
