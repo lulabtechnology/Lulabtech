@@ -58,7 +58,7 @@ export const siteCopy = {
     navigation: {
       items: [
         { label: "Proyectos", href: "/proyectos" },
-        { label: "Servicios", href: "/#servicios" },
+        { label: "Servicios", href: "/servicios-panama" },
         { label: "Soluciones", href: "/#soluciones" },
         { label: "Proceso", href: "/#proceso" },
         { label: "Precios", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
@@ -557,7 +557,7 @@ export const siteCopy = {
     navigation: {
       items: [
         { label: "Projects", href: "/proyectos" },
-        { label: "Services", href: "/#servicios" },
+        { label: "Services", href: "/servicios-panama" },
         { label: "Solutions", href: "/#soluciones" },
         { label: "Process", href: "/#proceso" },
         { label: "Pricing", href: "/cuanto-cuesta-una-pagina-web-en-panama" }

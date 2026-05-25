@@ -1,38 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Layers3, Mail, MessageCircle } from "lucide-react";
 import { contactData } from "@/data/contact";
+import { serviceHubClusters } from "@/data/service-hub";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import { trackEvent } from "@/lib/tracking";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { useSiteLanguage } from "@/components/providers/site-language";
-
-const serviceLinks = [
-  { label: "Landing pages desde $149", href: "/landing-pages-panama" },
-  { label: "Webs corporativas desde $299", href: "/paginas-web-corporativas-panama" },
-  { label: "Tiendas online desde $499", href: "/tiendas-online-panama" },
-  { label: "Software a medida desde $899", href: "/software-a-medida-panama" },
-  { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
-  { label: "Software para casilleros/logística", href: "/software-para-casilleros-panama" },
-  { label: "Webs para abogados", href: "/diseno-web-para-abogados-panama" },
-  { label: "Webs para clínicas", href: "/diseno-web-para-clinicas-panama" },
-  { label: "Webs para inmobiliarias", href: "/diseno-web-para-inmobiliarias-panama" },
-  { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
-  { label: "Software POS", href: "/software-pos-panama" },
-  { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" },
-  { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" },
-  { label: "Mantenimiento web", href: "/mantenimiento-web-panama" },
-  { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" },
-  { label: "Webs para restaurantes", href: "/paginas-web-para-restaurantes-panama" },
-  { label: "Webs para academias", href: "/paginas-web-para-academias-panama" },
-  { label: "Webs para eventos", href: "/paginas-web-para-eventos-panama" },
-  { label: "Rediseño web", href: "/rediseno-web-panama" },
-  { label: "Sistemas de inventario", href: "/sistemas-de-inventario-panama" },
-  { label: "CRM para empresas", href: "/crm-para-empresas-panama" },
-  { label: "Software para logística", href: "/software-para-logistica-panama" },
-];
 
 export function Footer() {
   const { copy } = useSiteLanguage();
@@ -41,7 +17,7 @@ export function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <Container className="py-12 sm:py-14">
         <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-brand-50/40 p-6 shadow-soft sm:p-8 lg:p-10">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.25fr_0.85fr] lg:gap-12">
             <div>
               <div className="relative h-12 w-[180px] sm:h-14 sm:w-[210px]">
                 <Image
@@ -60,7 +36,7 @@ export function Footer() {
                 {copy.footer.description}
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
                 <ButtonLink href={contactData.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackEvent("click_whatsapp_footer")}>
                   <MessageCircle className="h-4 w-4" />
                   {copy.footer.whatsapp}
@@ -73,31 +49,50 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
+                  Servicios por categoría
+                </p>
+                <a
+                  href="/servicios-panama"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-800"
+                >
+                  <Layers3 className="h-4 w-4" />
+                  Mapa de servicios
+                </a>
+              </div>
+
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                {serviceHubClusters.map((cluster) => (
+                  <div key={cluster.id} className="rounded-[22px] border border-slate-200 bg-white/80 p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700">
+                      {cluster.eyebrow}
+                    </p>
+                    <nav className="mt-3 grid gap-2">
+                      {cluster.links.slice(0, cluster.id === "web-seo" ? 6 : 5).map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          className="inline-flex items-start justify-between gap-2 text-sm font-medium leading-5 text-ink-700 transition hover:text-ink-900"
+                        >
+                          <span>{item.label}</span>
+                          <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-8">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
                   {copy.footer.navigation}
                 </p>
                 <nav className="mt-4 grid gap-3">
                   {copy.navigation.items.map((item) => (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-ink-700 transition hover:text-ink-900"
-                    >
-                      {item.label}
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  ))}
-                </nav>
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">
-                  Servicios SEO
-                </p>
-                <nav className="mt-4 grid gap-3">
-                  {serviceLinks.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}

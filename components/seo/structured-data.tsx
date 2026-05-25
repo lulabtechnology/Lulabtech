@@ -1,4 +1,5 @@
 import { servicePages } from "@/data/seo-pages";
+import { flatServiceHubLinks } from "@/data/service-hub";
 import { CONTACT_EMAIL, INSTAGRAM_URL, SITE_DESCRIPTION, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
 
 const baseUrl =
@@ -10,6 +11,16 @@ const services = servicePages.map((page) => ({
   url: `${baseUrl}/${page.slug}`,
   description: page.metaDescription
 }));
+
+const navigationLinks = [
+  { name: "Inicio", url: baseUrl },
+  { name: "Servicios", url: `${baseUrl}/servicios-panama` },
+  { name: "Proyectos", url: `${baseUrl}/proyectos` },
+  ...flatServiceHubLinks.map((link) => ({
+    name: link.label,
+    url: `${baseUrl}${link.href}`
+  }))
+];
 
 const faqs = [
   {
@@ -221,6 +232,12 @@ export function StructuredData() {
           name: service.name,
           item: `${baseUrl}/#service-${index + 1}`
         }))
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#site-navigation`,
+        name: navigationLinks.map((link) => link.name),
+        url: navigationLinks.map((link) => link.url)
       },
       {
         "@type": "FAQPage",

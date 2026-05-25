@@ -21,6 +21,9 @@ export const siteMetadata: Metadata = {
   description,
   keywords: [
     "diseño de páginas web en Panamá",
+    "servicios digitales Panamá",
+    "servicios de diseño web Panamá",
+    "servicios de software Panamá",
     "páginas web en Panamá",
     "páginas web Panamá",
     "páginas informativas Panamá",

@@ -9,6 +9,8 @@ import { ProjectShowcaseSection } from "@/components/sections/project-showcase";
 import { ServicesSection } from "@/components/sections/services";
 import { SeoGrowthSection } from "@/components/sections/seo-growth-section";
 import { SolutionUseCasesSection } from "@/components/sections/solution-use-cases";
+import { PhaseThreeSeoSection } from "@/components/sections/phase-three-seo-section";
+import { PhaseFiveNavigationSection } from "@/components/sections/phase-five-navigation-section";
 import { WhyLulabTechSection } from "@/components/sections/why-lulabtech";
 import { ProcessSection } from "@/components/sections/process";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -32,6 +34,8 @@ export default function HomePage() {
           <ServicesSection />
           <SeoGrowthSection />
           <SolutionUseCasesSection />
+          <PhaseThreeSeoSection />
+          <PhaseFiveNavigationSection />
           <WhyLulabTechSection />
           <ProcessSection />
           <FaqSection />

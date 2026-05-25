@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1
     },
     {
+      url: `${baseUrl}/servicios-panama`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.96
+    },
+    {
       url: `${baseUrl}/proyectos`,
       lastModified: now,
       changeFrequency: "monthly",

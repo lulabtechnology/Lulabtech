@@ -114,6 +114,12 @@ export function ServicePageStructuredData({ page }: { page: ServicePage }) {
           {
             "@type": "ListItem",
             position: 2,
+            name: "Servicios en Panamá",
+            item: `${baseUrl}/servicios-panama`
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
             name: page.eyebrow,
             item: url
           }

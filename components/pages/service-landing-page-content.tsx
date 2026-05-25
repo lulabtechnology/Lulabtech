@@ -101,6 +101,11 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
   const copy = uiCopy[activeLocale];
   const priceFrom = page.priceFrom || priceFromBySlug[slug];
   const serviceEvent = serviceEventBySlug[slug] || "click_servicio_software";
+  const serviceHubLabel = activeLocale === "en" ? "Services map" : "Mapa de servicios";
+  const relatedLinks = [
+    { label: serviceHubLabel, href: "/servicios-panama" },
+    ...page.relatedLinks.filter((link) => link.href !== "/servicios-panama")
+  ];
 
   return (
     <main>
@@ -108,6 +113,14 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
         <GridPattern className="opacity-20" />
         <div className="absolute left-1/2 top-8 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-brand-100/40 blur-3xl" />
         <Container className="relative">
+          <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-sm font-medium text-ink-500">
+            <Link href="/" className="transition hover:text-brand-700">Inicio</Link>
+            <span>/</span>
+            <Link href="/servicios-panama" className="transition hover:text-brand-700">{serviceHubLabel}</Link>
+            <span>/</span>
+            <span className="text-ink-800">{page.eyebrow}</span>
+          </nav>
+
           <div className="grid gap-9 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.78fr)] lg:items-center">
             <div className="max-w-3xl">
               <span className="eyebrow">{page.eyebrow}</span>
@@ -290,7 +303,7 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                   {copy.related}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  {page.relatedLinks.map((link) => (
+                  {relatedLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
