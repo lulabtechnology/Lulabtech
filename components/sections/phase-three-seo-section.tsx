@@ -28,7 +28,7 @@ const pathways = [
   {
     title: "Rediseño web",
     description:
-      "Para empresas que ya tienen sitio, pero necesitan verse más profesionales, mejorar mobile, SEO y rutas de contacto.",
+      "Para empresas que ya tienen sitio, pero necesitan verse más profesionales, mejorar mobile, SEO y canales de contacto.",
     href: "/rediseno-web-panama",
     icon: RefreshCw
   },
@@ -60,9 +60,9 @@ export function PhaseThreeSeoSection() {
     <SectionShell className="bg-white">
       <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <SectionHeading
-          eyebrow="SEO por sector y operación"
-          title="Nuevas rutas para búsquedas más específicas en Panamá"
-          description="Además de posicionar servicios generales, la web ahora conecta soluciones por industria y por problema operativo: restaurantes, academias, eventos, inventario, CRM y logística. Esto ayuda a captar búsquedas más cercanas a una intención real de cotización."
+          eyebrow="Soluciones por sector"
+          title="Páginas y sistemas para negocios reales en Panamá"
+          description="Si tu negocio es un restaurante, academia, evento, empresa logística o equipo que necesita inventario y seguimiento comercial, LulabTech puede crear una solución digital alineada con tu operación y tus canales de contacto."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -91,7 +91,7 @@ export function PhaseThreeSeoSection() {
 
       <div className="mt-8 rounded-[30px] border border-slate-200 bg-slate-50/80 p-5 sm:p-6">
         <p className="text-sm leading-7 text-ink-700">
-          Esta capa de interlinking no cambia la estética principal: refuerza el posicionamiento con páginas útiles, contenido comercial real y enlaces internos hacia servicios relacionados para que Google entienda mejor cada línea de negocio.
+          Estas opciones ayudan a elegir un camino concreto sin obligar al cliente a adivinar qué servicio necesita: web para captar consultas, ecommerce para vender o software para ordenar procesos internos.
         </p>
       </div>
     </SectionShell>

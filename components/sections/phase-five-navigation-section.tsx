@@ -13,9 +13,9 @@ export function PhaseFiveNavigationSection() {
     <SectionShell className="bg-gradient-to-b from-white via-brand-50/25 to-white">
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <SectionHeading
-          eyebrow="Mapa de servicios"
-          title="Una ruta más clara para elegir entre web, ecommerce, software y SEO"
-          description="La Fase 5 refuerza navegación e interlinking: el usuario puede entrar a un mapa de servicios, Google encuentra mejor cada página interna y las rutas principales quedan conectadas por intención de búsqueda."
+          eyebrow="Guía de servicios"
+          title="Elige con más claridad entre web, ecommerce, software y SEO"
+          description="Agrupamos los servicios de LulabTech para que un cliente pueda identificar rápido si necesita una landing page, una web corporativa, una tienda online, SEO inicial o un sistema operativo a medida."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -45,16 +45,16 @@ export function PhaseFiveNavigationSection() {
               <Compass className="h-5 w-5" />
             </span>
             <div>
-              <h3 className="text-lg font-semibold text-ink-900">Ver todos los servicios por categoría</h3>
+              <h3 className="text-lg font-semibold text-ink-900">Ver servicios por categoría</h3>
               <p className="mt-2 max-w-3xl text-sm leading-7 text-ink-600">
-                El nuevo hub reúne páginas web, landing pages, corporativas, ecommerce, software, POS, reservas, inventario, CRM, logística y páginas por industria.
+                Encuentra en un solo lugar páginas web, landing pages, webs corporativas, ecommerce, software, POS, reservas, inventario, CRM, logística y soluciones por industria.
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/servicios-panama" variant="secondary">
               <Layers3 className="h-4 w-4" />
-              Mapa de servicios
+              Ver servicios
             </ButtonLink>
             <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline">
               <MessageCircle className="h-4 w-4" />

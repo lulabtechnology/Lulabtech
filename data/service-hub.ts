@@ -19,12 +19,12 @@ export const serviceHubClusters: ServiceHubCluster[] = [
     eyebrow: "Web + SEO local",
     title: "Diseño web y posicionamiento inicial",
     description:
-      "Rutas para empresas que necesitan presencia profesional, explicación clara de servicios, base SEO y contacto directo por WhatsApp o formulario.",
+      "Opciones para empresas que necesitan presencia profesional, explicación clara de servicios, base SEO y contacto directo por WhatsApp o formulario.",
     links: [
       {
         label: "Diseño web en Panamá",
         href: "/diseno-web-panama",
-        description: "Página principal para posicionar diseño de páginas web profesionales en Panamá."
+        description: "Servicio principal para empresas que necesitan una web profesional, clara y orientada a captar consultas en Panamá."
       },
       {
         label: "Landing pages en Panamá",
@@ -46,12 +46,12 @@ export const serviceHubClusters: ServiceHubCluster[] = [
       {
         label: "Agencia de diseño web",
         href: "/agencia-de-diseno-web-panama",
-        description: "Página para búsquedas de agencia web con enfoque comercial, diseño y ejecución técnica."
+        description: "Servicio para negocios que buscan un equipo que combine estrategia comercial, diseño visual y desarrollo técnico."
       },
       {
         label: "SEO para páginas web",
         href: "/seo-para-paginas-web-panama",
-        description: "Base técnica, estructura, metadata, interlinking y optimización inicial para Google."
+        description: "Mejoras iniciales para ordenar títulos, contenido, estructura, enlaces internos y señales básicas para Google."
       },
       {
         label: "Mantenimiento web",
@@ -158,7 +158,7 @@ export const serviceHubClusters: ServiceHubCluster[] = [
     eyebrow: "Venta digital",
     title: "Catálogos, ecommerce y precios web",
     description:
-      "Rutas para clientes que comparan precios, necesitan vender productos o quieren entender qué tipo de web les conviene.",
+      "Opciones para clientes que comparan precios, necesitan vender productos o quieren entender qué tipo de web les conviene.",
     links: [
       {
         label: "Tiendas online en Panamá",
@@ -183,7 +183,7 @@ export const serviceHubClusters: ServiceHubCluster[] = [
     eyebrow: "Logística y operación",
     title: "Software para logística, casilleros y control interno",
     description:
-      "Rutas para empresas que manejan envíos, clientes, casilleros, estados, documentos, comprobantes o procesos operativos.",
+      "Opciones para empresas que manejan envíos, clientes, casilleros, estados, documentos, comprobantes o procesos operativos.",
     links: [
       {
         label: "Software para casilleros",
@@ -199,7 +199,7 @@ export const serviceHubClusters: ServiceHubCluster[] = [
       {
         label: "Software a medida",
         href: "/software-a-medida-panama",
-        description: "Base para proyectos personalizados cuando el flujo de trabajo no cabe en una plantilla."
+        description: "Para operaciones que necesitan una solución propia porque su proceso no encaja en una herramienta genérica."
       }
     ]
   }
@@ -218,7 +218,7 @@ export const hubFeaturedPaths = [
   },
   {
     title: "Quiero una solución por industria",
-    description: "Elige rutas específicas para abogados, clínicas, inmobiliarias, restaurantes, academias o eventos.",
+    description: "Elige opciones específicas para abogados, clínicas, inmobiliarias, restaurantes, academias o eventos.",
     links: ["/diseno-web-para-abogados-panama", "/diseno-web-para-clinicas-panama", "/paginas-web-para-restaurantes-panama"]
   }
 ];

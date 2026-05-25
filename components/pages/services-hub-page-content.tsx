@@ -12,12 +12,12 @@ import { SectionShell } from "@/components/layout/section-shell";
 const summaryCards = [
   {
     label: "Web y SEO",
-    value: "8 rutas",
+    value: "8 opciones",
     description: "Diseño web, landing pages, corporativas, SEO, mantenimiento y rediseño."
   },
   {
     label: "Software",
-    value: "7 rutas",
+    value: "7 opciones",
     description: "Sistemas a medida, POS, reservas, inventario, CRM y automatizaciones."
   },
   {
@@ -40,7 +40,7 @@ export function ServicesHubPageContent() {
                 Servicios de diseño web, software y SEO para empresas en Panamá
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-ink-600 sm:text-lg">
-                Esta página organiza las soluciones de LulabTech por intención: páginas web para captar clientes, software para operar mejor, ecommerce, SEO, mantenimiento y rutas por industria. Así puedes encontrar más rápido qué servicio encaja con tu negocio.
+                Encuentra de forma rápida el servicio que encaja con tu negocio: páginas web para captar clientes, ecommerce para vender productos, SEO para mejorar tu base digital y software para ordenar procesos internos.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -65,14 +65,14 @@ export function ServicesHubPageContent() {
               <div className="rounded-[28px] border border-brand-100 bg-gradient-to-br from-white via-brand-50/70 to-white p-6 sm:p-7">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
-                    Mapa SEO fase 5
+                    Servicios LulabTech
                   </p>
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-600 text-white">
                     <Compass className="h-5 w-5" />
                   </span>
                 </div>
                 <h2 className="mt-5 text-balance text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
-                  Una ruta interna para que Google y el cliente entiendan cada servicio.
+                  Una guía clara para comparar servicios antes de cotizar.
                 </h2>
                 <div className="mt-6 grid gap-3">
                   {summaryCards.map((card) => (
@@ -93,12 +93,12 @@ export function ServicesHubPageContent() {
 
       <SectionShell className="bg-white">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Directorio de servicios</span>
+          <span className="eyebrow">Servicios por categoría</span>
           <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">
             Elige la ruta según lo que quieres vender, ordenar o posicionar
           </h2>
           <p className="mt-4 text-base leading-7 text-ink-600">
-            Cada enlace lleva a una página interna con explicación, beneficios, proceso, precio desde cuando aplica, preguntas frecuentes y CTA directo a WhatsApp.
+            Cada opción incluye explicación comercial, beneficios, proceso, precio desde cuando aplica, preguntas frecuentes y contacto directo por WhatsApp.
           </p>
         </div>
 
@@ -139,12 +139,12 @@ export function ServicesHubPageContent() {
       <SectionShell className="bg-gradient-to-b from-slate-50/80 to-white">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <span className="eyebrow">Rutas recomendadas</span>
+            <span className="eyebrow">Recomendaciones rápidas</span>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">
-              Qué mirar primero según la necesidad del cliente
+              Qué revisar primero según el objetivo del negocio
             </h2>
             <p className="mt-4 text-base leading-7 text-ink-600">
-              Esta sección ayuda al usuario a no perderse entre muchas páginas SEO y refuerza enlaces internos hacia las rutas más importantes.
+              Usa estas recomendaciones para elegir entre una web para captar clientes, una tienda online para vender productos o un sistema para ordenar la operación diaria.
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export function ServicesHubPageContent() {
         <div className="rounded-[34px] border border-brand-100 bg-brand-50/70 p-6 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div>
-              <span className="eyebrow">Cómo usar este mapa</span>
+              <span className="eyebrow">Cómo elegir el servicio correcto</span>
               <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">
                 Si no sabes qué servicio necesitas, empieza por el objetivo del negocio
               </h2>

@@ -101,7 +101,7 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
   const copy = uiCopy[activeLocale];
   const priceFrom = page.priceFrom || priceFromBySlug[slug];
   const serviceEvent = serviceEventBySlug[slug] || "click_servicio_software";
-  const serviceHubLabel = activeLocale === "en" ? "Services map" : "Mapa de servicios";
+  const serviceHubLabel = activeLocale === "en" ? "Services" : "Servicios";
   const relatedLinks = [
     { label: serviceHubLabel, href: "/servicios-panama" },
     ...page.relatedLinks.filter((link) => link.href !== "/servicios-panama")

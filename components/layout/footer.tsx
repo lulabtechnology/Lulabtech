@@ -59,7 +59,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-800"
                 >
                   <Layers3 className="h-4 w-4" />
-                  Mapa de servicios
+                  Ver servicios
                 </a>
               </div>
 

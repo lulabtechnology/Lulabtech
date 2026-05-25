@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const clusters = [
   {
     title: "Servicios web principales",
-    description: "Rutas comerciales para quienes buscan presencia digital, desarrollo y posicionamiento inicial en Panamá.",
+    description: "Opciones comerciales para quienes buscan presencia digital, desarrollo y posicionamiento inicial en Panamá.",
     icon: Globe2,
     links: [
       { label: "Desarrollo web en Panamá", href: "/desarrollo-web-panama" },
@@ -44,9 +44,9 @@ export function SeoGrowthSection() {
     <SectionShell className="overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white">
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
         <SectionHeading
-          eyebrow="SEO y soluciones por necesidad"
-          title="Más rutas para que Google y tus clientes entiendan qué hace LulabTech"
-          description="Esta arquitectura conecta servicios principales, industrias y soluciones de software para reforzar búsquedas comerciales en Panamá sin cambiar el diseño principal de la web."
+          eyebrow="Servicios según tu necesidad"
+          title="Soluciones claras para vender, posicionar y operar mejor"
+          description="Organizamos los servicios principales de LulabTech para que sea fácil comparar una landing page, una web corporativa, ecommerce, SEO, mantenimiento o software operativo según el objetivo del negocio."
         />
 
         <div className="grid gap-4 md:grid-cols-3">
@@ -84,7 +84,7 @@ export function SeoGrowthSection() {
           <div className="flex gap-3">
             <Sparkles className="mt-1 h-5 w-5 shrink-0 text-brand-700" />
             <p className="text-sm leading-7 text-ink-700">
-              La arquitectura SEO refuerza páginas de intención comercial: desarrollo web, SEO, mantenimiento, industrias y software operativo. Así la web no depende solo del home para posicionar servicios específicos.
+              Elige una solución según lo que necesitas lograr: captar clientes, mejorar una web existente, vender productos, ordenar reservas, controlar inventario o automatizar tareas repetitivas.
             </p>
           </div>
           <Link

@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "¿La web queda preparada para Google?",
     answer:
-      "La base queda ordenada con estructura semántica, textos orientados a búsqueda, metadata, sitemap, robots, datos estructurados y una arquitectura preparada para crecer con páginas internas y contenido SEO."
+      "La web queda mejor organizada para Google y para el usuario: títulos claros, estructura correcta, sitemap, robots, datos estructurados, enlaces internos y contenido preparado para crecer con nuevas páginas de servicio."
   },
   {
     question: "¿Puedo conectar WhatsApp y formularios?",

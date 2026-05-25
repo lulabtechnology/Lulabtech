@@ -25,7 +25,7 @@ export function ServicesHubStructuredData() {
         url,
         name: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
         description:
-          "Mapa de servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
+          "Servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
         isPartOf: {
           "@id": `${baseUrl}/#website`
         },

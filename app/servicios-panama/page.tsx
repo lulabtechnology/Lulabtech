@@ -4,7 +4,7 @@ import { ServicesHubPage } from "@/components/pages/services-hub-page";
 export const metadata: Metadata = {
   title: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
   description:
-    "Mapa de servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
+    "Servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
   keywords: [
     "servicios digitales Panamá",
     "diseño web Panamá",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
     description:
-      "Mapa de servicios de LulabTech para empresas en Panamá: páginas web, ecommerce, software y SEO.",
+      "Guía de servicios de LulabTech para empresas en Panamá: páginas web, ecommerce, software y SEO.",
     images: ["/og/og-cover.png?v=7"]
   }
 };

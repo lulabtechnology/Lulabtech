@@ -1004,7 +1004,7 @@ const servicePagesEs: ServicePage[] = [
       "Estados de reserva y seguimiento administrativo",
       "Correos o mensajes de confirmación según alcance",
       "Panel para servicios, disponibilidad y solicitudes",
-      "Base para pagos, comprobantes o reportes en fases futuras"
+      "Base para pagos, comprobantes o reportes en etapas futuras"
     ],
     processTitle: "Cómo trabajamos un sistema de reservas",
     process: [
@@ -1063,7 +1063,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Puede tener pagos o comprobantes?",
         answer:
-          "Sí, se puede sumar carga de comprobantes, pagos o pasarela en una fase del proyecto si el negocio lo requiere."
+          "Sí, se puede sumar carga de comprobantes, pagos o pasarela en una etapa del proyecto si el negocio lo requiere."
       }
     ],
     relatedLinks: [
@@ -1312,7 +1312,7 @@ const servicePagesEs: ServicePage[] = [
       "Copy comercial y mensajes claros para el cliente final",
       "Enlaces a WhatsApp, formularios y canales oficiales",
       "SEO inicial y arquitectura para crecer",
-      "Posibilidad de crear sistemas, paneles y automatizaciones por fases"
+      "Posibilidad de crear sistemas, paneles y automatizaciones por etapas"
     ],
     processTitle: "Cómo trabaja LulabTech",
     process: [
@@ -1386,7 +1386,7 @@ const servicePagesEs: ServicePage[] = [
     eyebrow: "SEO para páginas web en Panamá",
     h1: "SEO para páginas web en Panamá desde la estructura, el contenido y la intención de búsqueda",
     intro:
-      "Preparamos páginas web con una base SEO clara para que Google entienda qué vende tu negocio, en qué país opera y qué servicios debe asociar con tu marca. Esta fase no promete resultados mágicos: ordena la estructura para crecer con contenido y medición.",
+      "Preparamos páginas web con una base SEO clara para que tu negocio se asocie mejor con sus servicios, su ubicación en Panamá y las búsquedas de clientes potenciales. Este trabajo no promete resultados mágicos: deja la web mejor ordenada para competir con contenido, medición y mejoras constantes.",
     metaTitle: "SEO para páginas web en Panamá | LulabTech",
     metaDescription:
       "SEO para páginas web en Panamá: estructura, metadata, sitemap, robots, enlaces internos, contenido comercial y base técnica para crecer en Google.",
@@ -1414,10 +1414,10 @@ const servicePagesEs: ServicePage[] = [
       "Jerarquía H1, H2 y contenido útil por servicio",
       "Sitemap y robots correctos",
       "Datos estructurados para organización, servicios y preguntas frecuentes",
-      "Interlinking entre páginas clave",
+      "Enlaces internos entre páginas clave",
       "Base para Search Console, GA4 y futuras campañas"
     ],
-    processTitle: "Cómo trabajamos una fase SEO inicial",
+    processTitle: "Cómo trabajamos una etapa SEO inicial",
     process: [
       {
         title: "Diagnóstico técnico",
@@ -1430,7 +1430,7 @@ const servicePagesEs: ServicePage[] = [
           "Priorizamos servicios con intención comercial: landing pages, web corporativa, ecommerce, software, reservas y verticales."
       },
       {
-        title: "Contenido e interlinking",
+        title: "Contenido y enlaces internos",
         description:
           "Creamos o mejoramos páginas internas con texto real, FAQs, CTAs y enlaces relacionados."
       },
@@ -1464,7 +1464,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿El SEO inicial garantiza aparecer primero?",
         answer:
-          "No. Nadie serio puede garantizar la primera posición. La fase inicial crea fundamentos correctos para competir y seguir mejorando."
+          "No. Nadie serio puede garantizar la primera posición. La etapa inicial crea fundamentos correctos para competir y seguir mejorando."
       },
       {
         question: "¿Incluye Google Search Console?",
@@ -1517,7 +1517,7 @@ const servicePagesEs: ServicePage[] = [
       "Ajustes visuales ligeros sin romper el diseño",
       "Apoyo en publicación y anticaché cuando hay cambios",
       "Priorización de mejoras según urgencia",
-      "Base para fases futuras de SEO o conversión"
+      "Base para etapas futuras de SEO o conversión"
     ],
     processTitle: "Cómo se maneja el mantenimiento",
     process: [
@@ -1557,7 +1557,7 @@ const servicePagesEs: ServicePage[] = [
           "Revisar formularios, botones, errores visuales, enlaces y comportamiento responsive."
       },
       {
-        title: "Mejoras por fases",
+        title: "Mejoras por etapas",
         description:
           "Planificar SEO, nuevas páginas, optimización de conversión o integraciones sin romper la web actual."
       }
@@ -1576,7 +1576,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿También pueden mejorar SEO durante mantenimiento?",
         answer:
-          "Sí, se pueden planificar mejoras SEO por fases, como metadata, nuevas páginas, contenido e interlinking."
+          "Sí, se pueden planificar mejoras SEO por etapas, como metadata, nuevas páginas, contenido e enlaces internos."
       }
     ],
     relatedLinks: [
@@ -1619,7 +1619,7 @@ const servicePagesEs: ServicePage[] = [
       "Ubicación, horarios y datos importantes ordenados",
       "Diseño cálido y profesional",
       "Base SEO para búsquedas locales",
-      "Posibilidad de sumar reservas o formularios por fase"
+      "Posibilidad de sumar reservas o formularios por etapa"
     ],
     processTitle: "Proceso para una web clínica",
     process: [
@@ -1673,7 +1673,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Pueden crear páginas por servicio?",
         answer:
-          "Sí. Es una buena fase SEO para posicionar servicios específicos y no depender solo de la página principal."
+          "Sí. Es una buena etapa SEO para posicionar servicios específicos y no depender solo de la página principal."
       },
       {
         question: "¿La web puede verse premium?",
@@ -1722,7 +1722,7 @@ const servicePagesEs: ServicePage[] = [
       "Perfil profesional y señales de confianza",
       "CTA a WhatsApp para compradores o propietarios",
       "SEO inicial para búsquedas inmobiliarias en Panamá",
-      "Base para panel administrativo o CRM en fases futuras"
+      "Base para panel administrativo o CRM en etapas futuras"
     ],
     processTitle: "Proceso para una web inmobiliaria",
     process: [
@@ -1814,7 +1814,7 @@ const servicePagesEs: ServicePage[] = [
     heroBullets: [
       "Ventas, productos, caja y usuarios por rol",
       "Reportes de ingresos, gastos y actividad",
-      "Módulos por fase: inventario, recetas, asistencia o facturas"
+      "Módulos por etapas: inventario, recetas, asistencia o facturas"
     ],
     benefitsTitle: "Un POS debe ayudar a controlar el negocio, no solo registrar ventas",
     benefitsDescription:
@@ -1825,7 +1825,7 @@ const servicePagesEs: ServicePage[] = [
       "Productos, categorías e imágenes",
       "Gastos, reportes y métricas internas",
       "Roles de usuario y auditoría según alcance",
-      "Inventario, recetas o asistencia en fases futuras"
+      "Inventario, recetas o asistencia en etapas futuras"
     ],
     processTitle: "Cómo se trabaja un POS a medida",
     process: [
@@ -1847,7 +1847,7 @@ const servicePagesEs: ServicePage[] = [
       {
         title: "Capacitación y mejoras",
         description:
-          "Se entrega una base funcional y se planifican mejoras por fase según el uso del negocio."
+          "Se entrega una base funcional y se planifican mejoras por etapa según el uso del negocio."
       }
     ],
     useCasesTitle: "Negocios que pueden usar un POS a medida",
@@ -1874,7 +1874,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Un POS a medida incluye inventario?",
         answer:
-          "Puede incluirlo si forma parte del alcance. También puede agregarse en una fase posterior."
+          "Puede incluirlo si forma parte del alcance. También puede agregarse en una etapa posterior."
       },
       {
         question: "¿Puede funcionar con roles de empleados?",
@@ -1955,7 +1955,7 @@ const servicePagesEs: ServicePage[] = [
     ],
     useCasesTitle: "Procesos que se pueden automatizar",
     useCasesDescription:
-      "No todo necesita un sistema gigante. Muchas empresas pueden iniciar con una automatización pequeña y crecer por fases.",
+      "No todo necesita un sistema gigante. Muchas empresas pueden iniciar con una automatización pequeña y crecer por etapas.",
     useCases: [
       {
         title: "Leads y formularios",
@@ -2091,7 +2091,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Puede conectarse con un sistema POS?",
         answer:
-          "Puede plantearse por fases. Primero la web comercial y luego módulos de POS, inventario, reportes o reservas si el restaurante lo necesita."
+          "Puede plantearse por etapas. Primero la web comercial y luego módulos de POS, inventario, reportes o reservas si el restaurante lo necesita."
       }
     ],
     relatedLinks: [
@@ -2238,7 +2238,7 @@ const servicePagesEs: ServicePage[] = [
       "Descarga de formularios, brochures o documentos del evento",
       "Secciones para agenda, ubicación, hoteles, mapas o preguntas frecuentes",
       "Estructura para campañas, anuncios y comunicación por redes",
-      "Base para futuras fases como registro, panel o galerías privadas"
+      "Base para etapas futuras como registro, panel o galerías privadas"
     ],
     processTitle: "Proceso para una web de evento",
     process: [
@@ -2292,7 +2292,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Puede manejar participantes confirmados?",
         answer:
-          "Puede mostrarlos en una sección pública o, si se requiere control, plantearse una fase con panel administrativo."
+          "Puede mostrarlos en una sección pública o, si se requiere control, plantearse una etapa con panel administrativo."
       },
       {
         question: "¿Sirve para campañas de promoción?",
@@ -2444,7 +2444,7 @@ const servicePagesEs: ServicePage[] = [
       "Alertas o reportes de bajo inventario según alcance",
       "Roles para administradores y usuarios operativos",
       "Filtros, búsqueda, exportaciones o reportes personalizados",
-      "Posibilidad de integrarse con ventas, POS, reservas o logística por fases"
+      "Posibilidad de integrarse con ventas, POS, reservas o logística por etapas"
     ],
     processTitle: "Proceso para crear un sistema de inventario",
     process: [
@@ -2464,7 +2464,7 @@ const servicePagesEs: ServicePage[] = [
           "Construimos el sistema con base de datos, panel administrativo y validaciones para reducir errores."
       },
       {
-        title: "Entrega por fases",
+        title: "Entrega por etapas",
         description:
           "Se entrega una primera versión funcional y se ajusta según el uso real del equipo."
       }
@@ -2498,7 +2498,7 @@ const servicePagesEs: ServicePage[] = [
       {
         question: "¿Puede conectarse con ventas o POS?",
         answer:
-          "Sí, si se cotiza dentro del alcance. Puede integrarse por fases con ventas, recetas, compras o reportes."
+          "Sí, si se cotiza dentro del alcance. Puede integrarse por etapas con ventas, recetas, compras o reportes."
       },
       {
         question: "¿Incluye usuarios y permisos?",
@@ -2999,7 +2999,7 @@ const servicePagesEn: ServicePage[] = [
       {
         question: "Can it include a portfolio or projects?",
         answer:
-          "Yes. It can include a section or project page to show experience without inventing fake results or data."
+          "Yes. It can include a section or project page to show experience without inventing unsupported results or data."
       },
       {
         question: "Can the website be expanded later?",
