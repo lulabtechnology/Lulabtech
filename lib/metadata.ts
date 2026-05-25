@@ -7,6 +7,8 @@ const baseUrl =
 
 const title = `Diseño de páginas web en Panamá | ${SITE_NAME}`;
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 const description =
   "Creamos páginas web, landing pages, tiendas online y software a medida en Panamá para negocios que quieren verse profesionales, captar clientes y vender más.";
 
@@ -84,6 +86,11 @@ export const siteMetadata: Metadata = {
     images: ["/og/og-cover.png?v=7"]
   },
   applicationName: SITE_NAME,
+  verification: googleSiteVerification
+    ? {
+        google: googleSiteVerification
+      }
+    : undefined,
   category: "technology",
   robots: {
     index: true,
