@@ -52,7 +52,13 @@ const priceFromBySlug: Record<string, string> = {
   "software-para-casilleros-panama": "$899",
   "diseno-web-para-abogados-panama": "$149",
   "sistemas-de-reservas-panama": "$899",
-  "cuanto-cuesta-una-pagina-web-en-panama": "$149"
+  "cuanto-cuesta-una-pagina-web-en-panama": "$149",
+  "desarrollo-web-panama": "$299",
+  "agencia-de-diseno-web-panama": "$149",
+  "diseno-web-para-clinicas-panama": "$299",
+  "diseno-web-para-inmobiliarias-panama": "$299",
+  "software-pos-panama": "$899",
+  "automatizaciones-para-empresas-panama": "$899"
 };
 
 const serviceEventBySlug: Record<string, string> = {
@@ -63,7 +69,15 @@ const serviceEventBySlug: Record<string, string> = {
   "software-a-medida-panama": "click_servicio_software",
   "software-para-restaurantes-panama": "click_servicio_software",
   "software-para-casilleros-panama": "click_servicio_software",
-  "sistemas-de-reservas-panama": "click_servicio_software"
+  "sistemas-de-reservas-panama": "click_servicio_software",
+  "desarrollo-web-panama": "click_servicio_web_corporativa",
+  "agencia-de-diseno-web-panama": "click_servicio_web_corporativa",
+  "seo-para-paginas-web-panama": "click_servicio_software",
+  "mantenimiento-web-panama": "click_servicio_software",
+  "diseno-web-para-clinicas-panama": "click_servicio_web_corporativa",
+  "diseno-web-para-inmobiliarias-panama": "click_servicio_web_corporativa",
+  "software-pos-panama": "click_servicio_software",
+  "automatizaciones-para-empresas-panama": "click_servicio_software"
 };
 
 export function ServiceLandingPageContent({ slug }: { slug: string }) {

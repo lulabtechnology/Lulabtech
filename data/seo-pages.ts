@@ -1174,6 +1174,829 @@ const servicePagesEs: ServicePage[] = [
       { label: "Software a medida desde $899", href: "/software-a-medida-panama" }
     ]
   },
+
+  {
+    slug: "desarrollo-web-panama",
+    eyebrow: "Desarrollo web en Panamá",
+    h1: "Desarrollo web en Panamá para empresas que necesitan una base moderna y escalable",
+    intro:
+      "Desarrollamos sitios web y plataformas digitales para empresas en Panamá que necesitan algo más sólido que una plantilla: código limpio, estructura responsive, SEO inicial, formularios, WhatsApp e integración con procesos reales.",
+    metaTitle: "Desarrollo web en Panamá para empresas | LulabTech",
+    metaDescription:
+      "Desarrollo web en Panamá para empresas: sitios modernos, páginas corporativas, landing pages, integraciones, formularios y bases escalables para crecer.",
+    keywords: [
+      "desarrollo web en Panamá",
+      "desarrolladores web Panamá",
+      "empresa de desarrollo web Panamá",
+      "desarrollo de sitios web Panamá"
+    ],
+    primaryCta: "Cotizar desarrollo web",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Código, diseño y estrategia para que la web no sea solo una vitrina.",
+    heroPanelDescription:
+      "Trabajamos la parte visual y técnica para que el sitio cargue bien, se entienda en móvil y pueda crecer con nuevas páginas, campañas o módulos.",
+    heroBullets: [
+      "Sitios responsive desarrollados con estructura moderna",
+      "Integración con WhatsApp, formularios, correo y medición",
+      "Base preparada para SEO, campañas y futuras mejoras"
+    ],
+    benefitsTitle: "Un desarrollo web serio evita rehacer todo cuando el negocio crece",
+    benefitsDescription:
+      "La diferencia está en construir con orden: rutas claras, componentes reutilizables, contenido bien estructurado y una experiencia pensada para convertir.",
+    benefits: [
+      "Arquitectura web lista para nuevas secciones",
+      "Diseño limpio sin perder enfoque comercial",
+      "Código responsive para celular, tablet y escritorio",
+      "Formularios y CTAs conectados al proceso comercial",
+      "SEO técnico inicial desde la estructura",
+      "Preparación para analítica, campañas y futuras integraciones"
+    ],
+    processTitle: "Cómo desarrollamos una web profesional",
+    process: [
+      {
+        title: "Objetivo y alcance",
+        description:
+          "Definimos si necesitas una landing, web corporativa, ecommerce o sistema web para no sobredimensionar ni limitar el proyecto."
+      },
+      {
+        title: "Arquitectura y contenido",
+        description:
+          "Ordenamos secciones, rutas, mensajes clave, CTAs y páginas necesarias para que la experiencia tenga lógica comercial."
+      },
+      {
+        title: "Desarrollo responsive",
+        description:
+          "Construimos la web cuidando rendimiento, mobile-first, accesibilidad básica, animaciones y consistencia visual."
+      },
+      {
+        title: "Publicación y medición",
+        description:
+          "Dejamos la web lista para dominio, SSL, indexación, WhatsApp, formularios y medición con herramientas como GA4 o GTM si el cliente las tiene."
+      }
+    ],
+    useCasesTitle: "Proyectos donde conviene desarrollo web a medida",
+    useCasesDescription:
+      "Es útil cuando tu empresa necesita una web confiable, rápida y preparada para crecer sin depender de estructuras genéricas.",
+    useCases: [
+      {
+        title: "Webs corporativas escalables",
+        description:
+          "Para empresas que desean iniciar con una base seria y luego sumar servicios, casos, SEO o formularios más avanzados."
+      },
+      {
+        title: "Landing pages para campañas",
+        description:
+          "Para ofertas específicas donde la velocidad, el mensaje y la ruta de conversión son clave."
+      },
+      {
+        title: "Sistemas y paneles internos",
+        description:
+          "Cuando la web debe conectarse con datos, usuarios, reservas, inventario, clientes o reportes."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Desarrollo web es lo mismo que diseño web?",
+        answer:
+          "No exactamente. El diseño define cómo se ve y se entiende la experiencia; el desarrollo convierte esa estructura en una web funcional, rápida y mantenible."
+      },
+      {
+        question: "¿Pueden hacer una web desde cero?",
+        answer:
+          "Sí. Podemos trabajar desde estrategia, contenido, diseño, desarrollo, publicación y base SEO inicial."
+      },
+      {
+        question: "¿Se puede ampliar después?",
+        answer:
+          "Sí. La idea es dejar una base preparada para agregar páginas SEO, módulos, formularios, integraciones o nuevas secciones."
+      }
+    ],
+    relatedLinks: [
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "Software a medida", href: "/software-a-medida-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "agencia-de-diseno-web-panama",
+    eyebrow: "Agencia de diseño web en Panamá",
+    h1: "Agencia de diseño web en Panamá para negocios que quieren una presencia digital más seria",
+    intro:
+      "LulabTech ayuda a empresas, marcas personales y negocios locales en Panamá a convertir ideas en páginas web, landing pages, tiendas online y sistemas digitales con diseño profesional y enfoque comercial.",
+    metaTitle: "Agencia de diseño web en Panamá | LulabTech",
+    metaDescription:
+      "Agencia de diseño web en Panamá para landing pages, webs corporativas, ecommerce, software a medida, SEO inicial y campañas digitales.",
+    keywords: [
+      "agencia de diseño web Panamá",
+      "agencia web Panamá",
+      "agencia digital Panamá",
+      "empresa de páginas web Panamá"
+    ],
+    primaryCta: "Hablar con LulabTech",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una agencia pequeña, ágil y enfocada en resultados visibles.",
+    heroPanelDescription:
+      "Unimos diseño, desarrollo, SEO inicial y pensamiento comercial para que la web se vea bien, se entienda rápido y tenga rutas claras de contacto.",
+    heroBullets: [
+      "Diseño web, desarrollo y software en un solo equipo",
+      "Experiencia con empresas de servicios, legal, logística, educación y restaurantes",
+      "Entregas pensadas para producción, dominio, hosting y campañas"
+    ],
+    benefitsTitle: "Trabajar con una agencia web debe darte claridad, no más confusión",
+    benefitsDescription:
+      "El proceso se enfoca en entender qué necesita vender o comunicar tu negocio y convertirlo en una experiencia digital ordenada.",
+    benefits: [
+      "Acompañamiento desde la estructura hasta la publicación",
+      "Diseños modernos sin depender de plantillas genéricas",
+      "Copy comercial y mensajes claros para el cliente final",
+      "Enlaces a WhatsApp, formularios y canales oficiales",
+      "SEO inicial y arquitectura para crecer",
+      "Posibilidad de crear sistemas, paneles y automatizaciones por fases"
+    ],
+    processTitle: "Cómo trabaja LulabTech",
+    process: [
+      {
+        title: "Entendemos el negocio",
+        description:
+          "Antes de diseñar, aclaramos oferta, público, objetivos, estilo visual y acción principal esperada."
+      },
+      {
+        title: "Proponemos estructura",
+        description:
+          "Definimos secciones, páginas, CTAs, contenido y prioridad de mensajes para evitar una web desordenada."
+      },
+      {
+        title: "Diseñamos y desarrollamos",
+        description:
+          "Construimos una experiencia visual cuidada, responsive, rápida y alineada con el objetivo comercial."
+      },
+      {
+        title: "Publicamos y mejoramos",
+        description:
+          "Dejamos la web lista para producción y preparada para campañas, SEO, contenido o nuevos módulos."
+      }
+    ],
+    useCasesTitle: "Servicios principales de la agencia",
+    useCasesDescription:
+      "La estructura puede adaptarse a negocios que necesitan presencia, captación, venta online o sistemas internos.",
+    useCases: [
+      {
+        title: "Diseño web y landing pages",
+        description:
+          "Para empresas que necesitan verse profesionales y recibir consultas por WhatsApp o formulario."
+      },
+      {
+        title: "Ecommerce y catálogos",
+        description:
+          "Para marcas que desean ordenar productos y vender o cotizar con más claridad."
+      },
+      {
+        title: "Software a medida",
+        description:
+          "Para negocios que necesitan panel administrativo, reservas, POS, inventario, logística o procesos internos."
+      }
+    ],
+    faq: [
+      {
+        question: "¿LulabTech trabaja solo en Panamá?",
+        answer:
+          "El enfoque comercial principal está en Panamá, pero las soluciones digitales pueden atender proyectos que operan de forma remota o regional."
+      },
+      {
+        question: "¿Pueden manejar dominio y correo?",
+        answer:
+          "Sí, según el modelo comercial del proyecto se puede incluir dominio y correo por el primer año y dejar clara la renovación anual."
+      },
+      {
+        question: "¿También hacen software?",
+        answer:
+          "Sí. Además de páginas web, LulabTech desarrolla sistemas para reservas, restaurantes, logística, inventario, clientes y paneles administrativos."
+      }
+    ],
+    relatedLinks: [
+      { label: "Landing pages", href: "/landing-pages-panama" },
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
+    ],
+    priceFrom: "$149"
+  },
+  {
+    slug: "seo-para-paginas-web-panama",
+    eyebrow: "SEO para páginas web en Panamá",
+    h1: "SEO para páginas web en Panamá desde la estructura, el contenido y la intención de búsqueda",
+    intro:
+      "Preparamos páginas web con una base SEO clara para que Google entienda qué vende tu negocio, en qué país opera y qué servicios debe asociar con tu marca. Esta fase no promete resultados mágicos: ordena la estructura para crecer con contenido y medición.",
+    metaTitle: "SEO para páginas web en Panamá | LulabTech",
+    metaDescription:
+      "SEO para páginas web en Panamá: estructura, metadata, sitemap, robots, enlaces internos, contenido comercial y base técnica para crecer en Google.",
+    keywords: [
+      "SEO para páginas web Panamá",
+      "SEO Panamá",
+      "posicionamiento web Panamá",
+      "optimización SEO Panamá"
+    ],
+    primaryCta: "Revisar mi SEO",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "SEO inicial realista: primero orden, luego crecimiento.",
+    heroPanelDescription:
+      "La base SEO combina estructura, títulos, descripciones, páginas internas, enlaces, datos estructurados y contenido útil para búsquedas locales.",
+    heroBullets: [
+      "Metadata, sitemap, robots y estructura semántica",
+      "Páginas orientadas a servicios y búsquedas locales",
+      "Enlaces internos para fortalecer temas comerciales"
+    ],
+    benefitsTitle: "Una web bonita sin estructura SEO puede ser difícil de encontrar",
+    benefitsDescription:
+      "El SEO inicial ayuda a que el sitio tenga fundamentos técnicos y contenido alineado con lo que buscan los clientes en Panamá.",
+    benefits: [
+      "Títulos y descripciones optimizadas por intención",
+      "Jerarquía H1, H2 y contenido útil por servicio",
+      "Sitemap y robots correctos",
+      "Datos estructurados para organización, servicios y preguntas frecuentes",
+      "Interlinking entre páginas clave",
+      "Base para Search Console, GA4 y futuras campañas"
+    ],
+    processTitle: "Cómo trabajamos una fase SEO inicial",
+    process: [
+      {
+        title: "Diagnóstico técnico",
+        description:
+          "Revisamos metadata, indexabilidad, sitemap, rutas, responsive, contenido y señales básicas de autoridad."
+      },
+      {
+        title: "Mapa de palabras clave",
+        description:
+          "Priorizamos servicios con intención comercial: landing pages, web corporativa, ecommerce, software, reservas y verticales."
+      },
+      {
+        title: "Contenido e interlinking",
+        description:
+          "Creamos o mejoramos páginas internas con texto real, FAQs, CTAs y enlaces relacionados."
+      },
+      {
+        title: "Medición y siguientes pasos",
+        description:
+          "Dejamos preparado el sitio para medir clics, formularios y tráfico, sin inventar IDs de herramientas."
+      }
+    ],
+    useCasesTitle: "Cuándo conviene trabajar SEO inicial",
+    useCasesDescription:
+      "Es especialmente útil cuando la web va a lanzarse, cuando ya existe pero no tiene páginas internas o cuando se quiere empezar a captar tráfico orgánico local.",
+    useCases: [
+      {
+        title: "Webs nuevas",
+        description:
+          "Permite publicar con una estructura más clara para Google desde el primer día."
+      },
+      {
+        title: "Webs existentes",
+        description:
+          "Ayuda a ordenar títulos, páginas, enlaces internos y contenido comercial sin rediseñar todo."
+      },
+      {
+        title: "Negocios locales",
+        description:
+          "Refuerza términos como servicio + Panamá, industria + Panamá y necesidades específicas del cliente."
+      }
+    ],
+    faq: [
+      {
+        question: "¿El SEO inicial garantiza aparecer primero?",
+        answer:
+          "No. Nadie serio puede garantizar la primera posición. La fase inicial crea fundamentos correctos para competir y seguir mejorando."
+      },
+      {
+        question: "¿Incluye Google Search Console?",
+        answer:
+          "Se puede preparar el sitio y orientar la configuración, pero la verificación depende del acceso del cliente al dominio o cuenta de Google."
+      },
+      {
+        question: "¿SEO reemplaza los anuncios?",
+        answer:
+          "No necesariamente. SEO y anuncios pueden complementarse: SEO construye base orgánica y Ads acelera tráfico hacia ofertas específicas."
+      }
+    ],
+    relatedLinks: [
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Google Ads", href: "/google-ads-panama" },
+      { label: "Precios de páginas web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
+    ]
+  },
+  {
+    slug: "mantenimiento-web-panama",
+    eyebrow: "Mantenimiento web en Panamá",
+    h1: "Mantenimiento web en Panamá para cuidar cambios, respaldo y continuidad de tu sitio",
+    intro:
+      "Damos soporte a sitios web que necesitan ajustes, mejoras de contenido, revisión de enlaces, cambios simples, respaldo y acompañamiento técnico para que la presencia digital no quede abandonada después de publicar.",
+    metaTitle: "Mantenimiento web en Panamá | LulabTech",
+    metaDescription:
+      "Mantenimiento web en Panamá para cambios, soporte, ajustes de contenido, respaldo, revisión técnica, continuidad y mejoras ligeras del sitio.",
+    keywords: [
+      "mantenimiento web Panamá",
+      "soporte web Panamá",
+      "actualización de páginas web Panamá",
+      "mantenimiento de sitios web Panamá"
+    ],
+    primaryCta: "Consultar mantenimiento",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una web publicada también necesita cuidado.",
+    heroPanelDescription:
+      "El mantenimiento permite corregir detalles, actualizar información, cuidar enlaces y acompañar mejoras sin reconstruir todo el sitio.",
+    heroBullets: [
+      "Cambios de textos, imágenes, enlaces y secciones simples",
+      "Revisión de formularios, WhatsApp, correos y rutas clave",
+      "Soporte técnico y mejoras por prioridad según alcance"
+    ],
+    benefitsTitle: "El mantenimiento evita que una web se vuelva vieja, confusa o incompleta",
+    benefitsDescription:
+      "Muchas webs pierden valor porque nadie actualiza servicios, precios, fotos, CTAs o información de contacto. El soporte mantiene la presencia activa.",
+    benefits: [
+      "Actualización de contenido y datos de contacto",
+      "Revisión de enlaces rotos y CTAs importantes",
+      "Ajustes visuales ligeros sin romper el diseño",
+      "Apoyo en publicación y anticaché cuando hay cambios",
+      "Priorización de mejoras según urgencia",
+      "Base para fases futuras de SEO o conversión"
+    ],
+    processTitle: "Cómo se maneja el mantenimiento",
+    process: [
+      {
+        title: "Revisión de necesidades",
+        description:
+          "Identificamos qué tipo de soporte requiere el sitio: cambios simples, contenido, formularios, SEO o ajustes técnicos."
+      },
+      {
+        title: "Priorización",
+        description:
+          "Ordenamos lo urgente y lo importante para no mezclar cambios pequeños con rediseños estructurales."
+      },
+      {
+        title: "Aplicación segura",
+        description:
+          "Hacemos cambios cuidando responsive, rutas, formularios, WhatsApp, imágenes y estructura existente."
+      },
+      {
+        title: "Validación",
+        description:
+          "Revisamos que el cambio se vea correctamente y que la versión publicada no quede atrapada por caché."
+      }
+    ],
+    useCasesTitle: "Ideal para negocios que ya tienen web",
+    useCasesDescription:
+      "Funciona para clientes que publicaron su sitio y ahora necesitan mantenerlo actualizado sin hacer un rediseño completo cada vez.",
+    useCases: [
+      {
+        title: "Cambios simples mensuales",
+        description:
+          "Actualizar textos, teléfonos, enlaces, precios, fotos o pequeñas secciones de forma ordenada."
+      },
+      {
+        title: "Correcciones técnicas",
+        description:
+          "Revisar formularios, botones, errores visuales, enlaces y comportamiento responsive."
+      },
+      {
+        title: "Mejoras por fases",
+        description:
+          "Planificar SEO, nuevas páginas, optimización de conversión o integraciones sin romper la web actual."
+      }
+    ],
+    faq: [
+      {
+        question: "¿El mantenimiento incluye rediseños completos?",
+        answer:
+          "No necesariamente. Los cambios estructurales grandes se cotizan aparte para proteger alcance, tiempo y calidad."
+      },
+      {
+        question: "¿Pueden mantener una web que no hizo LulabTech?",
+        answer:
+          "Depende del acceso, tecnología y estado del proyecto. Primero se revisa la estructura antes de prometer cambios."
+      },
+      {
+        question: "¿También pueden mejorar SEO durante mantenimiento?",
+        answer:
+          "Sí, se pueden planificar mejoras SEO por fases, como metadata, nuevas páginas, contenido e interlinking."
+      }
+    ],
+    relatedLinks: [
+      { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" },
+      { label: "Desarrollo web", href: "/desarrollo-web-panama" },
+      { label: "Diseño web", href: "/diseno-web-panama" }
+    ]
+  },
+  {
+    slug: "diseno-web-para-clinicas-panama",
+    eyebrow: "Diseño web para clínicas en Panamá",
+    h1: "Diseño web para clínicas en Panamá con servicios claros, confianza y citas por WhatsApp",
+    intro:
+      "Creamos páginas web para clínicas, consultorios y profesionales de salud o bienestar que necesitan presentar servicios, ubicación, especialidades, horarios y rutas de contacto de forma profesional.",
+    metaTitle: "Diseño web para clínicas en Panamá | LulabTech",
+    metaDescription:
+      "Diseño web para clínicas en Panamá con servicios, especialidades, ubicación, WhatsApp, formularios, citas y estructura SEO local.",
+    keywords: [
+      "diseño web para clínicas Panamá",
+      "páginas web para clínicas Panamá",
+      "web para consultorios Panamá",
+      "página web médica Panamá"
+    ],
+    primaryCta: "Cotizar web para clínica",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una web clínica debe verse confiable, humana y fácil de usar.",
+    heroPanelDescription:
+      "Organizamos servicios, diferenciales, ubicación y contacto para que el paciente entienda rápido cómo pedir información o agendar.",
+    heroBullets: [
+      "Secciones para servicios, equipo, ubicación y preguntas frecuentes",
+      "CTA a WhatsApp, formulario o sistema de citas según alcance",
+      "Diseño responsive con enfoque en confianza y claridad"
+    ],
+    benefitsTitle: "La primera impresión digital también influye en la confianza del paciente",
+    benefitsDescription:
+      "Una web bien estructurada ayuda a reducir dudas, explicar servicios y facilitar que el usuario escriba desde celular.",
+    benefits: [
+      "Presentación clara de servicios y especialidades",
+      "Botones de WhatsApp y contacto visibles",
+      "Ubicación, horarios y datos importantes ordenados",
+      "Diseño cálido y profesional",
+      "Base SEO para búsquedas locales",
+      "Posibilidad de sumar reservas o formularios por fase"
+    ],
+    processTitle: "Proceso para una web clínica",
+    process: [
+      {
+        title: "Servicios y especialidades",
+        description:
+          "Definimos qué servicios deben destacarse y qué información necesita el paciente antes de contactar."
+      },
+      {
+        title: "Confianza visual",
+        description:
+          "Diseñamos una experiencia limpia, profesional y humana, sin parecer una plantilla genérica."
+      },
+      {
+        title: "Contacto y citas",
+        description:
+          "Conectamos WhatsApp, formulario, correo o sistema de reservas según el proceso real de atención."
+      },
+      {
+        title: "Publicación SEO",
+        description:
+          "Dejamos la base preparada para indexación, metadatos y futuras páginas por servicio o especialidad."
+      }
+    ],
+    useCasesTitle: "Ideal para salud, estética y bienestar",
+    useCasesDescription:
+      "Puede adaptarse a clínicas dentales, consultorios, psicología, estética, fisioterapia, wellness y servicios de atención profesional.",
+    useCases: [
+      {
+        title: "Clínicas y consultorios",
+        description:
+          "Sitios para mostrar servicios, equipo, ubicación, horarios y canales de contacto."
+      },
+      {
+        title: "Servicios con cita",
+        description:
+          "Flujos que guían al usuario hacia WhatsApp, formulario o sistema de reserva."
+      },
+      {
+        title: "SEO por especialidad",
+        description:
+          "Base para crear futuras páginas por tratamiento, servicio o ubicación."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Puede tener botón para agendar cita?",
+        answer:
+          "Sí. Puede conectar a WhatsApp, formulario o un sistema de reservas si el proyecto lo requiere."
+      },
+      {
+        question: "¿Pueden crear páginas por servicio?",
+        answer:
+          "Sí. Es una buena fase SEO para posicionar servicios específicos y no depender solo de la página principal."
+      },
+      {
+        question: "¿La web puede verse premium?",
+        answer:
+          "Sí. Se puede trabajar una estética más boutique, limpia y confiable, alineada con el tipo de clínica."
+      }
+    ],
+    relatedLinks: [
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "diseno-web-para-inmobiliarias-panama",
+    eyebrow: "Diseño web inmobiliario en Panamá",
+    h1: "Diseño web para inmobiliarias en Panamá con propiedades, confianza y contacto directo",
+    intro:
+      "Desarrollamos páginas web para agentes inmobiliarios, asesoras, brokers y empresas de real estate en Panamá que necesitan mostrar propiedades, servicios, experiencia y contacto por WhatsApp de forma profesional.",
+    metaTitle: "Diseño web para inmobiliarias en Panamá | LulabTech",
+    metaDescription:
+      "Diseño web para inmobiliarias en Panamá con propiedades, galerías, filtros, WhatsApp, perfil profesional, SEO local y panel administrativo según alcance.",
+    keywords: [
+      "diseño web para inmobiliarias Panamá",
+      "páginas web inmobiliarias Panamá",
+      "web para bienes raíces Panamá",
+      "sitio web para agentes inmobiliarios Panamá"
+    ],
+    primaryCta: "Cotizar web inmobiliaria",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Una web inmobiliaria debe vender confianza antes de mostrar propiedades.",
+    heroPanelDescription:
+      "La estructura puede presentar perfil, servicios, propiedades destacadas, galerías, filtros, WhatsApp y mensajes claros para compradores o vendedores.",
+    heroBullets: [
+      "Propiedades destacadas con fotos, precio y detalles clave",
+      "CTA a WhatsApp para consultas de compra, venta o alquiler",
+      "Posibilidad de panel para administrar inmuebles"
+    ],
+    benefitsTitle: "Mostrar propiedades con orden mejora la percepción del servicio",
+    benefitsDescription:
+      "Una web inmobiliaria profesional permite centralizar propiedades, explicar servicios y recibir consultas más claras que solo por redes sociales.",
+    benefits: [
+      "Cards de propiedades con datos importantes",
+      "Galerías, filtros y páginas de detalle según alcance",
+      "Perfil profesional y señales de confianza",
+      "CTA a WhatsApp para compradores o propietarios",
+      "SEO inicial para búsquedas inmobiliarias en Panamá",
+      "Base para panel administrativo o CRM en fases futuras"
+    ],
+    processTitle: "Proceso para una web inmobiliaria",
+    process: [
+      {
+        title: "Modelo de propiedades",
+        description:
+          "Definimos si la web mostrará propiedades estáticas, catálogo administrable o integración con procesos internos."
+      },
+      {
+        title: "Estructura comercial",
+        description:
+          "Ordenamos servicios de compra, venta, alquiler, asesoría y perfil profesional."
+      },
+      {
+        title: "Diseño y galerías",
+        description:
+          "Creamos una experiencia visual clara para propiedades, fotos, beneficios y datos de contacto."
+      },
+      {
+        title: "Publicación y SEO",
+        description:
+          "La web queda preparada para indexación, enlaces internos y crecimiento con páginas de propiedades o zonas."
+      }
+    ],
+    useCasesTitle: "Para agentes, asesoras y empresas inmobiliarias",
+    useCasesDescription:
+      "Funciona tanto para una marca personal inmobiliaria como para una empresa que necesita catálogo y presencia corporativa.",
+    useCases: [
+      {
+        title: "Marca personal inmobiliaria",
+        description:
+          "Presentación de perfil, experiencia, servicios y propiedades destacadas."
+      },
+      {
+        title: "Catálogo de propiedades",
+        description:
+          "Listado con fotos, estado, precio, ubicación, metraje y CTA a WhatsApp."
+      },
+      {
+        title: "Panel administrativo",
+        description:
+          "Para crear, editar y ordenar propiedades desde un acceso privado cuando el alcance lo requiera."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Puede tener panel para subir propiedades?",
+        answer:
+          "Sí. Se puede cotizar una versión con panel administrativo para agregar y editar propiedades."
+      },
+      {
+        question: "¿Puede tener galerías por propiedad?",
+        answer:
+          "Sí. Las páginas de detalle pueden incluir galería, datos principales, amenidades y contacto."
+      },
+      {
+        question: "¿Sirve para agentes independientes?",
+        answer:
+          "Sí. También funciona como marca personal para mostrar autoridad, servicios y propiedades destacadas."
+      }
+    ],
+    relatedLinks: [
+      { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" }
+    ],
+    priceFrom: "$299"
+  },
+  {
+    slug: "software-pos-panama",
+    eyebrow: "Software POS en Panamá",
+    h1: "Software POS en Panamá para ventas, caja, productos y control operativo",
+    intro:
+      "Creamos sistemas POS y paneles administrativos para negocios en Panamá que necesitan registrar ventas, controlar caja, productos, gastos, usuarios, reportes e inventario desde una solución adaptada a su operación.",
+    metaTitle: "Software POS en Panamá desde $899 | LulabTech",
+    metaDescription:
+      "Software POS en Panamá para ventas, caja, productos, inventario, gastos, usuarios, reportes y panel administrativo desde $899 según alcance.",
+    keywords: [
+      "software POS Panamá",
+      "sistema POS Panamá",
+      "software de ventas Panamá",
+      "sistema de caja Panamá"
+    ],
+    primaryCta: "Cotizar software POS",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Un POS a medida puede ordenar ventas y operación sin depender de hojas sueltas.",
+    heroPanelDescription:
+      "El sistema puede adaptarse a flujos reales: ventas rápidas, métodos de pago, turnos de caja, productos, inventario, gastos y reportes.",
+    heroBullets: [
+      "Ventas, productos, caja y usuarios por rol",
+      "Reportes de ingresos, gastos y actividad",
+      "Módulos por fase: inventario, recetas, asistencia o facturas"
+    ],
+    benefitsTitle: "Un POS debe ayudar a controlar el negocio, no solo registrar ventas",
+    benefitsDescription:
+      "La ventaja de un desarrollo a medida es que el sistema puede crecer según el proceso real del negocio y no al revés.",
+    benefits: [
+      "Registro de ventas y métodos de pago",
+      "Apertura y cierre de caja",
+      "Productos, categorías e imágenes",
+      "Gastos, reportes y métricas internas",
+      "Roles de usuario y auditoría según alcance",
+      "Inventario, recetas o asistencia en fases futuras"
+    ],
+    processTitle: "Cómo se trabaja un POS a medida",
+    process: [
+      {
+        title: "Mapa operativo",
+        description:
+          "Entendemos cómo vende el negocio, qué métodos de pago usa, quién opera caja y qué reportes necesita."
+      },
+      {
+        title: "Módulos iniciales",
+        description:
+          "Definimos si el primer alcance incluye ventas, productos, caja, gastos, usuarios, inventario o facturación."
+      },
+      {
+        title: "Desarrollo y pruebas",
+        description:
+          "Construimos pantallas prácticas, rápidas y probadas con datos reales de operación."
+      },
+      {
+        title: "Capacitación y mejoras",
+        description:
+          "Se entrega una base funcional y se planifican mejoras por fase según el uso del negocio."
+      }
+    ],
+    useCasesTitle: "Negocios que pueden usar un POS a medida",
+    useCasesDescription:
+      "Funciona para restaurantes, cafeterías, tiendas pequeñas, puntos de venta, servicios con caja diaria y negocios que necesitan control interno.",
+    useCases: [
+      {
+        title: "Restaurantes y food trucks",
+        description:
+          "Ventas rápidas, productos, caja, métodos de pago, gastos y reportes de jornada."
+      },
+      {
+        title: "Tiendas y puntos de venta",
+        description:
+          "Control de productos, ventas, inventario básico y seguimiento de actividad."
+      },
+      {
+        title: "Operación por empleados",
+        description:
+          "Roles, permisos, auditoría y métricas por usuario cuando el negocio lo necesita."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Un POS a medida incluye inventario?",
+        answer:
+          "Puede incluirlo si forma parte del alcance. También puede agregarse en una fase posterior."
+      },
+      {
+        question: "¿Puede funcionar con roles de empleados?",
+        answer:
+          "Sí. Se pueden crear roles para administrador y empleados, con permisos según el flujo del negocio."
+      },
+      {
+        question: "¿Es lo mismo que software para restaurantes?",
+        answer:
+          "El POS puede ser parte del software para restaurantes, pero también puede adaptarse a otros negocios con ventas y caja."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" }
+    ],
+    priceFrom: "$899"
+  },
+  {
+    slug: "automatizaciones-para-empresas-panama",
+    eyebrow: "Automatizaciones para empresas en Panamá",
+    h1: "Automatizaciones para empresas en Panamá que quieren ahorrar tiempo y reducir tareas repetitivas",
+    intro:
+      "Diseñamos automatizaciones y soluciones digitales para empresas que necesitan ordenar formularios, notificaciones, reportes, reservas, clientes, documentos o flujos internos sin depender de procesos manuales todo el tiempo.",
+    metaTitle: "Automatizaciones para empresas en Panamá | LulabTech",
+    metaDescription:
+      "Automatizaciones para empresas en Panamá: formularios, reportes, notificaciones, paneles, flujos internos y soluciones digitales a medida.",
+    keywords: [
+      "automatizaciones para empresas Panamá",
+      "automatización de procesos Panamá",
+      "automatización digital Panamá",
+      "soluciones digitales Panamá"
+    ],
+    primaryCta: "Cotizar automatización",
+    secondaryCta: "Ver proyectos",
+    heroPanelTitle: "Automatizar no es complicar: es quitar fricción al proceso.",
+    heroPanelDescription:
+      "Podemos convertir tareas repetidas en flujos más claros: formularios, avisos, registros, paneles, reportes y seguimiento.",
+    heroBullets: [
+      "Formularios que alimentan paneles o correos",
+      "Notificaciones y registros para seguimiento",
+      "Reportes, estados y flujos internos por etapa"
+    ],
+    benefitsTitle: "Una automatización bien hecha libera tiempo y reduce errores",
+    benefitsDescription:
+      "Primero se entiende el proceso real, luego se define qué parte conviene digitalizar para que el equipo trabaje con más orden.",
+    benefits: [
+      "Menos tareas repetitivas por WhatsApp o Excel",
+      "Información centralizada en formularios o paneles",
+      "Notificaciones para clientes o equipo interno",
+      "Estados, historial y seguimiento",
+      "Reportes básicos para tomar decisiones",
+      "Base para crecer hacia software más completo"
+    ],
+    processTitle: "Cómo se define una automatización",
+    process: [
+      {
+        title: "Detectar el cuello de botella",
+        description:
+          "Identificamos qué tarea se repite, dónde se pierde información y qué resultado debería producir el flujo."
+      },
+      {
+        title: "Diseñar el flujo",
+        description:
+          "Separamos entradas, validaciones, notificaciones, estados y responsables antes de programar."
+      },
+      {
+        title: "Construir solución mínima",
+        description:
+          "Creamos una primera versión usable para validar si realmente ahorra tiempo y ordena el proceso."
+      },
+      {
+        title: "Medir y ampliar",
+        description:
+          "Con el uso real, se pueden sumar reportes, permisos, integraciones o módulos adicionales."
+      }
+    ],
+    useCasesTitle: "Procesos que se pueden automatizar",
+    useCasesDescription:
+      "No todo necesita un sistema gigante. Muchas empresas pueden iniciar con una automatización pequeña y crecer por fases.",
+    useCases: [
+      {
+        title: "Leads y formularios",
+        description:
+          "Capturar solicitudes, clasificarlas y notificar al equipo comercial."
+      },
+      {
+        title: "Reservas y confirmaciones",
+        description:
+          "Recibir solicitudes, manejar estados y enviar respuestas más ordenadas."
+      },
+      {
+        title: "Reportes internos",
+        description:
+          "Centralizar registros y generar métricas simples para seguimiento operativo."
+      }
+    ],
+    faq: [
+      {
+        question: "¿Una automatización requiere software completo?",
+        answer:
+          "No siempre. Puede empezar con formularios, notificaciones o un panel pequeño y luego crecer."
+      },
+      {
+        question: "¿Pueden conectar WhatsApp?",
+        answer:
+          "Se pueden crear enlaces, mensajes precargados y flujos de contacto; integraciones oficiales avanzadas dependen del alcance y herramientas disponibles."
+      },
+      {
+        question: "¿Qué se necesita para cotizar?",
+        answer:
+          "Explicar el proceso actual, qué se repite, quién lo hace, qué datos se manejan y qué resultado se espera."
+      }
+    ],
+    relatedLinks: [
+      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
+      { label: "Software POS", href: "/software-pos-panama" }
+    ],
+    priceFrom: "$899"
+  },
 ];
 
 const servicePagesEn: ServicePage[] = [

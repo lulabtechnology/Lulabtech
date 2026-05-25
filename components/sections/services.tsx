@@ -38,6 +38,11 @@ const serviceCards = [
     href: "/software-a-medida-panama",
     price: "$899",
     event: "click_servicio_software"
+  },
+  {
+    href: "/automatizaciones-para-empresas-panama",
+    price: "$899",
+    event: "click_servicio_software"
   }
 ] as const;
 

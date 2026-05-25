@@ -17,7 +17,13 @@ const serviceLinks = [
   { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
   { label: "Software para casilleros/logística", href: "/software-para-casilleros-panama" },
   { label: "Webs para abogados", href: "/diseno-web-para-abogados-panama" },
+  { label: "Webs para clínicas", href: "/diseno-web-para-clinicas-panama" },
+  { label: "Webs para inmobiliarias", href: "/diseno-web-para-inmobiliarias-panama" },
   { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
+  { label: "Software POS", href: "/software-pos-panama" },
+  { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" },
+  { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" },
+  { label: "Mantenimiento web", href: "/mantenimiento-web-panama" },
   { label: "Cuánto cuesta una web", href: "/cuanto-cuesta-una-pagina-web-en-panama" }
 ];
 

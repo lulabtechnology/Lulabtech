@@ -317,6 +317,11 @@ export const siteCopy = {
           title: "Software a la medida",
           description:
             "Sistemas para casilleros, restaurantes, reservas, inventarios, reportes, usuarios y procesos internos."
+        },
+        {
+          title: "Automatizaciones",
+          description:
+            "Flujos digitales para ordenar formularios, notificaciones, reportes, seguimiento y tareas repetitivas."
         }
       ]
     },
@@ -811,6 +816,11 @@ export const siteCopy = {
           title: "Custom software",
           description:
             "Systems for lockers, restaurants, bookings, inventories, reports, users and internal processes."
+        },
+        {
+          title: "Automations",
+          description:
+            "Digital workflows to organize forms, notifications, reports, follow-up and repetitive tasks."
         }
       ]
     },

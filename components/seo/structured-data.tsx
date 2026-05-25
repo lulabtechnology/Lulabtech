@@ -1,77 +1,15 @@
+import { servicePages } from "@/data/seo-pages";
 import { CONTACT_EMAIL, INSTAGRAM_URL, SITE_DESCRIPTION, SITE_NAME, WHATSAPP_NUMBER } from "@/lib/constants";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
-const services = [
-  {
-    name: "Diseño de páginas web en Panamá",
-    url: `${baseUrl}/diseno-web-panama`,
-    description:
-      "Diseño y desarrollo de páginas web profesionales para empresas, marcas personales y negocios de servicios en Panamá."
-  },
-  {
-    name: "Landing pages en Panamá",
-    url: `${baseUrl}/landing-pages-panama`,
-    description:
-      "Landing pages orientadas a captación de leads, campañas digitales, WhatsApp y formularios de cotización."
-  },
-  {
-    name: "Páginas web corporativas en Panamá",
-    url: `${baseUrl}/paginas-web-corporativas-panama`,
-    description:
-      "Webs corporativas con estructura clara, diseño premium, servicios, confianza y rutas de contacto."
-  },
-  {
-    name: "Tiendas online en Panamá",
-    url: `${baseUrl}/tiendas-online-panama`,
-    description:
-      "Tiendas online y catálogos digitales con experiencia responsive, presentación de productos, carrito, pagos o WhatsApp."
-  },
-  {
-    name: "Software a medida en Panamá",
-    url: `${baseUrl}/software-a-medida-panama`,
-    description:
-      "Sistemas web, paneles administrativos, reservas, inventarios, reportes, software para casilleros y restaurantes."
-  },
-  {
-    name: "Software para restaurantes en Panamá",
-    url: `${baseUrl}/software-para-restaurantes-panama`,
-    description:
-      "Sistemas para restaurantes con ventas, caja, productos, inventario, gastos, usuarios y reportes."
-  },
-  {
-    name: "Software para casilleros y logística en Panamá",
-    url: `${baseUrl}/software-para-casilleros-panama`,
-    description:
-      "Sistemas para courier, casilleros y logística con clientes, tracking, paquetes, estados y panel administrativo."
-  },
-  {
-    name: "Diseño web para abogados en Panamá",
-    url: `${baseUrl}/diseno-web-para-abogados-panama`,
-    description:
-      "Landing pages y webs corporativas para abogados y firmas legales con contacto claro y SEO local."
-  },
-  {
-    name: "Sistemas de reservas en Panamá",
-    url: `${baseUrl}/sistemas-de-reservas-panama`,
-    description:
-      "Sistemas de reservas con servicios, disponibilidad, estados, confirmaciones y panel administrativo."
-  },
-  {
-    name: "Precios de páginas web en Panamá",
-    url: `${baseUrl}/cuanto-cuesta-una-pagina-web-en-panama`,
-    description:
-      "Guía comercial de precios: landing pages, webs corporativas, ecommerce y software a medida en Panamá."
-  },
-  {
-    name: "Configuración de Google Ads en Panamá",
-    url: `${baseUrl}/google-ads-panama`,
-    description:
-      "Configuración inicial de campañas de Google Ads, palabras clave, anuncios, ubicación y conexión con landing pages."
-  }
-];
+const services = servicePages.map((page) => ({
+  name: page.eyebrow,
+  url: `${baseUrl}/${page.slug}`,
+  description: page.metaDescription
+}));
 
 const faqs = [
   {
@@ -111,25 +49,34 @@ const faqs = [
   }
 ];
 
-const seoTopics = [
-  "diseño de páginas web en Panamá",
-  "desarrollo web Panamá",
-  "páginas informativas Panamá",
-  "páginas para abogados Panamá",
-  "landing pages Panamá",
-  "páginas web corporativas Panamá",
-  "tiendas online Panamá",
-  "ecommerce Panamá",
-  "software a medida Panamá",
-  "software para casilleros",
-  "software para restaurantes",
-  "sistemas de reservas",
-  "SEO inicial",
-  "Google Ads Panamá",
-  "Meta Ads",
-  "formularios de cotización",
-  "WhatsApp para negocios"
-];
+const seoTopics = Array.from(
+  new Set([
+    "diseño de páginas web en Panamá",
+    "desarrollo web Panamá",
+    "agencia de diseño web Panamá",
+    "páginas informativas Panamá",
+    "páginas para abogados Panamá",
+    "diseño web para clínicas Panamá",
+    "diseño web para inmobiliarias Panamá",
+    "landing pages Panamá",
+    "páginas web corporativas Panamá",
+    "tiendas online Panamá",
+    "ecommerce Panamá",
+    "software a medida Panamá",
+    "software POS Panamá",
+    "software para casilleros",
+    "software para restaurantes",
+    "sistemas de reservas",
+    "automatizaciones para empresas",
+    "mantenimiento web Panamá",
+    "SEO inicial",
+    "Google Ads Panamá",
+    "Meta Ads",
+    "formularios de cotización",
+    "WhatsApp para negocios",
+    ...servicePages.flatMap((page) => page.keywords)
+  ])
+);
 
 export function StructuredData() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`;

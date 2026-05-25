@@ -14,7 +14,13 @@ const priceFromBySlug: Record<string, string> = {
   "software-para-casilleros-panama": "899",
   "diseno-web-para-abogados-panama": "149",
   "sistemas-de-reservas-panama": "899",
-  "cuanto-cuesta-una-pagina-web-en-panama": "149"
+  "cuanto-cuesta-una-pagina-web-en-panama": "149",
+  "desarrollo-web-panama": "299",
+  "agencia-de-diseno-web-panama": "149",
+  "diseno-web-para-clinicas-panama": "299",
+  "diseno-web-para-inmobiliarias-panama": "299",
+  "software-pos-panama": "899",
+  "automatizaciones-para-empresas-panama": "899"
 };
 
 export function ServicePageStructuredData({ page }: { page: ServicePage }) {
