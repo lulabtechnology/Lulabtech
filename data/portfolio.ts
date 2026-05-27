@@ -19,17 +19,20 @@ export const portfolioCategories = [
   {
     id: "corporativa" as const,
     label: "Webs corporativas",
-    description: "Sitios para empresas, firmas, clínicas, academias y marcas que necesitan una presencia más sólida."
+    description:
+      "Sitios para empresas, firmas, clínicas, academias y marcas que necesitan una presencia más sólida."
   },
   {
     id: "landing" as const,
     label: "Landing pages",
-    description: "Páginas orientadas a captación, campañas, marcas personales y negocios que venden por WhatsApp o formulario."
+    description:
+      "Páginas orientadas a captación, campañas, marcas personales y negocios que venden por WhatsApp o formulario."
   },
   {
     id: "software" as const,
     label: "Software y plataformas",
-    description: "Sistemas internos, portales y soluciones a medida para operación, reservas, logística y administración."
+    description:
+      "Sistemas internos, portales y soluciones a medida para operación, reservas, logística y administración."
   }
 ] as const;
 
@@ -46,7 +49,7 @@ export const portfolioTrustStats = [
   }
 ] as const;
 
-// Ordenados primero por impacto visual y comercial para que el portafolio sea más fuerte al compartirlo con clientes.
+// Ordenados primero por proyectos que generan mejor impresión al compartir el portafolio por WhatsApp.
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "solmas-legal",
@@ -56,7 +59,7 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Firma legal",
     description: "Web corporativa para firma legal con áreas de práctica, presentación de la firma y tono institucional elegante.",
-    services: ["Web corporativa", "Marca legal", "Estructura profesional"],
+    services: ["Web corporativa", "Marca legal", "SEO inicial"],
     logoSrc: "/clients/solmas.webp",
     featured: true
   },
@@ -459,9 +462,12 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const featuredPortfolioProjects = portfolioProjects.filter((project) => project.featured);
 
+const projectsWithLogos = portfolioProjects.filter((project) => project.logoSrc);
+const logoRowSplitIndex = Math.ceil(projectsWithLogos.length / 2);
+
 export const portfolioLogoRows = [
-  portfolioProjects.slice(0, 18),
-  portfolioProjects.slice(18, 36)
+  projectsWithLogos.slice(0, logoRowSplitIndex),
+  projectsWithLogos.slice(logoRowSplitIndex)
 ];
 
 export const portfolioStats = {
