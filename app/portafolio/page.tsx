@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { ProjectsPage } from "@/components/pages/projects-page";
 
 export const metadata: Metadata = {
-  title: "Portafolio de páginas web y software en Panamá | Lulab Technology",
+  title: "Portafolio de trabajos realizados | LulabTech Panamá",
   description:
-    "Portafolio de LulabTech con proyectos reales de landing pages, webs corporativas y software a medida para negocios en Panamá.",
+    "Portafolio de LulabTech con trabajos realizados en páginas web, landing pages, webs corporativas y software a medida para empresas en Panamá.",
   keywords: [
-    "portafolio diseño web Panamá",
+    "portafolio LulabTech",
     "trabajos realizados páginas web Panamá",
-    "proyectos LulabTech",
-    "software a medida Panamá",
-    "landing pages Panamá"
+    "portafolio diseño web Panamá",
+    "proyectos de landing pages Panamá",
+    "software a medida Panamá"
   ],
   alternates: {
     canonical: "/portafolio"
@@ -18,26 +18,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.lulabtech.com/portafolio",
-    title: "Portafolio de páginas web y software en Panamá | Lulab Technology",
+    title: "Portafolio de trabajos realizados | LulabTech Panamá",
     description:
-      "Conoce proyectos reales de LulabTech: landing pages, webs corporativas, software a medida y soluciones digitales desarrolladas para negocios en Panamá.",
+      "Mira trabajos reales de LulabTech: landing pages, webs corporativas y software a medida desarrollados para negocios en Panamá.",
     siteName: "LulabTech",
     locale: "es_PA",
     images: [
       {
-        url: "/og/og-cover.png?v=9",
+        url: "/og/og-cover.png?v=10",
         width: 1200,
         height: 630,
-        alt: "Portafolio de LulabTech"
+        alt: "Portafolio de trabajos realizados por LulabTech"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portafolio de páginas web y software en Panamá | Lulab Technology",
+    title: "Portafolio de trabajos realizados | LulabTech Panamá",
     description:
-      "Portafolio de LulabTech con trabajos publicados, landing pages, webs corporativas y software en Panamá.",
-    images: ["/og/og-cover.png?v=9"]
+      "Trabajos realizados por LulabTech en diseño web, landing pages, webs corporativas y software a medida.",
+    images: ["/og/og-cover.png?v=10"]
   }
 };
 

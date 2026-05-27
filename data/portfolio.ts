@@ -11,12 +11,8 @@ export type PortfolioProject = {
   services: string[];
   ctaLabel?: string;
   featured?: boolean;
-};
-
-export type TrustedLogo = {
-  src: string;
-  alt: string;
-  name: string;
+  logoSrc?: string;
+  screenshotSrc?: string;
 };
 
 export const portfolioCategories = [
@@ -40,26 +36,28 @@ export const portfolioCategories = [
   }
 ] as const;
 
-// Ordenados primero por impacto visual/comercial para la sección de confianza.
-export const trustedClientLogos: TrustedLogo[] = [
-  { src: "/clients/quality-techno-services.webp", alt: "Logo de Quality Techno Services", name: "Quality Techno Services" },
-  { src: "/clients/solmas.webp", alt: "Logo de SOLMAS Legal", name: "SOLMAS Legal" },
-  { src: "/clients/orthoclinix.webp", alt: "Logo de OrthoClinix", name: "OrthoClinix" },
-  { src: "/clients/aa-law-firm.webp", alt: "Logo de A&A Law Firm", name: "A&A Law Firm" },
-  { src: "/clients/alaf-international-academy.webp", alt: "Logo de ALAF International Academy", name: "ALAF International Academy" },
-  { src: "/clients/nova-shipping.webp", alt: "Logo de Nova Shipping Services", name: "Nova Shipping Services" },
-  { src: "/clients/bd-logistic.webp", alt: "Logo de B&D Logistic", name: "B&D Logistic" },
-  { src: "/clients/cerebritos.webp", alt: "Logo de Cerebritos Panamá", name: "Cerebritos Panamá" },
-  { src: "/clients/veranieras-flor.webp", alt: "Logo de Veranieras", name: "Veranieras" },
-  { src: "/clients/remax.webp", alt: "Logo de RE/MAX", name: "RE/MAX" },
-  { src: "/clients/enis-caicedo.webp", alt: "Logo de Enis Caicedo", name: "Enis Caicedo" },
-  { src: "/clients/servi-estufa.webp", alt: "Logo de Servi-Estufa", name: "Servi-Estufa" },
-  { src: "/clients/los-cholos.webp", alt: "Logo de Los Cholos", name: "Los Cholos" },
-  { src: "/clients/krasa-dermoestudio.webp", alt: "Logo de Krasa Dermoestudio", name: "Krasa Dermoestudio" },
-  { src: "/clients/alcira-trigueros.webp", alt: "Logo de Alcira Trigueros", name: "Alcira Trigueros" },
-  { src: "/clients/fundacion-alada.webp", alt: "Logo de Fundación Alada", name: "Fundación Alada" },
-  { src: "/clients/reyes-echevers-petroni.webp", alt: "Logo de Reyes Echevers Petroni", name: "Reyes Echevers Petroni" }
-];
+export const portfolioTrustStats = [
+  {
+    value: "100+",
+    label: "Proyectos realizados",
+    description: "Experiencia acumulada en webs, landings, software, SEO y soporte digital."
+  },
+  {
+    value: "2+",
+    label: "Años de experiencia",
+    description: "Trabajo continuo con negocios, marcas personales y empresas en Panamá."
+  },
+  {
+    value: "36",
+    label: "Trabajos públicos",
+    description: "Portafolio visible para enseñar referencias reales a nuevos clientes."
+  },
+  {
+    value: "SEO",
+    label: "Base técnica incluida",
+    description: "Estructura inicial para Google, rendimiento, responsive y medición."
+  }
+] as const;
 
 // Ordenados primero por proyectos que generan mejor impresión al compartir el portafolio por WhatsApp.
 export const portfolioProjects: PortfolioProject[] = [
@@ -70,8 +68,9 @@ export const portfolioProjects: PortfolioProject[] = [
     type: "corporativa",
     typeLabel: "Web corporativa",
     industry: "Firma legal",
-    description: "Web corporativa para firma legal con áreas de práctica, presentación de la firma y un tono institucional elegante.",
+    description: "Web corporativa para firma legal con áreas de práctica, presentación de la firma y tono institucional elegante.",
     services: ["Web corporativa", "Marca legal", "SEO inicial"],
+    logoSrc: "/clients/solmas.webp",
     featured: true
   },
   {
@@ -94,6 +93,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Servicios técnicos e industriales",
     description: "Presencia corporativa para una empresa técnica con servicios, respaldo, contacto y una presentación más sólida de marca.",
     services: ["Web corporativa", "Contacto", "Responsive"],
+    logoSrc: "/clients/quality-techno-services.webp",
     featured: true
   },
   {
@@ -103,8 +103,9 @@ export const portfolioProjects: PortfolioProject[] = [
     type: "landing",
     typeLabel: "Landing page",
     industry: "Clínica dental / ortodoncia",
-    description: "Landing premium para clínica dental con enfoque visual boutique, confianza y solicitudes de cita.",
+    description: "Landing premium para clínica dental con enfoque boutique, confianza visual y solicitudes de cita.",
     services: ["Landing page", "Sector salud", "Citas / contacto"],
+    logoSrc: "/clients/orthoclinix.webp",
     featured: true
   },
   {
@@ -127,6 +128,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Abogados",
     description: "Landing legal enfocada en explicar servicios, generar confianza y captar consultas desde WhatsApp o formulario.",
     services: ["Landing page", "Legal", "Conversión"],
+    logoSrc: "/clients/aa-law-firm.webp",
     featured: true
   },
   {
@@ -147,8 +149,9 @@ export const portfolioProjects: PortfolioProject[] = [
     type: "landing",
     typeLabel: "Landing page",
     industry: "Moda y accesorios",
-    description: "Landing visual para marca de accesorios, colección de producto y venta por WhatsApp con una estética muy cuidada.",
+    description: "Landing visual para marca de accesorios, colección de producto y venta por WhatsApp con una estética cuidada.",
     services: ["Landing page", "Marca", "Venta por WhatsApp"],
+    logoSrc: "/clients/veranieras-flor.webp",
     featured: true
   },
   {
@@ -183,6 +186,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description: "Plataforma web para operación logística, seguimiento, gestión documental, estados y procesos administrativos de la empresa.",
     services: ["Software a medida", "Portal cliente", "Gestión operativa"],
     ctaLabel: "Ver plataforma",
+    logoSrc: "/clients/nova-shipping.webp",
     featured: true
   },
   {
@@ -195,6 +199,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description: "Sistema operativo con acceso de usuarios, módulos de viajes, tarifas, planillas, finanzas y control administrativo para una empresa logística.",
     services: ["Software a medida", "Login / panel", "Gestión operativa"],
     ctaLabel: "Ver acceso",
+    logoSrc: "/clients/bd-logistic.webp",
     featured: true
   },
   {
@@ -207,6 +212,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description: "Sistema interno con acceso de usuarios para ventas, caja, inventario, asistencia y control operativo del negocio.",
     services: ["Software POS", "Login / panel", "Operación interna"],
     ctaLabel: "Ver acceso",
+    logoSrc: "/clients/los-cholos.webp",
     featured: true
   },
   {
@@ -216,8 +222,9 @@ export const portfolioProjects: PortfolioProject[] = [
     type: "landing",
     typeLabel: "Landing page",
     industry: "Educación infantil",
-    description: "Página de captación para academia/estimulación infantil con estructura comercial, información clara y contacto directo.",
+    description: "Página de captación para academia y estimulación infantil con información clara, branding amigable y contacto directo.",
     services: ["Landing page", "Captación", "WhatsApp"],
+    logoSrc: "/clients/cerebritos.webp",
     featured: true
   },
   {
@@ -229,6 +236,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Educación",
     description: "Sitio de captación para academia con presentación de propuesta académica, confianza y contacto.",
     services: ["Landing page", "Academia", "Información"],
+    logoSrc: "/clients/alaf-international-academy.webp",
     featured: true
   },
   {
@@ -282,7 +290,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Legal e inmobiliario",
     description: "Presencia digital para servicios legales e inmobiliarios con enfoque en claridad, respaldo y contacto directo.",
-    services: ["Landing page", "Marca personal", "Contacto"]
+    services: ["Landing page", "Marca personal", "Contacto"],
+    logoSrc: "/clients/alcira-trigueros.webp"
   },
   {
     slug: "enis-caicedo",
@@ -292,7 +301,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Marca profesional",
     description: "Web corporativa o brand site para presentar perfil profesional, servicios, propuesta y canales de contacto.",
-    services: ["Web corporativa", "Marca profesional", "Responsive"]
+    services: ["Web corporativa", "Marca profesional", "Responsive"],
+    logoSrc: "/clients/enis-caicedo.webp"
   },
   {
     slug: "palash-tower",
@@ -352,7 +362,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Belleza y estética",
     description: "Landing visual para servicios de estética, branding y contacto orientado a citas o consultas.",
-    services: ["Landing page", "Estética", "Citas"]
+    services: ["Landing page", "Estética", "Citas"],
+    logoSrc: "/clients/krasa-dermoestudio.webp"
   },
   {
     slug: "handy-group",
@@ -402,7 +413,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Servicios técnicos",
     description: "Página de captación para reparación y servicio técnico con foco en claridad, confianza y contacto rápido.",
-    services: ["Landing page", "Servicio técnico", "WhatsApp"]
+    services: ["Landing page", "Servicio técnico", "WhatsApp"],
+    logoSrc: "/clients/servi-estufa.webp"
   },
   {
     slug: "audiomedica",
@@ -448,13 +460,15 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const featuredPortfolioProjects = portfolioProjects.filter((project) => project.featured);
 
+export const portfolioLogoRows = [
+  portfolioProjects.slice(0, 18),
+  portfolioProjects.slice(18)
+];
+
 export const portfolioStats = {
   totalProjects: portfolioProjects.length,
   featuredProjects: featuredPortfolioProjects.length,
   totalLandingPages: portfolioProjects.filter((project) => project.type === "landing").length,
   totalCorporateWebsites: portfolioProjects.filter((project) => project.type === "corporativa").length,
-  totalSoftwareProjects: portfolioProjects.filter((project) => project.type === "software").length,
-  supportBadge: "Entrega rápida",
-  trustBadge: "Soporte inicial",
-  seoBadge: "SEO base"
+  totalSoftwareProjects: portfolioProjects.filter((project) => project.type === "software").length
 };

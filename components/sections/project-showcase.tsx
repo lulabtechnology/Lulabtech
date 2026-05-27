@@ -28,32 +28,25 @@ export function ProjectShowcaseSection() {
   const heading = locale === "en"
     ? {
         eyebrow: "Selected work",
-        title: "Real projects shown with visual previews",
+        title: "A quick look at published projects",
         description:
-          "A better first sample of LulabTech work, with real previews and a stronger order so prospects immediately see the most polished references.",
+          "A stronger sample of LulabTech work, ordered to show the most polished references first and help prospects understand the quality of the execution.",
         allLabel: "All",
         cta: "View full portfolio"
       }
     : {
         eyebrow: "Trabajos seleccionados",
-        title: "Una muestra visual real de proyectos publicados",
+        title: "Una vista rápida de proyectos publicados",
         description:
-          "Seleccionamos y ordenamos mejor los proyectos para que el visitante vea primero las referencias más fuertes de LulabTech, ahora con una vista previa mucho más útil.",
+          "Una muestra más fuerte de trabajos reales de LulabTech, ordenada para enseñar primero las referencias con mejor impacto visual y comercial.",
         allLabel: "Todos",
         cta: "Ver portafolio completo"
       };
 
   return (
-    <SectionShell
-      id={NAV_ANCHORS.projects}
-      className="overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-white"
-    >
+    <SectionShell id={NAV_ANCHORS.projects} className="overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-white">
       <Reveal>
-        <SectionHeading
-          eyebrow={heading.eyebrow}
-          title={heading.title}
-          description={heading.description}
-        />
+        <SectionHeading eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
       </Reveal>
 
       <Reveal delay={0.08}>
@@ -92,42 +85,22 @@ export function ProjectShowcaseSection() {
       <Reveal delay={0.14}>
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
-            <article
-              key={project.slug}
-              className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
-            >
+            <article key={project.slug} className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
               <div className="aspect-[16/10] overflow-hidden">
                 <PortfolioPreview project={project} compact />
               </div>
 
               <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
-                  {project.typeLabel}
-                </p>
-                <h3 className="mt-2 text-xl font-semibold leading-tight text-ink-900">
-                  {project.name}
-                </h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{project.typeLabel}</p>
+                <h3 className="mt-2 text-xl font-semibold leading-tight text-ink-900">{project.name}</h3>
                 <p className="mt-3 text-sm leading-7 text-ink-600">{project.description}</p>
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <ButtonLink
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="outline"
-                    className="w-full justify-center"
-                    onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_featured" })}
-                  >
+                  <ButtonLink href={project.url} target="_blank" rel="noreferrer" variant="outline" className="w-full justify-center" onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_featured" })}>
                     <ExternalLink className="h-4 w-4" />
                     {project.ctaLabel ?? (locale === "en" ? "View project" : "Ver proyecto")}
                   </ButtonLink>
-                  <ButtonLink
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full justify-center"
-                    onClick={() => trackEvent("click_whatsapp_hero", { source: `featured_${project.slug}` })}
-                  >
+                  <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="w-full justify-center" onClick={() => trackEvent("click_whatsapp_hero", { source: `featured_${project.slug}` })}>
                     {locale === "en" ? "Quote similar" : "Cotizar similar"}
                   </ButtonLink>
                 </div>

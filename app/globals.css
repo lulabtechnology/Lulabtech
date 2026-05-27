@@ -118,16 +118,31 @@ body {
   }
 }
 
-.client-marquee {
-  animation: client-marquee 56s linear infinite;
+@keyframes client-marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.client-marquee:hover {
+.client-marquee {
+  animation: client-marquee 58s linear infinite;
+}
+
+.client-marquee-reverse {
+  animation: client-marquee-reverse 62s linear infinite;
+}
+
+.client-marquee:hover,
+.client-marquee-reverse:hover {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .client-marquee {
+  .client-marquee,
+  .client-marquee-reverse {
     animation: none;
     transform: translateX(0);
   }
