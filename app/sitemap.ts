@@ -22,10 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.96
     },
     {
-      url: `${baseUrl}/proyectos`,
+      url: `${baseUrl}/portafolio`,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.85
+      changeFrequency: "weekly",
+      priority: 0.9
     },
     ...servicePageSlugs.map((slug) => ({
       url: `${baseUrl}/${slug}`,

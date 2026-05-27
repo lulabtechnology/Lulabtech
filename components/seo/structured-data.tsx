@@ -15,7 +15,7 @@ const services = servicePages.map((page) => ({
 const navigationLinks = [
   { name: "Inicio", url: baseUrl },
   { name: "Servicios", url: `${baseUrl}/servicios-panama` },
-  { name: "Proyectos", url: `${baseUrl}/proyectos` },
+  { name: "Portafolio", url: `${baseUrl}/portafolio` },
   ...flatServiceHubLinks.map((link) => ({
     name: link.label,
     url: `${baseUrl}${link.href}`

@@ -7,7 +7,7 @@ import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ButtonLink } from "@/components/ui/button";
-import { PortfolioCover } from "@/components/project/portfolio-cover";
+import { PortfolioPreview } from "@/components/project/portfolio-preview";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { featuredPortfolioProjects, portfolioCategories, type PortfolioCategoryId } from "@/data/portfolio";
 import { trackEvent } from "@/lib/tracking";
@@ -22,23 +22,23 @@ export function ProjectShowcaseSection() {
       ? featuredPortfolioProjects
       : featuredPortfolioProjects.filter((project) => project.type === activeCategory);
 
-    return base.slice(0, 9);
+    return base.slice(0, 6);
   }, [activeCategory]);
 
   const heading = locale === "en"
     ? {
-        eyebrow: "Featured work",
-        title: "Selected projects to build trust faster",
+        eyebrow: "Selected work",
+        title: "Real projects shown with visual previews",
         description:
-          "A curated sample of published websites and software projects developed by LulabTech. Use them as a quick visual reference before showing the full portfolio.",
+          "A better first sample of LulabTech work, with real previews and a stronger order so prospects immediately see the most polished references.",
         allLabel: "All",
         cta: "View full portfolio"
       }
     : {
-        eyebrow: "Proyectos destacados",
-        title: "Una muestra de trabajos reales para reforzar la confianza",
+        eyebrow: "Trabajos seleccionados",
+        title: "Una muestra visual real de proyectos publicados",
         description:
-          "Aquí ves una selección de proyectos publicados y software desarrollado por LulabTech. Sirven como referencia rápida antes de ir al portafolio completo.",
+          "Seleccionamos y ordenamos mejor los proyectos para que el visitante vea primero las referencias más fuertes de LulabTech, ahora con una vista previa mucho más útil.",
         allLabel: "Todos",
         cta: "Ver portafolio completo"
       };
@@ -97,7 +97,7 @@ export function ProjectShowcaseSection() {
               className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
             >
               <div className="aspect-[16/10] overflow-hidden">
-                <PortfolioCover project={project} compact />
+                <PortfolioPreview project={project} compact />
               </div>
 
               <div className="p-6">

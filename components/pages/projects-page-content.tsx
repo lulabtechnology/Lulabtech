@@ -2,13 +2,14 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, ExternalLink, MessageCircle } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
-import { PortfolioCover } from "@/components/project/portfolio-cover";
+import { PortfolioPreview } from "@/components/project/portfolio-preview";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import {
+  featuredPortfolioProjects,
   portfolioCategories,
   portfolioProjects,
   portfolioStats,
@@ -23,11 +24,16 @@ type ProjectsPageCopy = {
   title: string;
   description: string;
   trustLabel: string;
+  featuredTitle: string;
+  featuredDescription: string;
+  allProjectsTitle: string;
+  allProjectsDescription: string;
   filterLabel: string;
   allLabel: string;
   primaryCta: string;
   secondaryCta: string;
   stats: { label: string; value: string }[];
+  highlights: string[];
   ctaEyebrow: string;
   ctaTitle: string;
   ctaDescription: string;
@@ -38,10 +44,16 @@ type ProjectsPageCopy = {
 const copy = {
   es: {
     eyebrow: "Portafolio LulabTech",
-    title: "Trabajos realizados, proyectos publicados y software desarrollado por LulabTech",
+    title: "Un portafolio pensado para enviarlo por WhatsApp y generar confianza real",
     description:
-      "Aquí reunimos proyectos reales de LulabTech: landing pages, webs corporativas y software a medida para negocios en Panamá. Puedes usarlos como referencia visual y comercial cuando quieras mostrar experiencia a un cliente.",
-    trustLabel: "Prueba de confianza",
+      "Aquí tienes una selección ordenada de trabajos reales de LulabTech con una presentación mucho más útil para compartir con clientes: primero los proyectos que generan mejor impresión y luego el portafolio completo por categoría.",
+    trustLabel: "Comparte este enlace como prueba de confianza",
+    featuredTitle: "Proyectos destacados y ordenados por impacto",
+    featuredDescription:
+      "Estos son los trabajos que primero conviene mostrar cuando un cliente te pide referencias. Están elegidos y ordenados para dar una impresión más profesional desde el inicio.",
+    allProjectsTitle: "Todos los proyectos organizados por tipo de solución",
+    allProjectsDescription:
+      "Después de los destacados, aquí puedes enseñar el resto del portafolio filtrando entre landing pages, webs corporativas y software a medida.",
     filterLabel: "Filtrar por tipo de proyecto",
     allLabel: "Todos",
     primaryCta: "Cotizar un proyecto similar",
@@ -52,10 +64,17 @@ const copy = {
       { label: "Webs corporativas", value: `${portfolioStats.totalCorporateWebsites}` },
       { label: "Software y plataformas", value: `${portfolioStats.totalSoftwareProjects}` }
     ],
+    highlights: [
+      "Entrega rápida",
+      "Diseño premium",
+      "SEO base",
+      "Soporte inicial",
+      "Listo para compartir"
+    ],
     ctaEyebrow: "¿Quieres algo parecido?",
-    ctaTitle: "Podemos crear tu web o software con una dirección visual mucho más seria y comercial.",
+    ctaTitle: "Podemos crear tu web o software con una presencia visual mucho más fuerte y comercial.",
     ctaDescription:
-      "Si quieres una referencia rápida para un cliente, este portafolio ya organiza los trabajos por categoría. Y si ya quieres cotizar algo similar, te guiamos por WhatsApp o te proponemos la mejor ruta para tu negocio.",
+      "Si ya tienes un prospecto, este portafolio te sirve para mostrar credenciales. Y si ese prospecto ya quiere avanzar, nosotros te ayudamos a aterrizar su proyecto con la mejor ruta posible.",
     whatsapp: "Hablar por WhatsApp",
     links: [
       { label: "Diseño web", href: "/diseno-web-panama" },
@@ -67,10 +86,16 @@ const copy = {
   },
   en: {
     eyebrow: "LulabTech portfolio",
-    title: "Published projects, websites, and software developed by LulabTech",
+    title: "A portfolio built to share on WhatsApp and build trust fast",
     description:
-      "A curated portfolio of real LulabTech work: landing pages, corporate websites, and custom software for businesses in Panama.",
-    trustLabel: "Trust proof",
+      "This page is organized so you can quickly send it to prospects: strongest projects first, then the complete portfolio by category.",
+    trustLabel: "Share this link as trust proof",
+    featuredTitle: "Featured projects sorted by impact",
+    featuredDescription:
+      "These are the references that make the best first impression when a client asks for previous work.",
+    allProjectsTitle: "All projects organized by solution type",
+    allProjectsDescription:
+      "After the featured section, you can browse the full portfolio filtered by landing pages, corporate websites, and custom software.",
     filterLabel: "Filter by project type",
     allLabel: "All",
     primaryCta: "Quote a similar project",
@@ -81,10 +106,11 @@ const copy = {
       { label: "Corporate websites", value: `${portfolioStats.totalCorporateWebsites}` },
       { label: "Software platforms", value: `${portfolioStats.totalSoftwareProjects}` }
     ],
+    highlights: ["Fast delivery", "Premium design", "Basic SEO", "Initial support", "Share-ready"],
     ctaEyebrow: "Want something similar?",
-    ctaTitle: "We can build your website or software with a stronger visual and commercial direction.",
+    ctaTitle: "We can build your website or software with a stronger visual and commercial presence.",
     ctaDescription:
-      "This portfolio is organized by category so you can quickly show relevant references to a prospect. If you are ready to quote something similar, we can guide you through the next step.",
+      "Use this portfolio to show credentials to prospects, and when they are ready to move forward, we can guide the next step.",
     whatsapp: "Talk on WhatsApp",
     links: [
       { label: "Web design", href: "/diseno-web-panama" },
@@ -122,12 +148,22 @@ export function ProjectsPageContent() {
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-ink-600 sm:text-lg">
               {pageCopy.description}
             </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-2.5">
+              {pageCopy.highlights.map((item) => (
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm font-semibold text-ink-700 shadow-soft">
+                  <Sparkles className="h-4 w-4 text-brand-600" />
+                  {item}
+                </span>
+              ))}
+            </div>
+
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" onClick={() => trackEvent("click_whatsapp_hero", { source: "portfolio" })}>
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" onClick={() => trackEvent("click_whatsapp_hero", { source: "portafolio_page" })}>
                 <MessageCircle className="h-4 w-4" />
                 {pageCopy.primaryCta}
               </ButtonLink>
-              <ButtonLink href="/servicios-panama" variant="outline" size="lg" onClick={() => trackEvent("click_servicio_software", { source: "portfolio" })}>
+              <ButtonLink href="/servicios-panama" variant="outline" size="lg" onClick={() => trackEvent("click_servicio_software", { source: "portafolio_page" })}>
                 {pageCopy.secondaryCta}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
@@ -145,17 +181,106 @@ export function ProjectsPageContent() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-14">
         <Container>
-          <div className="rounded-[34px] border border-slate-200 bg-white/92 p-5 shadow-soft sm:p-6">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-              <div>
+          <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-3xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">{pageCopy.trustLabel}</p>
                 <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
-                  Portafolio organizado por tipo de solución
+                  {pageCopy.featuredTitle}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-ink-600 sm:text-base">
+                  {pageCopy.featuredDescription}
+                </p>
+              </div>
+
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}>
+                {pageCopy.whatsapp}
+                <ArrowUpRight className="h-4 w-4" />
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {featuredPortfolioProjects.map((project) => (
+              <article
+                key={project.slug}
+                className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <PortfolioPreview project={project} compact />
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+                        {project.typeLabel}
+                      </p>
+                      <h2 className="mt-2 text-xl font-semibold leading-tight text-ink-900">
+                        {project.name}
+                      </h2>
+                    </div>
+                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-600">
+                      {project.industry}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-sm leading-7 text-ink-600">{project.description}</p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.services.map((service) => (
+                      <span
+                        key={service}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-ink-700"
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5 text-brand-600" />
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <ButtonLink
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      variant="outline"
+                      className="w-full justify-center"
+                      onClick={() => trackEvent("click_portafolio", { project: project.name, source: "featured_grid" })}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      {project.ctaLabel ?? "Ver proyecto"}
+                    </ButtonLink>
+                    <ButtonLink
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full justify-center"
+                      onClick={() => trackEvent("click_whatsapp_footer", { source: `featured_${project.slug}` })}
+                    >
+                      Cotizar algo similar
+                    </ButtonLink>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-16 sm:pb-20">
+        <Container>
+          <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Portafolio completo</p>
+                <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
+                  {pageCopy.allProjectsTitle}
                 </h2>
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-600 sm:text-base">
-                  Landing pages, webs corporativas y software a medida ordenados para que puedas enseñar referencias con más facilidad y sin mezclar proyectos distintos.
+                  {pageCopy.allProjectsDescription}
                 </p>
               </div>
 
@@ -201,7 +326,7 @@ export function ProjectsPageContent() {
                 className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
               >
                 <div className="aspect-[16/10] overflow-hidden">
-                  <PortfolioCover project={project} compact />
+                  <PortfolioPreview project={project} compact />
                 </div>
 
                 <div className="p-6">
@@ -210,9 +335,9 @@ export function ProjectsPageContent() {
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
                         {project.typeLabel}
                       </p>
-                      <h2 className="mt-2 text-xl font-semibold leading-tight text-ink-900">
+                      <h3 className="mt-2 text-xl font-semibold leading-tight text-ink-900">
                         {project.name}
-                      </h2>
+                      </h3>
                     </div>
                     <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-600">
                       {project.industry}
