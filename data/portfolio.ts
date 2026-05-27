@@ -60,6 +60,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Firma legal",
     description: "Web corporativa para firma legal con áreas de práctica, presentación de la firma y tono institucional elegante.",
     services: ["Web corporativa", "Marca legal", "SEO inicial"],
+    screenshotSrc: "/portfolio-previews/solmas-legal.webp",
     logoSrc: "/clients/solmas.webp",
     featured: true
   },
@@ -72,6 +73,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Aire acondicionado e ingeniería",
     description: "Sitio corporativo para presentar servicios HVAC, proyectos, subservicios y contacto profesional para clientes residenciales, comerciales e industriales.",
     services: ["Web corporativa", "Estructura comercial", "Formulario / WhatsApp"],
+    screenshotSrc: "/portfolio-previews/isasa-panama.webp",
     logoSrc: "/clients/isasa-panama.webp",
     featured: true
   },
@@ -108,6 +110,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Abogados",
     description: "Landing legal de alto impacto para presentar la firma, reforzar confianza y captar consultas.",
     services: ["Landing page", "Legal", "Marca premium"],
+    screenshotSrc: "/portfolio-previews/rep-lawyer.webp",
     logoSrc: "/clients/rep-lawyer.webp",
     featured: true
   },
@@ -120,6 +123,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Abogados",
     description: "Landing legal enfocada en explicar servicios, generar confianza y captar consultas desde WhatsApp o formulario.",
     services: ["Landing page", "Legal", "Conversión"],
+    screenshotSrc: "/portfolio-previews/aa-law-firm.webp",
     logoSrc: "/clients/aa-law-firm.webp",
     featured: true
   },
@@ -132,6 +136,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Contabilidad",
     description: "Landing bilingüe para servicios contables y fiscales con enfoque en claridad, confianza y rutas directas de contacto.",
     services: ["Landing page", "Bilingüe", "Responsive"],
+    screenshotSrc: "/portfolio-previews/julissa-lewis.webp",
     featured: true
   },
   {
@@ -143,6 +148,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Moda y accesorios",
     description: "Landing visual para marca de accesorios, colección de producto y venta por WhatsApp con una estética cuidada.",
     services: ["Landing page", "Marca", "Venta por WhatsApp"],
+    screenshotSrc: "/portfolio-previews/veranieras.webp",
     logoSrc: "/clients/veranieras-flor.webp",
     featured: true
   },
@@ -155,6 +161,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Energía solar",
     description: "Página comercial para comunicar soluciones solares, ventajas del servicio y contacto inmediato con el cliente.",
     services: ["Landing page", "Video / visual", "Generación de leads"],
+    screenshotSrc: "/portfolio-previews/solarled.webp",
     logoSrc: "/clients/solarled.webp",
     featured: true
   },
@@ -167,6 +174,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Educación",
     description: "Web corporativa para academia con presentación institucional, oferta de cursos y captación de interesados.",
     services: ["Web corporativa", "Academia", "Panel admin"],
+    screenshotSrc: "/portfolio-previews/magna-academy.webp",
     featured: true
   },
   {
@@ -178,6 +186,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Logística / portal cliente",
     description: "Plataforma web para operación logística, seguimiento, gestión documental, estados y procesos administrativos de la empresa.",
     services: ["Software a medida", "Portal cliente", "Gestión operativa"],
+    screenshotSrc: "/portfolio-previews/nova-track-portal.webp",
     ctaLabel: "Ver plataforma",
     logoSrc: "/clients/nova-shipping.webp",
     featured: true
@@ -191,6 +200,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Logística y transporte",
     description: "Sistema operativo con acceso de usuarios, módulos de viajes, tarifas, planillas, finanzas y control administrativo para una empresa logística.",
     services: ["Software a medida", "Login / panel", "Gestión operativa"],
+    screenshotSrc: "/portfolio-previews/bb-logistic.webp",
     ctaLabel: "Ver acceso",
     logoSrc: "/clients/bd-logistic.webp",
     featured: true
@@ -217,6 +227,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Educación infantil",
     description: "Página de captación para academia y estimulación infantil con información clara, branding amigable y contacto directo.",
     services: ["Landing page", "Captación", "WhatsApp"],
+    screenshotSrc: "/portfolio-previews/cerebritos-panama.webp",
     logoSrc: "/clients/cerebritos.webp",
     featured: true
   },
@@ -241,6 +252,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Turismo / experiencias",
     description: "Landing turística para presentar experiencias, detalles de tours, reservas y comunicación con visitantes.",
     services: ["Landing page", "Turismo", "Reservas"],
+    screenshotSrc: "/portfolio-previews/biofest-panama.webp",
     featured: true
   },
   {
@@ -252,6 +264,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Turismo",
     description: "Landing turística orientada a presentar tours, detalles del servicio y contacto directo para consultas o reservas.",
     services: ["Landing page", "Turismo", "Reservas"],
+    screenshotSrc: "/portfolio-previews/panama-heritage-tours.webp",
     logoSrc: "/clients/panama-heritage-tours.webp",
     featured: true
   },
@@ -264,6 +277,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Tours y transporte",
     description: "Landing de tours y traslados con información comercial, reservas y contacto para turistas o clientes.",
     services: ["Landing page", "Reservas", "Turismo"],
+    screenshotSrc: "/portfolio-previews/caba-express.webp",
     featured: true
   },
   {
@@ -329,6 +343,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Servicios eléctricos / ingeniería",
     description: "Sitio corporativo para comunicar experiencia, servicios y canales de atención de la empresa.",
     services: ["Web corporativa", "Servicios", "Contacto"],
+    screenshotSrc: "/portfolio-previews/proselec-panama.webp",
     logoSrc: "/clients/proselec-panama.webp"
   },
   {
@@ -361,6 +376,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Belleza y estética",
     description: "Landing visual para servicios de estética, branding y contacto orientado a citas o consultas.",
     services: ["Landing page", "Estética", "Citas"],
+    screenshotSrc: "/portfolio-previews/krasa-dermoestudio.webp",
     logoSrc: "/clients/krasa-dermoestudio.webp"
   },
   {
@@ -414,6 +430,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Servicios técnicos",
     description: "Página de captación para reparación y servicio técnico con foco en claridad, confianza y contacto rápido.",
     services: ["Landing page", "Servicio técnico", "WhatsApp"],
+    screenshotSrc: "/portfolio-previews/servi-estufa.webp",
     logoSrc: "/clients/servi-estufa.webp"
   },
   {
