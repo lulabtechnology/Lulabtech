@@ -46,22 +46,22 @@ const copy = {
     eyebrow: "Portafolio LulabTech",
     title: "Trabajos realizados en páginas web, landing pages y software para empresas en Panamá",
     description:
-      "Una página pensada para compartir por WhatsApp cuando un cliente pide referencias. Primero aparecen los proyectos más fuertes y luego el portafolio completo organizado por tipo de solución.",
-    featuredTitle: "Proyectos destacados para revisar primero",
+      "Conoce una selección de proyectos desarrollados por LulabTech para negocios reales. Primero verás los trabajos con mayor impacto visual y comercial; luego el portafolio completo organizado por tipo de solución.",
+    featuredTitle: "Proyectos destacados",
     featuredDescription:
-      "Este bloque muestra los trabajos que mejor comunican experiencia, diseño y capacidad técnica desde el primer vistazo.",
+      "Trabajos seleccionados por su presentación, claridad comercial y calidad visual. Son buenas referencias para entender el estilo y el nivel de ejecución de LulabTech.",
     allProjectsTitle: "Portafolio completo por categoría",
     allProjectsDescription:
-      "Explora todos los trabajos visibles de LulabTech y filtra entre webs corporativas, landing pages y software a medida.",
+      "Revisa los proyectos por tipo de solución: webs corporativas, landing pages y software a medida.",
     filterLabel: "Filtrar por tipo de proyecto",
     allLabel: "Todos",
     primaryCta: "Cotizar un proyecto similar",
     secondaryCta: "Ver servicios",
-    highlights: ["100+ proyectos realizados", "2+ años de experiencia", "Entrega rápida", "SEO base", "Soporte inicial"],
+    highlights: ["100+ proyectos realizados", "2+ años de experiencia", "Entrega rápida", "Soporte inicial"],
     ctaEyebrow: "¿Quieres algo parecido?",
-    ctaTitle: "Creamos una presencia digital más seria para vender mejor desde el primer contacto.",
+    ctaTitle: "Creamos páginas web y sistemas que se ven profesionales y ayudan a cotizar mejor.",
     ctaDescription:
-      "Ya sea una landing page, una web corporativa o un software a medida, trabajamos la estructura, diseño, copy y ruta de contacto para que el proyecto se vea profesional y sea útil para el negocio.",
+      "Si necesitas una landing page, una web corporativa o un software a medida, organizamos el contenido, el diseño y los botones de contacto para que el cliente entienda la oferta y pueda escribir sin perderse.",
     whatsapp: "Hablar por WhatsApp",
     links: [
       { label: "Diseño web", href: "/diseno-web-panama" },
@@ -75,10 +75,10 @@ const copy = {
     eyebrow: "LulabTech portfolio",
     title: "Websites, landing pages and software projects for businesses in Panama",
     description:
-      "A share-ready portfolio for prospects who ask for previous work. Stronger projects appear first, followed by the complete portfolio by solution type.",
-    featuredTitle: "Featured projects to review first",
+      "Explore selected projects developed by LulabTech for real businesses. The strongest visual and commercial references appear first, followed by the complete portfolio by solution type.",
+    featuredTitle: "Featured projects",
     featuredDescription:
-      "This block highlights the projects that best communicate experience, design direction and technical capability at first glance.",
+      "Selected work that reflects LulabTech's visual quality, commercial clarity and execution level.",
     allProjectsTitle: "Complete portfolio by category",
     allProjectsDescription:
       "Browse visible LulabTech work and filter by corporate websites, landing pages and custom software.",
@@ -86,11 +86,11 @@ const copy = {
     allLabel: "All",
     primaryCta: "Quote a similar project",
     secondaryCta: "View services",
-    highlights: ["100+ completed projects", "2+ years experience", "Fast delivery", "Basic SEO", "Initial support"],
+    highlights: ["100+ completed projects", "2+ years experience", "Fast delivery", "Initial support"],
     ctaEyebrow: "Want something similar?",
-    ctaTitle: "We create a stronger digital presence to sell better from the first touchpoint.",
+    ctaTitle: "We build websites and systems that look professional and help businesses get better quote requests.",
     ctaDescription:
-      "Whether it is a landing page, a corporate website or custom software, we work on structure, design, copy and contact flow so the project looks professional and supports the business.",
+      "For landing pages, corporate websites or custom software, we organize the content, design and contact buttons so visitors understand the offer and can reach out easily.",
     whatsapp: "Talk on WhatsApp",
     links: [
       { label: "Web design", href: "/diseno-web-panama" },
@@ -202,7 +202,7 @@ export function ProjectsPageContent() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
             {portfolioTrustStats.map((stat) => (
               <div key={stat.label} className="rounded-[26px] border border-slate-200 bg-white/90 p-5 text-center shadow-soft">
                 <p className="text-3xl font-semibold text-ink-900 sm:text-[2rem]">{stat.value}</p>
@@ -244,7 +244,7 @@ export function ProjectsPageContent() {
           <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <span className="eyebrow">{portfolioStats.totalProjects} proyectos visibles</span>
+                <span className="eyebrow">Trabajos realizados</span>
                 <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">{pageCopy.allProjectsTitle}</h2>
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-600 sm:text-base">{pageCopy.allProjectsDescription}</p>
               </div>

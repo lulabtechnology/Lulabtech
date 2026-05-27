@@ -28,17 +28,17 @@ export function ProjectShowcaseSection() {
   const heading = locale === "en"
     ? {
         eyebrow: "Selected work",
-        title: "A quick look at published projects",
+        title: "Real projects developed by LulabTech",
         description:
-          "A stronger sample of LulabTech work, ordered to show the most polished references first and help prospects understand the quality of the execution.",
+          "A selected group of websites, brands and digital systems, ordered to show the strongest visual and commercial references first.",
         allLabel: "All",
         cta: "View full portfolio"
       }
     : {
         eyebrow: "Trabajos seleccionados",
-        title: "Una vista rápida de proyectos publicados",
+        title: "Proyectos reales desarrollados por LulabTech",
         description:
-          "Una muestra más fuerte de trabajos reales de LulabTech, ordenada para enseñar primero las referencias con mejor impacto visual y comercial.",
+          "Una selección de trabajos para empresas, marcas y sistemas digitales. Están ordenados para mostrar primero las referencias con mejor impacto visual y comercial.",
         allLabel: "Todos",
         cta: "Ver portafolio completo"
       };

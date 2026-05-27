@@ -40,22 +40,12 @@ export const portfolioTrustStats = [
   {
     value: "100+",
     label: "Proyectos realizados",
-    description: "Experiencia acumulada en webs, landings, software, SEO y soporte digital."
+    description: "Webs, landing pages y sistemas desarrollados para negocios de distintos sectores."
   },
   {
     value: "2+",
     label: "Años de experiencia",
-    description: "Trabajo continuo con negocios, marcas personales y empresas en Panamá."
-  },
-  {
-    value: "36",
-    label: "Trabajos públicos",
-    description: "Portafolio visible para enseñar referencias reales a nuevos clientes."
-  },
-  {
-    value: "SEO",
-    label: "Base técnica incluida",
-    description: "Estructura inicial para Google, rendimiento, responsive y medición."
+    description: "Trabajo continuo con empresas, marcas personales y proyectos digitales en Panamá."
   }
 ] as const;
 
@@ -81,7 +71,7 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Aire acondicionado e ingeniería",
     description: "Sitio corporativo para presentar servicios HVAC, proyectos, subservicios y contacto profesional para clientes residenciales, comerciales e industriales.",
-    services: ["Web corporativa", "SEO base", "Formulario / WhatsApp"],
+    services: ["Web corporativa", "Estructura comercial", "Formulario / WhatsApp"],
     featured: true
   },
   {

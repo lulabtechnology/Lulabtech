@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, BadgeCheck, Clock3, Layers3, SearchCheck } from "lucide-react";
+import { ArrowUpRight, Clock3, Layers3 } from "lucide-react";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
@@ -10,7 +10,7 @@ import { portfolioLogoRows, portfolioTrustStats, type PortfolioProject } from "@
 import { trackEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
-const icons = [Layers3, Clock3, BadgeCheck, SearchCheck];
+const icons = [Layers3, Clock3];
 
 function getDomain(url: string) {
   try {
@@ -65,20 +65,20 @@ export function CredibilityStrip() {
 
   const copy = locale === "en"
     ? {
-        eyebrow: "Trust proof",
-        title: "A stronger first impression before a prospect asks for references",
+        eyebrow: "Completed work",
+        title: "Real projects built for businesses in Panama",
         description:
-          "LulabTech brings together published websites, landing pages and software projects across legal, education, logistics, tourism, health, energy, real estate and service businesses.",
-        primary: "View portfolio",
-        logosTitle: "Brands and projects worked on by LulabTech"
+          "LulabTech has developed websites, landing pages and custom systems for legal firms, academies, logistics companies, tourism brands, health businesses, energy companies and professional services.",
+        primary: "View full portfolio",
+        logosTitle: "Some brands and projects we have worked with"
       }
     : {
-        eyebrow: "Prueba de confianza",
-        title: "Más respaldo visual antes de que el cliente pregunte por trabajos realizados",
+        eyebrow: "Trabajos realizados",
+        title: "Proyectos reales desarrollados por LulabTech",
         description:
-          "LulabTech reúne proyectos publicados de páginas web, landing pages y software para sectores como legal, educación, logística, turismo, salud, energía, inmobiliaria y servicios profesionales.",
-        primary: "Ver portafolio",
-        logosTitle: "Marcas y proyectos trabajados por LulabTech"
+          "Hemos desarrollado páginas web, landing pages y sistemas a medida para firmas legales, academias, empresas logísticas, marcas turísticas, clínicas, compañías de energía y servicios profesionales.",
+        primary: "Ver portafolio completo",
+        logosTitle: "Algunas marcas y proyectos trabajados"
       };
 
   return (

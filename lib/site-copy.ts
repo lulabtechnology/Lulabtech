@@ -84,26 +84,26 @@ export const siteCopy = {
       badges: ["Landing pages", "Webs corporativas", "Tiendas online", "Software a medida"],
       cards: [
         {
-          title: "Diseño que vende",
+          title: "Tu negocio se entiende rápido",
           description:
-            "Una presencia visual seria, moderna y pensada para que el negocio se entienda rápido."
+            "Organizamos tus servicios para que el cliente sepa qué ofreces y cómo contactarte."
         },
         {
-          title: "Mobile primero",
+          title: "Diseñada para celular",
           description:
-            "Experiencia responsive para que la web se vea sólida en celular, tablet y escritorio."
+            "La web se adapta a móvil, tablet y escritorio para que el recorrido se sienta cómodo."
         },
         {
-          title: "SEO desde la base",
+          title: "Lista para recibir clientes",
           description:
-            "Estructura, copy y metadata preparados para escalar con Google y contenido local."
+            "WhatsApp, formularios y llamados a la acción quedan claros desde el primer recorrido."
         }
       ],
       previewWindow: "Sitio web profesional",
       previewBadge: "LulabTech",
-      previewTitle: "Presencia digital clara, moderna y preparada para captar clientes.",
+      previewTitle: "Una web profesional para presentar mejor tu negocio.",
       previewDescription:
-        "Una estructura visual limpia para explicar tus servicios, conectar WhatsApp, reforzar confianza y preparar la base SEO local en Panamá.",
+        "Mostramos tus servicios, beneficios y canales de contacto de forma clara para que el visitante pueda cotizar sin confundirse.",
       sidePreviewAlt: "Vista previa de proyecto digital desarrollado por LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Captación" },
@@ -112,9 +112,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operación" }
       ],
       metrics: [
-        { label: "Diseño", value: "Más limpio y profesional" },
-        { label: "Código", value: "Base moderna y responsive" },
-        { label: "SEO", value: "Preparado para crecer" }
+        { label: "Claridad", value: "Tu oferta se entiende mejor" },
+        { label: "Contacto", value: "WhatsApp y formulario visibles" },
+        { label: "Confianza", value: "Imagen más seria para tu marca" }
       ],
       nextStepLabel: "Contacto claro",
       nextStepTitle: "Da el siguiente paso",
@@ -583,26 +583,26 @@ export const siteCopy = {
       badges: ["Landing pages", "Corporate websites", "Online stores", "Custom software"],
       cards: [
         {
-          title: "Design that sells",
+          title: "Your business is easy to understand",
           description:
-            "A serious, modern presence designed so the business is understood quickly."
+            "We organize your services so visitors know what you offer and how to contact you."
         },
         {
-          title: "Mobile first",
+          title: "Designed for mobile",
           description:
-            "A responsive experience so the website looks solid on phone, tablet and desktop."
+            "The website adapts to phone, tablet and desktop so the experience feels comfortable."
         },
         {
-          title: "SEO from the base",
+          title: "Ready to receive clients",
           description:
-            "Structure, copy and metadata prepared to scale through Google and local content."
+            "WhatsApp, forms and calls to action stay clear throughout the user journey."
         }
       ],
       previewWindow: "Professional website",
       previewBadge: "LulabTech",
-      previewTitle: "A clear, modern digital presence prepared to capture clients.",
+      previewTitle: "A professional website to present your business better.",
       previewDescription:
-        "A clean visual structure to explain services, connect WhatsApp, strengthen trust and prepare the local SEO base in Panama.",
+        "We present your services, benefits and contact channels clearly so visitors can request a quote without confusion.",
       sidePreviewAlt: "Preview of a digital project built by LulabTech",
       previewCards: [
         { eyebrow: "Landing pages", value: "Lead capture" },
@@ -611,9 +611,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operations" }
       ],
       metrics: [
-        { label: "Design", value: "Cleaner and more professional" },
-        { label: "Code", value: "Modern responsive foundation" },
-        { label: "SEO", value: "Prepared to grow" }
+        { label: "Clarity", value: "Your offer is easier to understand" },
+        { label: "Contact", value: "WhatsApp and forms are visible" },
+        { label: "Trust", value: "A stronger image for your brand" }
       ],
       nextStepLabel: "Clear contact",
       nextStepTitle: "Take the next step",
