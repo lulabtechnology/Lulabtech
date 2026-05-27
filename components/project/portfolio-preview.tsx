@@ -21,7 +21,7 @@ function getDomain(url: string) {
 function getScreenshotUrl(url: string) {
   const normalized = url.startsWith("http") ? url : `https://${url}`;
   // Espera varios segundos antes de capturar para evitar que salga el preloader.
-  return `https://image.thum.io/get/width/1500/crop/930/wait/8/noanimate/${normalized}`;
+  return `https://image.thum.io/get/width/1800/crop/1125/wait/8/noanimate/${normalized}`;
 }
 
 const themeMap: Record<PortfolioProject["type"], string> = {
@@ -39,14 +39,14 @@ function InitialsFallback({ project, domain, compact }: { project: PortfolioProj
     .join("");
 
   return (
-    <div className={cn("flex h-full w-full items-end bg-gradient-to-br p-5 text-white", themeMap[project.type])}>
+    <div className={cn("relative flex h-full w-full items-end bg-gradient-to-br p-6 text-white", themeMap[project.type])}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.24),transparent_34%)]" />
       <div className="relative">
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-3xl border border-white/20 bg-white/15 text-2xl font-semibold backdrop-blur-md">
+        <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-[28px] border border-white/20 bg-white/15 text-3xl font-semibold backdrop-blur-md">
           {initials}
         </div>
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">{project.typeLabel}</p>
-        <h3 className={cn(compact ? "mt-2 text-xl" : "mt-3 text-2xl", "font-semibold leading-tight")}>{project.name}</h3>
+        <h3 className={cn(compact ? "mt-2 text-2xl" : "mt-3 text-3xl", "font-semibold leading-tight")}>{project.name}</h3>
         <p className="mt-2 text-sm text-white/85">{domain}</p>
       </div>
     </div>
@@ -63,8 +63,8 @@ export function PortfolioPreview({ project, compact = false }: PortfolioPreviewP
       {!hasError ? (
         <img
           src={previewUrl}
-          alt={`Captura visual del proyecto ${project.name}`}
-          className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.02]"
+          alt={`Vista previa del proyecto ${project.name}`}
+          className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]"
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
@@ -74,24 +74,24 @@ export function PortfolioPreview({ project, compact = false }: PortfolioPreviewP
         <InitialsFallback project={project} domain={domain} compact={compact} />
       )}
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-1.5 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 backdrop-blur-md">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-center justify-between px-5 py-4">
+        <div className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/35 px-3 py-1.5 shadow-soft backdrop-blur-md">
           <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
         </div>
-        <span className="rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+        <span className="rounded-full border border-white/25 bg-black/35 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white shadow-soft backdrop-blur-md">
           {project.typeLabel}
         </span>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/78 via-black/35 to-transparent p-4 sm:p-5">
-        <div className="max-w-[92%]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/75">{project.industry}</p>
-          <p className={cn(compact ? "mt-2 text-lg" : "mt-3 text-xl", "font-semibold leading-tight text-white")}>{project.name}</p>
-          <p className="mt-1 text-sm text-white/82">{domain}</p>
+      {project.logoSrc ? (
+        <div className="pointer-events-none absolute bottom-5 left-5 z-10 flex h-16 w-24 items-center justify-center rounded-[22px] border border-white/30 bg-white/88 p-3 shadow-elevated backdrop-blur-md sm:h-[72px] sm:w-28">
+          <img src={project.logoSrc} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
         </div>
-      </div>
+      ) : null}
+
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5" />
     </div>
   );
 }

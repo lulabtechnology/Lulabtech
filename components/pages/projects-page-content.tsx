@@ -12,7 +12,6 @@ import {
   featuredPortfolioProjects,
   portfolioCategories,
   portfolioProjects,
-  portfolioStats,
   portfolioTrustStats,
   type PortfolioCategoryId,
   type PortfolioProject
@@ -102,25 +101,30 @@ const copy = {
   }
 } as const;
 
-function ProjectArticle({ project, source }: { project: PortfolioProject; source: string }) {
+function ProjectArticle({ project, source, featured = false }: { project: PortfolioProject; source: string; featured?: boolean }) {
   return (
-    <article className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
-      <div className="aspect-[16/10] overflow-hidden">
-        <PortfolioPreview project={project} compact />
+    <article
+      className={cn(
+        "group overflow-hidden border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated",
+        featured ? "rounded-[42px]" : "rounded-[36px]"
+      )}
+    >
+      <div className={cn("overflow-hidden bg-slate-100", featured ? "aspect-[16/9]" : "aspect-[16/10]") }>
+        <PortfolioPreview project={project} />
       </div>
 
-      <div className="p-6">
-        <div className="flex items-start justify-between gap-4">
+      <div className={cn(featured ? "p-7 sm:p-8" : "p-6 sm:p-7")}>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{project.typeLabel}</p>
-            <h2 className="mt-2 text-xl font-semibold leading-tight text-ink-900">{project.name}</h2>
+            <h2 className={cn("mt-2 font-semibold leading-tight text-ink-900", featured ? "text-2xl sm:text-[1.85rem]" : "text-2xl")}>{project.name}</h2>
           </div>
-          <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-600">
+          <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-ink-700">
             {project.industry}
           </span>
         </div>
 
-        <p className="mt-4 text-sm leading-7 text-ink-600">{project.description}</p>
+        <p className={cn("mt-4 leading-7 text-ink-600", featured ? "text-base" : "text-sm sm:text-base")}>{project.description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.services.map((service) => (
@@ -131,12 +135,13 @@ function ProjectArticle({ project, source }: { project: PortfolioProject; source
           ))}
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <ButtonLink
             href={project.url}
             target="_blank"
             rel="noreferrer"
             variant="outline"
+            size={featured ? "lg" : "md"}
             className="w-full justify-center"
             onClick={() => trackEvent("click_portafolio", { project: project.name, source })}
           >
@@ -147,6 +152,7 @@ function ProjectArticle({ project, source }: { project: PortfolioProject; source
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
+            size={featured ? "lg" : "md"}
             className="w-full justify-center"
             onClick={() => trackEvent("click_whatsapp_footer", { source: `${source}_${project.slug}` })}
           >
@@ -214,26 +220,26 @@ export function ProjectsPageContent() {
         </Container>
       </section>
 
-      <section className="py-12 sm:py-14">
+      <section className="py-12 sm:py-16">
         <Container>
           <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
                 <span className="eyebrow">Recomendados</span>
-                <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">{pageCopy.featuredTitle}</h2>
-                <p className="mt-3 text-sm leading-7 text-ink-600 sm:text-base">{pageCopy.featuredDescription}</p>
+                <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">{pageCopy.featuredTitle}</h2>
+                <p className="mt-3 text-base leading-7 text-ink-600">{pageCopy.featuredDescription}</p>
               </div>
 
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}>
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}>
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-7xl gap-8 xl:grid-cols-2">
             {featuredPortfolioProjects.map((project) => (
-              <ProjectArticle key={project.slug} project={project} source="featured_grid" />
+              <ProjectArticle key={project.slug} project={project} source="featured_grid" featured />
             ))}
           </div>
         </Container>
@@ -245,8 +251,8 @@ export function ProjectsPageContent() {
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <span className="eyebrow">Trabajos realizados</span>
-                <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">{pageCopy.allProjectsTitle}</h2>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-600 sm:text-base">{pageCopy.allProjectsDescription}</p>
+                <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">{pageCopy.allProjectsTitle}</h2>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-ink-600">{pageCopy.allProjectsDescription}</p>
               </div>
 
               <div>
@@ -284,7 +290,7 @@ export function ProjectsPageContent() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-7xl gap-8 xl:grid-cols-2">
             {visibleProjects.map((project) => (
               <ProjectArticle key={project.slug} project={project} source="portfolio_grid" />
             ))}

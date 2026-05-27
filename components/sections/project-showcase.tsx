@@ -22,7 +22,7 @@ export function ProjectShowcaseSection() {
       ? featuredPortfolioProjects
       : featuredPortfolioProjects.filter((project) => project.type === activeCategory);
 
-    return base.slice(0, 6);
+    return base.slice(0, 4);
   }, [activeCategory]);
 
   const heading = locale === "en"
@@ -83,24 +83,32 @@ export function ProjectShowcaseSection() {
       </Reveal>
 
       <Reveal delay={0.14}>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-7xl gap-8 lg:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.slug} className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
-              <div className="aspect-[16/10] overflow-hidden">
-                <PortfolioPreview project={project} compact />
+            <article key={project.slug} className="group overflow-hidden rounded-[38px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated">
+              <div className="aspect-[16/10] overflow-hidden bg-slate-100 sm:aspect-[16/9]">
+                <PortfolioPreview project={project} />
               </div>
 
-              <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{project.typeLabel}</p>
-                <h3 className="mt-2 text-xl font-semibold leading-tight text-ink-900">{project.name}</h3>
-                <p className="mt-3 text-sm leading-7 text-ink-600">{project.description}</p>
+              <div className="p-6 sm:p-7 lg:p-8">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{project.typeLabel}</p>
+                    <h3 className="mt-2 text-2xl font-semibold leading-tight text-ink-900 sm:text-[1.7rem]">{project.name}</h3>
+                  </div>
+                  <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-ink-700">
+                    {project.industry}
+                  </span>
+                </div>
 
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <ButtonLink href={project.url} target="_blank" rel="noreferrer" variant="outline" className="w-full justify-center" onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_featured" })}>
+                <p className="mt-4 text-base leading-7 text-ink-600">{project.description}</p>
+
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <ButtonLink href={project.url} target="_blank" rel="noreferrer" variant="outline" size="lg" className="w-full justify-center" onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_featured" })}>
                     <ExternalLink className="h-4 w-4" />
                     {project.ctaLabel ?? (locale === "en" ? "View project" : "Ver proyecto")}
                   </ButtonLink>
-                  <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="w-full justify-center" onClick={() => trackEvent("click_whatsapp_hero", { source: `featured_${project.slug}` })}>
+                  <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" className="w-full justify-center" onClick={() => trackEvent("click_whatsapp_hero", { source: `featured_${project.slug}` })}>
                     {locale === "en" ? "Quote similar" : "Cotizar similar"}
                   </ButtonLink>
                 </div>
