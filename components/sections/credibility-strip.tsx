@@ -22,25 +22,37 @@ function getDomain(url: string) {
 }
 
 function LogoTile({ project }: { project: PortfolioProject }) {
-  const [firstWord, secondWord] = project.name.split(" ");
-  const initials = `${firstWord?.[0] ?? "L"}${secondWord?.[0] ?? ""}`.toUpperCase();
-  const favicon = `https://www.google.com/s2/favicons?sz=128&domain_url=${encodeURIComponent(project.url)}`;
-
   return (
-    <div className="flex h-20 w-64 shrink-0 items-center gap-3 rounded-[22px] border border-slate-200 bg-white px-4 shadow-soft sm:h-24 sm:w-72">
-      <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noreferrer"
+      onClick={() => trackEvent("click_portafolio", { project: project.name, source: "logos_carousel" })}
+      className="group flex h-28 w-72 shrink-0 flex-col justify-between overflow-hidden rounded-[26px] border border-slate-200 bg-white p-4 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-elevated sm:h-32 sm:w-80"
+    >
+      <div className="relative flex min-h-0 flex-1 items-center justify-center rounded-[20px] bg-slate-50/80 px-4 py-3 ring-1 ring-inset ring-slate-100">
         {project.logoSrc ? (
-          <Image src={project.logoSrc} alt={`Logo de ${project.name}`} fill sizes="48px" className="object-contain p-2" />
+          <Image
+            src={project.logoSrc}
+            alt={`Logo de ${project.name}`}
+            fill
+            sizes="320px"
+            className="object-contain p-4 transition duration-300 group-hover:scale-[1.03]"
+          />
         ) : (
-          <img src={favicon} alt={`Logo de ${project.name}`} className="h-8 w-8 object-contain" loading="lazy" decoding="async" />
+          <div className="flex h-full w-full items-center justify-center text-center">
+            <span className="text-balance text-lg font-semibold leading-tight text-ink-900 sm:text-xl">
+              {project.name}
+            </span>
+          </div>
         )}
-        <span className="sr-only">{initials}</span>
       </div>
-      <div className="min-w-0">
+
+      <div className="mt-3 flex items-center justify-between gap-3">
         <p className="truncate text-sm font-semibold text-ink-900">{project.name}</p>
-        <p className="mt-1 truncate text-xs font-medium text-ink-500">{getDomain(project.url)}</p>
+        <p className="hidden truncate text-xs font-medium text-ink-500 sm:block">{getDomain(project.url)}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -48,10 +60,10 @@ function LogoRow({ projects, reverse = false }: { projects: PortfolioProject[]; 
   const repeated = [...projects, ...projects];
 
   return (
-    <div className="relative overflow-hidden py-2">
+    <div className="relative overflow-hidden py-2.5">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
-      <div className={cn("flex w-max gap-3 px-3", reverse ? "client-marquee-reverse" : "client-marquee")}>        
+      <div className={cn("flex w-max gap-4 px-3", reverse ? "client-marquee-reverse" : "client-marquee")}>
         {repeated.map((project, index) => (
           <LogoTile key={`${project.slug}-${index}`} project={project} />
         ))}
@@ -70,7 +82,7 @@ export function CredibilityStrip() {
         description:
           "LulabTech has developed websites, landing pages and custom systems for legal firms, academies, logistics companies, tourism brands, health businesses, energy companies and professional services.",
         primary: "View full portfolio",
-        logosTitle: "Some brands and projects we have worked with"
+        logosTitle: "Brands and projects we have worked with"
       }
     : {
         eyebrow: "Trabajos realizados",
@@ -78,7 +90,7 @@ export function CredibilityStrip() {
         description:
           "Hemos desarrollado páginas web, landing pages y sistemas a medida para firmas legales, academias, empresas logísticas, marcas turísticas, clínicas, compañías de energía y servicios profesionales.",
         primary: "Ver portafolio completo",
-        logosTitle: "Algunas marcas y proyectos trabajados"
+        logosTitle: "Marcas y proyectos trabajados"
       };
 
   return (
@@ -104,8 +116,8 @@ export function CredibilityStrip() {
               {portfolioTrustStats.map((item, index) => {
                 const Icon = icons[index] ?? Layers3;
                 return (
-                  <div key={item.label} className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4 shadow-soft">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-soft">
+                  <div key={item.label} className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-5 shadow-soft">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-soft">
                       <Icon className="h-5 w-5" />
                     </div>
                     <p className="mt-4 text-3xl font-semibold text-ink-900">{item.value}</p>

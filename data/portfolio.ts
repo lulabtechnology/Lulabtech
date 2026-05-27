@@ -19,20 +19,17 @@ export const portfolioCategories = [
   {
     id: "corporativa" as const,
     label: "Webs corporativas",
-    description:
-      "Sitios para empresas, firmas, clínicas, academias y marcas que necesitan una presencia más sólida."
+    description: "Sitios para empresas, firmas, clínicas, academias y marcas que necesitan una presencia más sólida."
   },
   {
     id: "landing" as const,
     label: "Landing pages",
-    description:
-      "Páginas orientadas a captación, campañas, marcas personales y negocios que venden por WhatsApp o formulario."
+    description: "Páginas orientadas a captación, campañas, marcas personales y negocios que venden por WhatsApp o formulario."
   },
   {
     id: "software" as const,
     label: "Software y plataformas",
-    description:
-      "Sistemas internos, portales y soluciones a medida para operación, reservas, logística y administración."
+    description: "Sistemas internos, portales y soluciones a medida para operación, reservas, logística y administración."
   }
 ] as const;
 
@@ -49,7 +46,7 @@ export const portfolioTrustStats = [
   }
 ] as const;
 
-// Ordenados primero por proyectos que generan mejor impresión al compartir el portafolio por WhatsApp.
+// Ordenados primero por impacto visual y comercial para que el portafolio sea más fuerte al compartirlo con clientes.
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "solmas-legal",
@@ -59,7 +56,7 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Firma legal",
     description: "Web corporativa para firma legal con áreas de práctica, presentación de la firma y tono institucional elegante.",
-    services: ["Web corporativa", "Marca legal", "SEO inicial"],
+    services: ["Web corporativa", "Marca legal", "Estructura profesional"],
     logoSrc: "/clients/solmas.webp",
     featured: true
   },
@@ -72,6 +69,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Aire acondicionado e ingeniería",
     description: "Sitio corporativo para presentar servicios HVAC, proyectos, subservicios y contacto profesional para clientes residenciales, comerciales e industriales.",
     services: ["Web corporativa", "Estructura comercial", "Formulario / WhatsApp"],
+    logoSrc: "/clients/isasa-panama.webp",
     featured: true
   },
   {
@@ -107,6 +105,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Abogados",
     description: "Landing legal de alto impacto para presentar la firma, reforzar confianza y captar consultas.",
     services: ["Landing page", "Legal", "Marca premium"],
+    logoSrc: "/clients/rep-lawyer.webp",
     featured: true
   },
   {
@@ -153,6 +152,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Energía solar",
     description: "Página comercial para comunicar soluciones solares, ventajas del servicio y contacto inmediato con el cliente.",
     services: ["Landing page", "Video / visual", "Generación de leads"],
+    logoSrc: "/clients/solarled.webp",
     featured: true
   },
   {
@@ -249,6 +249,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Turismo",
     description: "Landing turística orientada a presentar tours, detalles del servicio y contacto directo para consultas o reservas.",
     services: ["Landing page", "Turismo", "Reservas"],
+    logoSrc: "/clients/panama-heritage-tours.webp",
     featured: true
   },
   {
@@ -270,7 +271,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Floristería / regalos",
     description: "Landing orientada a mostrar propuesta de valor, catálogo visual y contacto para pedidos o consultas.",
-    services: ["Landing page", "Catálogo visual", "CTA"]
+    services: ["Landing page", "Catálogo visual", "CTA"],
+    logoSrc: "/clients/amornflor.webp"
   },
   {
     slug: "alcira-trigueros",
@@ -312,7 +314,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Servicios profesionales",
     description: "Landing clara para explicar servicios, reforzar la marca personal y facilitar el contacto del visitante.",
-    services: ["Landing page", "Servicios", "CTA"]
+    services: ["Landing page", "Servicios", "CTA"],
+    logoSrc: "/clients/eurides-young.webp"
   },
   {
     slug: "proselec-panama",
@@ -322,7 +325,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Servicios eléctricos / ingeniería",
     description: "Sitio corporativo para comunicar experiencia, servicios y canales de atención de la empresa.",
-    services: ["Web corporativa", "Servicios", "Contacto"]
+    services: ["Web corporativa", "Servicios", "Contacto"],
+    logoSrc: "/clients/proselec-panama.webp"
   },
   {
     slug: "dra-ivette-rios-diez",
@@ -332,7 +336,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Web corporativa",
     industry: "Salud",
     description: "Web para marca profesional del sector salud con presentación, servicios y contacto orientado a confianza.",
-    services: ["Web corporativa", "Marca profesional", "Responsive"]
+    services: ["Web corporativa", "Marca profesional", "Responsive"],
+    logoSrc: "/clients/dra-ivette-rios-diez.webp"
   },
   {
     slug: "chambonnet-comercial-realty",
@@ -383,7 +388,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Servicios marítimos / corporativos",
     description: "Landing para servicios empresariales con estructura clara y enfoque en captar contactos relevantes.",
-    services: ["Landing page", "Servicios", "Responsive"]
+    services: ["Landing page", "Servicios", "Responsive"],
+    logoSrc: "/clients/intramar-pty.webp"
   },
   {
     slug: "prisma-bm",
@@ -393,7 +399,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Business management",
     description: "Landing comercial para presentar servicios, proceso y llamada a la acción hacia contacto.",
-    services: ["Landing page", "Consultoría", "Conversión"]
+    services: ["Landing page", "Consultoría", "Conversión"],
+    logoSrc: "/clients/prisma-bm.webp"
   },
   {
     slug: "servi-estufa",
@@ -414,7 +421,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Salud auditiva",
     description: "Landing para servicios de salud auditiva con estructura informativa y conversión a contacto o cita.",
-    services: ["Landing page", "Salud", "Contacto"]
+    services: ["Landing page", "Salud", "Contacto"],
+    logoSrc: "/clients/audiomedica.webp"
   },
   {
     slug: "cle-property-management",
@@ -424,7 +432,8 @@ export const portfolioProjects: PortfolioProject[] = [
     typeLabel: "Landing page",
     industry: "Property management",
     description: "Landing para servicios de administración de propiedades con propuesta clara y captación de leads.",
-    services: ["Landing page", "Property management", "Leads"]
+    services: ["Landing page", "Property management", "Leads"],
+    logoSrc: "/clients/cle-property-management.webp"
   },
   {
     slug: "transformacion-360",
@@ -452,7 +461,7 @@ export const featuredPortfolioProjects = portfolioProjects.filter((project) => p
 
 export const portfolioLogoRows = [
   portfolioProjects.slice(0, 18),
-  portfolioProjects.slice(18)
+  portfolioProjects.slice(18, 36)
 ];
 
 export const portfolioStats = {
