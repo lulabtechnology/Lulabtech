@@ -57,7 +57,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => {
-                  if (item.href === "/proyectos") {
+                  if (item.href === "/portafolio") {
                     trackEvent("click_portafolio", { source: "navbar" });
                   }
                 }}

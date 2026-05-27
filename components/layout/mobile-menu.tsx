@@ -55,7 +55,7 @@ export function MobileMenu({ quoteHref }: MobileMenuProps) {
               key={item.href}
               href={item.href}
               onClick={() => {
-                if (item.href === "/proyectos") {
+                if (item.href === "/portafolio") {
                   trackEvent("click_portafolio", { source: "mobile_menu" });
                 }
                 setOpen(false);

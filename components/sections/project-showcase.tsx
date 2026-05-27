@@ -1,41 +1,47 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { NAV_ANCHORS } from "@/lib/constants";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
-import { ProjectCarousel } from "@/components/project/project-carousel";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ButtonLink } from "@/components/ui/button";
+import { PortfolioCover } from "@/components/project/portfolio-cover";
 import { useSiteLanguage } from "@/components/providers/site-language";
+import { featuredPortfolioProjects, portfolioCategories, type PortfolioCategoryId } from "@/data/portfolio";
+import { trackEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
 export function ProjectShowcaseSection() {
-  const { copy } = useSiteLanguage();
-  const showcase = copy.projectShowcase;
-  const [activeCategory, setActiveCategory] = useState("all");
+  const { locale } = useSiteLanguage();
+  const [activeCategory, setActiveCategory] = useState<PortfolioCategoryId | "all">("all");
 
-  const allItems = useMemo(
-    () =>
-      showcase.categories.flatMap((category) =>
-        category.items.map((item) => ({ ...item, categoryLabel: category.label }))
-      ),
-    [showcase.categories]
-  );
+  const projects = useMemo(() => {
+    const base = activeCategory === "all"
+      ? featuredPortfolioProjects
+      : featuredPortfolioProjects.filter((project) => project.type === activeCategory);
 
-  const activeGroup = useMemo(
-    () => showcase.categories.find((category) => category.id === activeCategory),
-    [activeCategory, showcase.categories]
-  );
+    return base.slice(0, 9);
+  }, [activeCategory]);
 
-  const activeItems = useMemo(() => {
-    if (activeCategory === "all") {
-      return allItems;
-    }
-
-    const categoryLabel = activeGroup?.label ?? "";
-
-    return activeGroup?.items.map((item) => ({ ...item, categoryLabel })) ?? [];
-  }, [activeCategory, activeGroup, allItems]);
+  const heading = locale === "en"
+    ? {
+        eyebrow: "Featured work",
+        title: "Selected projects to build trust faster",
+        description:
+          "A curated sample of published websites and software projects developed by LulabTech. Use them as a quick visual reference before showing the full portfolio.",
+        allLabel: "All",
+        cta: "View full portfolio"
+      }
+    : {
+        eyebrow: "Proyectos destacados",
+        title: "Una muestra de trabajos reales para reforzar la confianza",
+        description:
+          "Aquí ves una selección de proyectos publicados y software desarrollado por LulabTech. Sirven como referencia rápida antes de ir al portafolio completo.",
+        allLabel: "Todos",
+        cta: "Ver portafolio completo"
+      };
 
   return (
     <SectionShell
@@ -44,9 +50,9 @@ export function ProjectShowcaseSection() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow={showcase.eyebrow}
-          title={showcase.title}
-          description={showcase.description}
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
         />
       </Reveal>
 
@@ -62,10 +68,10 @@ export function ProjectShowcaseSection() {
                 : "border-slate-200 bg-white text-ink-700 hover:border-brand-200 hover:text-brand-700"
             )}
           >
-            {showcase.allLabel}
+            {heading.allLabel}
           </button>
 
-          {showcase.categories.map((category) => (
+          {portfolioCategories.map((category) => (
             <button
               key={category.id}
               type="button"
@@ -84,13 +90,59 @@ export function ProjectShowcaseSection() {
       </Reveal>
 
       <Reveal delay={0.14}>
-        <div className="mt-9">
-          <ProjectCarousel
-            key={activeCategory}
-            title={activeCategory === "all" ? showcase.allLabel : activeGroup?.label ?? showcase.allLabel}
-            description={activeCategory === "all" ? showcase.carouselDescription : activeGroup?.description ?? showcase.carouselDescription}
-            items={activeItems}
-          />
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project) => (
+            <article
+              key={project.slug}
+              className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated"
+            >
+              <div className="aspect-[16/10] overflow-hidden">
+                <PortfolioCover project={project} compact />
+              </div>
+
+              <div className="p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+                  {project.typeLabel}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold leading-tight text-ink-900">
+                  {project.name}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-ink-600">{project.description}</p>
+
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <ButtonLink
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="outline"
+                    className="w-full justify-center"
+                    onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_featured" })}
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    {project.ctaLabel ?? (locale === "en" ? "View project" : "Ver proyecto")}
+                  </ButtonLink>
+                  <ButtonLink
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full justify-center"
+                    onClick={() => trackEvent("click_whatsapp_hero", { source: `featured_${project.slug}` })}
+                  >
+                    {locale === "en" ? "Quote similar" : "Cotizar similar"}
+                  </ButtonLink>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.18}>
+        <div className="mt-10 flex justify-center">
+          <ButtonLink href="/portafolio" size="lg" onClick={() => trackEvent("click_portafolio", { source: "home_portfolio_cta" })}>
+            {heading.cta}
+            <ArrowUpRight className="h-4 w-4" />
+          </ButtonLink>
         </div>
       </Reveal>
     </SectionShell>

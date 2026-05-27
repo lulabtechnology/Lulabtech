@@ -54,7 +54,7 @@ export function ServicesHubPageContent() {
                   <MessageCircle className="h-4 w-4" />
                   Cotizar por WhatsApp
                 </ButtonLink>
-                <ButtonLink href="/proyectos" variant="outline" size="lg" onClick={() => trackEvent("click_portafolio", { source: "servicios_panama" })}>
+                <ButtonLink href="/portafolio" variant="outline" size="lg" onClick={() => trackEvent("click_portafolio", { source: "servicios_panama" })}>
                   Ver proyectos
                   <ArrowUpRight className="h-4 w-4" />
                 </ButtonLink>

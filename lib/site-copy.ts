@@ -57,7 +57,7 @@ export const siteCopy = {
   es: {
     navigation: {
       items: [
-        { label: "Proyectos", href: "/proyectos" },
+        { label: "Portafolio", href: "/portafolio" },
         { label: "Servicios", href: "/servicios-panama" },
         { label: "Soluciones", href: "/#soluciones" },
         { label: "Proceso", href: "/#proceso" },
@@ -556,7 +556,7 @@ export const siteCopy = {
   en: {
     navigation: {
       items: [
-        { label: "Projects", href: "/proyectos" },
+        { label: "Portfolio", href: "/portafolio" },
         { label: "Services", href: "/servicios-panama" },
         { label: "Solutions", href: "/#soluciones" },
         { label: "Process", href: "/#proceso" },

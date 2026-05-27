@@ -155,7 +155,7 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                   <MessageCircle className="h-4 w-4" />
                   {page.primaryCta}
                 </ButtonLink>
-                <ButtonLink href="/proyectos" variant="outline" size="lg" onClick={() => trackEvent("click_portafolio", { source: slug })}>
+                <ButtonLink href="/portafolio" variant="outline" size="lg" onClick={() => trackEvent("click_portafolio", { source: slug })}>
                   {page.secondaryCta}
                   <ArrowUpRight className="h-4 w-4" />
                 </ButtonLink>

@@ -144,7 +144,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Landing pages en Panamá", href: "/landing-pages-panama" },
       { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   },
   {
@@ -246,7 +246,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
       { label: "Google Ads en Panamá", href: "/google-ads-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   },
   {
@@ -348,7 +348,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
       { label: "Software a medida", href: "/software-a-medida-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   },
   {
@@ -557,7 +557,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   },
   {
@@ -659,7 +659,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Landing pages en Panamá", href: "/landing-pages-panama" },
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   }
 ,
@@ -865,7 +865,7 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Software a medida", href: "/software-a-medida-panama" },
       { label: "Web corporativa", href: "/paginas-web-corporativas-panama" },
-      { label: "Ver proyectos", href: "/proyectos" }
+      { label: "Ver proyectos", href: "/portafolio" }
     ]
   },
   {
@@ -2816,7 +2816,7 @@ const servicePagesEn: ServicePage[] = [
     relatedLinks: [
       { label: "Landing pages in Panama", href: "/landing-pages-panama" },
       { label: "Company websites", href: "/paginas-web-corporativas-panama" },
-      { label: "View projects", href: "/proyectos" }
+      { label: "View projects", href: "/portafolio" }
     ]
   },
   {
@@ -2913,7 +2913,7 @@ const servicePagesEn: ServicePage[] = [
     relatedLinks: [
       { label: "Web design in Panama", href: "/diseno-web-panama" },
       { label: "Google Ads in Panama", href: "/google-ads-panama" },
-      { label: "View projects", href: "/proyectos" }
+      { label: "View projects", href: "/portafolio" }
     ]
   },
   {
@@ -3010,7 +3010,7 @@ const servicePagesEn: ServicePage[] = [
     relatedLinks: [
       { label: "Web design in Panama", href: "/diseno-web-panama" },
       { label: "Custom software", href: "/software-a-medida-panama" },
-      { label: "View projects", href: "/proyectos" }
+      { label: "View projects", href: "/portafolio" }
     ]
   },
   {
@@ -3209,7 +3209,7 @@ const servicePagesEn: ServicePage[] = [
     relatedLinks: [
       { label: "Company websites", href: "/paginas-web-corporativas-panama" },
       { label: "Web design in Panama", href: "/diseno-web-panama" },
-      { label: "View projects", href: "/proyectos" }
+      { label: "View projects", href: "/portafolio" }
     ]
   },
   {
@@ -3306,7 +3306,7 @@ const servicePagesEn: ServicePage[] = [
     relatedLinks: [
       { label: "Landing pages in Panama", href: "/landing-pages-panama" },
       { label: "Web design in Panama", href: "/diseno-web-panama" },
-      { label: "View projects", href: "/proyectos" }
+      { label: "View projects", href: "/portafolio" }
     ]
   }
 ];

@@ -173,7 +173,7 @@ export const serviceHubClusters: ServiceHubCluster[] = [
       },
       {
         label: "Proyectos de LulabTech",
-        href: "/proyectos",
+        href: "/portafolio",
         description: "Casos visuales y ejemplos de landing pages, webs corporativas y software."
       }
     ]
