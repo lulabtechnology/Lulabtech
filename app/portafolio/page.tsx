@@ -3,10 +3,10 @@ import { ProjectsPage } from "@/components/pages/projects-page";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Portafolio de trabajos realizados | LulabTech Panamá"
+    absolute: "Portafolio diseño web Panamá | Proyectos LulabTech"
   },
   description:
-    "Portafolio de LulabTech con trabajos realizados en páginas web, landing pages, webs corporativas y software a medida para empresas en Panamá.",
+    "Portafolio de diseño web en Panamá con landing pages, webs corporativas, ecommerce y software a medida creados por LulabTech para negocios reales.",
   keywords: [
     "portafolio LulabTech",
     "trabajos realizados páginas web Panamá",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.lulabtech.com/portafolio",
-    title: "Portafolio de trabajos realizados | LulabTech Panamá",
+    title: "Portafolio diseño web Panamá | Proyectos LulabTech",
     description:
-      "Mira trabajos reales de LulabTech: landing pages, webs corporativas y software a medida desarrollados para negocios en Panamá.",
+      "Mira proyectos reales de LulabTech: landing pages, webs corporativas, ecommerce y software a medida desarrollados para negocios en Panamá.",
     siteName: "LulabTech",
     locale: "es_PA",
     images: [
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portafolio de trabajos realizados | LulabTech Panamá",
+    title: "Portafolio diseño web Panamá | Proyectos LulabTech",
     description:
-      "Trabajos realizados por LulabTech en diseño web, landing pages, webs corporativas y software a medida.",
+      "Proyectos de diseño web, landing pages, webs corporativas, ecommerce y software a medida realizados por LulabTech.",
     images: ["/og/og-cover.png?v=10"]
   }
 };

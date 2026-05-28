@@ -51,9 +51,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Diseño web en Panamá para empresas que quieren verse profesionales y vender más",
     intro:
       "Creamos páginas web profesionales para negocios panameños que necesitan comunicar mejor su oferta, generar confianza y convertir visitantes en consultas reales por WhatsApp, formulario o correo.",
-    metaTitle: "Diseño web en Panamá para empresas | Lulab Technology",
+    metaTitle: "Diseño web Panamá | Webs profesionales | LulabTech",
     metaDescription:
-      "Diseño web en Panamá para empresas, marcas y negocios que necesitan una página profesional, responsive, clara, rápida y preparada para SEO local.",
+      "Diseño web en Panamá para negocios que necesitan verse profesionales, explicar sus servicios y recibir consultas por WhatsApp o formulario.",
     keywords: [
       "diseño web en Panamá",
       "diseño de páginas web Panamá",
@@ -153,9 +153,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Landing pages en Panamá para captar clientes por WhatsApp, formularios y campañas",
     intro:
       "Diseñamos landing pages enfocadas en una oferta clara, un llamado a la acción visible y una ruta directa para que el usuario escriba, cotice o deje sus datos.",
-    metaTitle: "Landing pages en Panamá para WhatsApp y campañas | Lulab Technology",
+    metaTitle: "Landing pages Panamá | Campañas y WhatsApp | LulabTech",
     metaDescription:
-      "Landing pages en Panamá para captar clientes desde WhatsApp, formularios, Meta Ads y Google Ads con diseño responsive y enfoque comercial.",
+      "Landing pages en Panamá para captar clientes desde Meta Ads, Google Ads, redes y WhatsApp con diseño responsive, mensaje claro y CTA directo.",
     keywords: [
       "landing pages Panamá",
       "landing page para WhatsApp Panamá",
@@ -255,9 +255,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Páginas web corporativas en Panamá",
     intro:
       "Construimos páginas web corporativas para empresas que necesitan una presencia formal, clara y confiable, con secciones para servicios, equipo, experiencia, proyectos y contacto.",
-    metaTitle: "Páginas web corporativas en Panamá | Lulab Technology",
+    metaTitle: "Páginas web corporativas Panamá | Empresas | LulabTech",
     metaDescription:
-      "Páginas web corporativas para empresas en Panamá con diseño profesional, servicios, contacto, portafolio, SEO básico y experiencia responsive.",
+      "Páginas web corporativas en Panamá para empresas que quieren presentar servicios, respaldo, equipo, proyectos y contacto con una imagen profesional.",
     keywords: [
       "páginas web corporativas Panamá",
       "web corporativa Panamá",
@@ -357,9 +357,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Tiendas online en Panamá para vender productos de forma profesional",
     intro:
       "Creamos tiendas online y catálogos digitales para negocios que venden por Instagram, WhatsApp o tienda física y quieren presentar productos con más orden, confianza y capacidad de escalar.",
-    metaTitle: "Tiendas online en Panamá y ecommerce | Lulab Technology",
+    metaTitle: "Tiendas online Panamá | Ecommerce y catálogo | LulabTech",
     metaDescription:
-      "Tiendas online en Panamá para vender productos con catálogo, categorías, carrito, pagos o WhatsApp, experiencia móvil y estructura para crecer.",
+      "Tiendas online y catálogos digitales en Panamá para vender productos, mostrar categorías, conectar WhatsApp, carrito o pagos según el alcance.",
     keywords: [
       "tiendas online Panamá",
       "ecommerce Panamá",
@@ -459,9 +459,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Software a medida en Panamá para automatizar procesos de tu empresa",
     intro:
       "Desarrollamos sistemas digitales para empresas que ya no pueden manejar su operación solo con Excel, WhatsApp o procesos manuales. Creamos paneles, módulos, reservas, inventarios, reportes y flujos personalizados.",
-    metaTitle: "Software a medida en Panamá para empresas | Lulab Technology",
+    metaTitle: "Software a medida Panamá | Sistemas empresa | LulabTech",
     metaDescription:
-      "Software a medida en Panamá para automatizar procesos: paneles administrativos, reservas, inventarios, casilleros, restaurantes, reportes y bases de datos.",
+      "Software a medida en Panamá para empresas que necesitan paneles, usuarios, reportes, reservas, inventario, CRM o flujos internos personalizados.",
     keywords: [
       "software a medida Panamá",
       "sistemas web Panamá",
@@ -566,9 +566,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Configuración de Google Ads en Panamá para negocios que quieren recibir más consultas",
     intro:
       "Configuramos campañas de búsqueda en Google Ads para negocios que quieren aparecer cuando las personas ya están buscando servicios como los suyos. La campaña debe ir conectada a una web o landing clara para convertir mejor.",
-    metaTitle: "Configuración de Google Ads en Panamá | Lulab Technology",
+    metaTitle: "Google Ads Panamá | Campañas para captar leads | LulabTech",
     metaDescription:
-      "Configuración de Google Ads en Panamá: palabras clave, anuncios, ubicación, extensiones y conexión con landing page o página web. Pauta no incluida.",
+      "Configuración de Google Ads en Panamá para negocios que quieren captar consultas con búsqueda, keywords, anuncios, conversiones y landing alineada.",
     keywords: [
       "Google Ads Panamá",
       "configuración Google Ads Panamá",
@@ -670,9 +670,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Software para restaurantes en Panamá para controlar ventas, caja e inventario",
     intro:
       "Desarrollamos sistemas para restaurantes, cafeterías y negocios de comida en Panamá que necesitan vender más ordenado, controlar turnos de caja, registrar gastos, medir productos y administrar operaciones desde un panel propio.",
-    metaTitle: "Software para restaurantes en Panamá desde $899 | LulabTech",
+    metaTitle: "Software para restaurantes Panamá | POS y caja | LulabTech",
     metaDescription:
-      "Software para restaurantes en Panamá con POS, caja, ventas, productos, inventario, reportes, usuarios y panel administrativo desde $899 según alcance.",
+      "Software para restaurantes en Panamá con ventas, caja, productos, empleados, inventario, reportes y operación diaria desde un panel propio.",
     keywords: [
       "software para restaurantes en Panamá",
       "sistema POS Panamá",
@@ -772,9 +772,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Software para casilleros y logística en Panamá con tracking, clientes y administración",
     intro:
       "Creamos sistemas para casilleros, courier, carga y logística en Panamá que necesitan organizar clientes, paquetes, contenedores, estados, comprobantes, cobros y comunicación desde una plataforma propia.",
-    metaTitle: "Software para casilleros y logística en Panamá | LulabTech",
+    metaTitle: "Software para casilleros Panamá | Logística | LulabTech",
     metaDescription:
-      "Software para casilleros en Panamá con clientes, tracking, paquetes, contenedores, estados, comprobantes, facturación o panel administrativo desde $899.",
+      "Software para casilleros y logística en Panamá con clientes, tracking, estados, documentos, facturación, comprobantes y panel administrativo.",
     keywords: [
       "software para casilleros Panamá",
       "software de logística Panamá",
@@ -874,9 +874,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Diseño web para abogados en Panamá con imagen profesional y contacto claro",
     intro:
       "Creamos landing pages y páginas web para abogados, firmas legales y asesores en Panamá que necesitan presentar áreas de práctica, generar confianza y facilitar solicitudes de consulta por WhatsApp, formulario o correo.",
-    metaTitle: "Diseño web para abogados en Panamá desde $149 | LulabTech",
+    metaTitle: "Diseño web para abogados Panamá | Desde $149 | LulabTech",
     metaDescription:
-      "Diseño web para abogados en Panamá: landing pages y webs corporativas legales con servicios, confianza, WhatsApp, SEO local y contenido profesional desde $149.",
+      "Diseño web para abogados y firmas legales en Panamá con áreas de práctica, confianza, contacto por WhatsApp, formulario y base SEO local.",
     keywords: [
       "diseño web para abogados Panamá",
       "páginas web para abogados Panamá",
@@ -976,9 +976,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Sistemas de reservas en Panamá para citas, cupos, servicios y confirmaciones",
     intro:
       "Desarrollamos sistemas de reservas para negocios en Panamá que necesitan recibir solicitudes, controlar disponibilidad, aprobar o reprogramar citas, enviar confirmaciones y administrar servicios desde un panel propio.",
-    metaTitle: "Sistema de reservas en Panamá desde $899 | LulabTech",
+    metaTitle: "Sistema de reservas Panamá | Agenda y pagos | LulabTech",
     metaDescription:
-      "Sistema de reservas en Panamá para citas, servicios, disponibilidad, confirmaciones, estados, clientes y panel administrativo desde $899 según alcance.",
+      "Sistemas de reservas en Panamá para tours, academias, clínicas, eventos o servicios con disponibilidad, estados, pagos y panel administrativo.",
     keywords: [
       "sistema de reservas Panamá",
       "sistema de citas Panamá",
@@ -1078,9 +1078,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Cuánto cuesta una página web en Panamá y qué incluye cada tipo de proyecto",
     intro:
       "El precio de una página web en Panamá depende del alcance real: cantidad de secciones, páginas internas, contenido, panel administrativo, integraciones, pasarela de pago, automatizaciones, SEO y funcionalidades especiales.",
-    metaTitle: "Cuánto cuesta una página web en Panamá | Precios LulabTech",
+    metaTitle: "Cuánto cuesta una página web en Panamá | LulabTech",
     metaDescription:
-      "Conoce precios de páginas web en Panamá: landing desde $149, web corporativa desde $299, ecommerce desde $499 y software a medida desde $899.",
+      "Conoce precios desde para landing pages, webs corporativas, ecommerce y software en Panamá. Compara opciones y cotiza según tu alcance real.",
     keywords: [
       "cuánto cuesta una página web en Panamá",
       "precio página web Panamá",
@@ -1181,9 +1181,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Desarrollo web en Panamá para empresas que necesitan una base moderna y escalable",
     intro:
       "Desarrollamos sitios web y plataformas digitales para empresas en Panamá que necesitan algo más sólido que una plantilla: código limpio, estructura responsive, SEO inicial, formularios, WhatsApp e integración con procesos reales.",
-    metaTitle: "Desarrollo web en Panamá para empresas | LulabTech",
+    metaTitle: "Desarrollo web Panamá | Sitios y sistemas | LulabTech",
     metaDescription:
-      "Desarrollo web en Panamá para empresas: sitios modernos, páginas corporativas, landing pages, integraciones, formularios y bases escalables para crecer.",
+      "Desarrollo web en Panamá para empresas que necesitan páginas rápidas, responsive, SEO base, formularios, WhatsApp o sistemas con panel administrativo.",
     keywords: [
       "desarrollo web en Panamá",
       "desarrolladores web Panamá",
@@ -1284,9 +1284,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Agencia de diseño web en Panamá para negocios que quieren una presencia digital más seria",
     intro:
       "LulabTech ayuda a empresas, marcas personales y negocios locales en Panamá a convertir ideas en páginas web, landing pages, tiendas online y sistemas digitales con diseño profesional y enfoque comercial.",
-    metaTitle: "Agencia de diseño web en Panamá | LulabTech",
+    metaTitle: "Agencia de diseño web Panamá | LulabTech",
     metaDescription:
-      "Agencia de diseño web en Panamá para landing pages, webs corporativas, ecommerce, software a medida, SEO inicial y campañas digitales.",
+      "Agencia de diseño web en Panamá para crear landing pages, webs corporativas, ecommerce y software con estética profesional y enfoque comercial.",
     keywords: [
       "agencia de diseño web Panamá",
       "agencia web Panamá",
@@ -1387,9 +1387,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "SEO para páginas web en Panamá desde la estructura, el contenido y la intención de búsqueda",
     intro:
       "Preparamos páginas web con una base SEO clara para que tu negocio se asocie mejor con sus servicios, su ubicación en Panamá y las búsquedas de clientes potenciales. Este trabajo no promete resultados mágicos: deja la web mejor ordenada para competir con contenido, medición y mejoras constantes.",
-    metaTitle: "SEO para páginas web en Panamá | LulabTech",
+    metaTitle: "SEO para páginas web Panamá | Base técnica | LulabTech",
     metaDescription:
-      "SEO para páginas web en Panamá: estructura, metadata, sitemap, robots, enlaces internos, contenido comercial y base técnica para crecer en Google.",
+      "SEO para páginas web en Panamá con estructura, títulos, metadescripciones, sitemap, canonicals, enlaces internos y base técnica para Google.",
     keywords: [
       "SEO para páginas web Panamá",
       "SEO Panamá",
@@ -1489,9 +1489,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Mantenimiento web en Panamá para cuidar cambios, respaldo y continuidad de tu sitio",
     intro:
       "Damos soporte a sitios web que necesitan ajustes, mejoras de contenido, revisión de enlaces, cambios simples, respaldo y acompañamiento técnico para que la presencia digital no quede abandonada después de publicar.",
-    metaTitle: "Mantenimiento web en Panamá | LulabTech",
+    metaTitle: "Mantenimiento web Panamá | Soporte y cambios | LulabTech",
     metaDescription:
-      "Mantenimiento web en Panamá para cambios, soporte, ajustes de contenido, respaldo, revisión técnica, continuidad y mejoras ligeras del sitio.",
+      "Mantenimiento web en Panamá para hacer cambios, revisar formularios, corregir errores, actualizar contenido y cuidar la experiencia del sitio.",
     keywords: [
       "mantenimiento web Panamá",
       "soporte web Panamá",
@@ -1591,9 +1591,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Diseño web para clínicas en Panamá con servicios claros, confianza y citas por WhatsApp",
     intro:
       "Creamos páginas web para clínicas, consultorios y profesionales de salud o bienestar que necesitan presentar servicios, ubicación, especialidades, horarios y rutas de contacto de forma profesional.",
-    metaTitle: "Diseño web para clínicas en Panamá | LulabTech",
+    metaTitle: "Diseño web para clínicas Panamá | Citas | LulabTech",
     metaDescription:
-      "Diseño web para clínicas en Panamá con servicios, especialidades, ubicación, WhatsApp, formularios, citas y estructura SEO local.",
+      "Diseño web para clínicas en Panamá con servicios, especialidades, ubicación, WhatsApp, formularios, citas y estructura de confianza para pacientes.",
     keywords: [
       "diseño web para clínicas Panamá",
       "páginas web para clínicas Panamá",
@@ -1694,9 +1694,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Diseño web para inmobiliarias en Panamá con propiedades, confianza y contacto directo",
     intro:
       "Desarrollamos páginas web para agentes inmobiliarios, asesoras, brokers y empresas de real estate en Panamá que necesitan mostrar propiedades, servicios, experiencia y contacto por WhatsApp de forma profesional.",
-    metaTitle: "Diseño web para inmobiliarias en Panamá | LulabTech",
+    metaTitle: "Diseño web inmobiliario Panamá | Propiedades | LulabTech",
     metaDescription:
-      "Diseño web para inmobiliarias en Panamá con propiedades, galerías, filtros, WhatsApp, perfil profesional, SEO local y panel administrativo según alcance.",
+      "Diseño web para inmobiliarias en Panamá con propiedades, galerías, filtros, perfil profesional, WhatsApp y estructura para captar consultas.",
     keywords: [
       "diseño web para inmobiliarias Panamá",
       "páginas web inmobiliarias Panamá",
@@ -1797,9 +1797,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Software POS en Panamá para ventas, caja, productos y control operativo",
     intro:
       "Creamos sistemas POS y paneles administrativos para negocios en Panamá que necesitan registrar ventas, controlar caja, productos, gastos, usuarios, reportes e inventario desde una solución adaptada a su operación.",
-    metaTitle: "Software POS en Panamá desde $899 | LulabTech",
+    metaTitle: "Software POS Panamá | Caja, ventas y reportes | LulabTech",
     metaDescription:
-      "Software POS en Panamá para ventas, caja, productos, inventario, gastos, usuarios, reportes y panel administrativo desde $899 según alcance.",
+      "Software POS en Panamá para registrar ventas, métodos de pago, cierres de caja, productos, empleados, reportes e inventario según el negocio.",
     keywords: [
       "software POS Panamá",
       "sistema POS Panamá",
@@ -1900,9 +1900,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Automatizaciones para empresas en Panamá que quieren ahorrar tiempo y reducir tareas repetitivas",
     intro:
       "Diseñamos automatizaciones y soluciones digitales para empresas que necesitan ordenar formularios, notificaciones, reportes, reservas, clientes, documentos o flujos internos sin depender de procesos manuales todo el tiempo.",
-    metaTitle: "Automatizaciones para empresas en Panamá | LulabTech",
+    metaTitle: "Automatizaciones para empresas Panamá | LulabTech",
     metaDescription:
-      "Automatizaciones para empresas en Panamá: formularios, reportes, notificaciones, paneles, flujos internos y soluciones digitales a medida.",
+      "Automatizaciones para empresas en Panamá que quieren reducir tareas manuales, ordenar solicitudes, conectar datos y trabajar con procesos más claros.",
     keywords: [
       "automatizaciones para empresas Panamá",
       "automatización de procesos Panamá",
@@ -2004,9 +2004,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Páginas web para restaurantes en Panamá con menú, WhatsApp y presencia profesional",
     intro:
       "Creamos páginas web para restaurantes, cafeterías, food trucks y marcas gastronómicas que necesitan mostrar su propuesta, publicar menú, reforzar confianza y recibir consultas o pedidos por WhatsApp.",
-    metaTitle: "Páginas web para restaurantes en Panamá | LulabTech",
+    metaTitle: "Web para restaurantes Panamá | Menú y WhatsApp | LulabTech",
     metaDescription:
-      "Diseño de páginas web para restaurantes en Panamá con menú, fotos, ubicación, horarios, WhatsApp, SEO local y estructura comercial desde $149.",
+      "Páginas web para restaurantes en Panamá con menú, fotos, horarios, ubicación, pedidos o reservas por WhatsApp y presencia profesional.",
     keywords: [
       "páginas web para restaurantes Panamá",
       "diseño web para restaurantes Panamá",
@@ -2107,9 +2107,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Páginas web para academias en Panamá que necesitan presentar cursos y captar estudiantes",
     intro:
       "Diseñamos páginas web para academias, centros de capacitación, colegios, tutores y programas educativos que necesitan explicar su oferta, generar confianza y recibir solicitudes de información.",
-    metaTitle: "Páginas web para academias en Panamá | LulabTech",
+    metaTitle: "Páginas web para academias Panamá | Cursos | LulabTech",
     metaDescription:
-      "Diseño web para academias en Panamá con catálogo de cursos, formularios, WhatsApp, SEO local y estructura profesional desde $299.",
+      "Páginas web para academias en Panamá con cursos, programas, formularios, WhatsApp, información clara y estructura para captar estudiantes.",
     keywords: [
       "páginas web para academias Panamá",
       "diseño web educativo Panamá",
@@ -2210,9 +2210,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Páginas web para eventos, ferias y congresos en Panamá",
     intro:
       "Creamos páginas web para eventos, ferias, congresos, lanzamientos y actividades corporativas que necesitan comunicar fecha, sede, agenda, participantes, formularios y contacto de forma profesional.",
-    metaTitle: "Páginas web para eventos en Panamá | LulabTech",
+    metaTitle: "Páginas web para eventos Panamá | Formularios | LulabTech",
     metaDescription:
-      "Diseño de páginas web para eventos en Panamá: ferias, congresos, agenda, formularios, patrocinadores, documentos y contacto desde $299.",
+      "Páginas web para eventos en Panamá con agenda, participantes, formularios, descargas, WhatsApp, patrocinadores y contenido organizado.",
     keywords: [
       "páginas web para eventos Panamá",
       "web para ferias Panamá",
@@ -2313,9 +2313,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Rediseño de páginas web en Panamá para negocios que necesitan verse más profesionales",
     intro:
       "Mejoramos páginas existentes que se ven antiguas, cargan mal, no explican bien la oferta o no convierten. Rediseñamos estructura, contenido, experiencia mobile, SEO básico y rutas de contacto.",
-    metaTitle: "Rediseño de páginas web en Panamá | LulabTech",
+    metaTitle: "Rediseño web Panamá | Moderniza tu sitio | LulabTech",
     metaDescription:
-      "Rediseño web en Panamá para empresas con sitios antiguos o poco claros. Mejoramos estructura, diseño responsive, SEO, WhatsApp y conversión desde $299.",
+      "Rediseño web en Panamá para empresas con sitios antiguos, lentos o poco claros. Mejoramos diseño, estructura, responsive, SEO y CTAs.",
     keywords: [
       "rediseño web Panamá",
       "rediseñar página web Panamá",
@@ -2416,9 +2416,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Sistemas de inventario en Panamá para controlar productos, movimientos y reportes",
     intro:
       "Desarrollamos sistemas de inventario a medida para empresas que necesitan controlar productos, insumos, entradas, salidas, existencias, responsables y reportes desde un panel claro.",
-    metaTitle: "Sistemas de inventario en Panamá | LulabTech",
+    metaTitle: "Sistema de inventario Panamá | Stock y reportes | LulabTech",
     metaDescription:
-      "Sistema de inventario en Panamá para productos, insumos, movimientos, existencias, reportes, usuarios y panel administrativo desde $899.",
+      "Sistemas de inventario en Panamá para controlar productos, entradas, salidas, stock, usuarios, alertas y reportes desde un panel propio.",
     keywords: [
       "sistema de inventario Panamá",
       "software de inventario Panamá",
@@ -2519,9 +2519,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "CRM para empresas en Panamá que necesitan ordenar clientes, oportunidades y seguimiento",
     intro:
       "Creamos CRM y paneles comerciales a medida para empresas que quieren centralizar prospectos, clientes, estados, notas, responsables, formularios y seguimiento de oportunidades.",
-    metaTitle: "CRM para empresas en Panamá | LulabTech",
+    metaTitle: "CRM para empresas Panamá | Leads y seguimiento | LulabTech",
     metaDescription:
-      "CRM para empresas en Panamá con clientes, prospectos, estados, responsables, seguimiento, formularios, reportes y panel administrativo desde $899.",
+      "CRM para empresas en Panamá con seguimiento de prospectos, clientes, estados, responsables, notas, oportunidades y reportes comerciales.",
     keywords: [
       "CRM Panamá",
       "CRM para empresas Panamá",
@@ -2622,9 +2622,9 @@ const servicePagesEs: ServicePage[] = [
     h1: "Software para logística en Panamá: clientes, envíos, estados, documentos y reportes",
     intro:
       "Desarrollamos software logístico a medida para empresas que necesitan organizar clientes, envíos, rutas, estados, comprobantes, documentos, facturación operativa y reportes desde un panel centralizado.",
-    metaTitle: "Software para logística en Panamá | LulabTech",
+    metaTitle: "Software logístico Panamá | Carga y operaciones | LulabTech",
     metaDescription:
-      "Software para logística en Panamá con clientes, envíos, estados, documentos, comprobantes, reportes, usuarios y panel administrativo desde $899.",
+      "Software para logística en Panamá con control de envíos, estados, rutas, documentos, pagos, clientes, reportes y procesos operativos.",
     keywords: [
       "software para logística Panamá",
       "sistema logístico Panamá",

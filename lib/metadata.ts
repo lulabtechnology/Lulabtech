@@ -5,12 +5,12 @@ const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://www.lulabtech.com";
 
-const title = `Diseño de páginas web en Panamá | ${SITE_NAME}`;
+const title = `Diseño web Panamá | Páginas y software | ${SITE_NAME}`;
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 const description =
-  "Creamos páginas web, landing pages, tiendas online y software a medida en Panamá para negocios que quieren verse profesionales, captar clientes y vender más.";
+  "Diseño web en Panamá, landing pages, webs corporativas, ecommerce y software a medida para negocios que quieren captar clientes y operar mejor.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -78,7 +78,7 @@ export const siteMetadata: Metadata = {
         url: "/og/og-cover.png?v=7",
         width: 1200,
         height: 630,
-        alt: "LulabTech — Diseño de páginas web en Panamá"
+        alt: "LulabTech — Diseño web y software en Panamá"
       }
     ]
   },

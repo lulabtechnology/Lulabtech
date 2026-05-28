@@ -131,6 +131,30 @@ export function ServicesHubPageContent() {
                   </Link>
                 ))}
               </div>
+
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  size="sm"
+                  className="w-full sm:w-auto"
+                  onClick={() => trackEvent("click_whatsapp_service_cluster", { source: "servicios_panama", cluster: cluster.id })}
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Cotizar esta ruta
+                </ButtonLink>
+                <ButtonLink
+                  href="/#cotizar"
+                  variant="outline"
+                  size="sm"
+                  className="w-full sm:w-auto"
+                  onClick={() => trackEvent("click_formulario_contacto", { source: `servicios_panama_${cluster.id}` })}
+                >
+                  Enviar formulario
+                  <Search className="h-4 w-4" />
+                </ButtonLink>
+              </div>
             </article>
           ))}
         </div>

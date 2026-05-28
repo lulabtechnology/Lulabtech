@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowUpRight, Bot, Building2, LayoutTemplate, ShoppingBag, Workflow } from "lucide-react";
-import { NAV_ANCHORS } from "@/lib/constants";
+import { ArrowUpRight, Bot, Building2, LayoutTemplate, MessageCircle, ShoppingBag, Workflow } from "lucide-react";
+import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
 import { trackEvent } from "@/lib/tracking";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
@@ -50,6 +50,7 @@ export function ServicesSection() {
   const { copy, locale } = useSiteLanguage();
   const services = copy.services;
   const viewLabel = locale === "en" ? "View details" : "Ver detalle";
+  const quoteLabel = locale === "en" ? "Quote on WhatsApp" : "Cotizar por WhatsApp";
   const priceLabel = locale === "en" ? "Starting at" : "Desde";
   const note =
     locale === "en"
@@ -96,15 +97,27 @@ export function ServicesSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
                   {services.suffix}
                 </p>
-                <ButtonLink
-                  href={card.href}
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => trackEvent(card.event, { source: "home_services", href: card.href })}
-                >
-                  {viewLabel}
-                  <ArrowUpRight className="h-4 w-4" />
-                </ButtonLink>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <ButtonLink
+                    href={card.href}
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => trackEvent(card.event, { source: "home_services", href: card.href })}
+                  >
+                    {viewLabel}
+                    <ArrowUpRight className="h-4 w-4" />
+                  </ButtonLink>
+                  <ButtonLink
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                    onClick={() => trackEvent("click_whatsapp_service_card", { source: "home_services", href: card.href })}
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    {quoteLabel}
+                  </ButtonLink>
+                </div>
               </div>
             </div>
           );

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight, Building2, Globe2, Sparkles, Workflow } from "lucide-react";
+import { ArrowUpRight, Building2, Globe2, MessageCircle, Sparkles, Workflow } from "lucide-react";
 import { SectionShell } from "@/components/layout/section-shell";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const clusters = [
   {
@@ -87,13 +88,24 @@ export function SeoGrowthSection() {
               Elige una solución según lo que necesitas lograr: captar clientes, mejorar una web existente, vender productos, ordenar reservas, controlar inventario o automatizar tareas repetitivas.
             </p>
           </div>
-          <Link
-            href="/cuanto-cuesta-una-pagina-web-en-panama"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-ink-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink-800"
-          >
-            Ver precios desde
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <Link
+              href="/cuanto-cuesta-una-pagina-web-en-panama"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink-800"
+            >
+              Ver precios desde
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-200 bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition hover:bg-slate-50"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Cotizar ahora
+            </a>
+          </div>
         </div>
       </div>
     </SectionShell>

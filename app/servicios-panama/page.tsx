@@ -3,10 +3,10 @@ import { ServicesHubPage } from "@/components/pages/services-hub-page";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Servicios de diseño web, software y SEO en Panamá | LulabTech"
+    absolute: "Servicios digitales Panamá | Web, software y SEO | LulabTech"
   },
   description:
-    "Servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
+    "Explora servicios digitales en Panamá: diseño web, landing pages, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO. Cotiza con LulabTech.",
   keywords: [
     "servicios digitales Panamá",
     "diseño web Panamá",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.lulabtech.com/servicios-panama",
-    title: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
+    title: "Servicios digitales Panamá | Web, software y SEO | LulabTech",
     description:
-      "Explora los servicios de LulabTech: diseño web, landing pages, ecommerce, software, POS, reservas, CRM, inventario, SEO y soluciones por industria.",
+      "Explora servicios digitales en Panamá: diseño web, landing pages, ecommerce, software, POS, reservas, CRM, inventario, SEO y soluciones por industria.",
     siteName: "LulabTech",
     locale: "es_PA",
     images: [
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
+    title: "Servicios digitales Panamá | Web, software y SEO | LulabTech",
     description:
-      "Guía de servicios de LulabTech para empresas en Panamá: páginas web, ecommerce, software y SEO.",
+      "Servicios digitales en Panamá para empresas: páginas web, ecommerce, software, POS, reservas, CRM y SEO.",
     images: ["/og/og-cover.png?v=7"]
   }
 };

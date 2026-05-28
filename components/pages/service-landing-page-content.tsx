@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, HelpCircle, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, HelpCircle, MessageCircle, Search, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
@@ -22,6 +22,11 @@ const uiCopy = {
     faqTitle: "Dudas comunes antes de cotizar",
     related: "También puede interesarte",
     quote: "Cotizar con LulabTech",
+    midCtaEyebrow: "Siguiente paso",
+    midCtaTitle: "¿Quieres saber si este servicio aplica para tu negocio?",
+    midCtaDescription: "Cuéntanos qué vendes, qué problema quieres resolver y en qué etapa está tu proyecto. Te orientamos por WhatsApp o por formulario sin obligarte a comprar.",
+    midCtaPrimary: "Orientarme por WhatsApp",
+    midCtaSecondary: "Enviar formulario",
     priceLabel: "Precio desde",
     priceNote: "El precio final depende del alcance, contenido, integraciones y funcionalidades requeridas."
   },
@@ -36,6 +41,11 @@ const uiCopy = {
     faqTitle: "Common questions before requesting a quote",
     related: "You may also be interested in",
     quote: "Quote with LulabTech",
+    midCtaEyebrow: "Next step",
+    midCtaTitle: "Want to know if this service fits your business?",
+    midCtaDescription: "Tell us what you sell, what problem you want to solve, and where the project stands. We can guide you on WhatsApp or through the form without pressure.",
+    midCtaPrimary: "Get guidance on WhatsApp",
+    midCtaSecondary: "Send form",
     priceLabel: "Starting at",
     priceNote: "The final price depends on scope, content, integrations, and required functionality."
   }
@@ -225,6 +235,49 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                 <p className="mt-4 text-sm font-medium leading-7 text-ink-700">{benefit}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 rounded-[32px] border border-brand-100 bg-gradient-to-br from-brand-600 via-brand-700 to-ink-900 p-6 text-white shadow-elevated sm:p-8">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                  {copy.midCtaEyebrow}
+                </p>
+                <h2 className="mt-3 text-balance text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                  {copy.midCtaTitle}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-white/80">
+                  {copy.midCtaDescription}
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <ButtonLink
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 bg-white text-ink-900 hover:bg-white/90"
+                  onClick={() => {
+                    trackEvent("click_whatsapp_mid_cta", { service: slug });
+                    trackEvent(serviceEvent, { service: slug, placement: "service_mid_cta" });
+                  }}
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  {copy.midCtaPrimary}
+                </ButtonLink>
+                <ButtonLink
+                  href="/#cotizar"
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 bg-white/10 text-white hover:bg-white/15"
+                  onClick={() => trackEvent("click_formulario_contacto", { source: `service_mid_cta_${slug}` })}
+                >
+                  {copy.midCtaSecondary}
+                  <Search className="h-4 w-4" />
+                </ButtonLink>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
