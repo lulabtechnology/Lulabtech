@@ -21,28 +21,28 @@ export const projectCategories: ProjectCategory[] = [
         subtitle: "Landing educativa",
         description:
           "Página de captación para explicar clases, beneficios y contacto directo con una presentación clara.",
-        image: "/projects/landing/landing-01.png"
+        image: "/projects/landing/landing-01.webp"
       },
       {
         title: "Krasa Dermoestudio",
         subtitle: "Landing estética",
         description:
           "Diseño comercial para presentar servicios, generar confianza visual y facilitar solicitudes de cita.",
-        image: "/projects/landing/landing-02.png"
+        image: "/projects/landing/landing-02.webp"
       },
       {
         title: "Chabonnet Comercial",
         subtitle: "Landing inmobiliaria",
         description:
           "Estructura de alto impacto para explicar la oferta, recibir consultas y dirigir al visitante al contacto.",
-        image: "/projects/landing/landing-03.png"
+        image: "/projects/landing/landing-03.webp"
       },
       {
         title: "Biofest Panamá",
         subtitle: "Landing turística",
         description:
           "Experiencia visual para presentar tours, locaciones, reservas y comunicación bilingüe de forma ordenada.",
-        image: "/projects/landing/landing-04.png"
+        image: "/projects/landing/landing-04.webp"
       }
     ]
   },
@@ -55,28 +55,28 @@ export const projectCategories: ProjectCategory[] = [
         subtitle: "Web legal inmobiliaria",
         description:
           "Presencia profesional para comunicar servicios legales e inmobiliarios con tono serio y elegante.",
-        image: "/projects/Corporate/corporate-01.png"
+        image: "/projects/Corporate/corporate-01.webp"
       },
       {
         title: "Quality Techno Services",
         subtitle: "Web industrial",
         description:
           "Sitio corporativo para presentar servicios técnicos, respaldo profesional y canales de contacto claros.",
-        image: "/projects/Corporate/corporate-02.png"
+        image: "/projects/Corporate/corporate-02.webp"
       },
       {
         title: "Solarled",
         subtitle: "Web de energía solar",
         description:
           "Página comercial para explicar servicios solares, certificaciones, beneficios y contacto directo.",
-        image: "/projects/Corporate/corporate-03.png"
+        image: "/projects/Corporate/corporate-03.webp"
       },
       {
         title: "ALAF International Academy",
         subtitle: "Web educativa",
         description:
           "Estructura para academia, programas, comunicación institucional y experiencia responsive para estudiantes.",
-        image: "/projects/Corporate/corporate-04.png"
+        image: "/projects/Corporate/corporate-04.webp"
       }
     ]
   },
@@ -89,28 +89,28 @@ export const projectCategories: ProjectCategory[] = [
         subtitle: "Software para casilleros",
         description:
           "Portal para organizar clientes, casilleros, envíos, contenedores, estados y comprobantes.",
-        image: "/projects/software/software-01.png"
+        image: "/projects/software/software-01.webp"
       },
       {
         title: "Transformación 360",
         subtitle: "Sistema de reservas",
         description:
           "Sistema para servicios, disponibilidad, solicitudes, confirmaciones, estados y panel administrativo.",
-        image: "/projects/software/software-02.png"
+        image: "/projects/software/software-02.webp"
       },
       {
         title: "Los Cholos Cafetería",
         subtitle: "Software para restaurante",
         description:
           "Solución interna para ordenar ventas, datos operativos, reportes y control del negocio.",
-        image: "/projects/software/software-03.png"
+        image: "/projects/software/software-03.webp"
       },
       {
         title: "Biofest Reservas",
         subtitle: "Gestión de reservas",
         description:
           "Flujo digital para solicitudes, comprobantes, comunicación con visitantes y administración de reservas.",
-        image: "/projects/software/software-04.png"
+        image: "/projects/software/software-04.webp"
       }
     ]
   }

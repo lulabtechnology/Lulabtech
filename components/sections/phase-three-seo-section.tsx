@@ -88,12 +88,6 @@ export function PhaseThreeSeoSection() {
           })}
         </div>
       </div>
-
-      <div className="mt-8 rounded-[30px] border border-slate-200 bg-slate-50/80 p-5 sm:p-6">
-        <p className="text-sm leading-7 text-ink-700">
-          Estas opciones ayudan a elegir un camino concreto sin obligar al cliente a adivinar qué servicio necesita: web para captar consultas, ecommerce para vender o software para ordenar procesos internos.
-        </p>
-      </div>
     </SectionShell>
   );
 }

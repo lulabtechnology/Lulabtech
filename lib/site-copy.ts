@@ -181,28 +181,28 @@ export const siteCopy = {
               subtitle: "Landing educativa",
               description:
                 "Página de captación para explicar clases, beneficios y contacto directo con una presentación clara y responsive.",
-              image: "/projects/landing/landing-01.png"
+              image: "/projects/landing/landing-01.webp"
             },
             {
               title: "Krasa Dermoestudio",
               subtitle: "Landing estética",
               description:
                 "Diseño comercial para presentar servicios, generar confianza visual y facilitar solicitudes de cita.",
-              image: "/projects/landing/landing-02.png"
+              image: "/projects/landing/landing-02.webp"
             },
             {
               title: "Chabonnet Comercial",
               subtitle: "Landing inmobiliaria",
               description:
                 "Estructura de alto impacto para explicar la oferta, recibir consultas y dirigir al visitante al contacto.",
-              image: "/projects/landing/landing-03.png"
+              image: "/projects/landing/landing-03.webp"
             },
             {
               title: "Biofest Panamá",
               subtitle: "Landing turística",
               description:
                 "Experiencia visual para presentar tours, locaciones, reservas y comunicación bilingüe de forma ordenada.",
-              image: "/projects/landing/landing-04.png"
+              image: "/projects/landing/landing-04.webp"
             }
           ]
         },
@@ -217,28 +217,28 @@ export const siteCopy = {
               subtitle: "Web legal inmobiliaria",
               description:
                 "Presencia profesional para comunicar servicios legales e inmobiliarios con tono serio y elegante.",
-              image: "/projects/Corporate/corporate-01.png"
+              image: "/projects/Corporate/corporate-01.webp"
             },
             {
               title: "Quality Techno Services",
               subtitle: "Web industrial",
               description:
                 "Sitio corporativo para presentar servicios técnicos, respaldo profesional y canales de contacto claros.",
-              image: "/projects/Corporate/corporate-02.png"
+              image: "/projects/Corporate/corporate-02.webp"
             },
             {
               title: "Solarled",
               subtitle: "Web de energía solar",
               description:
                 "Página comercial para explicar servicios solares, certificaciones, beneficios y contacto directo.",
-              image: "/projects/Corporate/corporate-03.png"
+              image: "/projects/Corporate/corporate-03.webp"
             },
             {
               title: "ALAF International Academy",
               subtitle: "Web educativa",
               description:
                 "Estructura para academia, programas, comunicación institucional y experiencia responsive para estudiantes.",
-              image: "/projects/Corporate/corporate-04.png"
+              image: "/projects/Corporate/corporate-04.webp"
             }
           ]
         },
@@ -253,28 +253,28 @@ export const siteCopy = {
               subtitle: "Software para casilleros",
               description:
                 "Portal para organizar clientes, casilleros, envíos, contenedores, estados, comprobantes y operación logística.",
-              image: "/projects/software/software-01.png"
+              image: "/projects/software/software-01.webp"
             },
             {
               title: "Transformación 360",
               subtitle: "Sistema de reservas",
               description:
                 "Sistema para servicios, disponibilidad, solicitudes, confirmaciones, estados y panel administrativo.",
-              image: "/projects/software/software-02.png"
+              image: "/projects/software/software-02.webp"
             },
             {
               title: "Los Cholos Cafetería",
               subtitle: "Software para restaurante",
               description:
                 "Solución interna para ordenar ventas, datos operativos, reportes y control del negocio.",
-              image: "/projects/software/software-03.png"
+              image: "/projects/software/software-03.webp"
             },
             {
               title: "Biofest Reservas",
               subtitle: "Gestión de reservas",
               description:
                 "Flujo digital para solicitudes, comprobantes, comunicación con visitantes y administración de reservas.",
-              image: "/projects/software/software-04.png"
+              image: "/projects/software/software-04.webp"
             }
           ]
         }
@@ -680,28 +680,28 @@ export const siteCopy = {
               subtitle: "Educational landing",
               description:
                 "Lead capture page to explain classes, benefits and direct contact with a clear responsive presentation.",
-              image: "/projects/landing/landing-01.png"
+              image: "/projects/landing/landing-01.webp"
             },
             {
               title: "Krasa Dermoestudio",
               subtitle: "Aesthetic landing",
               description:
                 "Commercial design to present services, build visual trust and make appointment requests easier.",
-              image: "/projects/landing/landing-02.png"
+              image: "/projects/landing/landing-02.webp"
             },
             {
               title: "Chabonnet Comercial",
               subtitle: "Real estate landing",
               description:
                 "High-impact structure to explain the offer, receive inquiries and guide visitors toward contact.",
-              image: "/projects/landing/landing-03.png"
+              image: "/projects/landing/landing-03.webp"
             },
             {
               title: "Biofest Panamá",
               subtitle: "Tourism landing",
               description:
                 "Visual experience to present tours, locations, bookings and bilingual communication in an organized way.",
-              image: "/projects/landing/landing-04.png"
+              image: "/projects/landing/landing-04.webp"
             }
           ]
         },
@@ -716,28 +716,28 @@ export const siteCopy = {
               subtitle: "Legal real estate website",
               description:
                 "Professional presence to communicate legal and real estate services with a serious, elegant tone.",
-              image: "/projects/Corporate/corporate-01.png"
+              image: "/projects/Corporate/corporate-01.webp"
             },
             {
               title: "Quality Techno Services",
               subtitle: "Industrial website",
               description:
                 "Corporate website to present technical services, professional proof and clear contact channels.",
-              image: "/projects/Corporate/corporate-02.png"
+              image: "/projects/Corporate/corporate-02.webp"
             },
             {
               title: "Solarled",
               subtitle: "Solar energy website",
               description:
                 "Commercial page to explain solar services, certifications, benefits and direct contact.",
-              image: "/projects/Corporate/corporate-03.png"
+              image: "/projects/Corporate/corporate-03.webp"
             },
             {
               title: "ALAF International Academy",
               subtitle: "Educational website",
               description:
                 "Structure for academy programs, institutional communication and responsive student experience.",
-              image: "/projects/Corporate/corporate-04.png"
+              image: "/projects/Corporate/corporate-04.webp"
             }
           ]
         },
@@ -752,28 +752,28 @@ export const siteCopy = {
               subtitle: "Locker software",
               description:
                 "Portal to organize clients, lockers, shipments, containers, statuses, receipts and logistics operations.",
-              image: "/projects/software/software-01.png"
+              image: "/projects/software/software-01.webp"
             },
             {
               title: "Transformación 360",
               subtitle: "Booking system",
               description:
                 "System for services, availability, requests, confirmations, statuses and an admin panel.",
-              image: "/projects/software/software-02.png"
+              image: "/projects/software/software-02.webp"
             },
             {
               title: "Los Cholos Cafetería",
               subtitle: "Restaurant software",
               description:
                 "Internal solution to organize sales, operational data, reports and business control.",
-              image: "/projects/software/software-03.png"
+              image: "/projects/software/software-03.webp"
             },
             {
               title: "Biofest Bookings",
               subtitle: "Booking management",
               description:
                 "Digital flow for requests, receipts, visitor communication and booking administration.",
-              image: "/projects/software/software-04.png"
+              image: "/projects/software/software-04.webp"
             }
           ]
         }

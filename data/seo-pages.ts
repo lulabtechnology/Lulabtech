@@ -3397,7 +3397,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Landing comercial para presentar servicios estéticos, reforzar confianza visual y facilitar solicitudes de cita.",
     services: ["Landing page", "Diseño responsive", "CTA a contacto"],
-    image: "/projects/landing/landing-02.png"
+    image: "/projects/landing/landing-02.webp"
   },
   {
     name: "Nova Shipping Services",
@@ -3405,7 +3405,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Portal y sistema administrativo para organizar clientes, casilleros, envíos, contenedores, estados y comprobantes.",
     services: ["Software a medida", "Panel admin", "Portal cliente"],
-    image: "/projects/software/software-01.png"
+    image: "/projects/software/software-01.webp"
   },
   {
     name: "Biofest Panamá",
@@ -3413,7 +3413,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Experiencia visual para presentar tours, locaciones, información bilingüe y flujo de reservas.",
     services: ["Landing page", "Reservas", "Bilingüe ES/EN"],
-    image: "/projects/landing/landing-04.png"
+    image: "/projects/landing/landing-04.webp"
   },
   {
     name: "Quality Techno Services",
@@ -3421,7 +3421,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Sitio corporativo para explicar servicios técnicos, respaldo profesional y canales de contacto claros.",
     services: ["Web corporativa", "Formulario", "WhatsApp"],
-    image: "/projects/Corporate/corporate-02.png"
+    image: "/projects/Corporate/corporate-02.webp"
   },
   {
     name: "Solarled",
@@ -3429,7 +3429,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Página comercial para comunicar servicios solares, certificaciones, beneficios y contacto directo.",
     services: ["Landing page", "Diseño visual", "CTA comercial"],
-    image: "/projects/Corporate/corporate-03.png"
+    image: "/projects/Corporate/corporate-03.webp"
   },
   {
     name: "Transformación 360",
@@ -3437,7 +3437,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Sistema web para gestionar servicios, disponibilidad, reservas, estados y panel administrativo.",
     services: ["Software a medida", "Reservas", "Panel admin"],
-    image: "/projects/software/software-02.png"
+    image: "/projects/software/software-02.webp"
   },
   {
     name: "Alcira Trigueros Asesora Legal Inmobiliaria",
@@ -3445,7 +3445,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Presencia digital para comunicar servicios legales e inmobiliarios con tono profesional y elegante.",
     services: ["Web corporativa", "Marca personal", "SEO inicial"],
-    image: "/projects/Corporate/corporate-01.png"
+    image: "/projects/Corporate/corporate-01.webp"
   },
   {
     name: "ALAF International Academy",
@@ -3453,7 +3453,7 @@ const projectPortfolioEs: PortfolioProject[] = [
     description:
       "Estructura digital para academia, programas, comunicación institucional y experiencia responsive.",
     services: ["Web educativa", "Estructura de cursos", "Responsive"],
-    image: "/projects/Corporate/corporate-04.png"
+    image: "/projects/Corporate/corporate-04.webp"
   }
 ];
 
@@ -3464,7 +3464,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Commercial landing page to present beauty services, reinforce visual trust, and make appointment requests easier.",
     services: ["Landing page", "Responsive design", "Contact CTA"],
-    image: "/projects/landing/landing-02.png"
+    image: "/projects/landing/landing-02.webp"
   },
   {
     name: "Nova Shipping Services",
@@ -3472,7 +3472,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Portal and admin system to organize clients, lockers, shipments, containers, statuses, and receipts.",
     services: ["Custom software", "Admin panel", "Client portal"],
-    image: "/projects/software/software-01.png"
+    image: "/projects/software/software-01.webp"
   },
   {
     name: "Biofest Panamá",
@@ -3480,7 +3480,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Visual experience to present tours, locations, bilingual information, and booking flow.",
     services: ["Landing page", "Bookings", "Bilingual ES/EN"],
-    image: "/projects/landing/landing-04.png"
+    image: "/projects/landing/landing-04.webp"
   },
   {
     name: "Quality Techno Services",
@@ -3488,7 +3488,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Corporate website to explain technical services, professional backing, and clear contact channels.",
     services: ["Corporate website", "Form", "WhatsApp"],
-    image: "/projects/Corporate/corporate-02.png"
+    image: "/projects/Corporate/corporate-02.webp"
   },
   {
     name: "Solarled",
@@ -3496,7 +3496,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Commercial page to communicate solar services, certifications, benefits, and direct contact.",
     services: ["Landing page", "Visual design", "Commercial CTA"],
-    image: "/projects/Corporate/corporate-03.png"
+    image: "/projects/Corporate/corporate-03.webp"
   },
   {
     name: "Transformación 360",
@@ -3504,7 +3504,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Web system to manage services, availability, reservations, statuses, and admin panel.",
     services: ["Custom software", "Bookings", "Admin panel"],
-    image: "/projects/software/software-02.png"
+    image: "/projects/software/software-02.webp"
   },
   {
     name: "Alcira Trigueros Asesora Legal Inmobiliaria",
@@ -3512,7 +3512,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Digital presence to communicate legal and real estate services with a professional and elegant tone.",
     services: ["Corporate website", "Personal brand", "Initial SEO"],
-    image: "/projects/Corporate/corporate-01.png"
+    image: "/projects/Corporate/corporate-01.webp"
   },
   {
     name: "ALAF International Academy",
@@ -3520,7 +3520,7 @@ const projectPortfolioEn: PortfolioProject[] = [
     description:
       "Digital structure for academy, programs, institutional communication, and responsive experience.",
     services: ["Educational website", "Course structure", "Responsive"],
-    image: "/projects/Corporate/corporate-04.png"
+    image: "/projects/Corporate/corporate-04.webp"
   }
 ];
 

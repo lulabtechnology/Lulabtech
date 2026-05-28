@@ -24,7 +24,7 @@ export const viewport: Viewport = {
   themeColor: "#0E76FF"
 };
 
-const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "1475809483955480";
+const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID;
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
