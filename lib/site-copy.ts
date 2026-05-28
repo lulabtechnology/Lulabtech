@@ -452,14 +452,16 @@ export const siteCopy = {
     },
     googleReviews: {
       eyebrow: "Reseñas verificadas",
-      title: "Lo que dicen los clientes que ya confiaron en LulabTech",
+      title: "Lo que dicen en Google",
       description:
         "Mostramos reseñas reales desde Google Maps para que quien visite la web pueda validar la experiencia de otros clientes antes de escribirnos.",
       googleCta: "Ver reseñas en Google",
       whatsappCta: "Cotizar mi proyecto",
       attribution: "Reseñas proporcionadas por Google Maps. La información puede variar según los datos públicos del perfil de empresa.",
       verifiedLabel: "Reseña verificada",
-      readOnGoogle: "Leer en Google"
+      readOnGoogle: "Leer en Google",
+      emptyState:
+        "La sección está lista, pero Google todavía no está devolviendo reseñas desde la API. Revisa que las variables de Vercel estén guardadas y vuelve a desplegar; mientras tanto, el botón lleva directo al perfil de Google."
     },
     finalCta: {
       badge: "Hablemos",
@@ -962,14 +964,16 @@ export const siteCopy = {
     },
     googleReviews: {
       eyebrow: "Verified reviews",
-      title: "What clients say after working with LulabTech",
+      title: "What they say on Google",
       description:
         "We display real reviews from Google Maps so visitors can validate the experience of other clients before contacting us.",
       googleCta: "View reviews on Google",
       whatsappCta: "Quote my project",
       attribution: "Reviews provided by Google Maps. Information may vary according to the public business profile data.",
       verifiedLabel: "Verified review",
-      readOnGoogle: "Read on Google"
+      readOnGoogle: "Read on Google",
+      emptyState:
+        "The section is ready, but Google is not returning reviews through the API yet. Check that the Vercel variables are saved and redeploy; meanwhile, the button opens the Google profile directly."
     },
     finalCta: {
       badge: "Let’s talk",
