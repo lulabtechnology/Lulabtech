@@ -5,6 +5,7 @@ import { TopOfferBar } from "@/components/layout/top-offer-bar";
 import { StructuredData } from "@/components/seo/structured-data";
 import { HeroSection } from "@/components/sections/hero";
 import { CredibilityStrip } from "@/components/sections/credibility-strip";
+import { GoogleReviewsSection } from "@/components/sections/google-reviews-section";
 import { ProjectShowcaseSection } from "@/components/sections/project-showcase";
 import { ServicesSection } from "@/components/sections/services";
 import { SeoGrowthSection } from "@/components/sections/seo-growth-section";
@@ -30,6 +31,7 @@ export default function HomePage() {
         <main>
           <HeroSection />
           <CredibilityStrip />
+          <GoogleReviewsSection />
           <ProjectShowcaseSection />
           <ServicesSection />
           <SeoGrowthSection />

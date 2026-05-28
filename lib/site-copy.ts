@@ -450,6 +450,17 @@ export const siteCopy = {
         }
       ]
     },
+    googleReviews: {
+      eyebrow: "Reseñas verificadas",
+      title: "Lo que dicen los clientes que ya confiaron en LulabTech",
+      description:
+        "Mostramos reseñas reales desde Google Maps para que quien visite la web pueda validar la experiencia de otros clientes antes de escribirnos.",
+      googleCta: "Ver reseñas en Google",
+      whatsappCta: "Cotizar mi proyecto",
+      attribution: "Reseñas proporcionadas por Google Maps. La información puede variar según los datos públicos del perfil de empresa.",
+      verifiedLabel: "Reseña verificada",
+      readOnGoogle: "Leer en Google"
+    },
     finalCta: {
       badge: "Hablemos",
       title:
@@ -948,6 +959,17 @@ export const siteCopy = {
             "Yes. We can redesign, organize content, improve visual structure, strengthen initial SEO, optimize contact paths and prepare the website for a more serious growth stage."
         }
       ]
+    },
+    googleReviews: {
+      eyebrow: "Verified reviews",
+      title: "What clients say after working with LulabTech",
+      description:
+        "We display real reviews from Google Maps so visitors can validate the experience of other clients before contacting us.",
+      googleCta: "View reviews on Google",
+      whatsappCta: "Quote my project",
+      attribution: "Reviews provided by Google Maps. Information may vary according to the public business profile data.",
+      verifiedLabel: "Verified review",
+      readOnGoogle: "Read on Google"
     },
     finalCta: {
       badge: "Let’s talk",
