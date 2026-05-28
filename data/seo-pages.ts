@@ -3338,7 +3338,9 @@ export function createServicePageMetadata(slug: string): Metadata {
   const url = `${baseUrl}/${page.slug}`;
 
   return {
-    title: page.metaTitle,
+    title: {
+      absolute: page.metaTitle
+    },
     description: page.metaDescription,
     keywords: page.keywords,
     alternates: {

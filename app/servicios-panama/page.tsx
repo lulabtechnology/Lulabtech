@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { ServicesHubPage } from "@/components/pages/services-hub-page";
 
 export const metadata: Metadata = {
-  title: "Servicios de diseño web, software y SEO en Panamá | LulabTech",
+  title: {
+    absolute: "Servicios de diseño web, software y SEO en Panamá | LulabTech"
+  },
   description:
     "Servicios de LulabTech en Panamá: diseño web, landing pages, webs corporativas, ecommerce, software a medida, POS, reservas, CRM, inventario y SEO.",
   keywords: [

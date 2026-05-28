@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { ProjectsPage } from "@/components/pages/projects-page";
 
 export const metadata: Metadata = {
-  title: "Portafolio de trabajos realizados | LulabTech Panamá",
+  title: {
+    absolute: "Portafolio de trabajos realizados | LulabTech Panamá"
+  },
   description:
     "Portafolio de LulabTech con trabajos realizados en páginas web, landing pages, webs corporativas y software a medida para empresas en Panamá.",
   keywords: [

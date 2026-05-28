@@ -1,48 +1,8 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { SitePreloader } from "@/components/layout/site-preloader";
-import { TopOfferBar } from "@/components/layout/top-offer-bar";
-import { StructuredData } from "@/components/seo/structured-data";
-import { HeroSection } from "@/components/sections/hero";
-import { CredibilityStrip } from "@/components/sections/credibility-strip";
-import { ProjectShowcaseSection } from "@/components/sections/project-showcase";
-import { ServicesSection } from "@/components/sections/services";
-import { SeoGrowthSection } from "@/components/sections/seo-growth-section";
-import { PhaseThreeSeoSection } from "@/components/sections/phase-three-seo-section";
-import { SolutionUseCasesSection } from "@/components/sections/solution-use-cases";
-import { WhyLulabTechSection } from "@/components/sections/why-lulabtech";
-import { ProcessSection } from "@/components/sections/process";
-import { FaqSection } from "@/components/sections/faq-section";
-import { FinalCtaSection } from "@/components/sections/final-cta";
-import { QuoteFormSection } from "@/components/sections/quote-form-section";
-import { SiteLanguageProvider } from "@/components/providers/site-language";
+import { ServiceLandingPage } from "@/components/pages/service-landing-page";
+import { createServicePageMetadata } from "@/data/seo-pages";
 
-export default function HomePage() {
-  return (
-    <SiteLanguageProvider>
-      <div id="top" className="relative overflow-x-clip bg-white">
-        <StructuredData />
-        <SitePreloader />
-        <TopOfferBar />
-        <Navbar />
+export const metadata = createServicePageMetadata("sistemas-de-reservas-panama");
 
-        <main>
-          <HeroSection />
-          <CredibilityStrip />
-          <ProjectShowcaseSection />
-          <ServicesSection />
-          <SeoGrowthSection />
-          <PhaseThreeSeoSection />
-          <SolutionUseCasesSection />
-          <WhyLulabTechSection />
-          <ProcessSection />
-          <FaqSection />
-          <FinalCtaSection />
-          <QuoteFormSection />
-        </main>
-
-        <Footer />
-      </div>
-    </SiteLanguageProvider>
-  );
+export default function Page() {
+  return <ServiceLandingPage slug="sistemas-de-reservas-panama" />;
 }

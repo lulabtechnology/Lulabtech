@@ -69,7 +69,6 @@ export function ServicePageStructuredData({ page }: { page: ServicePage }) {
               "@type": "Offer",
               priceCurrency: "USD",
               price: priceFrom,
-              availability: "https://schema.org/InStock",
               areaServed: "Panamá",
               url
             }

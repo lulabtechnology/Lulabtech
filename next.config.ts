@@ -21,7 +21,12 @@ const nextConfig: NextConfig = {
         source: "/paginas-web-empresas-panama",
         destination: "/paginas-web-corporativas-panama",
         permanent: true
-      }
+      },
+      {
+        source: "/proyectos",
+        destination: "/portafolio",
+        permanent: true
+      },
     ];
   }
 };
