@@ -451,10 +451,10 @@ export const siteCopy = {
       ]
     },
     googleReviews: {
-      eyebrow: "Reseñas verificadas",
-      title: "Lo que dicen en Google",
+      eyebrow: "Reseñas verificadas en Google",
+      title: "Clientes que ya confiaron en LulabTech",
       description:
-        "Mostramos reseñas reales desde Google Maps para que quien visite la web pueda validar la experiencia de otros clientes antes de escribirnos.",
+        "Comentarios reales publicados en Google Maps para que quien visite la web valide la experiencia de otros clientes antes de escribirnos.",
       googleCta: "Ver reseñas en Google",
       whatsappCta: "Cotizar mi proyecto",
       attribution: "Reseñas proporcionadas por Google Maps. La información puede variar según los datos públicos del perfil de empresa.",
@@ -963,10 +963,10 @@ export const siteCopy = {
       ]
     },
     googleReviews: {
-      eyebrow: "Verified reviews",
-      title: "What they say on Google",
+      eyebrow: "Verified Google reviews",
+      title: "Clients who already trusted LulabTech",
       description:
-        "We display real reviews from Google Maps so visitors can validate the experience of other clients before contacting us.",
+        "Real comments published on Google Maps so visitors can validate other clients' experience before contacting us.",
       googleCta: "View reviews on Google",
       whatsappCta: "Quote my project",
       attribution: "Reviews provided by Google Maps. Information may vary according to the public business profile data.",

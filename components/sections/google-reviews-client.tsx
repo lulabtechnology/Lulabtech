@@ -14,19 +14,30 @@ import { cn } from "@/lib/utils";
 const fallbackMapsUrl = process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL || "";
 
 const avatarColorClasses = [
-  "bg-[#f4511e]",
-  "bg-[#1a73e8]",
-  "bg-[#34a853]",
-  "bg-[#a142f4]",
-  "bg-[#fbbc04] text-ink-900",
-  "bg-[#009688]",
-  "bg-[#3f7ee8]",
-  "bg-[#ea4335]",
-  "bg-[#2e7d32]"
+  "bg-brand-600",
+  "bg-accent-500",
+  "bg-ink-800",
+  "bg-[#2563eb]",
+  "bg-[#0ea5e9]",
+  "bg-[#14b8a6]",
+  "bg-[#6366f1]",
+  "bg-[#0891b2]",
+  "bg-[#059669]"
 ];
 
 type GoogleReviewsClientProps = {
   data: GoogleReviewsData | null;
+};
+
+type GoogleReviewsCopy = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  googleCta: string;
+  whatsappCta: string;
+  attribution: string;
+  readOnGoogle: string;
+  emptyState: string;
 };
 
 function formatRating(value?: number) {
@@ -45,7 +56,10 @@ function formatReviewCount(value?: number, locale: "es" | "en" = "es") {
 function GoogleMark({ className }: { className?: string }) {
   return (
     <span
-      className={cn("inline-flex h-5 w-5 items-center justify-center text-base font-black", className)}
+      className={cn(
+        "inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-base font-black shadow-soft",
+        className
+      )}
       aria-label="Google"
     >
       <span className="text-[#4285F4]">G</span>
@@ -64,7 +78,7 @@ function Stars({ rating = 5, size = "sm" }: { rating?: number; size?: "sm" | "md
           key={index}
           className={cn(
             iconSize,
-            index < roundedRating ? "fill-[#fbbc04] text-[#fbbc04]" : "text-white/20"
+            index < roundedRating ? "fill-[#fbbc04] text-[#fbbc04]" : "text-slate-300"
           )}
         />
       ))}
@@ -80,7 +94,7 @@ function InitialAvatar({ review, index }: { review: GoogleReview; index: number 
       <img
         src={review.authorPhotoUri}
         alt={`Foto de ${review.authorName}`}
-        className="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-white/10"
+        className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white shadow-soft"
         loading="lazy"
         referrerPolicy="no-referrer"
       />
@@ -90,7 +104,7 @@ function InitialAvatar({ review, index }: { review: GoogleReview; index: number 
   return (
     <div
       className={cn(
-        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-base font-bold text-white ring-1 ring-white/10",
+        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-base font-black text-white ring-2 ring-white shadow-soft",
         avatarColorClasses[index % avatarColorClasses.length]
       )}
     >
@@ -101,27 +115,27 @@ function InitialAvatar({ review, index }: { review: GoogleReview; index: number 
 
 function ReviewCard({ review, index, readOnGoogle }: { review: GoogleReview; index: number; readOnGoogle: string }) {
   const content = (
-    <article className="group flex h-full min-h-[220px] flex-col rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-left shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-lime-300/50 hover:bg-white/[0.075]">
+    <article className="group flex h-full min-h-[250px] flex-col rounded-[28px] border border-slate-200/80 bg-white/90 p-6 text-left shadow-[0_22px_70px_rgba(14,118,255,0.09)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-[0_26px_80px_rgba(14,118,255,0.14)]">
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
           <InitialAvatar review={review} index={index} />
           <div className="min-w-0">
-            <p className="truncate text-sm font-bold text-white">{review.authorName}</p>
-            <p className="mt-0.5 text-xs font-medium text-white/48">{review.relativeTime || readOnGoogle}</p>
+            <p className="truncate text-sm font-black text-ink-900">{review.authorName}</p>
+            <p className="mt-0.5 text-xs font-semibold text-ink-500">{review.relativeTime || readOnGoogle}</p>
           </div>
         </div>
 
-        <GoogleMark className="opacity-90" />
+        <GoogleMark className="opacity-95" />
       </div>
 
       <div className="mt-5">
         <Stars rating={review.rating} />
       </div>
 
-      <p className="mt-4 flex-1 text-sm leading-7 text-white/76">{review.text}</p>
+      <p className="mt-4 flex-1 text-sm leading-7 text-ink-700">{review.text}</p>
 
       {review.reviewUri ? (
-        <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-lime-300 opacity-0 transition duration-300 group-hover:opacity-100">
+        <span className="mt-5 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-brand-700 opacity-0 transition duration-300 group-hover:opacity-100">
           {readOnGoogle}
           <ArrowUpRight className="h-3.5 w-3.5" />
         </span>
@@ -140,19 +154,19 @@ function ReviewCard({ review, index, readOnGoogle }: { review: GoogleReview; ind
   return content;
 }
 
-function EmptyReviewsCard({ mapsUrl, copy }: { mapsUrl: string; copy: ReturnType<typeof useSiteLanguage>["copy"]["googleReviews"] }) {
+function EmptyReviewsCard({ mapsUrl, copy }: { mapsUrl: string; copy: GoogleReviewsCopy }) {
   return (
-    <div className="rounded-2xl border border-dashed border-white/15 bg-white/[0.045] p-7 text-center sm:col-span-2 lg:col-span-3">
-      <p className="mx-auto max-w-2xl text-sm leading-7 text-white/64">{copy.emptyState}</p>
+    <div className="rounded-[28px] border border-dashed border-brand-200 bg-white/80 p-7 text-center shadow-soft sm:col-span-2 lg:col-span-3">
+      <p className="mx-auto max-w-2xl text-sm leading-7 text-ink-600">{copy.emptyState}</p>
       {mapsUrl ? (
         <ButtonLink
           href={mapsUrl}
           target="_blank"
           rel="noreferrer"
-          variant="outline"
+          variant="primary"
           size="lg"
           onClick={() => trackEvent("click_google_reviews", { source: "reviews_empty_state" })}
-          className="mt-5 border-white/10 bg-white text-ink-950 hover:bg-lime-300"
+          className="mt-5 min-w-[220px] border-brand-600 bg-brand-600 text-white hover:bg-brand-700"
         >
           {copy.googleCta}
           <ArrowUpRight className="h-4 w-4" />
@@ -176,35 +190,32 @@ export function GoogleReviewsClient({ data }: GoogleReviewsClientProps) {
   return (
     <SectionShell
       id="resenas-google"
-      className="overflow-hidden bg-[#07080A] py-20 text-white sm:py-24"
+      className="overflow-hidden bg-gradient-to-b from-white via-brand-50/50 to-white py-20 text-ink-900 sm:py-24"
       containerClassName="relative"
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-lime-300/10 blur-[120px]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(190,255,36,0.12),transparent_34%),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:auto,42px_42px,42px_42px] opacity-80" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-400/20 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 right-[-120px] h-[420px] w-[420px] rounded-full bg-accent-300/20 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 bg-brand-grid bg-[size:42px_42px] opacity-45" />
 
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">
+          <p className="inline-flex items-center rounded-full border border-brand-100 bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-brand-700 shadow-soft">
             {reviewsCopy.eyebrow}
           </p>
 
-          <h2 className="mt-5 text-balance text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {locale === "es" ? (
-              <>
-                Lo que dicen en <span className="text-lime-300">Google</span>
-              </>
-            ) : (
-              <>
-                What they say on <span className="text-lime-300">Google</span>
-              </>
-            )}
+          <h2 className="mt-5 text-balance text-4xl font-black tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">
+            {reviewsCopy.title}
           </h2>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-white/58">
-            <span className="text-xl font-bold text-white/42">Google</span>
-            {rating ? <span className="text-3xl font-black tracking-tight text-white">{rating}</span> : null}
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-ink-600">
+            {reviewsCopy.description}
+          </p>
+
+          <div className="mx-auto mt-8 flex w-fit max-w-full flex-wrap items-center justify-center gap-3 rounded-full border border-slate-200 bg-white/90 px-5 py-3 text-ink-600 shadow-soft">
+            <span className="text-base font-black text-ink-700">Google</span>
+            {rating ? <span className="text-3xl font-black tracking-tight text-ink-950">{rating}</span> : null}
             <Stars rating={data?.rating || 5} size="md" />
-            <span className="text-sm font-medium">{formatReviewCount(data?.userRatingCount, locale)}</span>
+            <span className="text-sm font-semibold text-ink-500">{formatReviewCount(data?.userRatingCount, locale)}</span>
           </div>
         </Reveal>
 
@@ -229,10 +240,10 @@ export function GoogleReviewsClient({ data }: GoogleReviewsClientProps) {
               href={mapsUrl}
               target="_blank"
               rel="noreferrer"
-              variant="outline"
+              variant="primary"
               size="lg"
               onClick={() => trackEvent("click_google_reviews", { source: "reviews_section" })}
-              className="border-white/10 bg-white text-ink-950 hover:bg-lime-300"
+              className="min-w-[230px] border-brand-600 bg-brand-600 text-white shadow-elevated hover:bg-brand-700"
             >
               {reviewsCopy.googleCta}
               <ArrowUpRight className="h-4 w-4" />
@@ -243,17 +254,17 @@ export function GoogleReviewsClient({ data }: GoogleReviewsClientProps) {
             href={contactData.whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            variant="ghost"
+            variant="outline"
             size="lg"
             onClick={() => trackEvent("click_whatsapp_reviews")}
-            className="border border-white/10 bg-white/5 text-white hover:bg-white/10"
+            className="min-w-[230px] border-brand-200 bg-white text-brand-700 shadow-soft hover:border-brand-300 hover:bg-brand-50"
           >
             <MessageCircle className="h-4 w-4" />
             {reviewsCopy.whatsappCta}
           </ButtonLink>
         </Reveal>
 
-        <p className="relative mx-auto mt-7 max-w-2xl text-center text-xs leading-6 text-white/38">
+        <p className="relative mx-auto mt-7 max-w-2xl text-center text-xs leading-6 text-ink-500">
           {reviewsCopy.attribution}
         </p>
       </div>
