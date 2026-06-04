@@ -901,7 +901,7 @@ const servicePagesEs: ServicePage[] = [
       "Textos comerciales sin promesas exageradas",
       "Áreas de práctica presentadas con claridad",
       "Perfil profesional y señales de confianza",
-      "WhatsApp y formulario visibles",
+      "Canales de consulta visibles",
       "SEO inicial para búsquedas locales"
     ],
     processTitle: "Proceso para una página legal",

@@ -84,19 +84,19 @@ export const siteCopy = {
       badges: ["Landing pages", "Webs corporativas", "Tiendas online", "Software a medida"],
       cards: [
         {
-          title: "Tu negocio se entiende rápido",
+          title: "Servicios claros desde el inicio",
           description:
-            "Organizamos tus servicios para que el cliente sepa qué ofreces y cómo contactarte."
+            "Ordenamos qué haces, para quién es y por qué elegirte, para que el visitante no tenga que adivinar."
         },
         {
-          title: "Diseñada para celular",
+          title: "Pensada para verse bien en móvil",
           description:
-            "La web se adapta a móvil, tablet y escritorio para que el recorrido se sienta cómodo."
+            "La experiencia se siente cómoda en celular, tablet y computadora, con secciones y botones fáciles de recorrer."
         },
         {
-          title: "Lista para recibir clientes",
+          title: "Preparada para generar consultas",
           description:
-            "WhatsApp, formularios y llamados a la acción quedan claros desde el primer recorrido."
+            "WhatsApp, formularios y llamados a la acción quedan ubicados donde el cliente necesita tomar acción."
         }
       ],
       previewWindow: "Sitio web profesional",
@@ -112,9 +112,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operación" }
       ],
       metrics: [
-        { label: "Claridad", value: "Tu oferta se entiende mejor" },
-        { label: "Contacto", value: "WhatsApp y formulario visibles" },
-        { label: "Confianza", value: "Imagen más seria para tu marca" }
+        { label: "Mensaje claro", value: "El cliente entiende qué vendes y por qué elegirte." },
+        { label: "Contacto directo", value: "Botones y formularios visibles en puntos clave." },
+        { label: "Marca profesional", value: "Una presencia más seria para vender con seguridad." }
       ],
       nextStepLabel: "Contacto claro",
       nextStepTitle: "Da el siguiente paso",
@@ -556,7 +556,7 @@ export const siteCopy = {
       contact: "Contacto",
       email: "Email",
       directChannel: "Canal directo",
-      whatsapp: "WhatsApp",
+      whatsapp: "+507 6706-9044",
       rights: "Todos los derechos reservados.",
       bottom: "Diseño premium · enfoque comercial · experiencia responsive"
     },
@@ -596,19 +596,19 @@ export const siteCopy = {
       badges: ["Landing pages", "Corporate websites", "Online stores", "Custom software"],
       cards: [
         {
-          title: "Your business is easy to understand",
+          title: "Services clear from the start",
           description:
-            "We organize your services so visitors know what you offer and how to contact you."
+            "We organize what you do, who it helps and why choosing you makes sense, so visitors do not have to guess."
         },
         {
-          title: "Designed for mobile",
+          title: "Built to look good on mobile",
           description:
-            "The website adapts to phone, tablet and desktop so the experience feels comfortable."
+            "The experience feels easy on phone, tablet and desktop, with sections and buttons that are simple to browse."
         },
         {
-          title: "Ready to receive clients",
+          title: "Ready to generate inquiries",
           description:
-            "WhatsApp, forms and calls to action stay clear throughout the user journey."
+            "WhatsApp, forms and calls to action are placed where visitors need to take the next step."
         }
       ],
       previewWindow: "Professional website",
@@ -624,9 +624,9 @@ export const siteCopy = {
         { eyebrow: "Software", value: "Operations" }
       ],
       metrics: [
-        { label: "Clarity", value: "Your offer is easier to understand" },
-        { label: "Contact", value: "WhatsApp and forms are visible" },
-        { label: "Trust", value: "A stronger image for your brand" }
+        { label: "Clear message", value: "Visitors understand what you sell and why choosing you makes sense." },
+        { label: "Direct contact", value: "Buttons and forms stay visible in key moments." },
+        { label: "Professional brand", value: "A stronger presence that helps people trust you." }
       ],
       nextStepLabel: "Clear contact",
       nextStepTitle: "Take the next step",
@@ -1068,7 +1068,7 @@ export const siteCopy = {
       contact: "Contact",
       email: "Email",
       directChannel: "Direct channel",
-      whatsapp: "WhatsApp",
+      whatsapp: "+507 6706-9044",
       rights: "All rights reserved.",
       bottom: "Premium design · commercial focus · responsive experience"
     },
