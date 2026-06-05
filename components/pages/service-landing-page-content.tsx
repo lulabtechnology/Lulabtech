@@ -51,6 +51,216 @@ const uiCopy = {
   }
 } satisfies Record<ServiceLocale, Record<string, string>>;
 
+type QuickWinPanel = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: { title: string; description: string; href?: string; label?: string }[];
+};
+
+const quickWinPanels: Partial<Record<ServiceLocale, Record<string, QuickWinPanel>>> = {
+  es: {
+    "software-a-medida-panama": {
+      eyebrow: "Comparación rápida",
+      title: "¿Qué tipo de sistema puede necesitar tu empresa?",
+      description:
+        "Esta página está pensada para búsquedas con intención alta: empresas que ya sienten que Excel, WhatsApp o procesos manuales se quedaron pequeños.",
+      items: [
+        {
+          title: "Control interno",
+          description: "Usuarios, permisos, estados, reportes, filtros, historial y panel administrativo para ordenar la operación."
+        },
+        {
+          title: "Procesos específicos",
+          description: "Reservas, POS, inventario, logística, CRM, casilleros, pagos, documentos o módulos propios.",
+          href: "/sistemas-de-inventario-panama",
+          label: "Ver inventario"
+        },
+        {
+          title: "Proyecto por etapas",
+          description: "Se puede iniciar con una primera versión funcional y luego sumar módulos según el uso real del equipo.",
+          href: "/software-para-logistica-panama",
+          label: "Ver logística"
+        }
+      ]
+    },
+    "cuanto-cuesta-una-pagina-web-en-panama": {
+      eyebrow: "Precios de referencia",
+      title: "Comparación rápida de precios web en Panamá",
+      description:
+        "La idea no es vender un paquete genérico, sino ayudarte a ubicar qué tipo de proyecto se parece más a lo que necesitas antes de cotizar.",
+      items: [
+        {
+          title: "Landing page desde $149",
+          description: "Para una oferta puntual, una campaña, un servicio o una página enfocada en WhatsApp.",
+          href: "/landing-pages-panama",
+          label: "Ver landing"
+        },
+        {
+          title: "Web corporativa desde $299",
+          description: "Para empresas que necesitan secciones, presencia formal, servicios, confianza y contacto.",
+          href: "/paginas-web-corporativas-panama",
+          label: "Ver corporativa"
+        },
+        {
+          title: "Ecommerce desde $499",
+          description: "Para catálogos, productos, carrito, WhatsApp o flujo de compra según el alcance.",
+          href: "/tiendas-online-panama",
+          label: "Ver tienda online"
+        }
+      ]
+    },
+    "landing-pages-panama": {
+      eyebrow: "Para convertir tráfico",
+      title: "Qué debe tener una landing page para captar clientes",
+      description:
+        "Una landing funciona mejor cuando el anuncio, la promesa y el botón de contacto hablan del mismo servicio sin distraer al usuario.",
+      items: [
+        {
+          title: "Oferta clara",
+          description: "Un mensaje principal fácil de entender, con beneficios concretos y sin secciones innecesarias."
+        },
+        {
+          title: "CTA visible",
+          description: "WhatsApp, formulario o llamada con una acción simple para que el usuario no piense demasiado.",
+          href: "/google-ads-panama",
+          label: "Ver Google Ads"
+        },
+        {
+          title: "Confianza rápida",
+          description: "Preguntas frecuentes, proceso, ejemplos, precios desde y señales que reduzcan dudas antes de escribir.",
+          href: "/cuanto-cuesta-una-pagina-web-en-panama",
+          label: "Ver precios"
+        }
+      ]
+    },
+    "paginas-web-corporativas-panama": {
+      eyebrow: "Para empresas",
+      title: "Qué diferencia a una web corporativa de una landing simple",
+      description:
+        "Una web corporativa no solo presenta una oferta: ordena la empresa, sus servicios, su respaldo y sus canales de atención en una estructura más completa.",
+      items: [
+        {
+          title: "Más estructura",
+          description: "Servicios, empresa, procesos, equipo, proyectos, FAQ, contacto y páginas internas si el SEO lo requiere."
+        },
+        {
+          title: "Más confianza",
+          description: "Ideal para empresas B2B, firmas legales, clínicas, inmobiliarias, logística y servicios profesionales.",
+          href: "/diseno-web-para-inmobiliarias-panama",
+          label: "Ver inmobiliarias"
+        },
+        {
+          title: "Más crecimiento",
+          description: "La estructura queda lista para agregar páginas SEO, portafolio, blog, formularios o software interno.",
+          href: "/software-a-medida-panama",
+          label: "Ver software"
+        }
+      ]
+    }
+  },
+  en: {
+    "software-a-medida-panama": {
+      eyebrow: "Quick comparison",
+      title: "What type of system might your company need?",
+      description:
+        "This page is built for high-intent searches: companies that already feel Excel, WhatsApp or manual processes are no longer enough.",
+      items: [
+        {
+          title: "Internal control",
+          description: "Users, permissions, statuses, reports, filters, history and an admin panel to organize the operation."
+        },
+        {
+          title: "Specific workflows",
+          description: "Bookings, POS, inventory, logistics, CRM, lockers, payments, documents or custom modules.",
+          href: "/sistemas-de-inventario-panama",
+          label: "View inventory"
+        },
+        {
+          title: "Phased project",
+          description: "Start with a functional first version and add modules based on real team usage.",
+          href: "/software-para-logistica-panama",
+          label: "View logistics"
+        }
+      ]
+    },
+    "cuanto-cuesta-una-pagina-web-en-panama": {
+      eyebrow: "Reference pricing",
+      title: "Quick comparison of website prices in Panama",
+      description:
+        "The goal is not to sell a generic package, but to help you understand which type of project fits your need before requesting a quote.",
+      items: [
+        {
+          title: "Landing page from $149",
+          description: "For one offer, one campaign, one service or a page focused on WhatsApp.",
+          href: "/landing-pages-panama",
+          label: "View landing"
+        },
+        {
+          title: "Corporate website from $299",
+          description: "For companies that need sections, formal presence, services, trust and contact.",
+          href: "/paginas-web-corporativas-panama",
+          label: "View corporate"
+        },
+        {
+          title: "Ecommerce from $499",
+          description: "For catalogs, products, cart, WhatsApp or checkout flow depending on scope.",
+          href: "/tiendas-online-panama",
+          label: "View ecommerce"
+        }
+      ]
+    },
+    "landing-pages-panama": {
+      eyebrow: "Built to convert traffic",
+      title: "What a landing page needs to capture leads",
+      description:
+        "A landing page works better when the ad, promise and contact button all speak about the same service without distracting the visitor.",
+      items: [
+        {
+          title: "Clear offer",
+          description: "One main message, concrete benefits and no unnecessary sections."
+        },
+        {
+          title: "Visible CTA",
+          description: "WhatsApp, form or call with a simple action so users do not overthink the next step.",
+          href: "/google-ads-panama",
+          label: "View Google Ads"
+        },
+        {
+          title: "Fast trust",
+          description: "FAQs, process, examples, starting price and signals that reduce doubts before the user writes.",
+          href: "/cuanto-cuesta-una-pagina-web-en-panama",
+          label: "View pricing"
+        }
+      ]
+    },
+    "paginas-web-corporativas-panama": {
+      eyebrow: "For companies",
+      title: "How a corporate website differs from a simple landing page",
+      description:
+        "A corporate website does not only present an offer: it organizes the company, its services, proof and contact channels in a more complete structure.",
+      items: [
+        {
+          title: "More structure",
+          description: "Services, company, process, team, projects, FAQs, contact and internal pages when SEO requires it."
+        },
+        {
+          title: "More trust",
+          description: "Ideal for B2B companies, law firms, clinics, real estate, logistics and professional services.",
+          href: "/diseno-web-para-inmobiliarias-panama",
+          label: "View real estate"
+        },
+        {
+          title: "More growth",
+          description: "The structure can later grow with SEO pages, portfolio, blog, forms or internal software.",
+          href: "/software-a-medida-panama",
+          label: "View software"
+        }
+      ]
+    }
+  }
+};
+
 
 const priceFromBySlug: Record<string, string> = {
   "landing-pages-panama": "$149",
@@ -91,6 +301,7 @@ const serviceEventBySlug: Record<string, string> = {
   "agencia-de-diseno-web-panama": "click_servicio_web_corporativa",
   "seo-para-paginas-web-panama": "click_servicio_software",
   "mantenimiento-web-panama": "click_servicio_software",
+  "cuanto-cuesta-una-pagina-web-en-panama": "click_servicio_web_corporativa",
   "diseno-web-para-clinicas-panama": "click_servicio_web_corporativa",
   "diseno-web-para-inmobiliarias-panama": "click_servicio_web_corporativa",
   "software-pos-panama": "click_servicio_software",
@@ -110,6 +321,8 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
   const page = getServicePage(slug, activeLocale) || getServicePageOrThrow(slug, "es");
   const copy = uiCopy[activeLocale];
   const priceFrom = page.priceFrom || priceFromBySlug[slug];
+  const priceNote = page.priceNote || copy.priceNote;
+  const quickWinPanel = quickWinPanels[activeLocale]?.[slug] || quickWinPanels.es?.[slug];
   const serviceEvent = serviceEventBySlug[slug] || "click_servicio_software";
   const serviceHubLabel = activeLocale === "en" ? "Services" : "Servicios";
   const relatedLinks = [
@@ -147,7 +360,7 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                     {copy.priceLabel}
                   </span>
                   <span className="mt-1 text-2xl font-bold text-ink-900 sm:mt-0">{priceFrom}</span>
-                  <span className="text-sm leading-6 text-ink-500">{copy.priceNote}</span>
+                  <span className="text-sm leading-6 text-ink-500">{priceNote}</span>
                 </div>
               ) : null}
 
@@ -207,7 +420,7 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
                     {priceFrom ? copy.priceLabel : copy.results}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-white/90">
-                    {priceFrom ? `${priceFrom} · ${copy.priceNote}` : copy.resultsText}
+                    {priceFrom ? `${priceFrom} · ${priceNote}` : copy.resultsText}
                   </p>
                 </div>
               </div>
@@ -215,6 +428,47 @@ export function ServiceLandingPageContent({ slug }: { slug: string }) {
           </div>
         </Container>
       </section>
+
+      {quickWinPanel ? (
+        <section className="-mt-4 pb-6 sm:-mt-6 sm:pb-8">
+          <Container>
+            <div className="overflow-hidden rounded-[34px] border border-brand-100 bg-white p-5 shadow-elevated sm:p-6 lg:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
+                    {quickWinPanel.eyebrow}
+                  </p>
+                  <h2 className="mt-3 text-balance text-2xl font-semibold leading-tight text-ink-900 sm:text-3xl">
+                    {quickWinPanel.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-ink-600 sm:text-base">
+                    {quickWinPanel.description}
+                  </p>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-3">
+                  {quickWinPanel.items.map((item) => (
+                    <div key={item.title} className="rounded-[26px] border border-slate-200 bg-slate-50/70 p-5">
+                      <CheckCircle2 className="h-5 w-5 text-accent-600" />
+                      <h3 className="mt-4 text-base font-semibold leading-snug text-ink-900">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-ink-600">{item.description}</p>
+                      {item.href && item.label ? (
+                        <Link
+                          href={item.href}
+                          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-800"
+                        >
+                          {item.label}
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="py-16 sm:py-20">
         <Container>

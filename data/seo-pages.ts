@@ -150,38 +150,38 @@ const servicePagesEs: ServicePage[] = [
   {
     slug: "landing-pages-panama",
     eyebrow: "Landing pages en Panamá",
-    h1: "Landing pages en Panamá para captar clientes por WhatsApp, formularios y campañas",
+    h1: "Landing pages en Panamá desde $149 para campañas, WhatsApp y formularios",
     intro:
-      "Diseñamos landing pages enfocadas en una oferta clara, un llamado a la acción visible y una ruta directa para que el usuario escriba, cotice o deje sus datos.",
-    metaTitle: "Landing pages Panamá | Campañas y WhatsApp | LulabTech",
+      "Diseñamos landing pages desde $149 para campañas de Meta Ads, Google Ads, redes sociales y negocios que venden por WhatsApp. La página queda enfocada en una oferta clara, un mensaje directo y una ruta simple para que el usuario escriba, cotice o deje sus datos.",
+    metaTitle: "Landing pages Panamá | Desde $149 | LulabTech",
     metaDescription:
-      "Landing pages en Panamá para captar clientes desde Meta Ads, Google Ads, redes y WhatsApp con diseño responsive, mensaje claro y CTA directo.",
+      "Landing pages en Panamá desde $149 para Meta Ads, Google Ads y WhatsApp. Diseño responsive, mensaje claro, formulario y CTA para captar clientes.",
     keywords: [
       "landing pages Panamá",
       "landing page para WhatsApp Panamá",
       "landing page para Google Ads Panamá",
       "página one page Panamá"
     ],
-    primaryCta: "Quiero una landing page",
+    primaryCta: "Cotizar landing desde $149",
     secondaryCta: "Ver proyectos",
-    heroPanelTitle: "Una página enfocada en una acción: que el cliente te contacte.",
+    heroPanelTitle: "Una página de conversión enfocada en que el cliente te contacte.",
     heroPanelDescription:
-      "Construimos una ruta directa entre el anuncio, la oferta y el WhatsApp o formulario para reducir fricción y captar oportunidades reales.",
+      "Conectamos el anuncio, la oferta, la prueba de confianza y el botón de WhatsApp o formulario para que la landing no sea solo bonita, sino útil para vender.",
     heroBullets: [
-      "Una página enfocada en una oferta o campaña específica",
+      "Landing page desde $149 para una oferta, servicio o campaña específica",
       "CTA claro hacia WhatsApp, formulario o llamada",
-      "Diseño rápido, responsive y preparado para campañas digitales"
+      "Diseño responsive preparado para Meta Ads, Google Ads y tráfico orgánico"
     ],
-    benefitsTitle: "Una landing page debe explicar, convencer y mover a la acción",
+    benefitsTitle: "Una landing page debe explicar, convencer y mover a la acción sin distraer",
     benefitsDescription:
       "La landing elimina distracciones y concentra la atención en una oferta, servicio o campaña para aumentar la probabilidad de contacto.",
     benefits: [
-      "Hero fuerte con propuesta de valor clara",
+      "Hero fuerte con propuesta de valor, precio desde y CTA visible",
       "Beneficios y servicios explicados sin saturar",
       "Formulario o WhatsApp visible durante el recorrido",
       "Sección de confianza, preguntas frecuentes y CTA final",
-      "Base para medir campañas de Meta Ads o Google Ads",
-      "Experiencia móvil pensada para usuarios que llegan desde anuncios"
+      "Base para medir campañas de Meta Ads, Google Ads y clics a WhatsApp",
+      "Experiencia móvil pensada para usuarios que llegan desde anuncios, Instagram o búsquedas"
     ],
     processTitle: "Cómo trabajamos una landing page",
     process: [
@@ -244,44 +244,48 @@ const servicePagesEs: ServicePage[] = [
       }
     ],
     relatedLinks: [
-      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Cuánto cuesta una página web", href: "/cuanto-cuesta-una-pagina-web-en-panama" },
       { label: "Google Ads en Panamá", href: "/google-ads-panama" },
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
       { label: "Ver proyectos", href: "/portafolio" }
-    ]
+    ],
+    priceFrom: "$149",
+    priceNote: "Ideal para campañas, servicios puntuales y negocios que quieren convertir tráfico en consultas por WhatsApp o formulario."
   },
   {
     slug: "paginas-web-corporativas-panama",
     eyebrow: "Webs corporativas",
-    h1: "Páginas web corporativas en Panamá",
+    h1: "Páginas web corporativas en Panamá desde $299 para empresas serias",
     intro:
-      "Construimos páginas web corporativas para empresas que necesitan una presencia formal, clara y confiable, con secciones para servicios, equipo, experiencia, proyectos y contacto.",
-    metaTitle: "Páginas web corporativas Panamá | Empresas | LulabTech",
+      "Construimos páginas web corporativas desde $299 para empresas en Panamá que necesitan una presencia formal, clara y confiable, con secciones para servicios, equipo, experiencia, proyectos, formularios y contacto directo.",
+    metaTitle: "Páginas web corporativas Panamá | Desde $299",
     metaDescription:
-      "Páginas web corporativas en Panamá para empresas que quieren presentar servicios, respaldo, equipo, proyectos y contacto con una imagen profesional.",
+      "Páginas web corporativas en Panamá desde $299 para empresas que necesitan imagen profesional, servicios claros, SEO base, WhatsApp y formulario.",
     keywords: [
       "páginas web corporativas Panamá",
       "web corporativa Panamá",
       "sitio web empresarial Panamá",
       "diseño web corporativo Panamá"
     ],
-    primaryCta: "Crear web para mi empresa",
+    primaryCta: "Cotizar web corporativa",
     secondaryCta: "Ver proyectos",
-    heroPanelTitle: "Una web corporativa que ordena tu empresa y transmite confianza.",
+    heroPanelTitle: "Una web corporativa que ordena tu empresa, transmite confianza y facilita cotizaciones.",
     heroPanelDescription:
-      "Presentamos servicios, respaldo, equipo, experiencia y contacto en una estructura profesional que se entiende rápido.",
+      "Presentamos servicios, respaldo, equipo, experiencia, proyectos y contacto en una estructura profesional que se entiende rápido en móvil y escritorio.",
     heroBullets: [
-      "Estructura formal para presentar empresa, servicios y respaldo",
+      "Estructura formal para presentar empresa, servicios, respaldo y diferenciadores",
       "Diseño premium, limpio y alineado con la identidad de marca",
-      "Contacto claro por WhatsApp, formulario, correo y redes"
+      "Contacto claro por WhatsApp, formulario, correo y redes para recibir cotizaciones"
     ],
     benefitsTitle: "Una web corporativa debe transmitir seriedad desde el primer vistazo",
     benefitsDescription:
       "Para muchas empresas, la web es el primer punto de validación. Debe verse profesional, cargar bien y explicar la propuesta sin confundir.",
     benefits: [
-      "Secciones para servicios, empresa, beneficios, proyectos y contacto",
+      "Secciones para servicios, empresa, beneficios, proyectos, FAQ y contacto",
       "Diseño adaptable para ejecutivos, clientes y visitantes móviles",
       "Textos orientados a credibilidad y claridad comercial",
-      "Estructura preparada para SEO básico y futuras páginas internas",
+      "Estructura preparada para SEO básico, sitemap, enlaces internos y futuras páginas por servicio",
       "Integración con WhatsApp, correo y formularios",
       "Base visual consistente para empresas que quieren verse más serias"
     ],
@@ -347,9 +351,14 @@ const servicePagesEs: ServicePage[] = [
     ],
     relatedLinks: [
       { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Cuánto cuesta una página web", href: "/cuanto-cuesta-una-pagina-web-en-panama" },
+      { label: "Landing pages en Panamá", href: "/landing-pages-panama" },
+      { label: "Diseño web para inmobiliarias", href: "/diseno-web-para-inmobiliarias-panama" },
       { label: "Software a medida", href: "/software-a-medida-panama" },
       { label: "Ver proyectos", href: "/portafolio" }
-    ]
+    ],
+    priceFrom: "$299",
+    priceNote: "Para empresas que necesitan una web formal con secciones, contacto, base SEO y estructura preparada para crecer."
   },
   {
     slug: "tiendas-online-panama",
@@ -456,37 +465,38 @@ const servicePagesEs: ServicePage[] = [
   {
     slug: "software-a-medida-panama",
     eyebrow: "Software a medida en Panamá",
-    h1: "Software a medida en Panamá para automatizar procesos de tu empresa",
+    h1: "Software a medida en Panamá desde $899 para empresas que necesitan ordenar procesos",
     intro:
-      "Desarrollamos sistemas digitales para empresas que ya no pueden manejar su operación solo con Excel, WhatsApp o procesos manuales. Creamos paneles, módulos, reservas, inventarios, reportes y flujos personalizados.",
-    metaTitle: "Software a medida Panamá | Sistemas empresa | LulabTech",
+      "Desarrollamos software a medida desde $899 para empresas en Panamá que ya no pueden manejar su operación solo con Excel, WhatsApp o procesos manuales. Creamos paneles, usuarios, módulos, reservas, inventarios, CRM, reportes y flujos internos personalizados.",
+    metaTitle: "Software a medida Panamá | Sistemas desde $899",
     metaDescription:
-      "Software a medida en Panamá para empresas que necesitan paneles, usuarios, reportes, reservas, inventario, CRM o flujos internos personalizados.",
+      "Desarrollo de software a medida en Panamá desde $899: paneles, usuarios, inventario, reservas, CRM, reportes y sistemas internos para empresas.",
     keywords: [
       "software a medida Panamá",
       "sistemas web Panamá",
       "software para empresas Panamá",
+      "desarrollo de software Panamá",
       "automatización de procesos Panamá"
     ],
-    primaryCta: "Cotizar sistema a medida",
+    primaryCta: "Cotizar software desde $899",
     secondaryCta: "Ver proyectos",
-    heroPanelTitle: "Un sistema diseñado alrededor del flujo real de tu operación.",
+    heroPanelTitle: "Un sistema diseñado alrededor del flujo real de tu operación, no una plantilla genérica.",
     heroPanelDescription:
-      "Creamos paneles, módulos, usuarios, reportes y bases de datos para ordenar procesos que ya no deberían vivir solo en Excel o WhatsApp.",
+      "Creamos paneles, módulos, usuarios, reportes y bases de datos para ordenar procesos que ya no deberían vivir solo en Excel, grupos de WhatsApp o archivos sueltos.",
     heroBullets: [
-      "Paneles administrativos, usuarios, permisos y reportes",
+      "Paneles administrativos, usuarios, permisos, estados y reportes",
       "Bases de datos para ordenar información y reducir trabajo manual",
-      "Módulos personalizados según el flujo real de tu empresa"
+      "Módulos personalizados para reservas, inventario, logística, CRM, POS o control interno"
     ],
     benefitsTitle: "Cuando Excel y WhatsApp ya no alcanzan, necesitas un sistema",
     benefitsDescription:
       "Un software a medida permite controlar procesos, centralizar datos y reducir errores operativos con una herramienta diseñada para tu forma de trabajar.",
     benefits: [
-      "Módulos para clientes, productos, reservas, pagos, estados o reportes",
+      "Módulos para clientes, productos, reservas, pagos, estados, documentos o reportes",
       "Usuarios con roles y permisos según el equipo",
       "Panel administrativo para controlar la operación",
       "Base de datos estructurada para consultar información rápido",
-      "Exportaciones, filtros, estados y seguimiento",
+      "Exportaciones, filtros, búsquedas, estados, seguimiento y trazabilidad",
       "Diseño responsive para uso desde computadoras o móviles según el caso"
     ],
     processTitle: "Proceso para crear software a medida",
@@ -555,10 +565,16 @@ const servicePagesEs: ServicePage[] = [
       }
     ],
     relatedLinks: [
+      { label: "Software POS", href: "/software-pos-panama" },
+      { label: "Sistemas de inventario", href: "/sistemas-de-inventario-panama" },
+      { label: "Software para logística", href: "/software-para-logistica-panama" },
+      { label: "Software para restaurantes", href: "/software-para-restaurantes-panama" },
+      { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
       { label: "Páginas web corporativas", href: "/paginas-web-corporativas-panama" },
-      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
       { label: "Ver proyectos", href: "/portafolio" }
-    ]
+    ],
+    priceFrom: "$899",
+    priceNote: "El precio depende de módulos, usuarios, reportes, integraciones, base de datos y nivel de seguridad requerido."
   },
   {
     slug: "google-ads-panama",
@@ -1075,27 +1091,28 @@ const servicePagesEs: ServicePage[] = [
   {
     slug: "cuanto-cuesta-una-pagina-web-en-panama",
     eyebrow: "Precios de páginas web en Panamá",
-    h1: "Cuánto cuesta una página web en Panamá y qué incluye cada tipo de proyecto",
+    h1: "Cuánto cuesta una página web en Panamá en 2026: precios desde $149",
     intro:
-      "El precio de una página web en Panamá depende del alcance real: cantidad de secciones, páginas internas, contenido, panel administrativo, integraciones, pasarela de pago, automatizaciones, SEO y funcionalidades especiales.",
-    metaTitle: "Cuánto cuesta una página web en Panamá | LulabTech",
+      "El precio de una página web en Panamá depende del alcance real: una landing page puede iniciar desde $149, una web corporativa desde $299, un ecommerce desde $499 y un software a medida desde $899. La diferencia está en la cantidad de secciones, contenido, panel administrativo, integraciones, pasarela de pago, automatizaciones, SEO y funcionalidades especiales.",
+    metaTitle: "Cuánto cuesta una página web en Panamá 2026 | Desde $149",
     metaDescription:
-      "Conoce precios desde para landing pages, webs corporativas, ecommerce y software en Panamá. Compara opciones y cotiza según tu alcance real.",
+      "Precios de páginas web en Panamá 2026: landing desde $149, web corporativa desde $299, ecommerce desde $499 y software desde $899.",
     keywords: [
       "cuánto cuesta una página web en Panamá",
       "precio página web Panamá",
+      "precios de páginas web en Panamá 2026",
       "landing page desde 149 Panamá",
       "web corporativa desde 299 Panamá"
     ],
     primaryCta: "Pedir cotización exacta",
     secondaryCta: "Ver proyectos",
-    heroPanelTitle: "Precios desde, no paquetes cerrados para todos.",
+    heroPanelTitle: "Precios desde claros para comparar antes de cotizar.",
     heroPanelDescription:
-      "Un proyecto simple puede resolverse rápido; uno con panel, integraciones o lógica interna requiere más desarrollo y validación.",
+      "Una landing simple puede resolverse rápido; una web con páginas internas, panel, ecommerce, reservas o lógica interna requiere más desarrollo, contenido y validación.",
     heroBullets: [
       "Landing page desde $149",
       "Web corporativa desde $299 y ecommerce desde $499",
-      "Software a medida, reservas, restaurantes o casilleros desde $899"
+      "Software a medida, reservas, POS, inventario o casilleros desde $899"
     ],
     benefitsTitle: "Rangos de precio claros para tomar una mejor decisión",
     benefitsDescription:
@@ -1103,8 +1120,8 @@ const servicePagesEs: ServicePage[] = [
     benefits: [
       "Landing page desde $149 para una oferta o servicio específico",
       "Web corporativa desde $299 para empresas con más estructura",
-      "Ecommerce desde $499 para catálogo, productos y flujo de compra o WhatsApp",
-      "Software a medida desde $899 para paneles, reservas, inventarios o procesos internos",
+      "Ecommerce desde $499 para catálogo, productos, carrito, flujo de compra o WhatsApp",
+      "Software a medida desde $899 para paneles, usuarios, reservas, POS, inventarios, CRM o procesos internos",
       "Dominio y correo gratis por 1 año según promoción vigente",
       "Renovación anual desde $24.99 cuando aplique al modelo comercial de dominio/correo"
     ],
@@ -1171,8 +1188,12 @@ const servicePagesEs: ServicePage[] = [
     relatedLinks: [
       { label: "Landing pages desde $149", href: "/landing-pages-panama" },
       { label: "Web corporativa desde $299", href: "/paginas-web-corporativas-panama" },
-      { label: "Software a medida desde $899", href: "/software-a-medida-panama" }
-    ]
+      { label: "Tiendas online desde $499", href: "/tiendas-online-panama" },
+      { label: "Software a medida desde $899", href: "/software-a-medida-panama" },
+      { label: "Ver proyectos", href: "/portafolio" }
+    ],
+    priceFrom: "$149",
+    priceNote: "La opción correcta depende de si necesitas captar leads, presentar una empresa, vender productos o automatizar procesos."
   },
 
   {

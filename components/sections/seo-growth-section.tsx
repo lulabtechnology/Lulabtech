@@ -10,10 +10,11 @@ const clusters = [
     description: "Opciones comerciales para quienes buscan presencia digital, desarrollo y posicionamiento inicial en Panamá.",
     icon: Globe2,
     links: [
-      { label: "Desarrollo web en Panamá", href: "/desarrollo-web-panama" },
-      { label: "Agencia de diseño web", href: "/agencia-de-diseno-web-panama" },
-      { label: "SEO para páginas web", href: "/seo-para-paginas-web-panama" },
-      { label: "Mantenimiento web", href: "/mantenimiento-web-panama" }
+      { label: "Landing pages desde $149", href: "/landing-pages-panama" },
+      { label: "Páginas corporativas desde $299", href: "/paginas-web-corporativas-panama" },
+      { label: "Cuánto cuesta una página web", href: "/cuanto-cuesta-una-pagina-web-en-panama" },
+      { label: "Diseño web en Panamá", href: "/diseno-web-panama" },
+      { label: "Google Ads en Panamá", href: "/google-ads-panama" }
     ]
   },
   {
@@ -32,8 +33,10 @@ const clusters = [
     description: "Soluciones para negocios que necesitan paneles, reservas, caja, logística, reportes o procesos internos.",
     icon: Workflow,
     links: [
-      { label: "Software a medida", href: "/software-a-medida-panama" },
+      { label: "Software a medida desde $899", href: "/software-a-medida-panama" },
       { label: "Software POS", href: "/software-pos-panama" },
+      { label: "Sistemas de inventario", href: "/sistemas-de-inventario-panama" },
+      { label: "Software para logística", href: "/software-para-logistica-panama" },
       { label: "Sistemas de reservas", href: "/sistemas-de-reservas-panama" },
       { label: "Automatizaciones", href: "/automatizaciones-para-empresas-panama" }
     ]
