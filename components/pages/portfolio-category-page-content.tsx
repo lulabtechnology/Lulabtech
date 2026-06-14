@@ -100,13 +100,17 @@ export function PortfolioCategoryPageContent({ category }: { category: string })
             </div>
 
             <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-[#07142D] p-5 shadow-elevated">
-              <img src={section.coverSrc} alt={section.coverAlt} className="h-[430px] w-full rounded-[26px] object-cover" loading="eager" decoding="async" />
-              <div className="pointer-events-none absolute inset-5 rounded-[26px] bg-gradient-to-t from-[#020817]/88 via-[#020817]/20 to-transparent" />
-              <div className="absolute inset-x-10 bottom-10 rounded-[24px] border border-white/10 bg-black/45 p-5 text-white backdrop-blur-sm">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-100">{copy.priceLabel}</p>
-                <div className="mt-3 flex items-end gap-2">
-                  <span className="text-sm font-semibold text-white/75">{copy.fromLabel}</span>
-                  <span className="text-4xl font-semibold leading-none text-white">{section.price}</span>
+              <div className="relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[26px] border border-white/10 bg-gradient-to-br from-[#07142D] via-[#0D2A61] to-brand-700 p-8 text-white sm:min-h-[360px] lg:min-h-[430px]">
+                <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-300/25 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-accent-200/20 blur-3xl" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent_45%)]" />
+
+                <div className="relative max-w-sm rounded-[26px] border border-white/12 bg-black/30 p-6 backdrop-blur-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-100">{copy.priceLabel}</p>
+                  <div className="mt-4 flex items-end gap-3">
+                    <span className="pb-1 text-sm font-semibold text-white/75">{copy.fromLabel}</span>
+                    <span className="text-5xl font-semibold leading-none text-white sm:text-6xl">{section.price}</span>
+                  </div>
                 </div>
               </div>
             </div>
