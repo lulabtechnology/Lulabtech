@@ -128,7 +128,7 @@ const portfolioSectionCopy = {
       description: "Páginas diseñadas para captar clientes, presentar servicios y convertir visitas en mensajes, formularios o cotizaciones.",
       cta: "Ver landings de venta",
       quoteText: "Hola,%20quiero%20una%20landing%20page%20para%20vender%20o%20captar%20clientes",
-      coverSrc: "/portfolio-previews/rep-lawyer.webp",
+      coverSrc: "/portfolio-category-covers/landing-pages-que-venden.webp",
       coverAlt: "Ejemplo de landing page de venta creada por LulabTech",
       slugs: [
         "rep-lawyer",
@@ -159,7 +159,7 @@ const portfolioSectionCopy = {
       description: "Sitios con funciones adicionales como formularios avanzados, reservas, citas, accesos o flujos personalizados.",
       cta: "Ver reservas y plataformas",
       quoteText: "Hola,%20quiero%20una%20landing%20con%20reservas,%20citas%20o%20plataforma%20web",
-      coverSrc: "/portfolio-previews/bb-logistic.webp",
+      coverSrc: "/portfolio-category-covers/landing-reservas-citas-plataformas.webp",
       coverAlt: "Ejemplo de landing con plataforma, reservas o funciones avanzadas creada por LulabTech",
       slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
     },
@@ -170,7 +170,7 @@ const portfolioSectionCopy = {
       description: "Sitios profesionales para presentar empresas, marcas, instituciones o proyectos de forma clara y confiable.",
       cta: "Ver webs informativas",
       quoteText: "Hola,%20quiero%20una%20web%20corporativa%20informativa%20para%20mi%20empresa",
-      coverSrc: "/portfolio-previews/solmas-legal.webp",
+      coverSrc: "/portfolio-category-covers/webs-corporativas-informativas.webp",
       coverAlt: "Ejemplo de web corporativa informativa creada por LulabTech",
       slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
     },
@@ -181,7 +181,7 @@ const portfolioSectionCopy = {
       description: "Webs enfocadas en explicar servicios, mostrar autoridad y facilitar el contacto con clientes potenciales.",
       cta: "Ver webs de servicios",
       quoteText: "Hola,%20quiero%20una%20web%20corporativa%20para%20mostrar%20mis%20servicios",
-      coverSrc: "/portfolio-previews/isasa-panama.webp",
+      coverSrc: "/portfolio-category-covers/webs-corporativas-servicios.webp",
       coverAlt: "Ejemplo de web corporativa de servicios creada por LulabTech",
       slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
     },
@@ -192,7 +192,7 @@ const portfolioSectionCopy = {
       description: "Sistemas, portales y plataformas creadas para automatizar procesos, gestionar información o mejorar operaciones internas.",
       cta: "Ver software empresarial",
       quoteText: "Hola,%20quiero%20un%20software%20a%20medida%20para%20mi%20empresa",
-      coverSrc: "/portfolio-previews/nova-track-portal.webp",
+      coverSrc: "/portfolio-category-covers/software-a-medida-empresas.webp",
       coverAlt: "Ejemplo de software a medida para empresas creado por LulabTech",
       slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
     }
@@ -205,7 +205,7 @@ const portfolioSectionCopy = {
       description: "Pages designed to capture leads, present services and turn visits into messages, forms or quote requests.",
       cta: "View sales landings",
       quoteText: "Hello,%20I%20want%20a%20landing%20page%20to%20sell%20or%20capture%20leads",
-      coverSrc: "/portfolio-previews/rep-lawyer.webp",
+      coverSrc: "/portfolio-category-covers/landing-pages-que-venden.webp",
       coverAlt: "Sales landing page example created by LulabTech",
       slugs: [
         "rep-lawyer",
@@ -236,7 +236,7 @@ const portfolioSectionCopy = {
       description: "Sites with additional functions such as advanced forms, bookings, appointments, access areas or custom flows.",
       cta: "View bookings and platforms",
       quoteText: "Hello,%20I%20want%20a%20landing%20page%20with%20bookings,%20appointments%20or%20a%20web%20platform",
-      coverSrc: "/portfolio-previews/bb-logistic.webp",
+      coverSrc: "/portfolio-category-covers/landing-reservas-citas-plataformas.webp",
       coverAlt: "Booking, platform or advanced web function example created by LulabTech",
       slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
     },
@@ -247,7 +247,7 @@ const portfolioSectionCopy = {
       description: "Professional websites to present companies, brands, institutions or projects in a clear and trustworthy way.",
       cta: "View informative websites",
       quoteText: "Hello,%20I%20want%20an%20informative%20corporate%20website%20for%20my%20company",
-      coverSrc: "/portfolio-previews/solmas-legal.webp",
+      coverSrc: "/portfolio-category-covers/webs-corporativas-informativas.webp",
       coverAlt: "Informative corporate website example created by LulabTech",
       slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
     },
@@ -258,7 +258,7 @@ const portfolioSectionCopy = {
       description: "Websites focused on explaining services, showing authority and making it easier for potential clients to get in touch.",
       cta: "View service websites",
       quoteText: "Hello,%20I%20want%20a%20corporate%20website%20to%20show%20my%20services",
-      coverSrc: "/portfolio-previews/isasa-panama.webp",
+      coverSrc: "/portfolio-category-covers/webs-corporativas-servicios.webp",
       coverAlt: "Corporate service website example created by LulabTech",
       slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
     },
@@ -269,7 +269,7 @@ const portfolioSectionCopy = {
       description: "Systems, portals and platforms created to automate processes, manage information or improve internal operations.",
       cta: "View business software",
       quoteText: "Hello,%20I%20want%20custom%20software%20for%20my%20company",
-      coverSrc: "/portfolio-previews/nova-track-portal.webp",
+      coverSrc: "/portfolio-category-covers/software-a-medida-empresas.webp",
       coverAlt: "Custom software for companies example created by LulabTech",
       slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
     }
@@ -526,7 +526,7 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
         alt={section.coverAlt}
         className={cn(
           "absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100",
-          section.coverPosition ?? "object-top",
+          section.coverPosition ?? "object-center",
           isActive ? "scale-105 grayscale-0 opacity-100" : "opacity-[0.72]"
         )}
         loading="lazy"
@@ -540,12 +540,11 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
           {section.badge}
         </span>
 
-        <div className="rounded-[24px] border border-white/10 bg-black/35 p-4 backdrop-blur-[2px] transition duration-300 group-hover:bg-black/25">
-          <h3 className="text-[1.35rem] font-semibold leading-tight text-white sm:text-2xl lg:text-[1.25rem] xl:text-[1.35rem]">{section.title}</h3>
-          <p className="mt-3 text-sm leading-6 text-white/86">{section.description}</p>
-          <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-ink-900 transition group-hover:bg-brand-50">
-            {section.cta || viewExamplesLabel}
-            <ArrowUpRight className="h-4 w-4" />
+        <div className="flex min-h-[205px] w-full flex-col justify-between rounded-[24px] border border-white/10 bg-black/40 p-4 backdrop-blur-[2px] transition duration-300 group-hover:bg-black/28 lg:min-h-[230px] xl:min-h-[210px]">
+          <h3 className="text-[1.45rem] font-semibold leading-[1.12] text-white sm:text-2xl lg:text-[1.18rem] xl:text-[1.36rem]">{section.title}</h3>
+          <span className="mt-5 inline-flex min-h-[54px] w-full items-center justify-between gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-bold leading-tight text-ink-900 transition group-hover:bg-brand-50 lg:text-[0.8rem] xl:text-sm">
+            <span>{section.cta || viewExamplesLabel}</span>
+            <ArrowUpRight className="h-4 w-4 shrink-0" />
           </span>
         </div>
       </div>
