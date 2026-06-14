@@ -148,7 +148,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Moda y accesorios",
     description: "Landing visual para marca de accesorios, colección de producto y venta por WhatsApp con una estética cuidada.",
     services: ["Landing page", "Marca", "Venta por WhatsApp"],
-    screenshotSrc: null,
+    screenshotSrc: "/portfolio-previews/veranieras-preview.webp",
     logoSrc: "/clients/veranieras-flor.webp",
     featured: true
   },
