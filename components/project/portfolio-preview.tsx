@@ -30,6 +30,10 @@ const themeMap: Record<PortfolioProject["type"], string> = {
   software: "from-[#071E20] via-[#0B5A5A] to-[#34A89F]"
 };
 
+const compactPreviewOverrides: Partial<Record<PortfolioProject["slug"], string>> = {
+  "nova-track-portal": "/portfolio-previews/nova-track-portal-home.png"
+};
+
 function InitialsFallback({ project, domain, compact }: { project: PortfolioProject; domain: string; compact?: boolean }) {
   const initials = project.name
     .split(/\s+/)
@@ -56,15 +60,18 @@ function InitialsFallback({ project, domain, compact }: { project: PortfolioProj
 export function PortfolioPreview({ project, compact = false }: PortfolioPreviewProps) {
   const [hasError, setHasError] = useState(false);
   const domain = useMemo(() => getDomain(project.url), [project.url]);
-  const previewUrl = useMemo(
-    () => (project.screenshotSrc === null ? null : project.screenshotSrc ?? getScreenshotUrl(project.url)),
-    [project.screenshotSrc, project.url]
-  );
+  const previewUrl = useMemo(() => {
+    if (compact && compactPreviewOverrides[project.slug]) {
+      return compactPreviewOverrides[project.slug];
+    }
+
+    return project.screenshotSrc === null ? null : project.screenshotSrc ?? getScreenshotUrl(project.url);
+  }, [compact, project.slug, project.screenshotSrc, project.url]);
 
   const previewClassName = compact
     ? project.slug === "nova-track-portal"
-      ? "h-full w-full object-contain object-center bg-[#f3f7fc] transition duration-700 group-hover:scale-[1.012]"
-      : "h-full w-full object-contain object-top bg-[#eef3f8] transition duration-700 group-hover:scale-[1.012]"
+      ? "h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]"
+      : "h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.02]"
     : "h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]";
 
   const logoShellClassName = compact
