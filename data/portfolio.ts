@@ -161,7 +161,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Energía solar",
     description: "Página comercial para comunicar soluciones solares, ventajas del servicio y contacto inmediato con el cliente.",
     services: ["Landing page", "Video / visual", "Generación de leads"],
-    screenshotSrc: "/portfolio-previews/veranieras.webp",
+    screenshotSrc: "/portfolio-previews/solarled-card-preview.webp",
     logoSrc: "/clients/solarled.webp",
     featured: true
   },

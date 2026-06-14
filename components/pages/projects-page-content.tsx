@@ -124,7 +124,8 @@ function getScrollDistance(track: HTMLDivElement | null) {
 function ProjectShowcaseImage({ project }: { project: PortfolioProject }) {
   const [useLocalFallback, setUseLocalFallback] = useState(false);
   const localFallback = project.screenshotSrc === null ? undefined : project.screenshotSrc;
-  const src = useLocalFallback && localFallback ? localFallback : getShowcaseScreenshotUrl(project.url);
+  const forceLocalPreview = project.slug === "solarled" && Boolean(localFallback);
+  const src = forceLocalPreview && localFallback ? localFallback : useLocalFallback && localFallback ? localFallback : getShowcaseScreenshotUrl(project.url);
 
   return (
     <div className="relative h-[430px] overflow-hidden bg-slate-100">
@@ -133,13 +134,13 @@ function ProjectShowcaseImage({ project }: { project: PortfolioProject }) {
         alt={`Vista previa del proyecto ${project.name}`}
         className={cn(
           "h-full w-full object-top transition duration-700 group-hover:scale-[1.02]",
-          useLocalFallback ? "object-contain" : "object-cover"
+          forceLocalPreview ? "object-cover" : useLocalFallback ? "object-contain" : "object-cover"
         )}
         loading="lazy"
         decoding="async"
         referrerPolicy="no-referrer"
         onError={() => {
-          if (localFallback && !useLocalFallback) {
+          if (!forceLocalPreview && localFallback && !useLocalFallback) {
             setUseLocalFallback(true);
           }
         }}
