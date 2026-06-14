@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: "Portafolio diseño web Panamá | Proyectos LulabTech"
   },
   description:
-    "Portafolio de diseño web en Panamá con landing pages, webs corporativas, ecommerce y software a medida creados por LulabTech para negocios reales.",
+    "Portafolio de diseño web en Panamá con landing pages, webs corporativas y software a medida creados por LulabTech para negocios reales.",
   keywords: [
     "portafolio LulabTech",
     "trabajos realizados páginas web Panamá",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://www.lulabtech.com/portafolio",
     title: "Portafolio diseño web Panamá | Proyectos LulabTech",
     description:
-      "Mira proyectos reales de LulabTech: landing pages, webs corporativas, ecommerce y software a medida desarrollados para negocios en Panamá.",
+      "Mira proyectos reales de LulabTech: landing pages, webs corporativas y software a medida desarrollados para negocios en Panamá.",
     siteName: "LulabTech",
     locale: "es_PA",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portafolio diseño web Panamá | Proyectos LulabTech",
     description:
-      "Proyectos de diseño web, landing pages, webs corporativas, ecommerce y software a medida realizados por LulabTech.",
+      "Proyectos de diseño web, landing pages, webs corporativas y software a medida realizados por LulabTech.",
     images: ["/og/og-cover.png?v=10"]
   }
 };

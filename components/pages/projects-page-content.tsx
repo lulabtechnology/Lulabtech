@@ -39,7 +39,7 @@ type PortfolioSectionId =
   | "reservas-sistemas"
   | "corporativa-informativa"
   | "corporativa-servicios"
-  | "ecommerce-catalogos";
+  | "software-medida";
 
 type PortfolioSection = {
   id: PortfolioSectionId;
@@ -59,7 +59,7 @@ const copy = {
     eyebrow: "Portafolio LulabTech",
     title: "Elige el tipo de proyecto web que quieres ver",
     description:
-      "Organizamos el portafolio para que puedas revisar ejemplos según la necesidad del negocio: páginas para captar clientes, sistemas de reservas, webs corporativas, servicios profesionales y tiendas o catálogos digitales.",
+      "Organizamos el portafolio para que puedas revisar ejemplos según la necesidad del negocio: landing pages comerciales, páginas con reservas, webs corporativas y software a medida para empresas.",
     selectorEyebrow: "Explora por objetivo comercial",
     selectorTitle: "Cinco rutas claras para encontrar referencias más rápido",
     selectorDescription:
@@ -71,9 +71,9 @@ const copy = {
     secondaryCta: "Ver servicios",
     highlights: ["100+ proyectos realizados", "2+ años de experiencia", "Entrega rápida", "Soporte inicial"],
     ctaEyebrow: "¿Quieres algo parecido?",
-    ctaTitle: "Creamos páginas web, catálogos y sistemas que se ven profesionales y ayudan a cotizar mejor.",
+    ctaTitle: "Creamos landing pages, webs corporativas y software a medida que se ven profesionales y ayudan a cotizar mejor.",
     ctaDescription:
-      "Cuéntanos si necesitas una landing, una web corporativa, una página con reservas, un catálogo o un sistema a medida. Te ayudamos a ordenar el contenido y convertirlo en una experiencia clara para tus clientes.",
+      "Cuéntanos si necesitas una landing, una web corporativa, una página con reservas o un sistema a medida. Te ayudamos a ordenar el contenido y convertirlo en una experiencia clara para tus clientes.",
     whatsapp: "Hablar por WhatsApp",
     viewExamples: "Ver ejemplos",
     quoteThis: "Cotizar algo así",
@@ -90,7 +90,7 @@ const copy = {
     eyebrow: "LulabTech portfolio",
     title: "Choose the type of web project you want to explore",
     description:
-      "We organized the portfolio around business goals: lead generation pages, booking systems, corporate websites, service websites and digital catalogs or stores.",
+      "We organized the portfolio around business goals: sales landing pages, booking pages, corporate websites, service websites and custom software for companies.",
     selectorEyebrow: "Explore by business goal",
     selectorTitle: "Five clear paths to find relevant references faster",
     selectorDescription:
@@ -102,9 +102,9 @@ const copy = {
     secondaryCta: "View services",
     highlights: ["100+ completed projects", "2+ years experience", "Fast delivery", "Initial support"],
     ctaEyebrow: "Want something similar?",
-    ctaTitle: "We build websites, catalogs and systems that look professional and help businesses get better quote requests.",
+    ctaTitle: "We build landing pages, corporate websites and custom software that look professional and help businesses get better quote requests.",
     ctaDescription:
-      "Tell us if you need a landing page, corporate website, booking page, catalog or custom system. We help structure the content and turn it into a clear experience for your clients.",
+      "Tell us if you need a landing page, corporate website, booking page or custom system. We help structure the content and turn it into a clear experience for your clients.",
     whatsapp: "Talk on WhatsApp",
     viewExamples: "View examples",
     quoteThis: "Quote something like this",
@@ -125,56 +125,76 @@ const portfolioSectionCopy = {
       id: "landing-ventas",
       badge: "Landing pages",
       title: "Landing pages que venden",
-      description: "Páginas enfocadas en explicar rápido, generar confianza y llevar al cliente a WhatsApp, formulario o cotización.",
+      description: "Páginas diseñadas para captar clientes, presentar servicios y convertir visitas en mensajes, formularios o cotizaciones.",
       cta: "Ver landings de venta",
       quoteText: "Hola,%20quiero%20una%20landing%20page%20para%20vender%20o%20captar%20clientes",
       coverSrc: "/portfolio-previews/rep-lawyer.webp",
       coverAlt: "Ejemplo de landing page de venta creada por LulabTech",
-      slugs: ["rep-lawyer", "aa-law-firm", "julissa-lewis", "solarled", "orthoclinix", "krasa-dermoestudio", "rapicredito-panama", "servi-estufa", "eurides-young", "transformacion-360"]
+      slugs: [
+        "rep-lawyer",
+        "aa-law-firm",
+        "julissa-lewis",
+        "solarled",
+        "orthoclinix",
+        "krasa-dermoestudio",
+        "rapicredito-panama",
+        "servi-estufa",
+        "eurides-young",
+        "transformacion-360",
+        "los-cholos",
+        "cerebritos-panama",
+        "logiplus-pty",
+        "handy-group",
+        "cle-property-management",
+        "veranieras",
+        "amornflor",
+        "palash-tower",
+        "chambonnet-comercial-realty"
+      ]
     },
     {
       id: "reservas-sistemas",
-      badge: "Reservas y sistemas",
-      title: "Reservas, citas y plataformas web",
-      description: "Proyectos donde la web no solo informa: también organiza reservas, accesos, procesos internos o solicitudes de clientes.",
-      cta: "Ver reservas y sistemas",
-      quoteText: "Hola,%20quiero%20una%20web%20con%20reservas,%20citas%20o%20sistema%20interno",
-      coverSrc: "/portfolio-previews/nova-track-portal.webp",
-      coverAlt: "Ejemplo de plataforma y sistema web desarrollado por LulabTech",
-      slugs: ["nova-track-portal", "bb-logistic", "los-cholos", "caba-express", "panama-heritage-tours", "biofest-panama", "orthoclinix", "cerebritos-panama"]
+      badge: "Reservas y plataformas",
+      title: "Landing con reservas, citas y plataformas web",
+      description: "Sitios con funciones adicionales como formularios avanzados, reservas, citas, accesos o flujos personalizados.",
+      cta: "Ver reservas y plataformas",
+      quoteText: "Hola,%20quiero%20una%20landing%20con%20reservas,%20citas%20o%20plataforma%20web",
+      coverSrc: "/portfolio-previews/bb-logistic.webp",
+      coverAlt: "Ejemplo de landing con plataforma, reservas o funciones avanzadas creada por LulabTech",
+      slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
     },
     {
       id: "corporativa-informativa",
       badge: "Corporativas",
       title: "Webs corporativas informativas",
-      description: "Sitios para presentar la empresa, su historia, equipo, valores, respaldo y canales de contacto con una imagen profesional.",
+      description: "Sitios profesionales para presentar empresas, marcas, instituciones o proyectos de forma clara y confiable.",
       cta: "Ver webs informativas",
       quoteText: "Hola,%20quiero%20una%20web%20corporativa%20informativa%20para%20mi%20empresa",
       coverSrc: "/portfolio-previews/solmas-legal.webp",
       coverAlt: "Ejemplo de web corporativa informativa creada por LulabTech",
-      slugs: ["solmas-legal", "k9-security-international", "magna-academy", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
+      slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
     },
     {
       id: "corporativa-servicios",
       badge: "Servicios profesionales",
       title: "Webs corporativas de servicios",
-      description: "Páginas para empresas que necesitan explicar servicios, áreas de atención, beneficios y rutas claras de consulta comercial.",
+      description: "Webs enfocadas en explicar servicios, mostrar autoridad y facilitar el contacto con clientes potenciales.",
       cta: "Ver webs de servicios",
       quoteText: "Hola,%20quiero%20una%20web%20corporativa%20para%20mostrar%20mis%20servicios",
       coverSrc: "/portfolio-previews/isasa-panama.webp",
       coverAlt: "Ejemplo de web corporativa de servicios creada por LulabTech",
-      slugs: ["isasa-panama", "quality-techno-services", "logiplus-pty", "proselec-panama", "intramar-pty", "handy-group", "cle-property-management"]
+      slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
     },
     {
-      id: "ecommerce-catalogos",
-      badge: "Venta digital",
-      title: "E-commerce, catálogos y venta por WhatsApp",
-      description: "Experiencias visuales para mostrar productos, colecciones o servicios y llevar al usuario a pedido, compra o cotización.",
-      cta: "Ver catálogos y tiendas",
-      quoteText: "Hola,%20quiero%20una%20tienda,%20catalogo%20o%20web%20para%20vender%20por%20WhatsApp",
-      coverSrc: "/portfolio-previews/veranieras-preview.webp",
-      coverAlt: "Ejemplo de catálogo visual y venta digital creado por LulabTech",
-      slugs: ["veranieras", "amornflor", "solarled", "palash-tower", "chambonnet-comercial-realty", "los-cholos"]
+      id: "software-medida",
+      badge: "Software a medida",
+      title: "Software a medida para empresas",
+      description: "Sistemas, portales y plataformas creadas para automatizar procesos, gestionar información o mejorar operaciones internas.",
+      cta: "Ver software empresarial",
+      quoteText: "Hola,%20quiero%20un%20software%20a%20medida%20para%20mi%20empresa",
+      coverSrc: "/portfolio-previews/nova-track-portal.webp",
+      coverAlt: "Ejemplo de software a medida para empresas creado por LulabTech",
+      slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
     }
   ],
   en: [
@@ -182,56 +202,76 @@ const portfolioSectionCopy = {
       id: "landing-ventas",
       badge: "Landing pages",
       title: "Landing pages built to sell",
-      description: "Pages designed to explain fast, build trust and guide visitors toward WhatsApp, forms or quote requests.",
+      description: "Pages designed to capture leads, present services and turn visits into messages, forms or quote requests.",
       cta: "View sales landings",
       quoteText: "Hello,%20I%20want%20a%20landing%20page%20to%20sell%20or%20capture%20leads",
       coverSrc: "/portfolio-previews/rep-lawyer.webp",
       coverAlt: "Sales landing page example created by LulabTech",
-      slugs: ["rep-lawyer", "aa-law-firm", "julissa-lewis", "solarled", "orthoclinix", "krasa-dermoestudio", "rapicredito-panama", "servi-estufa", "eurides-young", "transformacion-360"]
+      slugs: [
+        "rep-lawyer",
+        "aa-law-firm",
+        "julissa-lewis",
+        "solarled",
+        "orthoclinix",
+        "krasa-dermoestudio",
+        "rapicredito-panama",
+        "servi-estufa",
+        "eurides-young",
+        "transformacion-360",
+        "los-cholos",
+        "cerebritos-panama",
+        "logiplus-pty",
+        "handy-group",
+        "cle-property-management",
+        "veranieras",
+        "amornflor",
+        "palash-tower",
+        "chambonnet-comercial-realty"
+      ]
     },
     {
       id: "reservas-sistemas",
-      badge: "Bookings and systems",
-      title: "Bookings, appointments and web platforms",
-      description: "Projects where the website does more than inform: it handles bookings, access, internal workflows or client requests.",
-      cta: "View bookings and systems",
-      quoteText: "Hello,%20I%20want%20a%20website%20with%20bookings,%20appointments%20or%20an%20internal%20system",
-      coverSrc: "/portfolio-previews/nova-track-portal.webp",
-      coverAlt: "Web platform and system example developed by LulabTech",
-      slugs: ["nova-track-portal", "bb-logistic", "los-cholos", "caba-express", "panama-heritage-tours", "biofest-panama", "orthoclinix", "cerebritos-panama"]
+      badge: "Bookings and platforms",
+      title: "Landing pages with bookings, appointments and web platforms",
+      description: "Sites with additional functions such as advanced forms, bookings, appointments, access areas or custom flows.",
+      cta: "View bookings and platforms",
+      quoteText: "Hello,%20I%20want%20a%20landing%20page%20with%20bookings,%20appointments%20or%20a%20web%20platform",
+      coverSrc: "/portfolio-previews/bb-logistic.webp",
+      coverAlt: "Booking, platform or advanced web function example created by LulabTech",
+      slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
     },
     {
       id: "corporativa-informativa",
       badge: "Corporate",
       title: "Informative corporate websites",
-      description: "Websites that present the company, story, team, values, credibility and contact channels with a professional image.",
+      description: "Professional websites to present companies, brands, institutions or projects in a clear and trustworthy way.",
       cta: "View informative websites",
       quoteText: "Hello,%20I%20want%20an%20informative%20corporate%20website%20for%20my%20company",
       coverSrc: "/portfolio-previews/solmas-legal.webp",
       coverAlt: "Informative corporate website example created by LulabTech",
-      slugs: ["solmas-legal", "k9-security-international", "magna-academy", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
+      slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
     },
     {
       id: "corporativa-servicios",
       badge: "Professional services",
       title: "Corporate service websites",
-      description: "Pages for companies that need to explain services, service areas, benefits and clear commercial contact paths.",
+      description: "Websites focused on explaining services, showing authority and making it easier for potential clients to get in touch.",
       cta: "View service websites",
       quoteText: "Hello,%20I%20want%20a%20corporate%20website%20to%20show%20my%20services",
       coverSrc: "/portfolio-previews/isasa-panama.webp",
       coverAlt: "Corporate service website example created by LulabTech",
-      slugs: ["isasa-panama", "quality-techno-services", "logiplus-pty", "proselec-panama", "intramar-pty", "handy-group", "cle-property-management"]
+      slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
     },
     {
-      id: "ecommerce-catalogos",
-      badge: "Digital sales",
-      title: "E-commerce, catalogs and WhatsApp sales",
-      description: "Visual experiences to showcase products, collections or services and guide users toward orders, purchases or quotes.",
-      cta: "View catalogs and stores",
-      quoteText: "Hello,%20I%20want%20a%20store,%20catalog%20or%20website%20to%20sell%20through%20WhatsApp",
-      coverSrc: "/portfolio-previews/veranieras-preview.webp",
-      coverAlt: "Visual catalog and digital sales example created by LulabTech",
-      slugs: ["veranieras", "amornflor", "solarled", "palash-tower", "chambonnet-comercial-realty", "los-cholos"]
+      id: "software-medida",
+      badge: "Custom software",
+      title: "Custom software for companies",
+      description: "Systems, portals and platforms created to automate processes, manage information or improve internal operations.",
+      cta: "View business software",
+      quoteText: "Hello,%20I%20want%20custom%20software%20for%20my%20company",
+      coverSrc: "/portfolio-previews/nova-track-portal.webp",
+      coverAlt: "Custom software for companies example created by LulabTech",
+      slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
     }
   ]
 } satisfies Record<"es" | "en", PortfolioSection[]>;
@@ -477,7 +517,7 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
       type="button"
       onClick={onSelect}
       className={cn(
-        "group relative flex min-h-[520px] overflow-hidden rounded-[30px] border text-left shadow-soft outline-none transition duration-300 hover:-translate-y-1 hover:shadow-elevated focus-visible:ring-4 focus-visible:ring-brand-200",
+        "group relative flex min-h-[540px] overflow-hidden rounded-[30px] border text-left shadow-soft outline-none transition duration-300 hover:-translate-y-1 hover:shadow-elevated focus-visible:ring-4 focus-visible:ring-brand-200",
         isActive ? "border-brand-500 ring-4 ring-brand-100" : "border-slate-200"
       )}
     >
@@ -487,22 +527,22 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
         className={cn(
           "absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100",
           section.coverPosition ?? "object-top",
-          isActive ? "scale-105 grayscale-0 opacity-100" : "opacity-[0.68]"
+          isActive ? "scale-105 grayscale-0 opacity-100" : "opacity-[0.72]"
         )}
         loading="lazy"
         decoding="async"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#020817]/20 via-[#020817]/30 to-[#020817]/92 transition duration-300 group-hover:from-[#020817]/5 group-hover:via-[#020817]/20 group-hover:to-[#020817]/88" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#020817]/35 via-[#020817]/42 to-[#020817]/94 transition duration-300 group-hover:from-[#020817]/12 group-hover:via-[#020817]/28 group-hover:to-[#020817]/88" />
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-500 via-accent-400 to-brand-300 opacity-80" />
 
-      <div className="relative z-10 flex h-full min-h-[520px] w-full flex-col justify-end p-5 text-white">
+      <div className="relative z-10 flex h-full min-h-[540px] w-full flex-col justify-end p-5 text-white">
         <span className="mb-auto w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md">
           {section.badge}
         </span>
 
-        <div>
-          <h3 className="text-2xl font-semibold leading-tight text-white">{section.title}</h3>
-          <p className="mt-3 text-sm leading-6 text-white/78">{section.description}</p>
+        <div className="rounded-[24px] border border-white/10 bg-black/35 p-4 backdrop-blur-[2px] transition duration-300 group-hover:bg-black/25">
+          <h3 className="text-[1.35rem] font-semibold leading-tight text-white sm:text-2xl lg:text-[1.25rem] xl:text-[1.35rem]">{section.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-white/86">{section.description}</p>
           <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-ink-900 transition group-hover:bg-brand-50">
             {section.cta || viewExamplesLabel}
             <ArrowUpRight className="h-4 w-4" />
