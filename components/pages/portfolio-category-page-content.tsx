@@ -69,50 +69,37 @@ export function PortfolioCategoryPageContent({ category }: { category: string })
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-50/35 to-white py-14 sm:py-16 lg:py-20">
         <GridPattern className="opacity-20" />
         <Container className="relative">
-          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-            <div>
-              <Link href="/portafolio" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-900">
-                <ArrowLeft className="h-4 w-4" />
-                {copy.back}
-              </Link>
-              <div className="mt-5">
-                <span className="eyebrow">{copy.eyebrow}</span>
-                <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-ink-900 sm:text-5xl lg:text-[4rem]">{section.title}</h1>
-                <p className="mt-6 max-w-3xl text-base leading-8 text-ink-600 sm:text-lg">{section.pageIntro}</p>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink
-                  href={`https://wa.me/50767069044?text=${section.quoteText}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  size="lg"
-                  onClick={() => trackEvent("click_whatsapp_portfolio_category_page", { category: section.id })}
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  {copy.quote}
-                </ButtonLink>
-                <ButtonLink href="/servicios-panama" variant="outline" size="lg">
-                  Ver servicios
-                  <ArrowUpRight className="h-4 w-4" />
-                </ButtonLink>
-              </div>
+          <div className="max-w-5xl">
+            <Link href="/portafolio" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition hover:text-brand-900">
+              <ArrowLeft className="h-4 w-4" />
+              {copy.back}
+            </Link>
+            <div className="mt-5">
+              <span className="eyebrow">{copy.eyebrow}</span>
+              <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-ink-900 sm:text-5xl lg:text-[4rem]">{section.title}</h1>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-ink-600 sm:text-lg">{section.pageIntro}</p>
+              <p className="mt-6 text-base font-semibold text-ink-900 sm:text-lg">
+                <span className="uppercase tracking-[0.18em] text-brand-700">{copy.priceLabel}:</span>{" "}
+                <span className="text-ink-700">{copy.fromLabel}</span>{" "}
+                <span className="text-2xl font-bold text-ink-950 sm:text-3xl">{section.price}</span>
+              </p>
             </div>
 
-            <div className="relative overflow-hidden rounded-[34px] border border-slate-200 bg-[#07142D] p-5 shadow-elevated">
-              <div className="relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[26px] border border-white/10 bg-gradient-to-br from-[#07142D] via-[#0D2A61] to-brand-700 p-8 text-white sm:min-h-[360px] lg:min-h-[430px]">
-                <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-300/25 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-accent-200/20 blur-3xl" />
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent_45%)]" />
-
-                <div className="relative max-w-sm rounded-[26px] border border-white/12 bg-black/30 p-6 backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-100">{copy.priceLabel}</p>
-                  <div className="mt-4 flex items-end gap-3">
-                    <span className="pb-1 text-sm font-semibold text-white/75">{copy.fromLabel}</span>
-                    <span className="text-5xl font-semibold leading-none text-white sm:text-6xl">{section.price}</span>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink
+                href={`https://wa.me/50767069044?text=${section.quoteText}`}
+                target="_blank"
+                rel="noreferrer"
+                size="lg"
+                onClick={() => trackEvent("click_whatsapp_portfolio_category_page", { category: section.id })}
+              >
+                <MessageCircle className="h-4 w-4" />
+                {copy.quote}
+              </ButtonLink>
+              <ButtonLink href="/servicios-panama" variant="outline" size="lg">
+                Ver servicios
+                <ArrowUpRight className="h-4 w-4" />
+              </ButtonLink>
             </div>
           </div>
         </Container>
