@@ -253,7 +253,6 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Educación infantil",
     description: "Página de captación para academia y estimulación infantil con información clara, branding amigable y contacto directo.",
     services: ["Landing page", "Captación", "WhatsApp"],
-    screenshotSrc: "/portfolio-previews/bb-logistic.webp",
     logoSrc: "/clients/cerebritos.webp",
     featured: true
   },

@@ -61,13 +61,25 @@ export function PortfolioPreview({ project, compact = false }: PortfolioPreviewP
     [project.screenshotSrc, project.url]
   );
 
+  const previewClassName = compact
+    ? project.slug === "nova-track-portal"
+      ? "h-full w-full object-contain object-center bg-[#f3f7fc] transition duration-700 group-hover:scale-[1.012]"
+      : "h-full w-full object-contain object-top bg-[#eef3f8] transition duration-700 group-hover:scale-[1.012]"
+    : "h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]";
+
+  const logoShellClassName = compact
+    ? project.slug === "solmas-legal"
+      ? "pointer-events-none absolute bottom-5 left-5 z-10 flex h-[72px] w-[140px] items-center justify-center rounded-[22px] border border-white/90 bg-white/96 p-4 shadow-elevated backdrop-blur-md sm:h-[80px] sm:w-[154px]"
+      : "pointer-events-none absolute bottom-5 left-5 z-10 flex h-[72px] w-[108px] items-center justify-center rounded-[22px] border border-white/85 bg-white/96 p-3.5 shadow-elevated backdrop-blur-md sm:h-[78px] sm:w-[118px]"
+    : "pointer-events-none absolute bottom-5 left-5 z-10 flex h-16 w-24 items-center justify-center rounded-[22px] border border-white/30 bg-white/88 p-3 shadow-elevated backdrop-blur-md sm:h-[72px] sm:w-28";
+
   return (
     <div className="relative h-full w-full overflow-hidden bg-slate-100">
       {previewUrl && !hasError ? (
         <img
           src={previewUrl}
           alt={`Vista previa del proyecto ${project.name}`}
-          className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]"
+          className={previewClassName}
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
@@ -89,7 +101,7 @@ export function PortfolioPreview({ project, compact = false }: PortfolioPreviewP
       </div>
 
       {project.logoSrc ? (
-        <div className="pointer-events-none absolute bottom-5 left-5 z-10 flex h-16 w-24 items-center justify-center rounded-[22px] border border-white/30 bg-white/88 p-3 shadow-elevated backdrop-blur-md sm:h-[72px] sm:w-28">
+        <div className={logoShellClassName}>
           <img src={project.logoSrc} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
         </div>
       ) : null}

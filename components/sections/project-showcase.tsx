@@ -19,7 +19,7 @@ const homeProjectSlugs = [
   "solmas-legal",
   "isasa-panama",
   "quality-techno-services",
-  "krasa-dermoestudio"
+  "cerebritos-panama"
 ] as const;
 
 function getProjectDomain(url: string) {
@@ -41,7 +41,7 @@ function ProjectCarouselCard({ project, locale }: { project: PortfolioProject; l
   const domain = getProjectDomain(project.url);
 
   return (
-    <article className="group flex h-full w-[308px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#06080d] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[330px]">
+    <article className="group flex h-[640px] w-[308px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#06080d] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[330px]">
       <div className="relative h-[430px] overflow-hidden bg-slate-100">
         <PortfolioPreview project={project} compact />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06080d] via-[#06080d]/35 to-transparent" />
