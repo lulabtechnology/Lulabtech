@@ -2,18 +2,10 @@
 
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-  MessageCircle,
-  Sparkles
-} from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
-import { PortfolioPreview } from "@/components/project/portfolio-preview";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import {
   featuredPortfolioProjects,
@@ -116,41 +108,86 @@ function getProjectDomain(url: string) {
   }
 }
 
-function getScrollDistance(track: HTMLDivElement | null) {
-  if (!track) return 340;
-  const first = track.firstElementChild as HTMLElement | null;
-  if (!first) return 340;
-  return first.offsetWidth + 24;
+function getShowcaseScreenshotUrl(url: string) {
+  const normalized = url.startsWith("http") ? url : `https://${url}`;
+  // Screenshot alto para que la card se vea tipo showcase vertical, no como recorte aplastado.
+  return `https://image.thum.io/get/width/1200/crop/1700/wait/8/noanimate/${normalized}`;
 }
 
-function PortfolioCarouselCard({ project, source }: { project: PortfolioProject; source: string }) {
+function getScrollDistance(track: HTMLDivElement | null) {
+  if (!track) return 360;
+  const firstCard = track.firstElementChild as HTMLElement | null;
+  if (!firstCard) return 360;
+  return firstCard.offsetWidth + 24;
+}
+
+function ProjectShowcaseImage({ project }: { project: PortfolioProject }) {
+  const [useLocalFallback, setUseLocalFallback] = useState(false);
+  const localFallback = project.screenshotSrc === null ? undefined : project.screenshotSrc;
+  const src = useLocalFallback && localFallback ? localFallback : getShowcaseScreenshotUrl(project.url);
+
+  return (
+    <div className="relative h-[430px] overflow-hidden bg-slate-100">
+      <img
+        src={src}
+        alt={`Vista previa del proyecto ${project.name}`}
+        className={cn(
+          "h-full w-full object-top transition duration-700 group-hover:scale-[1.02]",
+          useLocalFallback ? "object-contain" : "object-cover"
+        )}
+        loading="lazy"
+        decoding="async"
+        referrerPolicy="no-referrer"
+        onError={() => {
+          if (localFallback && !useLocalFallback) {
+            setUseLocalFallback(true);
+          }
+        }}
+      />
+
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-3 px-4 py-4">
+        {project.logoSrc ? (
+          <div className="flex h-14 w-20 items-center justify-center rounded-[18px] border border-white/35 bg-white/90 p-2.5 shadow-elevated backdrop-blur-md">
+            <img src={project.logoSrc} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+          </div>
+        ) : (
+          <div className="rounded-[18px] border border-white/25 bg-black/35 px-3 py-2 text-xs font-semibold text-white shadow-soft backdrop-blur-md">
+            {project.name}
+          </div>
+        )}
+
+        <span className="rounded-full border border-white/25 bg-black/45 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-soft backdrop-blur-md">
+          {project.typeLabel}
+        </span>
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#080b12] via-[#080b12]/45 to-transparent" />
+    </div>
+  );
+}
+
+function ProjectCarouselCard({ project, source }: { project: PortfolioProject; source: string }) {
   const domain = getProjectDomain(project.url);
 
   return (
-    <article className="group flex h-full w-[308px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#06080d] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[330px]">
-      <div className="relative h-[448px] overflow-hidden bg-slate-100">
-        <PortfolioPreview project={project} compact />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06080d] via-[#06080d]/30 to-transparent" />
-      </div>
+    <article className="group flex h-full w-[318px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#080b12] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[360px]">
+      <ProjectShowcaseImage project={project} />
 
-      <div className="flex flex-1 flex-col gap-3 border-t border-white/10 px-5 pb-5 pt-4 text-white sm:px-6">
+      <div className="flex flex-1 flex-col gap-3 border-t border-white/10 px-5 pb-5 pt-5 text-white">
         <div>
-          <h3 className="text-lg font-semibold leading-tight text-white sm:text-[1.36rem]">{project.name}</h3>
+          <h3 className="text-xl font-semibold leading-tight text-white">{project.name}</h3>
           <p className="mt-1 text-sm text-slate-300">{project.industry}</p>
         </div>
 
-        <div className="mt-1 flex flex-wrap gap-2">
-          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-200">
-            {project.typeLabel}
-          </span>
-          {project.services.slice(0, 1).map((service) => (
-            <span key={service} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-slate-300">
+        <div className="flex flex-wrap gap-2">
+          {project.services.slice(0, 2).map((service) => (
+            <span key={service} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[11px] font-semibold text-slate-200">
               {service}
             </span>
           ))}
         </div>
 
-        <div className="mt-auto flex items-center justify-between gap-3 pt-3">
+        <div className="mt-auto flex flex-col gap-3 pt-2">
           <Link
             href={project.url}
             target="_blank"
@@ -162,16 +199,29 @@ function PortfolioCarouselCard({ project, source }: { project: PortfolioProject;
             <ExternalLink className="h-3.5 w-3.5 shrink-0" />
           </Link>
 
-          <Link
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/12 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white transition hover:border-brand-400/50 hover:bg-brand-500/10"
-            onClick={() => trackEvent("click_whatsapp_footer", { source: `${source}_${project.slug}` })}
-          >
-            <MessageCircle className="h-3.5 w-3.5" />
-            Cotizar
-          </Link>
+          <div className="flex gap-2">
+            <ButtonLink
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              variant="outline"
+              size="md"
+              className="w-full justify-center border-white/15 bg-white text-ink-900 hover:bg-white/90"
+              onClick={() => trackEvent("click_portafolio", { project: project.name, source: `${source}_button` })}
+            >
+              {project.ctaLabel ?? "Ver proyecto"}
+            </ButtonLink>
+            <ButtonLink
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              size="md"
+              className="w-full justify-center"
+              onClick={() => trackEvent("click_whatsapp_footer", { source: `${source}_${project.slug}` })}
+            >
+              Cotizar
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </article>
@@ -181,7 +231,7 @@ function PortfolioCarouselCard({ project, source }: { project: PortfolioProject;
 function PortfolioCarousel({
   projects,
   source,
-  emptyLabel = "Sin proyectos para mostrar."
+  emptyLabel = "No hay proyectos disponibles para esta categoría."
 }: {
   projects: PortfolioProject[];
   source: string;
@@ -194,7 +244,7 @@ function PortfolioCarousel({
     if (!track) return;
 
     track.scrollBy({
-      left: getScrollDistance(track) * direction,
+      left: direction * getScrollDistance(track),
       behavior: "smooth"
     });
   };
@@ -209,10 +259,10 @@ function PortfolioCarousel({
 
   return (
     <div className="mt-8">
-      <div className="mb-5 flex items-center justify-end gap-2">
+      <div className="mb-5 flex justify-end gap-2">
         <button
           type="button"
-          aria-label="Desplazar carrusel a la izquierda"
+          aria-label="Mover carrusel hacia la izquierda"
           onClick={() => handleScroll(-1)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-800 shadow-soft transition hover:border-brand-200 hover:text-brand-700"
         >
@@ -220,7 +270,7 @@ function PortfolioCarousel({
         </button>
         <button
           type="button"
-          aria-label="Desplazar carrusel a la derecha"
+          aria-label="Mover carrusel hacia la derecha"
           onClick={() => handleScroll(1)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-800 shadow-soft transition hover:border-brand-200 hover:text-brand-700"
         >
@@ -233,7 +283,7 @@ function PortfolioCarousel({
         className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {projects.map((project) => (
-          <PortfolioCarouselCard key={project.slug} project={project} source={source} />
+          <ProjectCarouselCard key={project.slug} project={project} source={source} />
         ))}
       </div>
     </div>
@@ -260,40 +310,33 @@ export function ProjectsPageContent() {
         <Container className="relative">
           <div className="mx-auto max-w-4xl text-center">
             <span className="eyebrow">{pageCopy.eyebrow}</span>
-            <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl lg:text-6xl">
-              {pageCopy.title}
-            </h1>
-            <p className="mt-5 text-balance text-base leading-8 text-ink-600 sm:text-lg">{pageCopy.description}</p>
+            <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-ink-900 sm:text-5xl lg:text-[4rem]">{pageCopy.title}</h1>
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-ink-600 sm:text-lg">{pageCopy.description}</p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                size="lg"
-                onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_hero" })}
-              >
-                {pageCopy.primaryCta}
-                <ArrowUpRight className="h-4 w-4" />
-              </ButtonLink>
-              <ButtonLink href="/servicios-panama" variant="outline" size="lg">
-                {pageCopy.secondaryCta}
-              </ButtonLink>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-ink-700">
+            <div className="mt-6 flex flex-wrap justify-center gap-2.5">
               {pageCopy.highlights.map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-soft">
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm font-semibold text-ink-700 shadow-soft">
                   <Sparkles className="h-4 w-4 text-brand-600" />
                   {item}
                 </span>
               ))}
             </div>
+
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" onClick={() => trackEvent("click_whatsapp_hero", { source: "portafolio_page" })}>
+                <MessageCircle className="h-4 w-4" />
+                {pageCopy.primaryCta}
+              </ButtonLink>
+              <ButtonLink href="/servicios-panama" variant="outline" size="lg" onClick={() => trackEvent("click_servicio_software", { source: "portafolio_page" })}>
+                {pageCopy.secondaryCta}
+                <ArrowUpRight className="h-4 w-4" />
+              </ButtonLink>
+            </div>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
             {portfolioTrustStats.map((stat) => (
-              <div key={stat.label} className="rounded-[26px] border border-slate-200 bg-white p-5 text-left shadow-soft">
+              <div key={stat.label} className="rounded-[26px] border border-slate-200 bg-white/90 p-5 text-center shadow-soft">
                 <p className="text-3xl font-semibold text-ink-900 sm:text-[2rem]">{stat.value}</p>
                 <p className="mt-2 text-sm font-semibold text-ink-900">{stat.label}</p>
                 <p className="mt-2 text-xs leading-5 text-ink-500">{stat.description}</p>
@@ -313,14 +356,7 @@ export function ProjectsPageContent() {
                 <p className="mt-3 text-base leading-7 text-ink-600">{pageCopy.featuredDescription}</p>
               </div>
 
-              <ButtonLink
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                variant="outline"
-                size="lg"
-                onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}
-              >
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}>
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
@@ -376,7 +412,7 @@ export function ProjectsPageContent() {
             </div>
           </div>
 
-          <PortfolioCarousel projects={visibleProjects} source="portfolio_carousel" emptyLabel="No hay proyectos disponibles para esta categoría." />
+          <PortfolioCarousel projects={visibleProjects} source="portfolio_carousel" />
 
           <div className="mt-12 rounded-[34px] border border-slate-200 bg-gradient-to-br from-[#07142D] via-[#0E2554] to-brand-700 p-7 text-white shadow-elevated sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -385,15 +421,7 @@ export function ProjectsPageContent() {
                 <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl">{pageCopy.ctaTitle}</h2>
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">{pageCopy.ctaDescription}</p>
               </div>
-              <ButtonLink
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                variant="outline"
-                size="lg"
-                className="border-white/20 bg-white text-ink-900 hover:bg-white/90"
-                onClick={() => trackEvent("click_whatsapp_footer", { source: "portfolio_cta" })}
-              >
+              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" className="border-white/20 bg-white text-ink-900 hover:bg-white/90" onClick={() => trackEvent("click_whatsapp_footer", { source: "portfolio_cta" })}>
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>

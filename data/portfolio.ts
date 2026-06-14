@@ -419,7 +419,6 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Business management",
     description: "Landing comercial para presentar servicios, proceso y llamada a la acción hacia contacto.",
     services: ["Landing page", "Consultoría", "Conversión"],
-    screenshotSrc: undefined,
     logoSrc: "/clients/prisma-bm.webp"
   },
   {
