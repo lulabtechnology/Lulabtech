@@ -343,7 +343,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Servicios eléctricos / ingeniería",
     description: "Sitio corporativo para comunicar experiencia, servicios y canales de atención de la empresa.",
     services: ["Web corporativa", "Servicios", "Contacto"],
-    screenshotSrc: "/portfolio-previews/panama-heritage-tours.webp",
+    screenshotSrc: "/portfolio-previews/proselec-panama.webp",
     logoSrc: "/clients/proselec-panama.webp"
   },
   {
@@ -376,7 +376,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Belleza y estética",
     description: "Landing visual para servicios de estética, branding y contacto orientado a citas o consultas.",
     services: ["Landing page", "Estética", "Citas"],
-    screenshotSrc: "/portfolio-previews/proselec-panama.webp",
+    screenshotSrc: "/portfolio-previews/krasa-dermoestudio.webp",
     logoSrc: "/clients/krasa-dermoestudio.webp"
   },
   {
@@ -419,7 +419,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Business management",
     description: "Landing comercial para presentar servicios, proceso y llamada a la acción hacia contacto.",
     services: ["Landing page", "Consultoría", "Conversión"],
-    screenshotSrc: "/portfolio-previews/prisma-bm.webp",
+    screenshotSrc: undefined,
     logoSrc: "/clients/prisma-bm.webp"
   },
   {

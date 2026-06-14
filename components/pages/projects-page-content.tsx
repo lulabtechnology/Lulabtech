@@ -1,8 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  MessageCircle,
+  Sparkles
+} from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
@@ -101,66 +108,135 @@ const copy = {
   }
 } as const;
 
-function ProjectArticle({ project, source, featured = false }: { project: PortfolioProject; source: string; featured?: boolean }) {
+function getProjectDomain(url: string) {
+  try {
+    return new URL(url).host.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
+function getScrollDistance(track: HTMLDivElement | null) {
+  if (!track) return 340;
+  const first = track.firstElementChild as HTMLElement | null;
+  if (!first) return 340;
+  return first.offsetWidth + 24;
+}
+
+function PortfolioCarouselCard({ project, source }: { project: PortfolioProject; source: string }) {
+  const domain = getProjectDomain(project.url);
+
   return (
-    <article
-      className={cn(
-        "group overflow-hidden border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated",
-        featured ? "rounded-[42px]" : "rounded-[36px]"
-      )}
-    >
-      <div className={cn("overflow-hidden bg-slate-100", featured ? "aspect-[16/9]" : "aspect-[16/10]") }>
-        <PortfolioPreview project={project} />
+    <article className="group flex h-full w-[308px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#06080d] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[330px]">
+      <div className="relative h-[448px] overflow-hidden bg-slate-100">
+        <PortfolioPreview project={project} compact />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06080d] via-[#06080d]/30 to-transparent" />
       </div>
 
-      <div className={cn(featured ? "p-7 sm:p-8" : "p-6 sm:p-7")}>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">{project.typeLabel}</p>
-            <h2 className={cn("mt-2 font-semibold leading-tight text-ink-900", featured ? "text-2xl sm:text-[1.85rem]" : "text-2xl")}>{project.name}</h2>
-          </div>
-          <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-ink-700">
-            {project.industry}
-          </span>
+      <div className="flex flex-1 flex-col gap-3 border-t border-white/10 px-5 pb-5 pt-4 text-white sm:px-6">
+        <div>
+          <h3 className="text-lg font-semibold leading-tight text-white sm:text-[1.36rem]">{project.name}</h3>
+          <p className="mt-1 text-sm text-slate-300">{project.industry}</p>
         </div>
 
-        <p className={cn("mt-4 leading-7 text-ink-600", featured ? "text-base" : "text-sm sm:text-base")}>{project.description}</p>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.services.map((service) => (
-            <span key={service} className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-ink-700">
-              <CheckCircle2 className="h-3.5 w-3.5 text-brand-600" />
+        <div className="mt-1 flex flex-wrap gap-2">
+          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-200">
+            {project.typeLabel}
+          </span>
+          {project.services.slice(0, 1).map((service) => (
+            <span key={service} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-slate-300">
               {service}
             </span>
           ))}
         </div>
 
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink
+        <div className="mt-auto flex items-center justify-between gap-3 pt-3">
+          <Link
             href={project.url}
             target="_blank"
             rel="noreferrer"
-            variant="outline"
-            size={featured ? "lg" : "md"}
-            className="w-full justify-center"
+            className="inline-flex min-w-0 items-center gap-1.5 text-sm font-semibold text-brand-300 transition hover:text-brand-200"
             onClick={() => trackEvent("click_portafolio", { project: project.name, source })}
           >
-            <ExternalLink className="h-4 w-4" />
-            {project.ctaLabel ?? "Ver proyecto"}
-          </ButtonLink>
-          <ButtonLink
+            <span className="truncate">{domain}</span>
+            <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+          </Link>
+
+          <Link
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            size={featured ? "lg" : "md"}
-            className="w-full justify-center"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/12 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white transition hover:border-brand-400/50 hover:bg-brand-500/10"
             onClick={() => trackEvent("click_whatsapp_footer", { source: `${source}_${project.slug}` })}
           >
-            Cotizar similar
-          </ButtonLink>
+            <MessageCircle className="h-3.5 w-3.5" />
+            Cotizar
+          </Link>
         </div>
       </div>
     </article>
+  );
+}
+
+function PortfolioCarousel({
+  projects,
+  source,
+  emptyLabel = "Sin proyectos para mostrar."
+}: {
+  projects: PortfolioProject[];
+  source: string;
+  emptyLabel?: string;
+}) {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = (direction: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    track.scrollBy({
+      left: getScrollDistance(track) * direction,
+      behavior: "smooth"
+    });
+  };
+
+  if (!projects.length) {
+    return (
+      <div className="mt-8 rounded-[28px] border border-slate-200 bg-white p-8 text-center text-sm text-ink-500 shadow-soft">
+        {emptyLabel}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-8">
+      <div className="mb-5 flex items-center justify-end gap-2">
+        <button
+          type="button"
+          aria-label="Desplazar carrusel a la izquierda"
+          onClick={() => handleScroll(-1)}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-800 shadow-soft transition hover:border-brand-200 hover:text-brand-700"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          aria-label="Desplazar carrusel a la derecha"
+          onClick={() => handleScroll(1)}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-800 shadow-soft transition hover:border-brand-200 hover:text-brand-700"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      <div
+        ref={trackRef}
+        className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {projects.map((project) => (
+          <PortfolioCarouselCard key={project.slug} project={project} source={source} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -184,33 +260,40 @@ export function ProjectsPageContent() {
         <Container className="relative">
           <div className="mx-auto max-w-4xl text-center">
             <span className="eyebrow">{pageCopy.eyebrow}</span>
-            <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-ink-900 sm:text-5xl lg:text-[4rem]">{pageCopy.title}</h1>
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-ink-600 sm:text-lg">{pageCopy.description}</p>
+            <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl lg:text-6xl">
+              {pageCopy.title}
+            </h1>
+            <p className="mt-5 text-balance text-base leading-8 text-ink-600 sm:text-lg">{pageCopy.description}</p>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-2.5">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <ButtonLink
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                size="lg"
+                onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_hero" })}
+              >
+                {pageCopy.primaryCta}
+                <ArrowUpRight className="h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink href="/servicios-panama" variant="outline" size="lg">
+                {pageCopy.secondaryCta}
+              </ButtonLink>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-ink-700">
               {pageCopy.highlights.map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm font-semibold text-ink-700 shadow-soft">
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-soft">
                   <Sparkles className="h-4 w-4 text-brand-600" />
                   {item}
                 </span>
               ))}
             </div>
-
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" size="lg" onClick={() => trackEvent("click_whatsapp_hero", { source: "portafolio_page" })}>
-                <MessageCircle className="h-4 w-4" />
-                {pageCopy.primaryCta}
-              </ButtonLink>
-              <ButtonLink href="/servicios-panama" variant="outline" size="lg" onClick={() => trackEvent("click_servicio_software", { source: "portafolio_page" })}>
-                {pageCopy.secondaryCta}
-                <ArrowUpRight className="h-4 w-4" />
-              </ButtonLink>
-            </div>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {portfolioTrustStats.map((stat) => (
-              <div key={stat.label} className="rounded-[26px] border border-slate-200 bg-white/90 p-5 text-center shadow-soft">
+              <div key={stat.label} className="rounded-[26px] border border-slate-200 bg-white p-5 text-left shadow-soft">
                 <p className="text-3xl font-semibold text-ink-900 sm:text-[2rem]">{stat.value}</p>
                 <p className="mt-2 text-sm font-semibold text-ink-900">{stat.label}</p>
                 <p className="mt-2 text-xs leading-5 text-ink-500">{stat.description}</p>
@@ -230,18 +313,21 @@ export function ProjectsPageContent() {
                 <p className="mt-3 text-base leading-7 text-ink-600">{pageCopy.featuredDescription}</p>
               </div>
 
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}>
+              <ButtonLink
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                variant="outline"
+                size="lg"
+                onClick={() => trackEvent("click_whatsapp_footer", { source: "portafolio_featured" })}
+              >
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
             </div>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-7xl gap-8 xl:grid-cols-2">
-            {featuredPortfolioProjects.map((project) => (
-              <ProjectArticle key={project.slug} project={project} source="featured_grid" featured />
-            ))}
-          </div>
+          <PortfolioCarousel projects={featuredPortfolioProjects} source="featured_carousel" />
         </Container>
       </section>
 
@@ -290,11 +376,7 @@ export function ProjectsPageContent() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-7xl gap-8 xl:grid-cols-2">
-            {visibleProjects.map((project) => (
-              <ProjectArticle key={project.slug} project={project} source="portfolio_grid" />
-            ))}
-          </div>
+          <PortfolioCarousel projects={visibleProjects} source="portfolio_carousel" emptyLabel="No hay proyectos disponibles para esta categoría." />
 
           <div className="mt-12 rounded-[34px] border border-slate-200 bg-gradient-to-br from-[#07142D] via-[#0E2554] to-brand-700 p-7 text-white shadow-elevated sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -303,7 +385,15 @@ export function ProjectsPageContent() {
                 <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl">{pageCopy.ctaTitle}</h2>
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">{pageCopy.ctaDescription}</p>
               </div>
-              <ButtonLink href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="outline" size="lg" className="border-white/20 bg-white text-ink-900 hover:bg-white/90" onClick={() => trackEvent("click_whatsapp_footer", { source: "portfolio_cta" })}>
+              <ButtonLink
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                variant="outline"
+                size="lg"
+                className="border-white/20 bg-white text-ink-900 hover:bg-white/90"
+                onClick={() => trackEvent("click_whatsapp_footer", { source: "portfolio_cta" })}
+              >
                 {pageCopy.whatsapp}
                 <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
