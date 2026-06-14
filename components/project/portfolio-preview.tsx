@@ -56,11 +56,14 @@ function InitialsFallback({ project, domain, compact }: { project: PortfolioProj
 export function PortfolioPreview({ project, compact = false }: PortfolioPreviewProps) {
   const [hasError, setHasError] = useState(false);
   const domain = useMemo(() => getDomain(project.url), [project.url]);
-  const previewUrl = useMemo(() => project.screenshotSrc ?? getScreenshotUrl(project.url), [project.screenshotSrc, project.url]);
+  const previewUrl = useMemo(
+    () => (project.screenshotSrc === null ? null : project.screenshotSrc ?? getScreenshotUrl(project.url)),
+    [project.screenshotSrc, project.url]
+  );
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-slate-100">
-      {!hasError ? (
+      {previewUrl && !hasError ? (
         <img
           src={previewUrl}
           alt={`Vista previa del proyecto ${project.name}`}
