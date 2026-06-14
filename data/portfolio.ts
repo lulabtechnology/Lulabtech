@@ -64,6 +64,32 @@ export const portfolioProjects: PortfolioProject[] = [
     logoSrc: "/clients/solmas.webp",
     featured: true
   },
+
+  {
+    slug: "k9-security-international",
+    name: "K9 Security International",
+    url: "https://k9panamasecurity.com/",
+    type: "corporativa",
+    typeLabel: "Web corporativa",
+    industry: "Seguridad privada / logística",
+    description: "Web corporativa para empresa de seguridad con servicios de vigilancia, custodia, inspección K9, sectores atendidos y contacto comercial.",
+    services: ["Web corporativa", "Seguridad K9", "Contacto comercial"],
+    screenshotSrc: "/portfolio-previews/k9-security-international.webp",
+    logoSrc: "/clients/k9-security-international.webp",
+    featured: true
+  },
+  {
+    slug: "logiplus-pty",
+    name: "Logiplus PTY",
+    url: "https://logtranspor.vercel.app/",
+    type: "corporativa",
+    typeLabel: "Web corporativa",
+    industry: "Logística / importaciones",
+    description: "Web corporativa para empresa logística con importaciones USA, consolidación China LCL, casillero Miami, módulo de rastreo y captación de asesorías.",
+    services: ["Web corporativa", "Tracking", "Captación de leads"],
+    screenshotSrc: "/portfolio-previews/logiplus-pty.webp",
+    logoSrc: "/clients/logiplus-pty.webp"
+  },
   {
     slug: "isasa-panama",
     name: "ISASA Panamá",
