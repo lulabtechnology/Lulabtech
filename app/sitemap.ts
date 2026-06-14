@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { servicePageSlugs } from "@/data/seo-pages";
+import { portfolioSectionSlugs } from "@/data/portfolio-sections";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -27,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9
     },
+    ...portfolioSectionSlugs.map((slug) => ({
+      url: `${baseUrl}/portafolio/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.86
+    })),
     ...servicePageSlugs.map((slug) => ({
       url: `${baseUrl}/${slug}`,
       lastModified: now,

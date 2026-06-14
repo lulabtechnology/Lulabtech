@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/container";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { portfolioProjects, portfolioTrustStats, type PortfolioProject } from "@/data/portfolio";
+import { portfolioSectionCopy, type PortfolioSection } from "@/data/portfolio-sections";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { trackEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
@@ -17,10 +18,6 @@ type ProjectsPageCopy = {
   title: string;
   description: string;
   selectorEyebrow: string;
-  selectorTitle: string;
-  selectorDescription: string;
-  noSelectionTitle: string;
-  noSelectionDescription: string;
   primaryCta: string;
   secondaryCta: string;
   highlights: string[];
@@ -29,29 +26,7 @@ type ProjectsPageCopy = {
   ctaDescription: string;
   whatsapp: string;
   viewExamples: string;
-  quoteThis: string;
-  selectedEyebrow: string;
   links: { label: string; href: string }[];
-};
-
-type PortfolioSectionId =
-  | "landing-ventas"
-  | "reservas-sistemas"
-  | "corporativa-informativa"
-  | "corporativa-servicios"
-  | "software-medida";
-
-type PortfolioSection = {
-  id: PortfolioSectionId;
-  badge: string;
-  title: string;
-  description: string;
-  cta: string;
-  quoteText: string;
-  coverSrc: string;
-  coverAlt: string;
-  coverPosition?: string;
-  slugs: string[];
 };
 
 const copy = {
@@ -61,12 +36,6 @@ const copy = {
     description:
       "Organizamos el portafolio para que puedas revisar ejemplos según la necesidad del negocio: landing pages comerciales, páginas con reservas, webs corporativas y software a medida para empresas.",
     selectorEyebrow: "Explora por objetivo comercial",
-    selectorTitle: "Cinco rutas claras para encontrar referencias más rápido",
-    selectorDescription:
-      "En vez de mostrar todos los proyectos mezclados desde el inicio, primero eliges el tipo de solución. Así cada cliente ve ejemplos parecidos a lo que necesita y el portafolio se siente más ordenado, más premium y más fácil de vender.",
-    noSelectionTitle: "Selecciona una categoría para abrir los proyectos",
-    noSelectionDescription:
-      "Toca una de las cards superiores para ver ejemplos reales con el mismo estilo de presentación, enlaces y llamadas a cotización.",
     primaryCta: "Cotizar un proyecto similar",
     secondaryCta: "Ver servicios",
     highlights: ["100+ proyectos realizados", "2+ años de experiencia", "Entrega rápida", "Soporte inicial"],
@@ -76,8 +45,6 @@ const copy = {
       "Cuéntanos si necesitas una landing, una web corporativa, una página con reservas o un sistema a medida. Te ayudamos a ordenar el contenido y convertirlo en una experiencia clara para tus clientes.",
     whatsapp: "Hablar por WhatsApp",
     viewExamples: "Ver ejemplos",
-    quoteThis: "Cotizar algo así",
-    selectedEyebrow: "Ejemplos seleccionados",
     links: [
       { label: "Diseño web", href: "/diseno-web-panama" },
       { label: "Landing pages", href: "/landing-pages-panama" },
@@ -92,12 +59,6 @@ const copy = {
     description:
       "We organized the portfolio around business goals: sales landing pages, booking pages, corporate websites, service websites and custom software for companies.",
     selectorEyebrow: "Explore by business goal",
-    selectorTitle: "Five clear paths to find relevant references faster",
-    selectorDescription:
-      "Instead of showing every project mixed together from the start, visitors first choose the type of solution they need. This makes the portfolio feel clearer, more premium and easier to sell.",
-    noSelectionTitle: "Select a category to open the projects",
-    noSelectionDescription:
-      "Tap one of the cards above to view real examples with the same showcase style, project links and quote calls to action.",
     primaryCta: "Quote a similar project",
     secondaryCta: "View services",
     highlights: ["100+ completed projects", "2+ years experience", "Fast delivery", "Initial support"],
@@ -107,8 +68,6 @@ const copy = {
       "Tell us if you need a landing page, corporate website, booking page or custom system. We help structure the content and turn it into a clear experience for your clients.",
     whatsapp: "Talk on WhatsApp",
     viewExamples: "View examples",
-    quoteThis: "Quote something like this",
-    selectedEyebrow: "Selected examples",
     links: [
       { label: "Web design", href: "/diseno-web-panama" },
       { label: "Landing pages", href: "/landing-pages-panama" },
@@ -117,164 +76,7 @@ const copy = {
       { label: "Services", href: "/servicios-panama" }
     ]
   }
-} as const;
-
-const portfolioSectionCopy = {
-  es: [
-    {
-      id: "landing-ventas",
-      badge: "Landing pages",
-      title: "Landing pages que venden",
-      description: "Páginas diseñadas para captar clientes, presentar servicios y convertir visitas en mensajes, formularios o cotizaciones.",
-      cta: "Ver landings de venta",
-      quoteText: "Hola,%20quiero%20una%20landing%20page%20para%20vender%20o%20captar%20clientes",
-      coverSrc: "/portfolio-category-covers/landing-pages-que-venden.webp",
-      coverAlt: "Ejemplo de landing page de venta creada por LulabTech",
-      slugs: [
-        "rep-lawyer",
-        "aa-law-firm",
-        "julissa-lewis",
-        "solarled",
-        "orthoclinix",
-        "krasa-dermoestudio",
-        "rapicredito-panama",
-        "servi-estufa",
-        "eurides-young",
-        "transformacion-360",
-        "los-cholos",
-        "cerebritos-panama",
-        "logiplus-pty",
-        "handy-group",
-        "cle-property-management",
-        "veranieras",
-        "amornflor",
-        "palash-tower",
-        "chambonnet-comercial-realty"
-      ]
-    },
-    {
-      id: "reservas-sistemas",
-      badge: "Reservas y plataformas",
-      title: "Landing con reservas, citas y plataformas web",
-      description: "Sitios con funciones adicionales como formularios avanzados, reservas, citas, accesos o flujos personalizados.",
-      cta: "Ver reservas y plataformas",
-      quoteText: "Hola,%20quiero%20una%20landing%20con%20reservas,%20citas%20o%20plataforma%20web",
-      coverSrc: "/portfolio-category-covers/landing-reservas-citas-plataformas.webp",
-      coverAlt: "Ejemplo de landing con plataforma, reservas o funciones avanzadas creada por LulabTech",
-      slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
-    },
-    {
-      id: "corporativa-informativa",
-      badge: "Corporativas",
-      title: "Webs corporativas informativas",
-      description: "Sitios profesionales para presentar empresas, marcas, instituciones o proyectos de forma clara y confiable.",
-      cta: "Ver webs informativas",
-      quoteText: "Hola,%20quiero%20una%20web%20corporativa%20informativa%20para%20mi%20empresa",
-      coverSrc: "/portfolio-category-covers/webs-corporativas-informativas.webp",
-      coverAlt: "Ejemplo de web corporativa informativa creada por LulabTech",
-      slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
-    },
-    {
-      id: "corporativa-servicios",
-      badge: "Servicios profesionales",
-      title: "Webs corporativas de servicios",
-      description: "Webs enfocadas en explicar servicios, mostrar autoridad y facilitar el contacto con clientes potenciales.",
-      cta: "Ver webs de servicios",
-      quoteText: "Hola,%20quiero%20una%20web%20corporativa%20para%20mostrar%20mis%20servicios",
-      coverSrc: "/portfolio-category-covers/webs-corporativas-servicios.webp",
-      coverAlt: "Ejemplo de web corporativa de servicios creada por LulabTech",
-      slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
-    },
-    {
-      id: "software-medida",
-      badge: "Software a medida",
-      title: "Software a medida para empresas",
-      description: "Sistemas, portales y plataformas creadas para automatizar procesos, gestionar información o mejorar operaciones internas.",
-      cta: "Ver software empresarial",
-      quoteText: "Hola,%20quiero%20un%20software%20a%20medida%20para%20mi%20empresa",
-      coverSrc: "/portfolio-category-covers/software-a-medida-empresas.webp",
-      coverAlt: "Ejemplo de software a medida para empresas creado por LulabTech",
-      slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
-    }
-  ],
-  en: [
-    {
-      id: "landing-ventas",
-      badge: "Landing pages",
-      title: "Landing pages built to sell",
-      description: "Pages designed to capture leads, present services and turn visits into messages, forms or quote requests.",
-      cta: "View sales landings",
-      quoteText: "Hello,%20I%20want%20a%20landing%20page%20to%20sell%20or%20capture%20leads",
-      coverSrc: "/portfolio-category-covers/landing-pages-que-venden.webp",
-      coverAlt: "Sales landing page example created by LulabTech",
-      slugs: [
-        "rep-lawyer",
-        "aa-law-firm",
-        "julissa-lewis",
-        "solarled",
-        "orthoclinix",
-        "krasa-dermoestudio",
-        "rapicredito-panama",
-        "servi-estufa",
-        "eurides-young",
-        "transformacion-360",
-        "los-cholos",
-        "cerebritos-panama",
-        "logiplus-pty",
-        "handy-group",
-        "cle-property-management",
-        "veranieras",
-        "amornflor",
-        "palash-tower",
-        "chambonnet-comercial-realty"
-      ]
-    },
-    {
-      id: "reservas-sistemas",
-      badge: "Bookings and platforms",
-      title: "Landing pages with bookings, appointments and web platforms",
-      description: "Sites with additional functions such as advanced forms, bookings, appointments, access areas or custom flows.",
-      cta: "View bookings and platforms",
-      quoteText: "Hello,%20I%20want%20a%20landing%20page%20with%20bookings,%20appointments%20or%20a%20web%20platform",
-      coverSrc: "/portfolio-category-covers/landing-reservas-citas-plataformas.webp",
-      coverAlt: "Booking, platform or advanced web function example created by LulabTech",
-      slugs: ["bb-logistic", "caba-express", "panama-heritage-tours", "biofest-panama"]
-    },
-    {
-      id: "corporativa-informativa",
-      badge: "Corporate",
-      title: "Informative corporate websites",
-      description: "Professional websites to present companies, brands, institutions or projects in a clear and trustworthy way.",
-      cta: "View informative websites",
-      quoteText: "Hello,%20I%20want%20an%20informative%20corporate%20website%20for%20my%20company",
-      coverSrc: "/portfolio-category-covers/webs-corporativas-informativas.webp",
-      coverAlt: "Informative corporate website example created by LulabTech",
-      slugs: ["solmas-legal", "k9-security-international", "enis-caicedo", "dra-ivette-rios-diez", "jardines-espino-de-la-rosa", "alaf-international-academy"]
-    },
-    {
-      id: "corporativa-servicios",
-      badge: "Professional services",
-      title: "Corporate service websites",
-      description: "Websites focused on explaining services, showing authority and making it easier for potential clients to get in touch.",
-      cta: "View service websites",
-      quoteText: "Hello,%20I%20want%20a%20corporate%20website%20to%20show%20my%20services",
-      coverSrc: "/portfolio-category-covers/webs-corporativas-servicios.webp",
-      coverAlt: "Corporate service website example created by LulabTech",
-      slugs: ["isasa-panama", "quality-techno-services", "proselec-panama", "intramar-pty", "magna-academy"]
-    },
-    {
-      id: "software-medida",
-      badge: "Custom software",
-      title: "Custom software for companies",
-      description: "Systems, portals and platforms created to automate processes, manage information or improve internal operations.",
-      cta: "View business software",
-      quoteText: "Hello,%20I%20want%20custom%20software%20for%20my%20company",
-      coverSrc: "/portfolio-category-covers/software-a-medida-empresas.webp",
-      coverAlt: "Custom software for companies example created by LulabTech",
-      slugs: ["nova-track-portal", "bb-logistic", "los-cholos"]
-    }
-  ]
-} satisfies Record<"es" | "en", PortfolioSection[]>;
+} satisfies Record<"es" | "en", ProjectsPageCopy>;
 
 function getProjectDomain(url: string) {
   try {
@@ -286,7 +88,6 @@ function getProjectDomain(url: string) {
 
 function getShowcaseScreenshotUrl(url: string) {
   const normalized = url.startsWith("http") ? url : `https://${url}`;
-  // Screenshot alto para que la card se vea tipo showcase vertical, no como recorte aplastado.
   return `https://image.thum.io/get/width/1200/crop/1700/wait/8/noanimate/${normalized}`;
 }
 
@@ -297,7 +98,7 @@ function getScrollDistance(track: HTMLDivElement | null) {
   return firstCard.offsetWidth + 24;
 }
 
-function getProjectsBySlug(slugs: string[]) {
+export function getProjectsBySlug(slugs: string[]) {
   return slugs
     .map((slug) => portfolioProjects.find((project) => project.slug === slug))
     .filter((project): project is PortfolioProject => Boolean(project));
@@ -434,7 +235,7 @@ function ProjectCarouselCard({ project, source }: { project: PortfolioProject; s
   );
 }
 
-function PortfolioCarousel({ projects, source, emptyLabel }: { projects: PortfolioProject[]; source: string; emptyLabel: string }) {
+export function PortfolioCarousel({ projects, source, emptyLabel }: { projects: PortfolioProject[]; source: string; emptyLabel: string }) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const pauseAutoRef = useRef(false);
 
@@ -511,23 +312,19 @@ function PortfolioCarousel({ projects, source, emptyLabel }: { projects: Portfol
   );
 }
 
-function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { section: PortfolioSection; isActive: boolean; onSelect: () => void; viewExamplesLabel: string }) {
+function CategoryCard({ section, viewExamplesLabel }: { section: PortfolioSection; viewExamplesLabel: string }) {
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className={cn(
-        "group relative flex min-h-[540px] overflow-hidden rounded-[30px] border text-left shadow-soft outline-none transition duration-300 hover:-translate-y-1 hover:shadow-elevated focus-visible:ring-4 focus-visible:ring-brand-200",
-        isActive ? "border-brand-500 ring-4 ring-brand-100" : "border-slate-200"
-      )}
+    <Link
+      href={`/portafolio/${section.slug}`}
+      onClick={() => trackEvent("click_portfolio_category", { category: section.id, target: section.slug })}
+      className="group relative flex min-h-[540px] overflow-hidden rounded-[30px] border border-slate-200 text-left shadow-soft outline-none transition duration-300 hover:-translate-y-1 hover:shadow-elevated focus-visible:ring-4 focus-visible:ring-brand-200"
     >
       <img
         src={section.coverSrc}
         alt={section.coverAlt}
         className={cn(
-          "absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100",
-          section.coverPosition ?? "object-center",
-          isActive ? "scale-105 grayscale-0 opacity-100" : "opacity-[0.72]"
+          "absolute inset-0 h-full w-full object-cover grayscale opacity-[0.72] transition duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100",
+          section.coverPosition ?? "object-center"
         )}
         loading="lazy"
         decoding="async"
@@ -540,7 +337,7 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
           {section.badge}
         </span>
 
-        <div className="flex min-h-[205px] w-full flex-col justify-between rounded-[24px] border border-white/10 bg-black/40 p-4 backdrop-blur-[2px] transition duration-300 group-hover:bg-black/28 lg:min-h-[230px] xl:min-h-[210px]">
+        <div className="flex min-h-[184px] w-full flex-col justify-between rounded-[24px] border border-white/10 bg-black/40 p-4 backdrop-blur-[2px] transition duration-300 group-hover:bg-black/28 lg:min-h-[205px] xl:min-h-[190px]">
           <h3 className="text-[1.45rem] font-semibold leading-[1.12] text-white sm:text-2xl lg:text-[1.18rem] xl:text-[1.36rem]">{section.title}</h3>
           <span className="mt-5 inline-flex min-h-[54px] w-full items-center justify-between gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-bold leading-tight text-ink-900 transition group-hover:bg-brand-50 lg:text-[0.8rem] xl:text-sm">
             <span>{section.cta || viewExamplesLabel}</span>
@@ -548,28 +345,15 @@ function CategoryCard({ section, isActive, onSelect, viewExamplesLabel }: { sect
           </span>
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
 export function ProjectsPageContent() {
   const { locale } = useSiteLanguage();
-  const pageCopy = locale === "en" ? copy.en : copy.es;
-  const portfolioSections = locale === "en" ? portfolioSectionCopy.en : portfolioSectionCopy.es;
-  const detailsRef = useRef<HTMLDivElement | null>(null);
-  const [activeSectionId, setActiveSectionId] = useState<PortfolioSectionId | null>(null);
-
-  const activeSection = useMemo(() => portfolioSections.find((section) => section.id === activeSectionId) ?? null, [activeSectionId, portfolioSections]);
-  const activeProjects = useMemo(() => (activeSection ? getProjectsBySlug(activeSection.slugs) : []), [activeSection]);
-
-  const handleSelectSection = (sectionId: PortfolioSectionId) => {
-    setActiveSectionId(sectionId);
-    trackEvent("click_portfolio_category", { category: sectionId });
-
-    window.setTimeout(() => {
-      detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 80);
-  };
+  const currentLocale = locale === "en" ? "en" : "es";
+  const pageCopy = currentLocale === "en" ? copy.en : copy.es;
+  const portfolioSections = portfolioSectionCopy[currentLocale];
 
   return (
     <main>
@@ -619,64 +403,20 @@ export function ProjectsPageContent() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
-            <div className="max-w-4xl">
-              <span className="eyebrow">{pageCopy.selectorEyebrow}</span>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">{pageCopy.selectorTitle}</h2>
-              <p className="mt-3 text-base leading-7 text-ink-600">{pageCopy.selectorDescription}</p>
-            </div>
+            <span className="eyebrow">{pageCopy.selectorEyebrow}</span>
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {portfolioSections.map((section) => (
-              <CategoryCard
-                key={section.id}
-                section={section}
-                isActive={activeSectionId === section.id}
-                viewExamplesLabel={pageCopy.viewExamples}
-                onSelect={() => handleSelectSection(section.id)}
-              />
+              <CategoryCard key={section.id} section={section} viewExamplesLabel={pageCopy.viewExamples} />
             ))}
           </div>
         </Container>
       </section>
 
-      <section ref={detailsRef} className="pb-16 sm:pb-20">
+      <section className="pb-16 sm:pb-20">
         <Container>
-          {activeSection ? (
-            <div>
-              <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
-                <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
-                  <div>
-                    <span className="eyebrow">{pageCopy.selectedEyebrow}</span>
-                    <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">{activeSection.title}</h2>
-                    <p className="mt-3 max-w-3xl text-base leading-7 text-ink-600">{activeSection.description}</p>
-                  </div>
-
-                  <ButtonLink
-                    href={`https://wa.me/50767069044?text=${activeSection.quoteText}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="outline"
-                    size="lg"
-                    onClick={() => trackEvent("click_whatsapp_portfolio_category", { category: activeSection.id })}
-                  >
-                    {pageCopy.quoteThis}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </ButtonLink>
-                </div>
-              </div>
-
-              <PortfolioCarousel projects={activeProjects} source={`portfolio_${activeSection.id}`} emptyLabel={pageCopy.noSelectionDescription} />
-            </div>
-          ) : (
-            <div className="rounded-[34px] border border-dashed border-slate-300 bg-white p-8 text-center shadow-soft sm:p-10">
-              <p className="eyebrow">Portafolio</p>
-              <h2 className="mt-3 text-2xl font-semibold text-ink-900 sm:text-3xl">{pageCopy.noSelectionTitle}</h2>
-              <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-ink-600">{pageCopy.noSelectionDescription}</p>
-            </div>
-          )}
-
-          <div className="mt-12 rounded-[34px] border border-slate-200 bg-gradient-to-br from-[#07142D] via-[#0E2554] to-brand-700 p-7 text-white shadow-elevated sm:p-8 lg:p-10">
+          <div className="rounded-[34px] border border-slate-200 bg-gradient-to-br from-[#07142D] via-[#0E2554] to-brand-700 p-7 text-white shadow-elevated sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-100">{pageCopy.ctaEyebrow}</p>
