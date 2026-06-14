@@ -15,10 +15,6 @@ const categoryPageCopy = {
     eyebrow: "Portafolio por categoría",
     priceLabel: "Inversión inicial",
     fromLabel: "Desde",
-    carouselEyebrow: "Proyectos seleccionados",
-    carouselTitle: "Ejemplos reales en esta categoría",
-    carouselDescription:
-      "Desliza para ver referencias con screenshots, logos y enlaces. Estas cards se mueven automáticamente para que el visitante pueda explorar sin tener todo mezclado en una sola página.",
     emptyLabel: "No hay proyectos cargados para esta categoría todavía.",
     quote: "Cotizar algo así",
     back: "Volver al portafolio",
@@ -32,10 +28,6 @@ const categoryPageCopy = {
     eyebrow: "Portfolio by category",
     priceLabel: "Initial investment",
     fromLabel: "Starting at",
-    carouselEyebrow: "Selected projects",
-    carouselTitle: "Real examples in this category",
-    carouselDescription:
-      "Swipe to view references with screenshots, logos and links. These cards move automatically so visitors can explore without seeing every project mixed on one page.",
     emptyLabel: "There are no projects loaded for this category yet.",
     quote: "Quote something like this",
     back: "Back to portfolio",
@@ -116,23 +108,14 @@ export function PortfolioCategoryPageContent({ category }: { category: string })
                   <span className="text-sm font-semibold text-white/75">{copy.fromLabel}</span>
                   <span className="text-4xl font-semibold leading-none text-white">{section.price}</span>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-white/76">{section.priceNote}</p>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-14">
         <Container>
-          <div className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-soft sm:p-7 lg:p-8">
-            <div className="max-w-4xl">
-              <span className="eyebrow">{copy.carouselEyebrow}</span>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-ink-900 sm:text-4xl">{copy.carouselTitle}</h2>
-              <p className="mt-3 text-base leading-7 text-ink-600">{copy.carouselDescription}</p>
-            </div>
-          </div>
-
           <PortfolioCarousel projects={projects} source={`portfolio_category_page_${section.id}`} emptyLabel={copy.emptyLabel} />
         </Container>
       </section>
