@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
@@ -239,6 +239,7 @@ function PortfolioCarousel({
   emptyLabel?: string;
 }) {
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const pauseAutoRef = useRef(false);
 
   const handleScroll = (direction: -1 | 1) => {
     const track = trackRef.current;
@@ -249,6 +250,29 @@ function PortfolioCarousel({
       behavior: "smooth"
     });
   };
+
+  useEffect(() => {
+    if (!projects.length) return;
+
+    const interval = window.setInterval(() => {
+      if (pauseAutoRef.current) return;
+
+      const track = trackRef.current;
+      if (!track) return;
+
+      const amount = getScrollDistance(track);
+      const reachedEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - amount * 0.75;
+
+      if (reachedEnd) {
+        track.scrollTo({ left: 0, behavior: "smooth" });
+        return;
+      }
+
+      track.scrollBy({ left: amount, behavior: "smooth" });
+    }, 4300);
+
+    return () => window.clearInterval(interval);
+  }, [projects]);
 
   if (!projects.length) {
     return (
@@ -281,6 +305,12 @@ function PortfolioCarousel({
 
       <div
         ref={trackRef}
+        onMouseEnter={() => {
+          pauseAutoRef.current = true;
+        }}
+        onMouseLeave={() => {
+          pauseAutoRef.current = false;
+        }}
         className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {projects.map((project) => (

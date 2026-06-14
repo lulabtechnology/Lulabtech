@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { NAV_ANCHORS, WHATSAPP_URL } from "@/lib/constants";
@@ -8,10 +8,10 @@ import { SectionShell } from "@/components/layout/section-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ButtonLink } from "@/components/ui/button";
-import { PortfolioPreview } from "@/components/project/portfolio-preview";
 import { useSiteLanguage } from "@/components/providers/site-language";
 import { portfolioProjects, type PortfolioProject } from "@/data/portfolio";
 import { trackEvent } from "@/lib/tracking";
+import { cn } from "@/lib/utils";
 
 const homeProjectSlugs = [
   "k9-security-international",
@@ -30,70 +30,119 @@ function getProjectDomain(url: string) {
   }
 }
 
+function getShowcaseScreenshotUrl(url: string) {
+  const normalized = url.startsWith("http") ? url : `https://${url}`;
+  return `https://image.thum.io/get/width/1200/crop/1700/wait/8/noanimate/${normalized}`;
+}
+
 function getScrollAmount(track: HTMLDivElement | null) {
-  if (!track) return 320;
+  if (!track) return 360;
   const firstCard = track.firstElementChild as HTMLElement | null;
-  if (!firstCard) return 320;
+  if (!firstCard) return 360;
   return firstCard.offsetWidth + 24;
+}
+
+function HomeShowcaseImage({ project }: { project: PortfolioProject }) {
+  const [useLocalFallback, setUseLocalFallback] = useState(false);
+  const localFallback = project.screenshotSrc === null ? undefined : project.screenshotSrc;
+  const forceLocalPreview = project.slug === "solarled" && Boolean(localFallback);
+  const src = forceLocalPreview && localFallback ? localFallback : useLocalFallback && localFallback ? localFallback : getShowcaseScreenshotUrl(project.url);
+
+  return (
+    <div className="relative h-[430px] overflow-hidden bg-slate-100">
+      <img
+        src={src}
+        alt={`Vista previa del proyecto ${project.name}`}
+        className={cn(
+          "h-full w-full object-top transition duration-700 group-hover:scale-[1.02]",
+          forceLocalPreview ? "object-cover" : useLocalFallback ? "object-contain" : "object-cover"
+        )}
+        loading="lazy"
+        decoding="async"
+        referrerPolicy="no-referrer"
+        onError={() => {
+          if (!forceLocalPreview && localFallback && !useLocalFallback) {
+            setUseLocalFallback(true);
+          }
+        }}
+      />
+
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-3 px-4 py-4">
+        {project.logoSrc ? (
+          <div className="flex h-14 w-20 items-center justify-center rounded-[18px] border border-white/35 bg-white/90 p-2.5 shadow-elevated backdrop-blur-md">
+            <img src={project.logoSrc} alt="" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+          </div>
+        ) : (
+          <div className="rounded-[18px] border border-white/25 bg-black/35 px-3 py-2 text-xs font-semibold text-white shadow-soft backdrop-blur-md">
+            {project.name}
+          </div>
+        )}
+
+        <span className="rounded-full border border-white/25 bg-black/45 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-soft backdrop-blur-md">
+          {project.typeLabel}
+        </span>
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#080b12] via-[#080b12]/45 to-transparent" />
+    </div>
+  );
 }
 
 function ProjectCarouselCard({ project, locale }: { project: PortfolioProject; locale: "es" | "en" }) {
   const domain = getProjectDomain(project.url);
 
   return (
-    <article className="group flex h-[640px] w-[308px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#06080d] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[330px]">
-      <div className="relative h-[430px] overflow-hidden bg-slate-100">
-        <PortfolioPreview project={project} compact />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06080d] via-[#06080d]/35 to-transparent" />
-      </div>
+    <article className="group flex h-full w-[318px] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-[#080b12] shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-elevated sm:w-[360px]">
+      <HomeShowcaseImage project={project} />
 
-      <div className="flex flex-1 flex-col gap-3 border-t border-white/10 px-5 pb-5 pt-4 text-white sm:px-6">
+      <div className="flex flex-1 flex-col gap-3 border-t border-white/10 px-5 pb-5 pt-5 text-white">
         <div>
-          <h3 className="text-lg font-semibold leading-tight text-white sm:text-[1.36rem]">{project.name}</h3>
+          <h3 className="text-xl font-semibold leading-tight text-white">{project.name}</h3>
           <p className="mt-1 text-sm text-slate-300">{project.industry}</p>
         </div>
 
-        <div className="mt-1 flex flex-wrap gap-2">
-          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-200">
-            {project.typeLabel}
-          </span>
-          {project.services.slice(0, 1).map((service) => (
-            <span key={service} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-slate-300">
+        <div className="flex flex-wrap gap-2">
+          {project.services.slice(0, 2).map((service) => (
+            <span key={service} className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[11px] font-semibold text-slate-200">
               {service}
             </span>
           ))}
         </div>
 
-        <Link
-          href={project.url}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-auto inline-flex min-w-0 items-center gap-1.5 pt-3 text-sm font-semibold text-brand-300 transition hover:text-brand-200"
-          onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_projects_carousel_domain" })}
-        >
-          <span className="truncate">{domain}</span>
-          <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-        </Link>
-
-        <div className="grid grid-cols-2 gap-2 pt-1">
+        <div className="mt-auto flex flex-col gap-3 pt-2">
           <Link
             href={project.url}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-ink-900 transition hover:bg-slate-100"
-            onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_projects_carousel_button" })}
+            className="inline-flex min-w-0 items-center gap-1.5 text-sm font-semibold text-brand-300 transition hover:text-brand-200"
+            onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_projects_carousel_domain" })}
           >
-            {project.ctaLabel ?? (locale === "en" ? "View project" : "Ver proyecto")}
+            <span className="truncate">{domain}</span>
+            <ExternalLink className="h-3.5 w-3.5 shrink-0" />
           </Link>
-          <Link
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-brand-600 px-4 text-sm font-semibold text-white transition hover:bg-brand-700"
-            onClick={() => trackEvent("click_whatsapp_hero", { source: `home_projects_cta_${project.slug}` })}
-          >
-            {locale === "en" ? "Quote" : "Cotizar"}
-          </Link>
+
+          <div className="flex gap-2">
+            <ButtonLink
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              variant="outline"
+              size="md"
+              className="w-full justify-center border-white/15 bg-white text-ink-900 hover:bg-white/90"
+              onClick={() => trackEvent("click_portafolio", { project: project.name, source: "home_projects_carousel_button" })}
+            >
+              {project.ctaLabel ?? (locale === "en" ? "View project" : "Ver proyecto")}
+            </ButtonLink>
+            <ButtonLink
+              href={WHATSAPP_URL}
+              target="_blank"
+              size="md"
+              className="w-full justify-center"
+              onClick={() => trackEvent("click_whatsapp_hero", { source: `home_projects_cta_${project.slug}` })}
+            >
+              {locale === "en" ? "Quote" : "Cotizar"}
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </article>
@@ -103,6 +152,7 @@ function ProjectCarouselCard({ project, locale }: { project: PortfolioProject; l
 export function ProjectShowcaseSection() {
   const { locale } = useSiteLanguage();
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const pauseAutoRef = useRef(false);
 
   const projects = useMemo(
     () => homeProjectSlugs.map((slug) => portfolioProjects.find((project) => project.slug === slug)).filter(Boolean) as PortfolioProject[],
@@ -137,11 +187,13 @@ export function ProjectShowcaseSection() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
+      if (pauseAutoRef.current) return;
+
       const track = trackRef.current;
       if (!track) return;
 
       const amount = getScrollAmount(track);
-      const reachedEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - amount * 0.6;
+      const reachedEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - amount * 0.75;
 
       if (reachedEnd) {
         track.scrollTo({ left: 0, behavior: "smooth" });
@@ -192,6 +244,12 @@ export function ProjectShowcaseSection() {
 
           <div
             ref={trackRef}
+            onMouseEnter={() => {
+              pauseAutoRef.current = true;
+            }}
+            onMouseLeave={() => {
+              pauseAutoRef.current = false;
+            }}
             className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {projects.map((project) => (
