@@ -212,7 +212,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Logística / portal cliente",
     description: "Plataforma web para operación logística, seguimiento, gestión documental, estados y procesos administrativos de la empresa.",
     services: ["Software a medida", "Portal cliente", "Gestión operativa"],
-    screenshotSrc: "/portfolio-previews/magna-academy.webp",
+    screenshotSrc: "/portfolio-previews/nova-track-portal.webp",
     ctaLabel: "Ver plataforma",
     logoSrc: "/clients/nova-shipping.webp",
     featured: true
@@ -402,7 +402,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Belleza y estética",
     description: "Landing visual para servicios de estética, branding y contacto orientado a citas o consultas.",
     services: ["Landing page", "Estética", "Citas"],
-    screenshotSrc: "/portfolio-previews/proselec-panama.webp",
+    screenshotSrc: "/portfolio-previews/krasa-dermoestudio.webp",
     logoSrc: "/clients/krasa-dermoestudio.webp"
   },
   {
